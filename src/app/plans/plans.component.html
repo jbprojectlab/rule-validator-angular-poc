@@ -1,1 +1,31 @@
-<p>plans works!</p>
+<div className='plans-table'>
+  <table>
+    <colgroup span="12"></colgroup>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers; index as i;">{{header}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- {plans.map(({group, planName, throughPeriod, controlNumber, dateReceived, category, mode, status, currentState, lastUpdated, dueDate, reportScore}, idx) => ( -->
+        <tr *ngFor="let plan of plans; index as i;">
+          <td>{{plan.group}}</td>
+          <td>{{plan.planName}}</td>
+          <td>{{plan.throughPeriod}}</td>
+          <td>
+            <!-- <a routerLink="/{{controlNumber}}" routerLinkActive="active" target='_blank' rel='noopener noreferrer'>
+              {{plan.controlNumber}}
+            </a> -->
+          </td>
+          <td>{{plan.dateReceived}}</td>
+          <td>{{plan.category}}</td>
+          <td>{{plan.mode}}</td>
+          <td>{{plan.status}}</td>
+          <td>{{plan.currentState}}</td>
+          <td>{{plan.lastUpdated}}</td>
+          <td>{{plan.dueDate}}</td>
+          <td>{{plan.reportScore}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
