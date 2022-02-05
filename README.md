@@ -1,4 +1,4 @@
-# Rule Validator -- Angular Poc
+# Rule Validator -- Angular POC
 
 Proof of concept for Blue Cross Blue Shield America Rule Validator UI
 
