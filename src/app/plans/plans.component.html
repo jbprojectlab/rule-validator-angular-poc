@@ -1,4 +1,4 @@
-<div className='plans-table'>
+<div id='plans-table' className='plans-table'>
   <table>
     <colgroup span="12"></colgroup>
     <thead>
@@ -8,14 +8,14 @@
     </thead>
     <tbody>
       <!-- {plans.map(({group, planName, throughPeriod, controlNumber, dateReceived, category, mode, status, currentState, lastUpdated, dueDate, reportScore}, idx) => ( -->
-        <tr *ngFor="let plan of plans; index as i;">
+        <tr *ngFor="let plan of plans; index as i;" [ngClass]="selectedRow === i ? 'selected' : ''" (click)="selectRow(i)">
           <td>{{plan.group}}</td>
           <td>{{plan.planName}}</td>
           <td>{{plan.throughPeriod}}</td>
           <td>
-            <!-- <a routerLink="/{{controlNumber}}" routerLinkActive="active" target='_blank' rel='noopener noreferrer'>
+            <a routerLink="/" target='_blank' rel='noopener noreferrer'>
               {{plan.controlNumber}}
-            </a> -->
+            </a>
           </td>
           <td>{{plan.dateReceived}}</td>
           <td>{{plan.category}}</td>

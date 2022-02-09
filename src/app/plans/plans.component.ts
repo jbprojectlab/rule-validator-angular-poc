@@ -163,12 +163,17 @@ export class PlansComponent implements OnInit {
       dueDate: 1643583296196,
       reportScore: 0
     },
-  ]  
+  ]
 
-  constructor() {
-  }
+  selectedRow = 0
+
+  constructor() {}
 
   ngOnInit(): void {
     console.log('plans:  ', this.plans)
+  }
+
+  selectRow(row: number) {
+    this.selectedRow = row
   }
 }
