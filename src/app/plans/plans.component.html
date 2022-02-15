@@ -21,13 +21,14 @@
               {{plan.controlNumber}}
             </a>
           </td>
-          <td>{{plan.dateReceived}}</td>
+          <!-- <td>{{plan.dateReceived}}</td> -->
+          <td>{{plan.dateReceived | date:'MM/dd/yyyy'}}</td>
           <td>{{plan.category}}</td>
           <td>{{plan.mode}}</td>
           <td>{{plan.status}}</td>
           <td>{{plan.currentState}}</td>
-          <td>{{plan.lastUpdated}}</td>
-          <td>{{plan.dueDate}}</td>
+          <td>{{plan.lastUpdated | date:'MM/dd/yyyy'}}</td>
+          <td>{{plan.dueDate | date:'MM/dd/yyyy'}}</td>
           <td>{{plan.reportScore}}</td>
         </tr>
     </tbody>
