@@ -22,7 +22,7 @@ export class PlansComponent implements OnInit {
     'L2 Report Score'
   ]
 
-  plans = [
+  initialPlans = [
     {
       group: '100101234',
       planName: 'BCBSIL',
@@ -41,7 +41,7 @@ export class PlansComponent implements OnInit {
       group: '100101234',
       planName: 'BCBSIL',
       throughPeriod: 202112,
-      controlNumber: 23457,
+      controlNumber: 23456,
       dateReceived: 1623582896199,
       category: 'abcd',
       mode: 'Active',
@@ -52,10 +52,10 @@ export class PlansComponent implements OnInit {
       reportScore: 0
     },
     {
-      group: '100105678',
+      group: '100101234',
       planName: 'BCBSIL',
       throughPeriod: 202112,
-      controlNumber: 23458,
+      controlNumber: 23456,
       dateReceived: 1623582916199,
       category: 'abcd',
       mode: 'Active',
@@ -68,8 +68,8 @@ export class PlansComponent implements OnInit {
     {
       group: '100105678',
       planName: 'Plan 3',
-      throughPeriod: 202112,
-      controlNumber: 23459,
+      throughPeriod: 202110,
+      controlNumber: 23457,
       dateReceived: 1623582926199,
       category: 'abcd',
       mode: 'Active',
@@ -80,13 +80,13 @@ export class PlansComponent implements OnInit {
       reportScore: 0.75
     },
       {
-      group: '100104321',
+      group: '100105678',
       planName: 'Plan 4',
-      throughPeriod: 202112,
-      controlNumber: 23460,
+      throughPeriod: 202110,
+      controlNumber: 23457,
       dateReceived: 1623582936199,
       category: 'abcd',
-      mode: 'Active',
+      mode: 'inActive',
       status: 'Ready for L2 Review',
       currentState: 'Open',
       lastUpdated: 1633582486199,
@@ -96,11 +96,11 @@ export class PlansComponent implements OnInit {
     {
       group: '100104321',
       planName: 'Plan 5',
-      throughPeriod: 202112,
-      controlNumber: 23461,
+      throughPeriod: 202110,
+      controlNumber: 23457,
       dateReceived: 1623582946199,
       category: 'abcd',
-      mode: 'Active',
+      mode: 'inActive',
       status: 'Level 1 Pass',
       currentState: 'Open',
       lastUpdated: 1633582586199,
@@ -110,11 +110,11 @@ export class PlansComponent implements OnInit {
     {
       group: '100104321',
       planName: 'Plan 6',
-      throughPeriod: 202112,
-      controlNumber: 23462,
+      throughPeriod: 202108,
+      controlNumber: 23458,
       dateReceived: 1623582956199,
       category: 'abcd',
-      mode: 'Active',
+      mode: 'inActive',
       status: 'Level 1 Pass',
       currentState: 'Open',
       lastUpdated: 1633582686199,
@@ -124,11 +124,11 @@ export class PlansComponent implements OnInit {
     {
       group: '100104321',
       planName: 'Plan 7',
-      throughPeriod: 202112,
-      controlNumber: 23456,
+      throughPeriod: 202108,
+      controlNumber: 23458,
       dateReceived: 1623582966199,
       category: 'abcd',
-      mode: 'Active',
+      mode: 'Inactive',
       status: 'L1 Pass',
       currentState: 'Open',
       lastUpdated: 1633582786199,
@@ -138,11 +138,11 @@ export class PlansComponent implements OnInit {
     {
       group: '100109876',
       planName: 'Plan 8',
-      throughPeriod: 202112,
-      controlNumber: 23463,
+      throughPeriod: 202106,
+      controlNumber: 23459,
       dateReceived: 1623582976199,
       category: 'abcd',
-      mode: 'Active',
+      mode: 'N/A',
       status: 'Ready for L1 Review',
       currentState: 'Open',
       lastUpdated: 1633582886199,
@@ -152,11 +152,11 @@ export class PlansComponent implements OnInit {
     {
       group: '100109876',
       planName: 'Plan 9',
-      throughPeriod: 202112,
-      controlNumber: 23464,
+      throughPeriod: 202106,
+      controlNumber: 23459,
       dateReceived: 1623582986199,
       category: 'abcd',
-      mode: 'Active',
+      mode: 'N/A',
       status: 'Ready for L1 Review',
       currentState: 'Open',
       lastUpdated: 1633582986199,
@@ -167,9 +167,65 @@ export class PlansComponent implements OnInit {
 
   selectedRow = 0
 
+  selectedSubmissionGroupOption!: string;
+  selectedPaidThroughPeriodOption!: string;
+  selectedModeOption!: string;
+  selectedSubmissionControlOption!: string;
+  selectedCategoryOption!: string;
+
+  options: any = {
+    submissionGroupOptions: [
+      '100101234',
+      '100105678',
+      '100104321',
+      '100109876',
+    ],
+    paidThroughPeriodOptions: [
+      '202112',
+      '202110',
+      '202108',
+      '202106',
+    ],
+    modeOptions: [
+      'Active',
+      'Inactive',
+      'N/A',
+    ],
+    submissionControlOptions: [
+      '23456',
+      '23457',
+      '23458',
+      '23459',
+    ],
+    categoryOptions: [
+      'abcd',
+      'efgh',
+      'ijkl',
+      'mnop',
+    ]
+  }
+
+  plans: any = []
+  filteredPlans: any = []
+
+  handleSubmissionGroupChange(value: string) {
+    console.log('value on change:  ', value)
+    if(value) {
+      this.selectedSubmissionGroupOption = value
+      this.filteredPlans = this.plans.filter((plan: { group: string; }) => plan.group === value)
+    } else if(this.plans.length !== this.initialPlans.length) {
+      this.plans = this.initialPlans
+    }
+  }
+
+  search() {
+    this.plans = this.filteredPlans
+  }
+
   constructor() {}
 
   ngOnInit(): void {
+    this.plans = this.initialPlans
     console.log('plans:  ', this.plans)
   }
 

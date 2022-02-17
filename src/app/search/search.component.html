@@ -1,30 +1,42 @@
-<div class="search">
-  Submission Group
-  <form>
-    <select>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>Option 3</option>
-    </select>
-    <select>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>Option 3</option>
-    </select>
-    <select>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>Option 3</option>
-    </select>
-    <select>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>Option 3</option>
-    </select>
-    <select>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>Option 3</option>
-    </select>
-  </form>
-</div>
+<!-- <div class="search">
+  <h4>
+    Search Filters
+  </h4>
+  <div>
+    <ng-select
+      class="custom"
+      [(ngModel)]="selectedSubmissionGroupOption"
+      placeholder="Submission Group"
+      (change)="handleSubmissionGroupChange(selectedSubmissionGroupOption)"
+      >
+      <ng-option
+        *ngFor="let submissionGroupOption of options.submissionGroupOptions"
+        [value]="submissionGroupOption"
+      >
+        {{submissionGroupOption}}
+      </ng-option>
+    </ng-select>
+    <button (click)="search()">Search</button>
+    
+    <ng-select class="custom" [(ngModel)]="selectedPaidThroughPeriodOption" placeholder="Paid Through Period">
+      <ng-option *ngFor="let paidThroughPeriodOption of options.paidThroughPeriodOptions" [value]="paidThroughPeriodOption">
+        {{paidThroughPeriodOption}}
+      </ng-option>
+    </ng-select>
+    <ng-select class="custom" [(ngModel)]="selectedModeOption" placeholder="Mode">
+      <ng-option *ngFor="let modeOption of options.modeOptions" [value]="modeOption">
+        {{modeOption}}
+      </ng-option>
+    </ng-select>
+    <ng-select class="custom" [(ngModel)]="selectedSubmissionControlOption" placeholder="Submission Control">
+      <ng-option *ngFor="let submissionControlOption of options.submissionControlOptions" [value]="submissionControlOption">
+        {{submissionControlOption}}
+      </ng-option>
+    </ng-select>
+    <ng-select class="custom last-select" [(ngModel)]="selectedCategoryOption" placeholder="Category">
+      <ng-option *ngFor="let categoryOption of options.categoryOptions" [value]="categoryOption">
+        {{categoryOption}}
+      </ng-option>
+    </ng-select>
+  </div>
+</div> -->

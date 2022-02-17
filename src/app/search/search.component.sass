@@ -1,18 +1,27 @@
 .search
   background-color: #edf2f6
   border-radius: 20px
-  height: 80px
+  height: 100px
   padding: 20px 40px
-  margin-top: -60px
+  margin-top: -132px
   position: absolute
   right: 40px
-  width: 55%
+  width: 65%
+  min-width: 800px
 
-  select
-    background-color: #edf2f6
-    border: none
-    border-bottom: 1px solid #000
-    margin: 30px 40px 0 0
-    -webkit-appearance: none
-    padding: 10px 10px 10px 0
+  div
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-top: 20px
 
+  h4
+    margin: 0
+
+  .ng-select.custom
+    min-width: 150px
+    width: 18%
+
+@media screen and (max-width: 1280px)
+  .search
+    right: 0
