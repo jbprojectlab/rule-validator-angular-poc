@@ -1,21 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-// planName: 'Plan 9',
-// throughPeriod: 202106,
-// controlNumber: 23459,
-// dateReceived: 1623582986199,
-// category: 'abcd',
-// mode: 'N/A',
-// status: 'Ready for L1 Review',
-// currentState: 'Open',
-// lastUpdated: 1633582986199,
-// dueDate: 1643583296196,
-// reportScore: 0
-
 interface Plan {
   submissionGroup?: number;
   planName?: string;
-  throughPeriod?: number;
+  paidThroughPeriod?: number;
   controlNumber?: number;
   dateReceived?: number;
   category?: string;
@@ -53,7 +41,7 @@ export class PlansComponent implements OnInit {
     {
       submissionGroup: 100101234,
       planName: 'BCBSIL',
-      throughPeriod: 202112,
+      paidThroughPeriod: 202112,
       controlNumber: 23456,
       dateReceived: 1623582886199,
       category: 'abcd',
@@ -67,7 +55,7 @@ export class PlansComponent implements OnInit {
     {
       submissionGroup: 100101234,
       planName: 'BCBSIL',
-      throughPeriod: 202112,
+      paidThroughPeriod: 202112,
       controlNumber: 23456,
       dateReceived: 1623582896199,
       category: 'abcd',
@@ -81,7 +69,7 @@ export class PlansComponent implements OnInit {
     {
       submissionGroup: 100101234,
       planName: 'BCBSIL',
-      throughPeriod: 202112,
+      paidThroughPeriod: 202112,
       controlNumber: 23456,
       dateReceived: 1623582916199,
       category: 'abcd',
@@ -95,7 +83,7 @@ export class PlansComponent implements OnInit {
     {
       submissionGroup: 100105678,
       planName: 'Plan 3',
-      throughPeriod: 202110,
+      paidThroughPeriod: 202110,
       controlNumber: 23457,
       dateReceived: 1623582926199,
       category: 'abcd',
@@ -109,7 +97,7 @@ export class PlansComponent implements OnInit {
       {
       submissionGroup: 100105678,
       planName: 'Plan 4',
-      throughPeriod: 202110,
+      paidThroughPeriod: 202110,
       controlNumber: 23457,
       dateReceived: 1623582936199,
       category: 'abcd',
@@ -123,7 +111,7 @@ export class PlansComponent implements OnInit {
     {
       submissionGroup: 100104321,
       planName: 'Plan 5',
-      throughPeriod: 202110,
+      paidThroughPeriod: 202110,
       controlNumber: 23457,
       dateReceived: 1623582946199,
       category: 'abcd',
@@ -137,7 +125,7 @@ export class PlansComponent implements OnInit {
     {
       submissionGroup: 100104321,
       planName: 'Plan 6',
-      throughPeriod: 202108,
+      paidThroughPeriod: 202108,
       controlNumber: 23458,
       dateReceived: 1623582956199,
       category: 'abcd',
@@ -151,7 +139,7 @@ export class PlansComponent implements OnInit {
     {
       submissionGroup: 100104321,
       planName: 'Plan 7',
-      throughPeriod: 202108,
+      paidThroughPeriod: 202108,
       controlNumber: 23458,
       dateReceived: 1623582966199,
       category: 'abcd',
@@ -165,7 +153,7 @@ export class PlansComponent implements OnInit {
     {
       submissionGroup: 100109876,
       planName: 'Plan 8',
-      throughPeriod: 202106,
+      paidThroughPeriod: 202106,
       controlNumber: 23459,
       dateReceived: 1623582976199,
       category: 'abcd',
@@ -179,7 +167,7 @@ export class PlansComponent implements OnInit {
     {
       submissionGroup: 100109876,
       planName: 'Plan 9',
-      throughPeriod: 202106,
+      paidThroughPeriod: 202106,
       controlNumber: 23459,
       dateReceived: 1623582986199,
       category: 'abcd',
@@ -232,22 +220,110 @@ export class PlansComponent implements OnInit {
     ]
   }
 
-  plans: Plan[] = []
-  filteredPlans: Plan[] = this.initialPlans.map((plan: Plan) => plan)
+  plans: Plan[] = this.initialPlans.map((plan: Plan) => plan)
+  searchFilter: Plan = {}
 
-  handleSearchFilterChange(key: string | number, value: any, type: string) {
-    let match = type === 'number' ? Number(value) : value
+  // handleSearchFilterChange(key: string | number, value: any, type: string) {
+  //   let match = type === 'number' ? Number(value) : value
     
-    if(match) {
-      console.log('filtered before:   ', this.filteredPlans)
-      // @ts-ignore
-      this.filteredPlans = this.filteredPlans.filter((plan: Plan) => plan[key] == match)
-      console.log('key:  ', key, '    match:  ', match, '   filtered Plans after:    ', this.filteredPlans)
-    }
+  //   if(match) {
+  //     console.log('filtered before:   ', this.filteredPlans)
+  //     // @ts-ignore
+  //     this.filteredPlans = this.filteredPlans.filter((plan: Plan) => plan[key] == match)
+  //     console.log('key:  ', key, '    match:  ', match, '   filtered Plans after:    ', this.filteredPlans)
+  //   }
+  // }
+
+  handleSearchFilterChange(key: string, value: string | number, type: string) {
+    // grab all filters
+    // filter array on clicking of search button
+
+    if(!value) return
+
+    // @ts-ignore
+    this.searchFilter[key] = value
+    console.log('searchFilter:  ', this.searchFilter)
   }
 
   search() {
-    this.plans = this.filteredPlans
+    if(Object.keys(this.searchFilter).length === 0) {
+      this.plans = this.initialPlans
+      return
+    }
+    
+    // this.plans = this.plans.filter((plan: Plan) => {
+    //   return plan.submissionGroup === this.searchFilter.submissionGroup &&
+    //     plan.paidThroughPeriod === this.searchFilter.paidThroughPeriod &&
+    //     plan.controlNumber === this.searchFilter.controlNumber &&
+    //     plan.category === this.searchFilter.category &&
+    //     plan.mode === this.searchFilter.mode
+    // })
+
+    const filtered: Plan[] = []
+
+    for(let i = 0; i < this.plans.length; i += 1) {
+      const plan = this.plans[i]
+
+      const filteredPlan: Plan = {
+        planName: plan.planName,
+        dateReceived: plan.dateReceived,
+        status: plan.status,
+        currentState: plan.currentState,
+        lastUpdated: plan.lastUpdated,
+        dueDate: plan.dueDate,
+        reportScore: plan.reportScore
+      }
+
+      let submissionGroup = plan.submissionGroup,
+        paidThroughPeriod = plan.paidThroughPeriod,
+        controlNumber = plan.controlNumber,
+        category = plan.category,
+        mode = plan.mode
+
+      if(!this.searchFilter.submissionGroup) {
+        filteredPlan.submissionGroup = submissionGroup
+      } else if(this.searchFilter.submissionGroup !== submissionGroup) {
+        continue
+      } else {
+        filteredPlan.submissionGroup = submissionGroup
+      }
+
+      if(!this.searchFilter.paidThroughPeriod) {
+        filteredPlan.paidThroughPeriod = paidThroughPeriod
+      } else if(this.searchFilter.paidThroughPeriod !== paidThroughPeriod) {
+        continue
+      } else {
+        filteredPlan.paidThroughPeriod = paidThroughPeriod
+      }
+
+      if(!this.searchFilter.controlNumber) {
+        filteredPlan.controlNumber = controlNumber
+      } else if(this.searchFilter.controlNumber !== controlNumber) {
+        continue
+      } else {
+        filteredPlan.controlNumber = controlNumber
+      }
+
+      if(!this.searchFilter.category) {
+        filteredPlan.category = category
+      } else if(this.searchFilter.category !== category) {
+        continue
+      } else {
+        filteredPlan.category = category
+      }
+
+      if(!this.searchFilter.mode) {
+        filteredPlan.mode = mode
+      } else if(this.searchFilter.mode !== mode) {
+        continue
+      } else {
+        filteredPlan.mode = mode
+      }
+
+      filtered.push(filteredPlan)
+    }
+
+    this.plans = filtered
   }
 
   constructor() {}
@@ -256,7 +332,7 @@ export class PlansComponent implements OnInit {
     this.plans = this.initialPlans
     console.log('plans:  ', this.plans)
 
-    // else if(this.plans.length !== this.initialPlans.length) {
+    // if(this.plans.length !== this.initialPlans.length) {
     //   this.plans = this.initialPlans
     // }
   }

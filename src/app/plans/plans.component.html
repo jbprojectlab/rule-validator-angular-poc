@@ -59,7 +59,7 @@
         <tr *ngFor="let plan of plans; index as i;" [ngClass]="selectedRow === i ? 'selected' : ''" (click)="selectRow(i)">
           <td>{{plan.submissionGroup}}</td>
           <td>{{plan.planName}}</td>
-          <td>{{plan.throughPeriod}}</td>
+          <td>{{plan.paidThroughPeriod}}</td>
           <td>
             <a routerLink="/" target='_blank' rel='noopener noreferrer'>
               {{plan.controlNumber}}
