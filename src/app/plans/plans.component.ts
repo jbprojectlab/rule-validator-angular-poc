@@ -1,5 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 
+// planName: 'Plan 9',
+// throughPeriod: 202106,
+// controlNumber: 23459,
+// dateReceived: 1623582986199,
+// category: 'abcd',
+// mode: 'N/A',
+// status: 'Ready for L1 Review',
+// currentState: 'Open',
+// lastUpdated: 1633582986199,
+// dueDate: 1643583296196,
+// reportScore: 0
+
+interface Plan {
+  submissionGroup?: number;
+  planName?: string;
+  throughPeriod?: number;
+  controlNumber?: number;
+  dateReceived?: number;
+  category?: string;
+  mode?: string;
+  status?: string;
+  currentState?: string;
+  lastUpdated?: number;
+  dueDate?: number;
+  reportScore?: number;
+}
+
 @Component({
   selector: 'app-plans',
   templateUrl: './plans.component.html',
@@ -24,7 +51,7 @@ export class PlansComponent implements OnInit {
 
   initialPlans = [
     {
-      group: '100101234',
+      submissionGroup: 100101234,
       planName: 'BCBSIL',
       throughPeriod: 202112,
       controlNumber: 23456,
@@ -38,7 +65,7 @@ export class PlansComponent implements OnInit {
       reportScore: 1.2
     },
     {
-      group: '100101234',
+      submissionGroup: 100101234,
       planName: 'BCBSIL',
       throughPeriod: 202112,
       controlNumber: 23456,
@@ -52,7 +79,7 @@ export class PlansComponent implements OnInit {
       reportScore: 0
     },
     {
-      group: '100101234',
+      submissionGroup: 100101234,
       planName: 'BCBSIL',
       throughPeriod: 202112,
       controlNumber: 23456,
@@ -66,7 +93,7 @@ export class PlansComponent implements OnInit {
       reportScore: 0.5
     },
     {
-      group: '100105678',
+      submissionGroup: 100105678,
       planName: 'Plan 3',
       throughPeriod: 202110,
       controlNumber: 23457,
@@ -80,7 +107,7 @@ export class PlansComponent implements OnInit {
       reportScore: 0.75
     },
       {
-      group: '100105678',
+      submissionGroup: 100105678,
       planName: 'Plan 4',
       throughPeriod: 202110,
       controlNumber: 23457,
@@ -94,7 +121,7 @@ export class PlansComponent implements OnInit {
       reportScore: 1.4
     },
     {
-      group: '100104321',
+      submissionGroup: 100104321,
       planName: 'Plan 5',
       throughPeriod: 202110,
       controlNumber: 23457,
@@ -108,7 +135,7 @@ export class PlansComponent implements OnInit {
       reportScore: 0.1
     },
     {
-      group: '100104321',
+      submissionGroup: 100104321,
       planName: 'Plan 6',
       throughPeriod: 202108,
       controlNumber: 23458,
@@ -122,7 +149,7 @@ export class PlansComponent implements OnInit {
       reportScore: 0.2
     },
     {
-      group: '100104321',
+      submissionGroup: 100104321,
       planName: 'Plan 7',
       throughPeriod: 202108,
       controlNumber: 23458,
@@ -136,7 +163,7 @@ export class PlansComponent implements OnInit {
       reportScore: 0.75
     },
     {
-      group: '100109876',
+      submissionGroup: 100109876,
       planName: 'Plan 8',
       throughPeriod: 202106,
       controlNumber: 23459,
@@ -150,7 +177,7 @@ export class PlansComponent implements OnInit {
       reportScore: 1
     },
     {
-      group: '100109876',
+      submissionGroup: 100109876,
       planName: 'Plan 9',
       throughPeriod: 202106,
       controlNumber: 23459,
@@ -167,35 +194,35 @@ export class PlansComponent implements OnInit {
 
   selectedRow = 0
 
-  selectedSubmissionGroupOption!: string;
-  selectedPaidThroughPeriodOption!: string;
+  selectedSubmissionGroupOption!: number;
+  selectedPaidThroughPeriodOption!: number;
   selectedModeOption!: string;
-  selectedSubmissionControlOption!: string;
+  selectedControlNumberOption!: string;
   selectedCategoryOption!: string;
 
   options: any = {
     submissionGroupOptions: [
-      '100101234',
-      '100105678',
-      '100104321',
-      '100109876',
+      100101234,
+      100105678,
+      100104321,
+      100109876,
     ],
     paidThroughPeriodOptions: [
-      '202112',
-      '202110',
-      '202108',
-      '202106',
+      202112,
+      202110,
+      202108,
+      202106,
     ],
     modeOptions: [
       'Active',
       'Inactive',
       'N/A',
     ],
-    submissionControlOptions: [
-      '23456',
-      '23457',
-      '23458',
-      '23459',
+    controlNumberOptions: [
+      23456,
+      23457,
+      23458,
+      23459,
     ],
     categoryOptions: [
       'abcd',
@@ -205,16 +232,17 @@ export class PlansComponent implements OnInit {
     ]
   }
 
-  plans: any = []
-  filteredPlans: any = []
+  plans: Plan[] = []
+  filteredPlans: Plan[] = this.initialPlans.map((plan: Plan) => plan)
 
-  handleSubmissionGroupChange(value: string) {
-    console.log('value on change:  ', value)
-    if(value) {
-      this.selectedSubmissionGroupOption = value
-      this.filteredPlans = this.plans.filter((plan: { group: string; }) => plan.group === value)
-    } else if(this.plans.length !== this.initialPlans.length) {
-      this.plans = this.initialPlans
+  handleSearchFilterChange(key: string | number, value: any, type: string) {
+    let match = type === 'number' ? Number(value) : value
+    
+    if(match) {
+      console.log('filtered before:   ', this.filteredPlans)
+      // @ts-ignore
+      this.filteredPlans = this.filteredPlans.filter((plan: Plan) => plan[key] == match)
+      console.log('key:  ', key, '    match:  ', match, '   filtered Plans after:    ', this.filteredPlans)
     }
   }
 
@@ -227,6 +255,10 @@ export class PlansComponent implements OnInit {
   ngOnInit(): void {
     this.plans = this.initialPlans
     console.log('plans:  ', this.plans)
+
+    // else if(this.plans.length !== this.initialPlans.length) {
+    //   this.plans = this.initialPlans
+    // }
   }
 
   selectRow(row: number) {

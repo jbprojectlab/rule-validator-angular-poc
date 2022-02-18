@@ -1,20 +1,16 @@
 <app-navbar></app-navbar>
+
 <div class="plans-table">
   <div class="table-title">
     NDW - L2 Rules
   </div>
-  <!-- <app-search (submissionGroupFilterEvent)="filterPlansTable($event)"></app-search> -->
+  
   <div class="search">
     <h4>
       Search Filters
     </h4>
     <div>
-      <ng-select
-        class="custom"
-        [(ngModel)]="selectedSubmissionGroupOption"
-        placeholder="Submission Group"
-        (change)="handleSubmissionGroupChange(selectedSubmissionGroupOption)"
-      >
+      <ng-select class="custom" [(ngModel)]="selectedSubmissionGroupOption" placeholder="Submission Group" (change)="handleSearchFilterChange('submissionGroup', selectedSubmissionGroupOption, 'number')">
         <ng-option
           *ngFor="let submissionGroupOption of options.submissionGroupOptions"
           [value]="submissionGroupOption"
@@ -22,30 +18,35 @@
           {{submissionGroupOption}}
         </ng-option>
       </ng-select>
-      <button (click)="search()">Search</button>
       
-      <ng-select class="custom" [(ngModel)]="selectedPaidThroughPeriodOption" placeholder="Paid Through Period">
+      <ng-select class="custom" [(ngModel)]="selectedPaidThroughPeriodOption" placeholder="Paid Through Period" (change)="handleSearchFilterChange('paidThroughPeriod', selectedPaidThroughPeriodOption, 'number')">
         <ng-option *ngFor="let paidThroughPeriodOption of options.paidThroughPeriodOptions" [value]="paidThroughPeriodOption">
           {{paidThroughPeriodOption}}
         </ng-option>
       </ng-select>
-      <ng-select class="custom" [(ngModel)]="selectedModeOption" placeholder="Mode">
-        <ng-option *ngFor="let modeOption of options.modeOptions" [value]="modeOption">
-          {{modeOption}}
+
+      <ng-select class="custom" [(ngModel)]="selectedControlNumberOption" placeholder="Submission Control" (change)="handleSearchFilterChange('controlNumber', selectedControlNumberOption, 'number')">
+        <ng-option *ngFor="let controlNumberOption of options.controlNumberOptions" [value]="controlNumberOption">
+          {{controlNumberOption}}
         </ng-option>
       </ng-select>
-      <ng-select class="custom" [(ngModel)]="selectedSubmissionControlOption" placeholder="Submission Control">
-        <ng-option *ngFor="let submissionControlOption of options.submissionControlOptions" [value]="submissionControlOption">
-          {{submissionControlOption}}
-        </ng-option>
-      </ng-select>
-      <ng-select class="custom last-select" [(ngModel)]="selectedCategoryOption" placeholder="Category">
+
+      <ng-select class="custom last-select" [(ngModel)]="selectedCategoryOption" placeholder="Category" (change)="handleSearchFilterChange('category', selectedCategoryOption, 'string')">
         <ng-option *ngFor="let categoryOption of options.categoryOptions" [value]="categoryOption">
           {{categoryOption}}
         </ng-option>
       </ng-select>
+
+      <ng-select class="custom" [(ngModel)]="selectedModeOption" placeholder="Mode" (change)="handleSearchFilterChange('mode', selectedModeOption, 'string')">
+        <ng-option *ngFor="let modeOption of options.modeOptions" [value]="modeOption">
+          {{modeOption}}
+        </ng-option>
+      </ng-select>
+
+      <button (click)="search()">Search</button>
     </div>
   </div>
+
   <table>
     <colgroup span="12"></colgroup>
     <thead>
@@ -56,7 +57,7 @@
     <tbody>
       <!-- {plans.map(({group, planName, throughPeriod, controlNumber, dateReceived, category, mode, status, currentState, lastUpdated, dueDate, reportScore}, idx) => ( -->
         <tr *ngFor="let plan of plans; index as i;" [ngClass]="selectedRow === i ? 'selected' : ''" (click)="selectRow(i)">
-          <td>{{plan.group}}</td>
+          <td>{{plan.submissionGroup}}</td>
           <td>{{plan.planName}}</td>
           <td>{{plan.throughPeriod}}</td>
           <td>
@@ -64,7 +65,6 @@
               {{plan.controlNumber}}
             </a>
           </td>
-          <!-- <td>{{plan.dateReceived}}</td> -->
           <td>{{plan.dateReceived | date:'MM/dd/yyyy'}}</td>
           <td>{{plan.category}}</td>
           <td>{{plan.mode}}</td>
