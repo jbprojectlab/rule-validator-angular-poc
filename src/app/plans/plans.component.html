@@ -43,7 +43,7 @@
         </ng-option>
       </ng-select>
 
-      <button (click)="search()">Search</button>
+      <img class="search-btn" (click)="search()" src="/assets/img/search.png" >
     </div>
   </div>
 
@@ -55,25 +55,26 @@
       </tr>
     </thead>
     <tbody>
-      <!-- {plans.map(({group, planName, throughPeriod, controlNumber, dateReceived, category, mode, status, currentState, lastUpdated, dueDate, reportScore}, idx) => ( -->
-        <tr *ngFor="let plan of plans; index as i;" [ngClass]="selectedRow === i ? 'selected' : ''" (click)="selectRow(i)">
-          <td>{{plan.submissionGroup}}</td>
-          <td>{{plan.planName}}</td>
-          <td>{{plan.paidThroughPeriod}}</td>
-          <td>
-            <a routerLink="/" target='_blank' rel='noopener noreferrer'>
-              {{plan.controlNumber}}
-            </a>
-          </td>
-          <td>{{plan.dateReceived | date:'MM/dd/yyyy'}}</td>
-          <td>{{plan.category}}</td>
-          <td>{{plan.mode}}</td>
-          <td>{{plan.status}}</td>
-          <td>{{plan.currentState}}</td>
-          <td>{{plan.lastUpdated | date:'MM/dd/yyyy'}}</td>
-          <td>{{plan.dueDate | date:'MM/dd/yyyy'}}</td>
-          <td>{{plan.reportScore}}</td>
-        </tr>
+      <tr *ngFor="let plan of plans; index as i;" [ngClass]="selectedRow === i ? 'selected' : ''" (click)="selectRow(i)">
+        <td>{{plan.submissionGroup}}</td>
+        <td>{{plan.planName}}</td>
+        <td>{{plan.paidThroughPeriod}}</td>
+        <td>
+          <a routerLink="/" target='_blank' rel='noopener noreferrer'>
+            {{plan.controlNumber}}
+          </a>
+        </td>
+        <td>{{plan.dateReceived | date:'MM/dd/yyyy'}}</td>
+        <td>{{plan.category}}</td>
+        <td>{{plan.mode}}</td>
+        <td>{{plan.status}}</td>
+        <td>{{plan.currentState}}</td>
+        <td>{{plan.lastUpdated | date:'MM/dd/yyyy'}}</td>
+        <td>{{plan.dueDate | date:'MM/dd/yyyy'}}</td>
+        <td *ngIf="plan.reportScore !== undefined" [ngClass]="{'green': plan.reportScore >= 1, 'yellow': plan.reportScore >= 0.5 && plan.reportScore < 1, 'red':  plan.reportScore < 0.5}">
+          <p>{{plan.reportScore}}</p>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
