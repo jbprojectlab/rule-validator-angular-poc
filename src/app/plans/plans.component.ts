@@ -50,7 +50,387 @@ export class PlansComponent implements OnInit {
       currentState: 'Open',
       lastUpdated: 1633582086199,
       dueDate: 1643583206196,
+      reportScore: 0.2
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202112,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
       reportScore: 1.2
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202112,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'ijkl',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.7
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202112,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'mnop',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 2.3
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202112,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'Inactive',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.25
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202112,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'N/A',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.8
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'abcd',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.7
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.1
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'ijkl',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.1
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'mnop',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.9
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'Inactive',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.3
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'N/A',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.4
+    },
+
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202108,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'abcd',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 2.1
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202108,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.4
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202108,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'ijkl',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.8
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202108,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'mnop',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.2
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202108,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'Inactive',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.5
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202108,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'N/A',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.2
+    },
+
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202106,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'abcd',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.2
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202106,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.4
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202106,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'ijkl',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.4
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202106,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'mnop',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.9
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202106,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'Inactive',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.2
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202106,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'N/A',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.4
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'abcd',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.7
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202108,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'abcd',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.7
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202106,
+      controlNumber: 23456,
+      dateReceived: 1623582886199,
+      category: 'abcd',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.2
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202112,
+      controlNumber: 23457,
+      dateReceived: 1623582886199,
+      category: 'abcd',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 0.2
     },
     {
       submissionGroup: 100101234,
@@ -70,6 +450,34 @@ export class PlansComponent implements OnInit {
       submissionGroup: 100101234,
       planName: 'BCBSIL',
       paidThroughPeriod: 202112,
+      controlNumber: 23458,
+      dateReceived: 1623582896199,
+      category: 'abcd',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582186199,
+      dueDate: 1643583216196,
+      reportScore: 1.8
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202112,
+      controlNumber: 23459,
+      dateReceived: 1623582896199,
+      category: 'abcd',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582186199,
+      dueDate: 1643583216196,
+      reportScore: 0.7
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202112,
       controlNumber: 23456,
       dateReceived: 1623582916199,
       category: 'abcd',
@@ -82,7 +490,7 @@ export class PlansComponent implements OnInit {
     },
     {
       submissionGroup: 100105678,
-      planName: 'Plan 3',
+      planName: 'BCBSIL',
       paidThroughPeriod: 202110,
       controlNumber: 23457,
       dateReceived: 1623582926199,
@@ -96,7 +504,7 @@ export class PlansComponent implements OnInit {
     },
       {
       submissionGroup: 100105678,
-      planName: 'Plan 4',
+      planName: 'BCBSIL',
       paidThroughPeriod: 202110,
       controlNumber: 23457,
       dateReceived: 1623582936199,
@@ -110,7 +518,7 @@ export class PlansComponent implements OnInit {
     },
     {
       submissionGroup: 100104321,
-      planName: 'Plan 5',
+      planName: 'BCBSIL',
       paidThroughPeriod: 202110,
       controlNumber: 23457,
       dateReceived: 1623582946199,
@@ -124,7 +532,7 @@ export class PlansComponent implements OnInit {
     },
     {
       submissionGroup: 100104321,
-      planName: 'Plan 6',
+      planName: 'BCBSIL',
       paidThroughPeriod: 202108,
       controlNumber: 23458,
       dateReceived: 1623582956199,
@@ -138,11 +546,11 @@ export class PlansComponent implements OnInit {
     },
     {
       submissionGroup: 100104321,
-      planName: 'Plan 7',
+      planName: 'BCBSIL',
       paidThroughPeriod: 202108,
       controlNumber: 23458,
       dateReceived: 1623582966199,
-      category: 'abcd',
+      category: 'mnop',
       mode: 'Inactive',
       status: 'L1 Pass',
       currentState: 'Open',
@@ -152,11 +560,11 @@ export class PlansComponent implements OnInit {
     },
     {
       submissionGroup: 100109876,
-      planName: 'Plan 8',
+      planName: 'BCBSIL',
       paidThroughPeriod: 202106,
       controlNumber: 23459,
       dateReceived: 1623582976199,
-      category: 'abcd',
+      category: 'mnop',
       mode: 'N/A',
       status: 'Ready for L1 Review',
       currentState: 'Open',
@@ -166,17 +574,269 @@ export class PlansComponent implements OnInit {
     },
     {
       submissionGroup: 100109876,
-      planName: 'Plan 9',
+      planName: 'BCBSIL',
       paidThroughPeriod: 202106,
       controlNumber: 23459,
       dateReceived: 1623582986199,
-      category: 'abcd',
+      category: 'mnop',
       mode: 'N/A',
       status: 'Ready for L1 Review',
       currentState: 'Open',
       lastUpdated: 1633582986199,
       dueDate: 1643583296196,
       reportScore: 0
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202106,
+      controlNumber: 23457,
+      dateReceived: 1623582886199,
+      category: 'ijkl',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.2
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202106,
+      controlNumber: 23457,
+      dateReceived: 1623582896199,
+      category: 'ijkl',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582186199,
+      dueDate: 1643583216196,
+      reportScore: 0
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202106,
+      controlNumber: 23457,
+      dateReceived: 1623582916199,
+      category: 'ijkl',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582286199,
+      dueDate: 1643583226196,
+      reportScore: 0.5
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23457,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.2
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23457,
+      dateReceived: 1623582896199,
+      category: 'efgh',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582186199,
+      dueDate: 1643583216196,
+      reportScore: 0
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23457,
+      dateReceived: 1623582916199,
+      category: 'efgh',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582286199,
+      dueDate: 1643583226196,
+      reportScore: 0.5
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23457,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'Inactive',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.2
+    },
+    {
+      submissionGroup: 100105678,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23457,
+      dateReceived: 1623582896199,
+      category: 'efgh',
+      mode: 'Inactive',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582186199,
+      dueDate: 1643583216196,
+      reportScore: 0
+    },
+    {
+      submissionGroup: 100104321,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23456,
+      dateReceived: 1623582916199,
+      category: 'efgh',
+      mode: 'N/A',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582286199,
+      dueDate: 1643583226196,
+      reportScore: 0.5
+    },
+    {
+      submissionGroup: 100101234,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23457,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'Inactive',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.2
+    },
+    {
+      submissionGroup: 100105678,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202108,
+      controlNumber: 23458,
+      dateReceived: 1623582896199,
+      category: 'efgh',
+      mode: 'Inactive',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582186199,
+      dueDate: 1643583216196,
+      reportScore: 0
+    },
+    {
+      submissionGroup: 100104321,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202106,
+      controlNumber: 23459,
+      dateReceived: 1623582916199,
+      category: 'efgh',
+      mode: 'N/A',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582286199,
+      dueDate: 1643583226196,
+      reportScore: 0.5
+    },
+    {
+      submissionGroup: 100109876,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23457,
+      dateReceived: 1623582886199,
+      category: 'efgh',
+      mode: 'Inactive',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.2
+    },
+    {
+      submissionGroup: 100105678,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202108,
+      controlNumber: 23458,
+      dateReceived: 1623582896199,
+      category: 'mnop',
+      mode: 'Inactive',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582186199,
+      dueDate: 1643583216196,
+      reportScore: 0
+    },
+    {
+      submissionGroup: 100109876,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202106,
+      controlNumber: 23459,
+      dateReceived: 1623582916199,
+      category: 'efgh',
+      mode: 'N/A',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582286199,
+      dueDate: 1643583226196,
+      reportScore: 0.5
+    },
+    {
+      submissionGroup: 100109876,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202110,
+      controlNumber: 23457,
+      dateReceived: 1623582886199,
+      category: 'mnop',
+      mode: 'Inactive',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582086199,
+      dueDate: 1643583206196,
+      reportScore: 1.2
+    },
+    {
+      submissionGroup: 100105678,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202108,
+      controlNumber: 23458,
+      dateReceived: 1623582896199,
+      category: 'abcd',
+      mode: 'Active',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582186199,
+      dueDate: 1643583216196,
+      reportScore: 0
+    },
+    {
+      submissionGroup: 100109876,
+      planName: 'BCBSIL',
+      paidThroughPeriod: 202106,
+      controlNumber: 23456,
+      dateReceived: 1623582916199,
+      category: 'ijkl',
+      mode: 'N/A',
+      status: 'Ready for L2 Review',
+      currentState: 'Open',
+      lastUpdated: 1633582286199,
+      dueDate: 1643583226196,
+      reportScore: 0.5
     },
   ]
 
@@ -245,25 +905,11 @@ export class PlansComponent implements OnInit {
     console.log('searchFilter:  ', this.searchFilter)
   }
 
-  search() {
-    if(Object.keys(this.searchFilter).length === 0) {
-      this.plans = this.initialPlans
-      return
-    }
-    
-    // this.plans = this.plans.filter((plan: Plan) => {
-    //   return plan.submissionGroup === this.searchFilter.submissionGroup &&
-    //     plan.paidThroughPeriod === this.searchFilter.paidThroughPeriod &&
-    //     plan.controlNumber === this.searchFilter.controlNumber &&
-    //     plan.category === this.searchFilter.category &&
-    //     plan.mode === this.searchFilter.mode
-    // })
-
+  search() {    
     const filtered: Plan[] = []
 
     for(let i = 0; i < this.plans.length; i += 1) {
       const plan = this.plans[i]
-
       const filteredPlan: Plan = {
         planName: plan.planName,
         dateReceived: plan.dateReceived,
@@ -323,6 +969,13 @@ export class PlansComponent implements OnInit {
       filtered.push(filteredPlan)
     }
 
+    for(const filterKey in this.searchFilter) {
+      if(this.searchFilter.hasOwnProperty(filterKey)) {
+        //@ts-ignore
+        delete this.searchFilter[filterKey];
+      }
+    }
+
     this.plans = filtered
   }
 
@@ -330,11 +983,6 @@ export class PlansComponent implements OnInit {
 
   ngOnInit(): void {
     this.plans = this.initialPlans
-    console.log('plans:  ', this.plans)
-
-    // if(this.plans.length !== this.initialPlans.length) {
-    //   this.plans = this.initialPlans
-    // }
   }
 
   selectRow(row: number) {
