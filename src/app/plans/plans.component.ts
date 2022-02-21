@@ -491,7 +491,7 @@ export class PlansComponent implements OnInit {
     {
       submissionGroup: 100105678,
       planName: 'BCBSIL',
-      paidThroughPeriod: 202110,
+      paidThroughPeriod: 202112,
       controlNumber: 23457,
       dateReceived: 1623582926199,
       category: 'abcd',
@@ -883,30 +883,18 @@ export class PlansComponent implements OnInit {
   plans: Plan[] = this.initialPlans.map((plan: Plan) => plan)
   searchFilter: Plan = {}
 
-  // handleSearchFilterChange(key: string | number, value: any, type: string) {
-  //   let match = type === 'number' ? Number(value) : value
-    
-  //   if(match) {
-  //     console.log('filtered before:   ', this.filteredPlans)
-  //     // @ts-ignore
-  //     this.filteredPlans = this.filteredPlans.filter((plan: Plan) => plan[key] == match)
-  //     console.log('key:  ', key, '    match:  ', match, '   filtered Plans after:    ', this.filteredPlans)
-  //   }
-  // }
-
   handleSearchFilterChange(key: string, value: string | number, type: string) {
-    // grab all filters
-    // filter array on clicking of search button
-
-    if(!value) return
-
-    // @ts-ignore
-    this.searchFilter[key] = value
-    console.log('searchFilter:  ', this.searchFilter)
+    if(!value) {
+      // @ts-ignore
+      delete this.searchFilter[key]
+    } else {
+      // @ts-ignore
+      this.searchFilter[key] = value
+    }
   }
 
-  search() {    
-    const filtered: Plan[] = []
+  search() {
+    let filtered: Plan[] = []
 
     for(let i = 0; i < this.plans.length; i += 1) {
       const plan = this.plans[i]
@@ -919,61 +907,36 @@ export class PlansComponent implements OnInit {
         dueDate: plan.dueDate,
         reportScore: plan.reportScore
       }
-
+      
       let submissionGroup = plan.submissionGroup,
-        paidThroughPeriod = plan.paidThroughPeriod,
-        controlNumber = plan.controlNumber,
-        category = plan.category,
-        mode = plan.mode
+      paidThroughPeriod = plan.paidThroughPeriod,
+      controlNumber = plan.controlNumber,
+      category = plan.category,
+      mode = plan.mode
+      
+      this.plans = this.initialPlans
 
-      if(!this.searchFilter.submissionGroup) {
+      if(!this.searchFilter.submissionGroup || this.searchFilter.submissionGroup === submissionGroup) {
         filteredPlan.submissionGroup = submissionGroup
-      } else if(this.searchFilter.submissionGroup !== submissionGroup) {
-        continue
-      } else {
-        filteredPlan.submissionGroup = submissionGroup
-      }
+      } else continue
 
-      if(!this.searchFilter.paidThroughPeriod) {
+      if(!this.searchFilter.paidThroughPeriod || this.searchFilter.paidThroughPeriod === paidThroughPeriod) {
         filteredPlan.paidThroughPeriod = paidThroughPeriod
-      } else if(this.searchFilter.paidThroughPeriod !== paidThroughPeriod) {
-        continue
-      } else {
-        filteredPlan.paidThroughPeriod = paidThroughPeriod
-      }
+      } else continue
 
-      if(!this.searchFilter.controlNumber) {
+      if(!this.searchFilter.controlNumber || this.searchFilter.controlNumber === controlNumber) {
         filteredPlan.controlNumber = controlNumber
-      } else if(this.searchFilter.controlNumber !== controlNumber) {
-        continue
-      } else {
-        filteredPlan.controlNumber = controlNumber
-      }
+      } else continue
 
-      if(!this.searchFilter.category) {
+      if(!this.searchFilter.category || this.searchFilter.category === category) {
         filteredPlan.category = category
-      } else if(this.searchFilter.category !== category) {
-        continue
-      } else {
-        filteredPlan.category = category
-      }
+      } else continue
 
-      if(!this.searchFilter.mode) {
+      if(!this.searchFilter.mode || this.searchFilter.mode === mode) {
         filteredPlan.mode = mode
-      } else if(this.searchFilter.mode !== mode) {
-        continue
-      } else {
-        filteredPlan.mode = mode
-      }
+      } else continue
 
       filtered.push(filteredPlan)
-    }
-
-    for(const filterKey in this.searchFilter) {
-      if(this.searchFilter.hasOwnProperty(filterKey)) {
-        //@ts-ignore
-        delete this.searchFilter[filterKey];
-      }
     }
 
     this.plans = filtered
