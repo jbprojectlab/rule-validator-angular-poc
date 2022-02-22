@@ -79,6 +79,7 @@ export class PlansComponent implements OnInit {
 
   search() {
     let filtered: Plan[] = []
+    this.plans = initialPlans
 
     for(let i = 0; i < this.plans.length; i += 1) {
       const plan = this.plans[i]
@@ -97,8 +98,6 @@ export class PlansComponent implements OnInit {
       controlNumber = plan.controlNumber,
       category = plan.category,
       mode = plan.mode
-      
-      this.plans = initialPlans
 
       if(!this.searchFilter.submissionGroup || this.searchFilter.submissionGroup === submissionGroup) {
         filteredPlan.submissionGroup = submissionGroup
@@ -136,3 +135,11 @@ export class PlansComponent implements OnInit {
     this.selectedRow = row
   }
 }
+
+// 0 = green
+// > 0 < 1 = yellow
+// >= 1 = red
+
+// max = 1.5
+
+// create user model
