@@ -135,11 +135,3 @@ export class PlansComponent implements OnInit {
     this.selectedRow = row
   }
 }
-
-// 0 = green
-// > 0 < 1 = yellow
-// >= 1 = red
-
-// max = 1.5
-
-// create user model

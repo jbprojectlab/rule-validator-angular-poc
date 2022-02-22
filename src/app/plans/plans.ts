@@ -55,7 +55,7 @@ export const initialPlans: Plan[] = [
     currentState: 'Open',
     lastUpdated: 1633582086199,
     dueDate: 1643583206196,
-    reportScore: 2.3
+    reportScore: 0
   },
   {
     submissionGroup: 100101234,
@@ -97,7 +97,7 @@ export const initialPlans: Plan[] = [
     currentState: 'Open',
     lastUpdated: 1633582086199,
     dueDate: 1643583206196,
-    reportScore: 1.7
+    reportScore: 0
   },
   {
     submissionGroup: 100101234,
@@ -182,7 +182,7 @@ export const initialPlans: Plan[] = [
     currentState: 'Open',
     lastUpdated: 1633582086199,
     dueDate: 1643583206196,
-    reportScore: 2.1
+    reportScore: 0
   },
   {
     submissionGroup: 100101234,
@@ -224,7 +224,7 @@ export const initialPlans: Plan[] = [
     currentState: 'Open',
     lastUpdated: 1633582086199,
     dueDate: 1643583206196,
-    reportScore: 1.2
+    reportScore: 1.4
   },
   {
     submissionGroup: 100101234,
@@ -323,7 +323,7 @@ export const initialPlans: Plan[] = [
     currentState: 'Open',
     lastUpdated: 1633582086199,
     dueDate: 1643583206196,
-    reportScore: 1.2
+    reportScore: 1.5
   },
   {
     submissionGroup: 100101234,
@@ -351,7 +351,7 @@ export const initialPlans: Plan[] = [
     currentState: 'Open',
     lastUpdated: 1633582086199,
     dueDate: 1643583206196,
-    reportScore: 1.7
+    reportScore: 0
   },
   {
     submissionGroup: 100101234,
@@ -421,7 +421,7 @@ export const initialPlans: Plan[] = [
     currentState: 'Open',
     lastUpdated: 1633582186199,
     dueDate: 1643583216196,
-    reportScore: 1.8
+    reportScore: 0
   },
   {
     submissionGroup: 100101234,
@@ -561,7 +561,7 @@ export const initialPlans: Plan[] = [
     currentState: 'Open',
     lastUpdated: 1633582086199,
     dueDate: 1643583206196,
-    reportScore: 1.2
+    reportScore: 1.1
   },
   {
     submissionGroup: 100101234,
@@ -645,7 +645,7 @@ export const initialPlans: Plan[] = [
     currentState: 'Open',
     lastUpdated: 1633582086199,
     dueDate: 1643583206196,
-    reportScore: 1.2
+    reportScore: 1.4
   },
   {
     submissionGroup: 100105678,
@@ -729,7 +729,7 @@ export const initialPlans: Plan[] = [
     currentState: 'Open',
     lastUpdated: 1633582086199,
     dueDate: 1643583206196,
-    reportScore: 1.2
+    reportScore: 1.3
   },
   {
     submissionGroup: 100105678,

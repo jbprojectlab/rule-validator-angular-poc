@@ -71,7 +71,7 @@
         <td>{{plan.currentState}}</td>
         <td>{{plan.lastUpdated | date:'MM/dd/yyyy'}}</td>
         <td>{{plan.dueDate | date:'MM/dd/yyyy'}}</td>
-        <td *ngIf="plan.reportScore !== undefined" [ngClass]="{'green': plan.reportScore >= 1, 'yellow': plan.reportScore >= 0.5 && plan.reportScore < 1, 'red':  plan.reportScore < 0.5}">
+        <td *ngIf="plan.reportScore !== undefined" [ngClass]="{'green': plan.reportScore === 0, 'yellow': plan.reportScore > 0 && plan.reportScore < 1, 'red':  plan.reportScore >= 1}">
           <p>{{plan.reportScore}}</p>
         </td>
       </tr>
@@ -79,3 +79,12 @@
   </table>
   <div *ngIf="plans.length === 0" class="no-results-msg">No plans match your search</div>
 </div>
+
+
+// 0 = green
+// > 0 < 1 = yellow
+// >= 1 = red
+
+// max = 1.5
+
+// create user model
