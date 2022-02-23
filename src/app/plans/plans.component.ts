@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Plan } from '../../d'
-import { initialPlans } from './plans'
+// import { initialPlans } from './plans'
 
 @Component({
   selector: 'app-plans',
@@ -64,7 +66,8 @@ export class PlansComponent implements OnInit {
     ]
   }
 
-  plans: Plan[] = initialPlans.map((plan: Plan) => plan)
+  plans: Plan[] = []
+  initialPlans: Plan[] = []
   searchFilter: Plan = {}
 
   handleSearchFilterChange(key: string, value: string | number, type: string) {
@@ -79,7 +82,7 @@ export class PlansComponent implements OnInit {
 
   search() {
     let filtered: Plan[] = []
-    this.plans = initialPlans
+    this.plans = this.initialPlans
 
     for(let i = 0; i < this.plans.length; i += 1) {
       const plan = this.plans[i]
@@ -125,10 +128,17 @@ export class PlansComponent implements OnInit {
     this.plans = filtered
   }
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  getPlans(): Observable<any> {
+    return this.http.get('/api/plans')
+  }
 
   ngOnInit(): void {
-    this.plans = initialPlans
+    this.getPlans().subscribe((response) => {
+      this.initialPlans = response
+      this.plans = this.initialPlans
+    })
   }
 
   selectRow(row: number) {
