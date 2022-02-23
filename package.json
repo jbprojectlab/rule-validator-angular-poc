@@ -4,8 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-server": "nodemon server/index.js --watch",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "seed": "node seed.js",
     "test": "ng test"
   },
   "private": true,
@@ -19,7 +21,14 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@ng-select/ng-select": "^8.1.1",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "chalk": "^2.4.1",
+    "concurrently": "^7.0.0",
+    "express": "^4.14.0",
+    "pg": "^7.4.3",
     "rxjs": "~7.5.0",
+    "sequelize": "^4.37.8",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
@@ -35,6 +44,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "morgan": "^1.10.0",
     "typescript": "~4.5.2"
   }
 }
