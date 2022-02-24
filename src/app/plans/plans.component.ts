@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Plan } from '../../d'
-// import { initialPlans } from './plans'
 
 @Component({
   selector: 'app-plans',
@@ -136,7 +135,7 @@ export class PlansComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.isSearching) this.isSearching = false
-    
+
     this.getPlans().subscribe((response) => {
       this.initialPlans = response
       this.plans = this.initialPlans

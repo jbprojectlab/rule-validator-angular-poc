@@ -4,6 +4,7 @@ nav
   display: flex
   flex-direction: column
   align-items: center
+  padding-top: 200px
   position: fixed
   left: 0
   top: 0
@@ -11,10 +12,12 @@ nav
   height: 100%
   width: 72px
 
+  a
+    margin-bottom: 140px
+  
   img
-    margin-bottom: 100px
+    filter: brightness(0) invert(1)
     width: 40px
 
-  .home-link
-    cursor: pointer
-    margin-top: 200px
+  .active
+    filter: none

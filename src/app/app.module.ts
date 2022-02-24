@@ -10,6 +10,8 @@ import { PlansComponent } from './plans/plans.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SelectComponent } from './select/select.component';
+import { ClipboardComponent } from './clipboard/clipboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { SelectComponent } from './select/select.component';
     PlansComponent,
     HomeComponent,
     NavbarComponent,
-    SelectComponent
+    SelectComponent,
+    ClipboardComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
