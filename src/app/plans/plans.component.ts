@@ -26,8 +26,6 @@ export class PlansComponent implements OnInit {
     'L2 Report Score'
   ]
 
-  selectedRow = 0
-
   selectedSubmissionGroupOption!: number;
   selectedPaidThroughPeriodOption!: number;
   selectedModeOption!: string;
@@ -69,6 +67,7 @@ export class PlansComponent implements OnInit {
   plans: Plan[] = []
   initialPlans: Plan[] = []
   searchFilter: Plan = {}
+  isSearching: boolean = false
 
   handleSearchFilterChange(key: string, value: string | number, type: string) {
     if(!value) {
@@ -83,6 +82,7 @@ export class PlansComponent implements OnInit {
   search() {
     let filtered: Plan[] = []
     this.plans = this.initialPlans
+    this.isSearching = true
 
     for(let i = 0; i < this.plans.length; i += 1) {
       const plan = this.plans[i]
@@ -135,13 +135,11 @@ export class PlansComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.isSearching) this.isSearching = false
+    
     this.getPlans().subscribe((response) => {
       this.initialPlans = response
       this.plans = this.initialPlans
     })
-  }
-
-  selectRow(row: number) {
-    this.selectedRow = row
   }
 }
