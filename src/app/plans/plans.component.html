@@ -55,7 +55,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let plan of plans; index as i;" [ngClass]="selectedRow === i ? 'selected' : ''" (click)="selectRow(i)">
+      <tr *ngFor="let plan of plans; index as i;">
         <td>{{plan.submissionGroup}}</td>
         <td>{{plan.planName}}</td>
         <td>{{plan.paidThroughPeriod}}</td>
@@ -77,14 +77,5 @@
       </tr>
     </tbody>
   </table>
-  <div *ngIf="plans.length === 0" class="no-results-msg">No plans match your search</div>
+  <div *ngIf="plans.length === 0 && isSearching" class="no-results-msg">No plans match your search</div>
 </div>
-
-
-// 0 = green
-// > 0 < 1 = yellow
-// >= 1 = red
-
-// max = 1.5
-
-// create user model

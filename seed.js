@@ -1,6 +1,9 @@
-import { Plan } from '../../d'
+const {db} = require('./server/db')
+const {green, red} = require('chalk')
 
-export const initialPlans: Plan[] = [
+const {Plan} = require('./server/db/models');
+
+const plans = [
   {
     submissionGroup: 100101234,
     planName: 'BCBSIL',
@@ -802,3 +805,24 @@ export const initialPlans: Plan[] = [
     reportScore: 0.5
   },
 ]
+
+const seed = async () => {
+	try {
+		await db.sync({force: true})
+    await Promise.all(plans.map(async plan => {
+      await Plan.create(plan)
+    }))
+  } catch(err) {
+    console.error(err)
+  }
+
+  console.log(green('Seeding success!'))
+  db.close()
+}
+
+seed()
+  .catch(err => {
+    console.error(red('Oh noes! Something went wrong!'))
+    console.error(err)
+    db.close()
+  })
