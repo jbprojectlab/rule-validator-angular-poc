@@ -25,12 +25,6 @@
         </ng-option>
       </ng-select>
 
-      <ng-select class="custom" [(ngModel)]="selectedControlNumberOption" placeholder="Submission Control" (change)="handleSearchFilterChange('controlNumber', selectedControlNumberOption, 'number')">
-        <ng-option *ngFor="let controlNumberOption of options.controlNumberOptions" [value]="controlNumberOption">
-          {{controlNumberOption}}
-        </ng-option>
-      </ng-select>
-
       <ng-select class="custom last-select" [(ngModel)]="selectedCategoryOption" placeholder="Category" (change)="handleSearchFilterChange('category', selectedCategoryOption, 'string')">
         <ng-option *ngFor="let categoryOption of options.categoryOptions" [value]="categoryOption">
           {{categoryOption}}
@@ -60,7 +54,7 @@
         <td>{{plan.planName}}</td>
         <td>{{plan.paidThroughPeriod}}</td>
         <td>
-          <a routerLink="/" target='_blank' rel='noopener noreferrer'>
+          <a routerLink="/plans/{{plan.controlNumber}}" target='_blank' rel='noopener noreferrer'>
             {{plan.controlNumber}}
           </a>
         </td>

@@ -1,0 +1,50 @@
+<div className='plan-table'>
+  <div className='plan-table-header'>
+    <h2>{{title}}</h2>
+    <!-- <img src="/assets/img/{{showTableIcon}}.png" onClick={toggleOpenState} /> -->
+  </div>
+  <table>
+    <colgroup span="15"></colgroup>
+    <thead>
+      <tr *ngFor="let header of headers; index as i">
+        <th>{{header}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Row Count</td>
+        <td>Row Count</td>
+        <td>Row Count</td>
+        <td>Rejects-Count</td>
+        <td>Rejects-Count</td>
+        <td>Rejects-Count</td>
+        <td>Rejects-Percentage</td>
+        <td>Rejects-Percentage</td>
+        <td>Rejects-Percentage</td>
+        <td>Comments</td>
+        <td>Comments</td>
+        <td>Comments</td>
+      </tr>
+      <tr *ngFor="let row of tableData; index as i">
+        <td>{{row.description}}</td>
+        <td>{{row.recordCount}}</td>
+        <td>{{row.percentageVariance}}</td>
+        <td>{{row.ptdPeriod0.rowCount}}</td>
+        <td>{{row.ptdPeriod1.rowCount}}</td>
+        <td>{{row.ptdPeriod2.rowCount}}</td>
+        <td>{{row.ptdPeriod0.rejectsCount}}</td>
+        <td>{{row.ptdPeriod1.rejectsCount}}</td>
+        <td>{{row.ptdPeriod2.rejectsCount}}</td>
+        <td>{{formatDecimalToPercent(row.ptdPeriod0.rejectsPercentage)}}</td>
+        <td>{{formatDecimalToPercent(row.ptdPeriod1.rejectsPercentage)}}</td>
+        <td>{{formatDecimalToPercent(row.ptdPeriod2.rejectsPercentage)}}</td>
+        <td>{{row.ptdPeriod0.comments}}</td>
+        <td>{{row.ptdPeriod1.comments}}</td>
+        <td>{{row.ptdPeriod2.comments}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

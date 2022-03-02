@@ -1,0 +1,19 @@
+<div>
+  <div>
+    <h1>L2 Checklist</h1>
+    <ul>
+      <li>Plan Name: {{planDescription.planName}}</li>
+      <li>Plan Code: {{planDescription.group}}</li>
+      <li>Submission Control Number: {{planDescription.controlNumber}}</li>
+      <li>Paid Through Period: {{planDescription.throughPeriod}}</li>
+      <li>Submission Mode: {{planDescription.mode}}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="plan.rejects">
+    <app-plan-table [title]="'Rejects'" [tableData]="plan.rejects"></app-plan-table>
+  </div>
+  <!-- <PlanTable title={'Rejects'} data={mockPlan.rejects} />
+  <PlanTable title={'Transformations'} data={mockPlan.transformations} />
+  <PlanTable title={'Analytical Warnings'} data={mockPlan.analyticalWarnings} /> -->
+</div>

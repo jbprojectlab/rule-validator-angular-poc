@@ -12,6 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SelectComponent } from './select/select.component';
 import { ClipboardComponent } from './clipboard/clipboard.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PlanComponent } from './plan/plan.component';
+import { PlanTableComponent } from './plan-table/plan-table.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavbarComponent,
     SelectComponent,
     ClipboardComponent,
-    DashboardComponent
+    DashboardComponent,
+    PlanComponent,
+    PlanTableComponent
   ],
   imports: [
     BrowserModule,
