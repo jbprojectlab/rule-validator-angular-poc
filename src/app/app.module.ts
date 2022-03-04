@@ -25,7 +25,7 @@ import { PlanTableComponent } from './plan-table/plan-table.component';
     ClipboardComponent,
     DashboardComponent,
     PlanComponent,
-    PlanTableComponent
+    PlanTableComponent,
   ],
   imports: [
     BrowserModule,

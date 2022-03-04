@@ -1,6 +1,5 @@
 <div>
-  <div>
-    <h1>L2 Checklist</h1>
+  <div class="plan-header">
     <ul>
       <li>Plan Name: {{planDescription.planName}}</li>
       <li>Plan Code: {{planDescription.group}}</li>
@@ -10,8 +9,11 @@
     </ul>
   </div>
 
-  <div *ngIf="plan.rejects">
-    <app-plan-table [title]="'Rejects'" [tableData]="plan.rejects"></app-plan-table>
+  <div *ngIf="plan.rejects" class="plan">
+    <h1>L2 Checklist</h1>
+    <div class="plan-table-wrapper">
+      <app-plan-table [title]="'Rejects'" [tableData]="plan.rejects"></app-plan-table>
+    </div>
   </div>
   <!-- <PlanTable title={'Rejects'} data={mockPlan.rejects} />
   <PlanTable title={'Transformations'} data={mockPlan.transformations} />
