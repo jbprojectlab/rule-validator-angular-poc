@@ -9,13 +9,21 @@
     </ul>
   </div>
 
-  <div *ngIf="plan.rejects" class="plan">
-    <h1>L2 Checklist</h1>
-    <div class="plan-table-wrapper">
-      <app-plan-table [title]="'Rejects'" [tableData]="plan.rejects"></app-plan-table>
+  <div *ngIf="plan.rejects" class="plan" [ngClass]="{'closed': !level2ChecklistIsOpen}">
+    <div class="checklist-header">
+      <img src="assets/img/arrow-drop-down-circle.png" (click)="toggleChecklist(2)" />
+      <h1>L2 Checklist</h1>
+    </div>
+    <div *ngIf="level2ChecklistIsOpen">
+      <div class="plan-table-wrapper">
+        <app-plan-table [title]="'Rejects'" [tableData]="plan.rejects"></app-plan-table>
+      </div>
+      <div class="plan-table-wrapper">
+        <app-plan-table [title]="'Transformations'" [tableData]="plan.transformations"></app-plan-table>
+      </div>
+      <div class="plan-table-wrapper">
+        <app-plan-table [title]="'Analytical Warnings'" [tableData]="plan.analyticalWarnings"></app-plan-table>
+      </div>
     </div>
   </div>
-  <!-- <PlanTable title={'Rejects'} data={mockPlan.rejects} />
-  <PlanTable title={'Transformations'} data={mockPlan.transformations} />
-  <PlanTable title={'Analytical Warnings'} data={mockPlan.analyticalWarnings} /> -->
 </div>

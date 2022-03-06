@@ -9,13 +9,22 @@ import mockPlan, { mockPlanDescription } from './mock-plan'
 export class PlanComponent implements OnInit {
   planDescription: any = mockPlanDescription;
   plan: any = mockPlan;
+  level2ChecklistIsOpen: boolean = false
+
+  toggleCheckList2() {
+    this.level2ChecklistIsOpen = !this.level2ChecklistIsOpen
+  }
+
+  toggleChecklist(checklistNumber: number) {
+    if(checklistNumber === 2) {
+      this.toggleCheckList2()
+    }
+  }
 
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.plan)
-    // this.planDescription = mockPlanDescription
-    // this.plan = mockPlan
   }
 
 }
