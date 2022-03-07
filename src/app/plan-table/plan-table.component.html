@@ -1,7 +1,7 @@
 <div class="plan-table">
-  <div class="plan-table-header">
+  <div class="plan-table-header" [ngClass]="{'closed': title === 'Rejects' && !rejectsTableIsOpen || title === 'Transformations' && !transformationsTableIsOpen || title === 'Analytical Warnings' && !analyticalWarningsTableIsOpen}">
     <h2>{{title}}</h2>
-    <img src="/assets/img/show-more.png" (click)="toggleTable(title)" />
+    <img src="/assets/img/show-more.png" (click)="toggleTable(title)"/>
   </div>
   <div *ngIf="title === 'Rejects' && rejectsTableIsOpen || title === 'Transformations' && transformationsTableIsOpen || title === 'Analytical Warnings' && analyticalWarningsTableIsOpen" class="table-wrapper">
     <table>

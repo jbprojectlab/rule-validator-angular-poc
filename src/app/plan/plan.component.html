@@ -11,8 +11,11 @@
 
   <div *ngIf="plan.rejects" class="plan" [ngClass]="{'closed': !level2ChecklistIsOpen}">
     <div class="checklist-header">
-      <img src="assets/img/arrow-drop-down-circle.png" (click)="toggleChecklist(2)" />
-      <h1>L2 Checklist</h1>
+      <div class="checklist-title">
+        <img src="assets/img/arrow-drop-down-circle.png" />
+        <h1>L2 Checklist</h1>
+      </div>
+      <img src="assets/img/show-more-white.png" (click)="toggleChecklist(2)" class="show-table-img"/>
     </div>
     <div *ngIf="level2ChecklistIsOpen">
       <div class="plan-table-wrapper">

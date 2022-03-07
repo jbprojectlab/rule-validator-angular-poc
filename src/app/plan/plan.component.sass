@@ -24,12 +24,22 @@
   .checklist-header
     display: flex
     align-items: center
+    justify-content: space-between
 
-    img
-      height: 24px
+    .checklist-title
+      display: flex
+      align-items: center
+
+      img
+        height: 24px
+        margin: 4px 12px
+
+    .show-table-img
+      cursor: pointer
+      height: 12px
       margin: 4px 12px
 
-  &.closed .checklist-header img
+  &.closed .show-table-img
     transform: rotate(270deg) 
 
 
