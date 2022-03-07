@@ -10,6 +10,9 @@ export class PlanComponent implements OnInit {
   planDescription: any = mockPlanDescription;
   plan: any = mockPlan;
   level2ChecklistIsOpen: boolean = false
+  rejectsTableIsOpen: boolean = true
+  transformationsTableIsOpen: boolean = true
+  analyticalWarningsTableIsOpen: boolean = true
 
   toggleCheckList2() {
     this.level2ChecklistIsOpen = !this.level2ChecklistIsOpen
@@ -21,10 +24,33 @@ export class PlanComponent implements OnInit {
     }
   }
 
+  toggleRejectsTable() {
+    this.rejectsTableIsOpen = !this.rejectsTableIsOpen
+    console.log('toggling rejects table:  ', this.rejectsTableIsOpen)
+  }
+
+  toggleTransformationsTable() {
+    this.transformationsTableIsOpen = !this.transformationsTableIsOpen
+  }
+
+  toggleAnalyticalWarningsTable() {
+    this.analyticalWarningsTableIsOpen = !this.analyticalWarningsTableIsOpen
+  }
+
+  toggleTable(title: string) {
+    if(title === 'Rejects') {
+      this.toggleRejectsTable()
+    } else if(title === 'Transformations') {
+      this.toggleTransformationsTable()
+    } else if(title === 'Analytical Warnings') {
+      this.toggleAnalyticalWarningsTable()
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.plan)
+    // console.log(this.plan)
   }
 
 }

@@ -1,9 +1,9 @@
 <div class="plan-table">
   <div class="plan-table-header">
     <h2>{{title}}</h2>
-    <!-- <img src="/assets/img/{{showTableIcon}}.png" onClick={toggleOpenState} /> -->
+    <img src="/assets/img/show-more.png" (click)="toggleTable(title)" />
   </div>
-  <div class="table-wrapper">
+  <div *ngIf="title === 'Rejects' && rejectsTableIsOpen || title === 'Transformations' && transformationsTableIsOpen || title === 'Analytical Warnings' && analyticalWarningsTableIsOpen" class="table-wrapper">
     <table>
       <colgroup span="15"></colgroup>
       <thead>

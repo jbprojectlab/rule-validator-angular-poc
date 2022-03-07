@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChange } from '@angular/core';
 
 @Component({
   selector: 'app-plan-table',
@@ -24,7 +24,7 @@ export class PlanTableComponent implements OnInit {
     '<PTD Period>',
     '<PTD-1 Period>',
     '<PTD-2 Period>'
-  ]  
+  ]
   
   formatDecimalToPercent(decimal: number) {
     let number = String(decimal * 100)
@@ -33,13 +33,21 @@ export class PlanTableComponent implements OnInit {
 
   @Input() title!: string;
   @Input() tableData: any;
+  @Input() toggleTable: any;
+  @Input() rejectsTableIsOpen: any;
+  @Input() transformationsTableIsOpen: any;
+  @Input() analyticalWarningsTableIsOpen: any;
 
   constructor() { }
 
+  ngOnChanges(changes: SimpleChange) {
+    console.log('changes:  ', changes)
+    // console.log('table is open:   ', this.tableIsOpen)
+  }
 
   ngOnInit(): void {
-    console.log('table data:   ', this.tableData)
-    console.log('title:  ', this.title)
+    // console.log('table data:   ', this.tableData)
+    // console.log('title:  ', this.title)
   }
 
 }
