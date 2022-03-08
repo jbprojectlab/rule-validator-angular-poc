@@ -1,20 +1,36 @@
 <div>
   <div class="plan-header">
     <ul>
-      <li>Plan Name: {{planDescription.planName}}</li>
-      <li>Plan Code: {{planDescription.group}}</li>
-      <li>Submission Control Number: {{planDescription.controlNumber}}</li>
-      <li>Paid Through Period: {{planDescription.throughPeriod}}</li>
-      <li>Submission Mode: {{planDescription.mode}}</li>
+      <li>
+        <h4>Plan Name:</h4>
+        <p>{{planDescription.planName}}</p>
+      </li>
+      <li>
+        <h4>Plan Code:</h4>
+        <p>{{planDescription.group}}</p>
+      </li>
+      <li>
+        <h4>Submission Control Number:</h4>
+        <p>{{planDescription.controlNumber}}</p>
+      </li>
+      <li>
+        <h4>Paid Through Period:</h4>
+        <p>{{planDescription.throughPeriod}}</p>
+      </li>
+      <li>
+        <h4>Submission Mode:</h4>
+        <p>{{planDescription.mode}}</p>
+      </li>
     </ul>
+    <div>
+      <button>Pass</button>
+      <button>Reject</button>
+    </div>
   </div>
 
   <div *ngIf="plan.rejects" class="plan" [ngClass]="{'closed': !level2ChecklistIsOpen}">
     <div class="checklist-header">
-      <div class="checklist-title">
-        <img src="assets/img/arrow-drop-down-circle.png" />
-        <h1>L2 Checklist</h1>
-      </div>
+      <h1>L2 Checklist</h1>
       <img src="assets/img/show-more-white.png" (click)="toggleChecklist(2)" class="show-table-img"/>
     </div>
     <div *ngIf="level2ChecklistIsOpen">

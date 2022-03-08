@@ -1,19 +1,29 @@
 .plan-table-header
   align-items: center
   display: flex
+  height: 60px
   justify-content: space-between
   padding: 4px 0 0 30px
+
+  h2
+    position: absolute
+    left: 102px
 
   img
     cursor: pointer
     height: 12px
-    margin-right: 12px
+    margin-right: 32px
+    position: absolute
+    right: 52px
 
   &.closed img
     transform: rotate(270deg)
 
 .table-wrapper
   padding: 0px 4px 6px
+
+.plan-table
+  padding: 0
   
 table
   background-color: #fff
@@ -35,7 +45,7 @@ table
 
   th,
   td
-    color: #7a8789
+    color: rgba(0, 2, 3, 0.5)
 
   tbody
     tr:nth-child(even)
@@ -77,10 +87,11 @@ table
       a
         color: #5f696b
 
-@media screen and (max-width: 1600px)
+@media screen and (max-width: 1650px)
   .plan-table
     overflow-x: scroll
     margin-right: 12px
+    padding-top: 12px
 
     &::-webkit-scrollbar
       opacity: 0

@@ -4,15 +4,43 @@
   border-radius: 20px
   display: flex
   height: 100px
-  margin: -100px 40px 40px 60px
+  justify-content: space-between
+  margin: -100px 60px 40px 60px
 
   ul
+    align-items: center
+    border-right: 1px solid rgba(0, 2, 3, 0.5)
+    color: rgba(0, 2, 3, 0.5)
     display: flex
+    height: 100%
     list-style-type: none
+    flex-basis: 70%
 
     li
-      line-height: 24px
       margin-right: 20px
+
+      h4
+        font-weight: 400
+
+      p
+        font-weight: 600
+
+  div
+    margin-right: 80px
+
+  button
+    border: none
+    border-radius: 25px
+    color: #fff
+    height: 32px
+    margin-left: 20px
+    width: 100px
+
+    &:first-child
+      background-color: #5dbf40
+
+    &:last-child
+      background-color: #e52a1a
 
 .plan
   background-color: #098BC9
@@ -26,18 +54,17 @@
     align-items: center
     justify-content: space-between
 
-    .checklist-title
-      display: flex
-      align-items: center
+    h1
+      margin-left: 20px
 
-      img
-        height: 24px
-        margin: 4px 12px
+    img
+      height: 24px
+      margin: 4px 12px
 
     .show-table-img
       cursor: pointer
       height: 12px
-      margin: 4px 12px
+      margin: 4px 20px
 
   &.closed .show-table-img
     transform: rotate(270deg) 
@@ -46,9 +73,12 @@
   .plan-table-wrapper
     background-color: #edf2f6
     border-radius: 20px
-    color: #7a8789
+    color: rgba(0, 2, 3, 0.5)
     margin-bottom: 12px
 
 @media screen and (max-width: 1600px)
   .plan
     margin-right: 40px
+
+    .checklist-header
+      padding: 12px 0
