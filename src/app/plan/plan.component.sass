@@ -5,7 +5,8 @@
   display: flex
   height: 100px
   justify-content: space-between
-  margin: -100px 60px 40px 60px
+  margin: 120px 60px 20px
+  min-width: 600px
 
   ul
     align-items: center
@@ -26,7 +27,10 @@
         font-weight: 600
 
   div
-    margin-right: 80px
+    display: flex
+    flex-basis: 30%
+    justify-content: center
+    margin-right: 20px
 
   button
     border: none
@@ -48,6 +52,7 @@
   color: #fff
   margin: 40px 60px
   padding: 8px 8px 2px 8px
+  min-width: 600px
 
   .checklist-header
     display: flex
@@ -82,3 +87,11 @@
 
     .checklist-header
       padding: 12px 0
+
+@media screen and (max-width: 900px)
+  .plan-header div
+    flex-direction: column
+    align-items: center
+
+    button
+      margin: 4px 0
