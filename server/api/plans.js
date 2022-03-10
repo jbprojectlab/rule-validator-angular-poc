@@ -12,3 +12,16 @@ router.get('/', async (req, res, next) => {
 })
 
 module.exports = router
+
+
+/*
+
+  /plans should always return one filter (most recent paidThroughPeriod is what we've decided for now)
+  
+    - create query parameter for each filter
+
+  if user attempts to filter WITHOUT a Paid Through Period, input validation will prevent this
+
+  add reset filters feature to main branch
+
+*/

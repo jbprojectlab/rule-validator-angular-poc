@@ -5,7 +5,7 @@ const path = require('path')
 const morgan = require('morgan')
 const {db} = require('./db')
 const app = express()
-const PORT = 3000
+const PORT = 7200
 
 app.use(morgan('dev'))
 
