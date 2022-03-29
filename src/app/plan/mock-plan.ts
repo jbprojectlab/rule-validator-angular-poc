@@ -425,7 +425,7 @@ export const mockPlanDescription =   {
   group: 'GRP1234',
   planName: 'BCBSIL',
   throughPeriod: 202112,
-  controlNumber: 23456,
+  submissionControl: 23456,
   mode: 'Mode 1'
 }
 

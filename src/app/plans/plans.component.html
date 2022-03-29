@@ -54,19 +54,19 @@
         <td>{{plan.planName}}</td>
         <td>{{plan.paidThroughPeriod}}</td>
         <td>
-          <a routerLink="/plans/{{plan.controlNumber}}" target='_blank' rel='noopener noreferrer'>
-            {{plan.controlNumber}}
+          <a routerLink="/plans/{{plan.submissionControl}}" target='_blank' rel='noopener noreferrer'>
+            {{plan.submissionControl}}
           </a>
         </td>
-        <td>{{plan.dateReceived | date:'MM/dd/yyyy'}}</td>
+        <td>{{plan.submissionReceivedDate | date:'MM/dd/yyyy'}}</td>
         <td>{{plan.category}}</td>
         <td>{{plan.mode}}</td>
         <td>{{plan.status}}</td>
-        <td>{{plan.currentState}}</td>
+        <td>{{plan.submissionCurrentState}}</td>
         <td>{{plan.lastUpdated | date:'MM/dd/yyyy'}}</td>
-        <td>{{plan.dueDate | date:'MM/dd/yyyy'}}</td>
-        <td *ngIf="plan.reportScore !== undefined" [ngClass]="{'green': plan.reportScore === 0, 'yellow': plan.reportScore > 0 && plan.reportScore < 1, 'red':  plan.reportScore >= 1}">
-          <p>{{plan.reportScore}}</p>
+        <td>{{plan.planValidationDue | date:'MM/dd/yyyy'}}</td>
+        <td *ngIf="plan.reportScoreL2 !== undefined" [ngClass]="{'green': plan.reportScoreL2 === 0, 'yellow': plan.reportScoreL2 > 0 && plan.reportScoreL2 < 1, 'red':  plan.reportScoreL2 >= 1}">
+          <p>{{plan.reportScoreL2}}</p>
         </td>
       </tr>
     </tbody>

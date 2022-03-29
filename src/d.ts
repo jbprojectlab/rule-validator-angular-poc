@@ -1,14 +1,14 @@
 export interface Plan {
-  submissionGroup?: number;
+  submissionGroup?: string;
   planName?: string;
   paidThroughPeriod?: number;
-  controlNumber?: number;
-  dateReceived?: number;
+  submissionControl?: number;
+  submissionReceivedDate?: string;
   category?: string;
   mode?: string;
   status?: string;
-  currentState?: string;
-  lastUpdated?: number;
-  dueDate?: number;
-  reportScore?: number;
+  submissionCurrentState?: string;
+  lastUpdated?: string;
+  planValidationDue?: string;
+  reportScoreL2?: number;
 }

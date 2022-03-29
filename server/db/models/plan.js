@@ -5,19 +5,19 @@ const Plan = db.define("plan", {
   submissionGroup: Sequelize.INTEGER,
   planName: Sequelize.STRING,
   paidThroughPeriod: Sequelize.INTEGER,
-  controlNumber: {
+  submissionControl: {
     type: Sequelize.INTEGER,
     allowNull: false,
     unique: true
   },
-  dateReceived: Sequelize.DATE,
+  submissionReceivedDate: Sequelize.DATE,
   category: Sequelize.STRING,
   mode: Sequelize.STRING,
   status: Sequelize.STRING,
-  currentState: Sequelize.STRING,
+  submissionCurrentState: Sequelize.STRING,
   lastUpdated: Sequelize.DATE,
-  dueDate: Sequelize.DATE,
-  reportScore: Sequelize.INTEGER
+  planValidationDue: Sequelize.DATE,
+  reportScoreL2: Sequelize.INTEGER
 });
 
 module.exports = {

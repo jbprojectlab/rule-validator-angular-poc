@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Plan } from '../../d'
-import { plans } from './plans'
+import plans from './plans.json'
 
 @Component({
   selector: 'app-plans',
@@ -29,7 +29,7 @@ export class PlansComponent implements OnInit {
   selectedSubmissionGroupOption!: number;
   selectedPaidThroughPeriodOption!: number;
   selectedModeOption!: string;
-  selectedControlNumberOption!: string;
+  selectedsubmissionControlOption!: string;
   selectedCategoryOption!: string;
 
   options: any = {
@@ -46,21 +46,21 @@ export class PlansComponent implements OnInit {
       202106,
     ],
     modeOptions: [
-      'Active',
-      'Inactive',
-      'N/A',
+      'Production',
+      'Deployment',
+      'Test',
     ],
-    controlNumberOptions: [
+    submissionControlOptions: [
       23456,
       23457,
       23458,
       23459,
     ],
     categoryOptions: [
-      'abcd',
-      'efgh',
-      'ijkl',
-      'mnop',
+      'Combined',
+      'Medical',
+      'Combined',
+      'Combined',
     ]
   }
 
@@ -88,17 +88,17 @@ export class PlansComponent implements OnInit {
       const plan = this.plans[i]
       const filteredPlan: Plan = {
         planName: plan.planName,
-        dateReceived: plan.dateReceived,
+        submissionReceivedDate: plan.submissionReceivedDate,
         status: plan.status,
-        currentState: plan.currentState,
+        submissionCurrentState: plan.submissionCurrentState,
         lastUpdated: plan.lastUpdated,
-        dueDate: plan.dueDate,
-        reportScore: plan.reportScore
+        planValidationDue: plan.planValidationDue,
+        reportScoreL2: plan.reportScoreL2
       }
       
       let submissionGroup = plan.submissionGroup,
       paidThroughPeriod = plan.paidThroughPeriod,
-      controlNumber = plan.controlNumber,
+      submissionControl = plan.submissionControl,
       category = plan.category,
       mode = plan.mode
 
@@ -110,8 +110,8 @@ export class PlansComponent implements OnInit {
         filteredPlan.paidThroughPeriod = paidThroughPeriod
       } else continue
 
-      if(!this.searchFilter.controlNumber || this.searchFilter.controlNumber === controlNumber) {
-        filteredPlan.controlNumber = controlNumber
+      if(!this.searchFilter.submissionControl || this.searchFilter.submissionControl === submissionControl) {
+        filteredPlan.submissionControl = submissionControl
       } else continue
 
       if(!this.searchFilter.category || this.searchFilter.category === category) {
