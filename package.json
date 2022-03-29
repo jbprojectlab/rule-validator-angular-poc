@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.config.json",
-    "start-server": "nodemon server/index.js --watch",
+    "start-server": "/usr/local/lib/node_modules/nodemon/bin/nodemon.js server/index.js --watch",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "seed": "node seed.js",

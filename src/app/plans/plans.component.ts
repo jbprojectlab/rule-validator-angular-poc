@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Plan } from '../../d'
+import { plans } from './plans'
 
 @Component({
   selector: 'app-plans',
@@ -129,16 +130,18 @@ export class PlansComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
-  getPlans(): Observable<any> {
-    return this.http.get('/api/plans')
-  }
+  // getPlans(): Observable<any> {
+  //   return this.http.get('/api/plans')
+  // }
 
   ngOnInit(): void {
     if(this.isSearching) this.isSearching = false
 
-    this.getPlans().subscribe((response) => {
-      this.initialPlans = response
-      this.plans = this.initialPlans
-    })
+    // this.getPlans().subscribe((response) => {
+    //   this.initialPlans = response
+    //   this.plans = this.initialPlans
+    // })
+    this.initialPlans = plans
+    this.plans = this.initialPlans
   }
 }
