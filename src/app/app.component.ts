@@ -25,7 +25,6 @@ export class AppComponent {
 
         if (event instanceof NavigationEnd) {
             //do something on end activity
-            console.log('end event:  ', event)
             const segments = event.url.split('/')
             console.log(segments)
             if(segments[1] && segments[1] === 'plans' && segments[2] || segments[1] === 'home') {
@@ -34,8 +33,6 @@ export class AppComponent {
               this.navIsHidden = false
             }
         }
-
-        console.log('nav hidden:  ', this.navIsHidden)
     });
 }
   

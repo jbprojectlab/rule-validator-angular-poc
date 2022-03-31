@@ -33,10 +33,10 @@ export class PlansComponent implements OnInit {
 
   options: any = {
     submissionGroupOptions: [
-      100101234,
-      100105678,
-      100104321,
-      100109876,
+      '100101234',
+      '100105678',
+      '100104321',
+      '100109876',
     ],
     paidThroughPeriodOptions: [
       202112,
@@ -50,10 +50,10 @@ export class PlansComponent implements OnInit {
       'N/A',
     ],
     controlNumberOptions: [
-      23456,
-      23457,
-      23458,
-      23459,
+      '23456',
+      '23457',
+      '23458',
+      '23459',
     ],
     categoryOptions: [
       'abcd',
@@ -87,20 +87,20 @@ export class PlansComponent implements OnInit {
       const plan = this.plans[i]
       const filteredPlan: Plan = {
         planName: plan.planName,
-        dateReceived: plan.dateReceived,
+        submissionReceivedDate: plan.submissionReceivedDate,
         status: plan.status,
-        currentState: plan.currentState,
+        submissionCurrentState: plan.submissionCurrentState,
         lastUpdated: plan.lastUpdated,
-        dueDate: plan.dueDate,
-        reportScore: plan.reportScore
+        planValidationDue: plan.planValidationDue,
+        reportScoreL2: plan.reportScoreL2
       }
-      
+
       let submissionGroup = plan.submissionGroup,
       paidThroughPeriod = plan.paidThroughPeriod,
-      controlNumber = plan.controlNumber,
+      submissionControl = plan.submissionControl,
       category = plan.category,
       mode = plan.mode
-
+      
       if(!this.searchFilter.submissionGroup || this.searchFilter.submissionGroup === submissionGroup) {
         filteredPlan.submissionGroup = submissionGroup
       } else continue
@@ -109,8 +109,8 @@ export class PlansComponent implements OnInit {
         filteredPlan.paidThroughPeriod = paidThroughPeriod
       } else continue
 
-      if(!this.searchFilter.controlNumber || this.searchFilter.controlNumber === controlNumber) {
-        filteredPlan.controlNumber = controlNumber
+      if(!this.searchFilter.submissionControl || this.searchFilter.submissionControl === submissionControl) {
+        filteredPlan.submissionControl = submissionControl
       } else continue
 
       if(!this.searchFilter.category || this.searchFilter.category === category) {
@@ -130,7 +130,7 @@ export class PlansComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   getPlans(): Observable<any> {
-    return this.http.get('/api/plans')
+    return this.http.get('/api/summary/list?paiddate=202201')
   }
 
   ngOnInit(): void {
