@@ -10,6 +10,11 @@ import { Plan } from '../../d'
 })
 
 export class PlansComponent implements OnInit {
+  plans: Plan[] = []
+  initialPlans: Plan[] = []
+  searchFilter: Plan = {}
+  isSearching: boolean = false
+  
   headers = [
     'Submission Group / Plan Code',
     'Plan Name',
@@ -31,42 +36,24 @@ export class PlansComponent implements OnInit {
   selectedControlNumberOption!: string;
   selectedCategoryOption!: string;
 
-  options: any = {
-    submissionGroupOptions: [
-      '100101234',
-      '100105678',
-      '100104321',
-      '100109876',
-    ],
-    paidThroughPeriodOptions: [
-      202112,
-      202110,
-      202108,
-      202106,
-    ],
-    modeOptions: [
-      'Active',
-      'Inactive',
-      'N/A',
-    ],
-    controlNumberOptions: [
-      '23456',
-      '23457',
-      '23458',
-      '23459',
-    ],
-    categoryOptions: [
-      'abcd',
-      'efgh',
-      'ijkl',
-      'mnop',
-    ]
+  getUniqueOptions(plans: Plan[], key: string) {
+    // @ts-ignore
+    return [...new Set(plans.map((plan: Plan) => plan[key]))]
   }
 
-  plans: Plan[] = []
-  initialPlans: Plan[] = []
-  searchFilter: Plan = {}
-  isSearching: boolean = false
+  submissionGroupOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'submissionGroup')
+  paidThroughPeriodOptions: number[] | any[] = this.getUniqueOptions(this.initialPlans, 'paidThroughPeriod')
+  modeOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'mode')
+  submissionControlOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'submissionControl')
+  categoryOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'category')
+
+  options: any = {
+    submissionGroupOptions: this.submissionGroupOptions,
+    paidThroughPeriodOptions: this.paidThroughPeriodOptions,
+    modeOptions: this.modeOptions,
+    submissionControlOptions: this.submissionControlOptions,
+    categoryOptions: this.categoryOptions
+  }
 
   handleSearchFilterChange(key: string, value: string | number, type: string) {
     if(!value) {
