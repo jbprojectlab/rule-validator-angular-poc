@@ -32,36 +32,23 @@ export class PlansComponent implements OnInit {
   selectedsubmissionControlOption!: string;
   selectedCategoryOption!: string;
 
+  getUniqueOptions(plans: Plan[], key: string) {
+    // @ts-ignore
+    return [...new Set(plans.map((plan: Plan) => plan[key]))]
+  }
+
+  submissionGroupOptions: string[] | any[] = this.getUniqueOptions(plans, 'submissionGroup')
+  paidThroughPeriodOptions: number[] | any[] = this.getUniqueOptions(plans, 'paidThroughPeriod')
+  modeOptions: string[] | any[] = this.getUniqueOptions(plans, 'mode')
+  submissionControlOptions: string[] | any[] = this.getUniqueOptions(plans, 'submissionControl')
+  categoryOptions: string[] | any[] = this.getUniqueOptions(plans, 'category')
+
   options: any = {
-    submissionGroupOptions: [
-      100101234,
-      100105678,
-      100104321,
-      100109876,
-    ],
-    paidThroughPeriodOptions: [
-      202112,
-      202110,
-      202108,
-      202106,
-    ],
-    modeOptions: [
-      'Production',
-      'Deployment',
-      'Test',
-    ],
-    submissionControlOptions: [
-      23456,
-      23457,
-      23458,
-      23459,
-    ],
-    categoryOptions: [
-      'Combined',
-      'Medical',
-      'Combined',
-      'Combined',
-    ]
+    submissionGroupOptions: this.submissionGroupOptions,
+    paidThroughPeriodOptions: this.paidThroughPeriodOptions,
+    modeOptions: this.modeOptions,
+    submissionControlOptions: this.submissionControlOptions,
+    categoryOptions: this.categoryOptions
   }
 
   plans: Plan[] = []
@@ -130,17 +117,9 @@ export class PlansComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
-  // getPlans(): Observable<any> {
-  //   return this.http.get('/api/plans')
-  // }
-
   ngOnInit(): void {
     if(this.isSearching) this.isSearching = false
 
-    // this.getPlans().subscribe((response) => {
-    //   this.initialPlans = response
-    //   this.plans = this.initialPlans
-    // })
     this.initialPlans = plans
     this.plans = this.initialPlans
   }

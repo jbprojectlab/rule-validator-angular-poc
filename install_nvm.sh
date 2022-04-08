@@ -286,7 +286,7 @@ nvm_check_global_modules() {
     # shellcheck disable=SC2016
     echo '=> You currently have modules installed globally with `npm`. These will no'
     # shellcheck disable=SC2016
-    echo '=> longer be linked to the Production version of Node when you install a new node'
+    echo '=> longer be linked to the active version of Node when you install a new node'
     # shellcheck disable=SC2016
     echo '=> with `nvm`; and they may (depending on how you construct your `$PATH`)'
     # shellcheck disable=SC2016
