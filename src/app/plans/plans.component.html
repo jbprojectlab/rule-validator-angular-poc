@@ -23,7 +23,7 @@
       
       <ng-select class="custom" [(ngModel)]="selectedPaidThroughPeriodOption" placeholder="Paid Through Period" (change)="handleSearchFilterChange('paidThroughPeriod', selectedPaidThroughPeriodOption, 'string')">
         <ng-option *ngFor="let paidThroughPeriodOption of options.paidThroughPeriodOptions" [value]="paidThroughPeriodOption">
-          {{paidThroughPeriodOption}}
+          {{paidThroughPeriodOption || getCurrentPaidDate()}}
         </ng-option>
       </ng-select>
 

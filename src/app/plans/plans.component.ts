@@ -64,7 +64,7 @@ export class PlansComponent implements OnInit {
   }
 
   selectedSubmissionGroupOption!: number;
-  selectedPaidThroughPeriodOption!: string;
+  selectedPaidThroughPeriodOption: string = this.getCurrentPaidDate();
   selectedModeOption!: string;
   selectedControlNumberOption!: string;
   selectedCategoryOption!: string;
@@ -90,7 +90,7 @@ export class PlansComponent implements OnInit {
 
   handleSearchFilterChange(key: string, value: string | number, type: string) {
     if(key === 'paidThroughPeriod') {
-      console.log('value:  ', value)
+      this.getPlans()
     }
     if(!value) {
       // @ts-ignore
@@ -147,13 +147,14 @@ export class PlansComponent implements OnInit {
       filtered.push(filteredPlan)
     }
 
+    this.selectedPaidThroughPeriodOption = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
     this.plans = filtered
   }
 
   constructor(private http: HttpClient) {}
 
   getPlans(): Observable<any> {
-    const currentPaidDate = this.selectedPaidThroughPeriodOption
+    const currentPaidDate = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
     const url = `http://mdcdappl2r05lv.bcbsbsa:8085/api/summary/list?paiddate=${currentPaidDate}`
     console.log('url:  ', url)
     return this.http.get(url)
