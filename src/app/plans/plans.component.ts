@@ -114,10 +114,21 @@ export class PlansComponent implements OnInit {
     this.plans = filtered
   }
 
+  getCurrentPaidDate() {
+    const currentDate = new Date()
+    const currentYear = String(currentDate.getFullYear())
+    let currentMonth = String(currentDate.getMonth())
+    if(currentMonth.length < 2) currentMonth = '0' + currentMonth
+    return currentYear + currentMonth
+  }
+
   constructor(private http: HttpClient) {}
 
   getPlans(): Observable<any> {
-    return this.http.get('/api/summary/list?paiddate=202201')
+    const currentPaidDate = this.getCurrentPaidDate()
+    const url = `http://mdcdapp12r051v.bcbsbsa:8085/api/summary/list?paiddate=${currentPaidDate}`
+    console.log('url:  ', url)
+    return this.http.get(url)
   }
 
   ngOnInit(): void {
