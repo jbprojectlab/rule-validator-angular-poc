@@ -155,7 +155,7 @@ export class PlansComponent implements OnInit {
 
   getPlans(): Observable<any> {
     const currentPaidDate = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
-    const url = `http://mdcdappl2r05lv.bcbsbsa:8085/api/summary/list?paiddate=${currentPaidDate}`
+    const url = `http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/list?paiddate=${currentPaidDate}`
     console.log('url:  ', url)
     return this.http.get(url)
   }
