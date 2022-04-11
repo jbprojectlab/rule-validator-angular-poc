@@ -33,13 +33,38 @@ export class PlansComponent implements OnInit {
   getCurrentPaidDate() {
     const currentDate = new Date()
     const currentYear = String(currentDate.getFullYear())
-    let currentMonth = String(currentDate.getMonth())
+    let currentMonth = String(currentDate.getMonth() + 1)
     if(currentMonth.length < 2) currentMonth = '0' + currentMonth
     return currentYear + currentMonth
   }
 
+  formatNextPaidDateOption(currentDate: string) {
+    let nextDateYear = currentDate.slice(0, 4)
+    let nextDateMonth = String(Number(currentDate.slice(4)) - 1)
+    if(nextDateMonth === '-1') {
+      nextDateYear = String(Number(nextDateYear) - 1)
+      nextDateMonth = '12'
+    }
+    if(nextDateMonth.length < 2) {
+      nextDateMonth = '0' + nextDateMonth
+    }
+    const nextDate = nextDateYear + nextDateMonth
+    return nextDate
+  }
+
+  getPaidThroughPeriodOptions() {
+    let currentDate = this.getCurrentPaidDate()
+    const dateOptions: string[] = [currentDate]
+    for(let i = 0; i < 133; i += 1) {
+      let nextDate = this.formatNextPaidDateOption(currentDate)
+      currentDate = nextDate
+      dateOptions.push(currentDate)
+    }
+    return dateOptions
+  }
+
   selectedSubmissionGroupOption!: number;
-  selectedPaidThroughPeriodOption: string = this.getCurrentPaidDate();
+  selectedPaidThroughPeriodOption!: string;
   selectedModeOption!: string;
   selectedControlNumberOption!: string;
   selectedCategoryOption!: string;
@@ -50,7 +75,7 @@ export class PlansComponent implements OnInit {
   }
 
   submissionGroupOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'submissionGroup')
-  paidThroughPeriodOptions: number[] | any[] = this.getUniqueOptions(this.initialPlans, 'paidThroughPeriod')
+  paidThroughPeriodOptions: number[] | any[] = this.getPaidThroughPeriodOptions()
   modeOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'mode')
   submissionControlOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'submissionControl')
   categoryOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'category')
@@ -64,6 +89,9 @@ export class PlansComponent implements OnInit {
   }
 
   handleSearchFilterChange(key: string, value: string | number, type: string) {
+    if(key === 'paidThroughPeriod') {
+      console.log('value:  ', value)
+    }
     if(!value) {
       // @ts-ignore
       delete this.searchFilter[key]
@@ -126,7 +154,7 @@ export class PlansComponent implements OnInit {
 
   getPlans(): Observable<any> {
     const currentPaidDate = this.selectedPaidThroughPeriodOption
-    const url = `http://mdcdapp12r051v.bcbsbsa:8085/api/summary/list?paiddate=${currentPaidDate}`
+    const url = `http://mdcdappl2r05lv.bcbsbsa:8085/api/summary/list?paiddate=${currentPaidDate}`
     console.log('url:  ', url)
     return this.http.get(url)
   }
