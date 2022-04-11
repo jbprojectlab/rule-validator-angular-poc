@@ -30,8 +30,16 @@ export class PlansComponent implements OnInit {
     'L2 Report Score'
   ]
 
+  getCurrentPaidDate() {
+    const currentDate = new Date()
+    const currentYear = String(currentDate.getFullYear())
+    let currentMonth = String(currentDate.getMonth())
+    if(currentMonth.length < 2) currentMonth = '0' + currentMonth
+    return currentYear + currentMonth
+  }
+
   selectedSubmissionGroupOption!: number;
-  selectedPaidThroughPeriodOption!: number;
+  selectedPaidThroughPeriodOption: string = this.getCurrentPaidDate();
   selectedModeOption!: string;
   selectedControlNumberOption!: string;
   selectedCategoryOption!: string;
@@ -114,18 +122,10 @@ export class PlansComponent implements OnInit {
     this.plans = filtered
   }
 
-  getCurrentPaidDate() {
-    const currentDate = new Date()
-    const currentYear = String(currentDate.getFullYear())
-    let currentMonth = String(currentDate.getMonth())
-    if(currentMonth.length < 2) currentMonth = '0' + currentMonth
-    return currentYear + currentMonth
-  }
-
   constructor(private http: HttpClient) {}
 
   getPlans(): Observable<any> {
-    const currentPaidDate = this.getCurrentPaidDate()
+    const currentPaidDate = this.selectedPaidThroughPeriodOption
     const url = `http://mdcdapp12r051v.bcbsbsa:8085/api/summary/list?paiddate=${currentPaidDate}`
     console.log('url:  ', url)
     return this.http.get(url)
