@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Plan } from '../../d'
+// import dummyPlans from './plans.json'
 
 @Component({
   selector: 'app-plans',
@@ -63,7 +64,7 @@ export class PlansComponent implements OnInit {
     return dateOptions
   }
 
-  selectedSubmissionGroupOption!: number;
+  selectedSubmissionGroupOption!: string;
   selectedPaidThroughPeriodOption: string = this.getCurrentPaidDate();
   selectedModeOption!: string;
   selectedControlNumberOption!: string;
@@ -71,14 +72,21 @@ export class PlansComponent implements OnInit {
 
   getUniqueOptions(plans: Plan[], key: string) {
     // @ts-ignore
-    return [...new Set(plans.map((plan: Plan) => plan[key]))]
+    const uniqueOptions = [...new Set(plans.map((plan: Plan) => plan[key]))]
+    return uniqueOptions
   }
 
-  submissionGroupOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'submissionGroup')
-  paidThroughPeriodOptions: number[] | any[] = this.getPaidThroughPeriodOptions()
-  modeOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'mode')
-  submissionControlOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'submissionControl')
-  categoryOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'category')
+  submissionGroupOptions!: string[] | any[]
+  paidThroughPeriodOptions!: string[] | any[] 
+  modeOptions!: string[] | any[]
+  submissionControlOptions!: number[] | any[]
+  categoryOptions!: string[] | any[]
+
+  // submissionGroupOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'submissionGroup')
+  // paidThroughPeriodOptions: number[] | any[] = this.getPaidThroughPeriodOptions()
+  // modeOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'mode')
+  // submissionControlOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'submissionControl')
+  // categoryOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'category')
 
   options: any = {
     submissionGroupOptions: this.submissionGroupOptions,
@@ -149,6 +157,10 @@ export class PlansComponent implements OnInit {
 
     this.selectedPaidThroughPeriodOption = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
     this.plans = filtered
+    this.getPlans().subscribe((response) => {
+      this.initialPlans = response
+      this.plans = this.initialPlans
+    })
   }
 
   constructor(private http: HttpClient) {}
@@ -156,7 +168,6 @@ export class PlansComponent implements OnInit {
   getPlans(): Observable<any> {
     const currentPaidDate = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
     const url = `http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/list?paiddate=${currentPaidDate}`
-    console.log('url:  ', url)
     return this.http.get(url)
   }
 
@@ -164,8 +175,14 @@ export class PlansComponent implements OnInit {
     if(this.isSearching) this.isSearching = false
 
     this.getPlans().subscribe((response) => {
-      this.initialPlans = response
-      this.plans = this.initialPlans
+      if(!this.initialPlans.length) this.initialPlans = response
+      this.plans = response
     })
+
+    this.options.submissionGroupOptions = this.getUniqueOptions(this.initialPlans, 'submissionGroup')
+    this.options.paidThroughPeriodOptions = this.getPaidThroughPeriodOptions()
+    this.options.modeOptions = this.getUniqueOptions(this.initialPlans, 'mode')
+    this.options.submissionControlOptions = this.getUniqueOptions(this.initialPlans, 'submissionControl')
+    this.options.categoryOptions = this.getUniqueOptions(this.initialPlans, 'category')
   }
 }
