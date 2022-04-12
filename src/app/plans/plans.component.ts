@@ -158,7 +158,6 @@ export class PlansComponent implements OnInit {
     this.selectedPaidThroughPeriodOption = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
     this.plans = filtered
     this.getPlans().subscribe((response) => {
-      this.initialPlans = response
       this.plans = this.initialPlans
     })
   }
