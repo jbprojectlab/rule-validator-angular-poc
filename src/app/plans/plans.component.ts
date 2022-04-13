@@ -82,12 +82,6 @@ export class PlansComponent implements OnInit {
   submissionControlOptions!: number[] | any[]
   categoryOptions!: string[] | any[]
 
-  // submissionGroupOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'submissionGroup')
-  // paidThroughPeriodOptions: number[] | any[] = this.getPaidThroughPeriodOptions()
-  // modeOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'mode')
-  // submissionControlOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'submissionControl')
-  // categoryOptions: string[] | any[] = this.getUniqueOptions(this.initialPlans, 'category')
-
   options: any = {
     submissionGroupOptions: this.submissionGroupOptions,
     paidThroughPeriodOptions: this.paidThroughPeriodOptions,
@@ -100,6 +94,7 @@ export class PlansComponent implements OnInit {
     if(key === 'paidThroughPeriod') {
       this.getPlans()
     }
+    
     if(!value) {
       // @ts-ignore
       delete this.searchFilter[key]
@@ -111,54 +106,60 @@ export class PlansComponent implements OnInit {
 
   search() {
     let filtered: Plan[] = []
-    this.plans = this.initialPlans
-    this.isSearching = true
 
-    for(let i = 0; i < this.plans.length; i += 1) {
-      const plan = this.plans[i]
-      const filteredPlan: Plan = {
-        planName: plan.planName,
-        submissionReceivedDate: plan.submissionReceivedDate,
-        status: plan.status,
-        submissionCurrentState: plan.submissionCurrentState,
-        lastUpdated: plan.lastUpdated,
-        planValidationDue: plan.planValidationDue,
-        reportScoreL2: plan.reportScoreL2
-      }
-
-      let submissionGroup = plan.submissionGroup,
-      paidThroughPeriod = plan.paidThroughPeriod,
-      submissionControl = plan.submissionControl,
-      category = plan.category,
-      mode = plan.mode
-      
-      if(!this.searchFilter.submissionGroup || this.searchFilter.submissionGroup === submissionGroup) {
-        filteredPlan.submissionGroup = submissionGroup
-      } else continue
-
-      if(!this.searchFilter.paidThroughPeriod || this.searchFilter.paidThroughPeriod === paidThroughPeriod) {
-        filteredPlan.paidThroughPeriod = paidThroughPeriod
-      } else continue
-
-      if(!this.searchFilter.submissionControl || this.searchFilter.submissionControl === submissionControl) {
-        filteredPlan.submissionControl = submissionControl
-      } else continue
-
-      if(!this.searchFilter.category || this.searchFilter.category === category) {
-        filteredPlan.category = category
-      } else continue
-
-      if(!this.searchFilter.mode || this.searchFilter.mode === mode) {
-        filteredPlan.mode = mode
-      } else continue
-
-      filtered.push(filteredPlan)
-    }
-
-    this.selectedPaidThroughPeriodOption = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
-    this.plans = filtered
     this.getPlans().subscribe((response) => {
-      this.plans = this.initialPlans
+      this.plans = response
+      
+      this.options.submissionGroupOptions = this.getUniqueOptions(this.initialPlans, 'submissionGroup')
+      this.options.modeOptions = this.getUniqueOptions(this.initialPlans, 'mode')
+      this.options.submissionControlOptions = this.getUniqueOptions(this.initialPlans, 'submissionControl')
+      this.options.categoryOptions = this.getUniqueOptions(this.initialPlans, 'category')
+      
+      this.isSearching = true
+
+      for(let i = 0; i < this.plans.length; i += 1) {
+        const plan = this.plans[i]
+        const filteredPlan: Plan = {
+          planName: plan.planName,
+          submissionReceivedDate: plan.submissionReceivedDate,
+          status: plan.status,
+          submissionCurrentState: plan.submissionCurrentState,
+          lastUpdated: plan.lastUpdated,
+          planValidationDue: plan.planValidationDue,
+          reportScoreL2: plan.reportScoreL2
+        }
+  
+        let submissionGroup = plan.submissionGroup,
+        paidThroughPeriod = plan.paidThroughPeriod,
+        submissionControl = plan.submissionControl,
+        category = plan.category,
+        mode = plan.mode
+        
+        if(!this.searchFilter.submissionGroup || this.searchFilter.submissionGroup === submissionGroup) {
+          filteredPlan.submissionGroup = submissionGroup
+        } else continue
+  
+        if(!this.searchFilter.paidThroughPeriod || this.searchFilter.paidThroughPeriod === paidThroughPeriod) {
+          filteredPlan.paidThroughPeriod = paidThroughPeriod
+        } else continue
+  
+        if(!this.searchFilter.submissionControl || this.searchFilter.submissionControl === submissionControl) {
+          filteredPlan.submissionControl = submissionControl
+        } else continue
+  
+        if(!this.searchFilter.category || this.searchFilter.category === category) {
+          filteredPlan.category = category
+        } else continue
+  
+        if(!this.searchFilter.mode || this.searchFilter.mode === mode) {
+          filteredPlan.mode = mode
+        } else continue
+  
+        filtered.push(filteredPlan)
+      }
+  
+      this.selectedPaidThroughPeriodOption = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
+      this.plans = filtered
     })
   }
 
@@ -178,10 +179,6 @@ export class PlansComponent implements OnInit {
       this.plans = response
     })
 
-    this.options.submissionGroupOptions = this.getUniqueOptions(this.initialPlans, 'submissionGroup')
     this.options.paidThroughPeriodOptions = this.getPaidThroughPeriodOptions()
-    this.options.modeOptions = this.getUniqueOptions(this.initialPlans, 'mode')
-    this.options.submissionControlOptions = this.getUniqueOptions(this.initialPlans, 'submissionControl')
-    this.options.categoryOptions = this.getUniqueOptions(this.initialPlans, 'category')
   }
 }
