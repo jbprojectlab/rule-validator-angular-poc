@@ -12,7 +12,7 @@
       Search Filters
     </h4>
     <div>
-      <ng-select class="custom" [(ngModel)]="selectedSubmissionGroupOption" placeholder="Submission Group" (change)="handleSearchFilterChange('submissionGroup', selectedSubmissionGroupOption, 'number')">
+      <ng-select class="custom" [(ngModel)]="selectedSubmissionGroupOption" placeholder="Submission Group" (change)="handleSearchFilterChange('submissionGroup', selectedSubmissionGroupOption)">
         <ng-option
           *ngFor="let submissionGroupOption of options.submissionGroupOptions"
           [value]="submissionGroupOption"
@@ -21,19 +21,19 @@
         </ng-option>
       </ng-select>
       
-      <ng-select class="custom" [(ngModel)]="selectedPaidThroughPeriodOption" placeholder="Paid Through Period" (change)="handleSearchFilterChange('paidThroughPeriod', selectedPaidThroughPeriodOption, 'string')">
+      <ng-select class="custom" [(ngModel)]="selectedPaidThroughPeriodOption" placeholder="Paid Through Period" (change)="handleSearchFilterChange('paidThroughPeriod', selectedPaidThroughPeriodOption)">
         <ng-option *ngFor="let paidThroughPeriodOption of options.paidThroughPeriodOptions" [value]="paidThroughPeriodOption">
           {{paidThroughPeriodOption || getCurrentPaidDate()}}
         </ng-option>
       </ng-select>
 
-      <ng-select class="custom last-select" [(ngModel)]="selectedCategoryOption" placeholder="Category" (change)="handleSearchFilterChange('category', selectedCategoryOption, 'string')">
+      <ng-select class="custom last-select" [(ngModel)]="selectedCategoryOption" placeholder="Category" (change)="handleSearchFilterChange('category', selectedCategoryOption)">
         <ng-option *ngFor="let categoryOption of options.categoryOptions" [value]="categoryOption">
           {{categoryOption}}
         </ng-option>
       </ng-select>
 
-      <ng-select class="custom" [(ngModel)]="selectedModeOption" placeholder="Mode" (change)="handleSearchFilterChange('mode', selectedModeOption, 'string')">
+      <ng-select class="custom" [(ngModel)]="selectedModeOption" placeholder="Mode" (change)="handleSearchFilterChange('mode', selectedModeOption)">
         <ng-option *ngFor="let modeOption of options.modeOptions" [value]="modeOption">
           {{modeOption}}
         </ng-option>

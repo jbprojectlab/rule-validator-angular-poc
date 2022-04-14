@@ -1,7 +1,7 @@
 export interface Plan {
   submissionGroup?: string;
   planName?: string;
-  paidThroughPeriod?: number;
+  paidThroughPeriod?: string;
   submissionControl?: number;
   submissionReceivedDate?: string;
   category?: string;

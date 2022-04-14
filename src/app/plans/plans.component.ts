@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Plan } from '../../d'
-// import dummyPlans from './plans.json'
+import dummyPlans from './plans.json'
 
 @Component({
   selector: 'app-plans',
@@ -12,7 +12,7 @@ import { Plan } from '../../d'
 
 export class PlansComponent implements OnInit {
   plans: Plan[] = []
-  initialPlans: Plan[] = []
+  // initialPlans: Plan[] = []
   searchFilter: Plan = {}
   isSearching: boolean = false
   
@@ -36,7 +36,9 @@ export class PlansComponent implements OnInit {
     const currentYear = String(currentDate.getFullYear())
     let currentMonth = String(currentDate.getMonth() + 1)
     if(currentMonth.length < 2) currentMonth = '0' + currentMonth
-    return currentYear + currentMonth
+    const currentPaidDate = currentYear + currentMonth
+    console.log('currentPaidDate:  ', currentPaidDate)
+    return currentPaidDate
   }
 
   formatNextPaidDateOption(currentDate: string) {
@@ -67,7 +69,6 @@ export class PlansComponent implements OnInit {
   selectedSubmissionGroupOption!: string;
   selectedPaidThroughPeriodOption: string = this.getCurrentPaidDate();
   selectedModeOption!: string;
-  selectedControlNumberOption!: string;
   selectedCategoryOption!: string;
 
   getUniqueOptions(plans: Plan[], key: string) {
@@ -79,18 +80,16 @@ export class PlansComponent implements OnInit {
   submissionGroupOptions!: string[] | any[]
   paidThroughPeriodOptions!: string[] | any[] 
   modeOptions!: string[] | any[]
-  submissionControlOptions!: number[] | any[]
   categoryOptions!: string[] | any[]
 
   options: any = {
     submissionGroupOptions: this.submissionGroupOptions,
     paidThroughPeriodOptions: this.paidThroughPeriodOptions,
     modeOptions: this.modeOptions,
-    submissionControlOptions: this.submissionControlOptions,
     categoryOptions: this.categoryOptions
   }
 
-  handleSearchFilterChange(key: string, value: string | number, type: string) {
+  handleSearchFilterChange(key: string, value: string | number) {
     if(key === 'paidThroughPeriod') {
       this.getPlans()
     }
@@ -104,16 +103,18 @@ export class PlansComponent implements OnInit {
     }
   }
 
+  getOptions() {
+    this.options.submissionGroupOptions = this.getUniqueOptions(this.plans, 'submissionGroup')
+    this.options.categoryOptions = this.getUniqueOptions(this.plans, 'category')
+    this.options.modeOptions = this.getUniqueOptions(this.plans, 'mode')
+  }
+
   search() {
     let filtered: Plan[] = []
 
     this.getPlans().subscribe((response) => {
-      this.plans = response
-      
-      this.options.submissionGroupOptions = this.getUniqueOptions(this.initialPlans, 'submissionGroup')
-      this.options.modeOptions = this.getUniqueOptions(this.initialPlans, 'mode')
-      this.options.submissionControlOptions = this.getUniqueOptions(this.initialPlans, 'submissionControl')
-      this.options.categoryOptions = this.getUniqueOptions(this.initialPlans, 'category')
+      // this.plans = response
+      this.plans = dummyPlans
       
       this.isSearching = true
 
@@ -121,6 +122,7 @@ export class PlansComponent implements OnInit {
         const plan = this.plans[i]
         const filteredPlan: Plan = {
           planName: plan.planName,
+          submissionControl: plan.submissionControl,
           submissionReceivedDate: plan.submissionReceivedDate,
           status: plan.status,
           submissionCurrentState: plan.submissionCurrentState,
@@ -131,7 +133,6 @@ export class PlansComponent implements OnInit {
   
         let submissionGroup = plan.submissionGroup,
         paidThroughPeriod = plan.paidThroughPeriod,
-        submissionControl = plan.submissionControl,
         category = plan.category,
         mode = plan.mode
         
@@ -141,10 +142,6 @@ export class PlansComponent implements OnInit {
   
         if(!this.searchFilter.paidThroughPeriod || this.searchFilter.paidThroughPeriod === paidThroughPeriod) {
           filteredPlan.paidThroughPeriod = paidThroughPeriod
-        } else continue
-  
-        if(!this.searchFilter.submissionControl || this.searchFilter.submissionControl === submissionControl) {
-          filteredPlan.submissionControl = submissionControl
         } else continue
   
         if(!this.searchFilter.category || this.searchFilter.category === category) {
@@ -168,15 +165,19 @@ export class PlansComponent implements OnInit {
   getPlans(): Observable<any> {
     const currentPaidDate = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
     const url = `http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/list?paiddate=${currentPaidDate}`
-    return this.http.get(url)
+    return this.http.get('http://date.jsontest.com')
   }
 
   ngOnInit(): void {
     if(this.isSearching) this.isSearching = false
 
     this.getPlans().subscribe((response) => {
-      if(!this.initialPlans.length) this.initialPlans = response
-      this.plans = response
+      console.log('response on init:  ', response)
+      // if(!this.initialPlans.length) this.initialPlans = dummyPlans
+      // this.plans = response
+      this.plans = dummyPlans
+      this.getOptions()
+      console.log('options on init:  ', this.options)
     })
 
     this.options.paidThroughPeriodOptions = this.getPaidThroughPeriodOptions()
