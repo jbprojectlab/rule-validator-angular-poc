@@ -4,7 +4,7 @@
 
 <div class="plans-table">
   <div class="table-title">
-    NDW - L2 Rules
+    NDW - Summary Page
   </div>
   
   <div class="search">
@@ -27,15 +27,21 @@
         </ng-option>
       </ng-select>
 
+      <ng-select class="custom" [(ngModel)]="selectedSubmissionCurrentStateOption" placeholder="Submission Current State" (change)="handleSearchFilterChange('submissionCurrentState', selectedSubmissionCurrentStateOption)">
+        <ng-option *ngFor="let submissionCurrentStateOption of options.submissionCurrentStateOptions" [value]="submissionCurrentStateOption">
+          {{submissionCurrentStateOption}}
+        </ng-option>
+      </ng-select>
+
       <ng-select class="custom last-select" [(ngModel)]="selectedCategoryOption" placeholder="Category" (change)="handleSearchFilterChange('category', selectedCategoryOption)">
         <ng-option *ngFor="let categoryOption of options.categoryOptions" [value]="categoryOption">
           {{categoryOption}}
         </ng-option>
       </ng-select>
 
-      <ng-select class="custom" [(ngModel)]="selectedModeOption" placeholder="Mode" (change)="handleSearchFilterChange('mode', selectedModeOption)">
-        <ng-option *ngFor="let modeOption of options.modeOptions" [value]="modeOption">
-          {{modeOption}}
+      <ng-select class="custom last-select" [(ngModel)]="selectedStatusOption" placeholder="Status" (change)="handleSearchFilterChange('status', selectedStatusOption)">
+        <ng-option *ngFor="let statusOption of options.statusOptions" [value]="statusOption">
+          {{statusOption}}
         </ng-option>
       </ng-select>
 

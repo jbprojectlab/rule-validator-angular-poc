@@ -37,7 +37,6 @@ export class PlansComponent implements OnInit {
     let currentMonth = String(currentDate.getMonth() + 1)
     if(currentMonth.length < 2) currentMonth = '0' + currentMonth
     const currentPaidDate = currentYear + currentMonth
-    console.log('currentPaidDate:  ', currentPaidDate)
     return currentPaidDate
   }
 
@@ -68,8 +67,9 @@ export class PlansComponent implements OnInit {
 
   selectedSubmissionGroupOption!: string;
   selectedPaidThroughPeriodOption: string = this.getCurrentPaidDate();
-  selectedModeOption!: string;
+  selectedSubmissionCurrentStateOption!: string;
   selectedCategoryOption!: string;
+  selectedStatusOption!: string;
 
   getUniqueOptions(plans: Plan[], key: string) {
     // @ts-ignore
@@ -79,14 +79,16 @@ export class PlansComponent implements OnInit {
 
   submissionGroupOptions!: string[] | any[]
   paidThroughPeriodOptions!: string[] | any[] 
-  modeOptions!: string[] | any[]
+  submissionCurrentStateOptions!: string[] | any[]
   categoryOptions!: string[] | any[]
+  statusOptions!: string[] | any[]
 
   options: any = {
     submissionGroupOptions: this.submissionGroupOptions,
     paidThroughPeriodOptions: this.paidThroughPeriodOptions,
-    modeOptions: this.modeOptions,
-    categoryOptions: this.categoryOptions
+    submissionCurrentStateOptions: this.submissionCurrentStateOptions,
+    categoryOptions: this.categoryOptions,
+    statusOptions: this.statusOptions
   }
 
   handleSearchFilterChange(key: string, value: string | number) {
@@ -105,16 +107,18 @@ export class PlansComponent implements OnInit {
 
   getOptions() {
     this.options.submissionGroupOptions = this.getUniqueOptions(this.plans, 'submissionGroup')
+    this.options.submissionCurrentStateOptions = this.getUniqueOptions(this.plans, 'submissionCurrentState')
     this.options.categoryOptions = this.getUniqueOptions(this.plans, 'category')
-    this.options.modeOptions = this.getUniqueOptions(this.plans, 'mode')
+    this.options.statusOptions = this.getUniqueOptions(this.plans, 'status')
   }
 
   search() {
     let filtered: Plan[] = []
 
     this.getPlans().subscribe((response) => {
-      // this.plans = response
-      this.plans = dummyPlans
+      this.plans = response
+      // this.plans = dummyPlans
+      console.log('response on search:  ', response)
       
       this.isSearching = true
 
@@ -124,8 +128,7 @@ export class PlansComponent implements OnInit {
           planName: plan.planName,
           submissionControl: plan.submissionControl,
           submissionReceivedDate: plan.submissionReceivedDate,
-          status: plan.status,
-          submissionCurrentState: plan.submissionCurrentState,
+          mode: plan.mode,
           lastUpdated: plan.lastUpdated,
           planValidationDue: plan.planValidationDue,
           reportScoreL2: plan.reportScoreL2
@@ -133,8 +136,9 @@ export class PlansComponent implements OnInit {
   
         let submissionGroup = plan.submissionGroup,
         paidThroughPeriod = plan.paidThroughPeriod,
+        submissionCurrentState = plan.submissionCurrentState,
         category = plan.category,
-        mode = plan.mode
+        status = plan.status
         
         if(!this.searchFilter.submissionGroup || this.searchFilter.submissionGroup === submissionGroup) {
           filteredPlan.submissionGroup = submissionGroup
@@ -144,12 +148,16 @@ export class PlansComponent implements OnInit {
           filteredPlan.paidThroughPeriod = paidThroughPeriod
         } else continue
   
+        if(!this.searchFilter.submissionCurrentState || this.searchFilter.submissionCurrentState === submissionCurrentState) {
+          filteredPlan.submissionCurrentState = submissionCurrentState
+        } else continue
+  
         if(!this.searchFilter.category || this.searchFilter.category === category) {
           filteredPlan.category = category
         } else continue
-  
-        if(!this.searchFilter.mode || this.searchFilter.mode === mode) {
-          filteredPlan.mode = mode
+
+        if(!this.searchFilter.status || this.searchFilter.status === status) {
+          filteredPlan.status = status
         } else continue
   
         filtered.push(filteredPlan)
@@ -174,10 +182,9 @@ export class PlansComponent implements OnInit {
     this.getPlans().subscribe((response) => {
       console.log('response on init:  ', response)
       // if(!this.initialPlans.length) this.initialPlans = dummyPlans
-      // this.plans = response
-      this.plans = dummyPlans
+      this.plans = response
+      // this.plans = dummyPlans
       this.getOptions()
-      console.log('options on init:  ', this.options)
     })
 
     this.options.paidThroughPeriodOptions = this.getPaidThroughPeriodOptions()
