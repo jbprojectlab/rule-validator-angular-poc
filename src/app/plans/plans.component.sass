@@ -1,5 +1,5 @@
 table
-  margin: 0 40px 40px 120px
+  margin: 0 40px 40px 80px
   padding: 0
   border: 1px solid #e5e9e8
   border-radius: 25px
@@ -14,6 +14,7 @@ table
 
   th
     padding: 20px
+    text-align: center
 
   th,
   td
@@ -46,6 +47,9 @@ table
       &.red p
         background-color: rgba(229, 42, 26, 0.7)
 
+      &.left-aligned
+        text-align: left
+
       a
         color: #5f696b
 
@@ -65,9 +69,17 @@ table
     padding: 0 20px
 
 .plans-table
+  padding: 0 40px
+  margin-top: 100px
+
+  table
+    margin-right: 0
+  
   .table-title
+    position: absolute
     font-size: 24px
-    margin: 220px 140px 40px
+    top: 140px
+    left: 140px
 
 .plans-table-border
   border-bottom: 1px solid rgba(0, 0, 0, 0.5)
@@ -83,34 +95,33 @@ table
 .search
   background-color: #edf2f6
   border-radius: 20px
-  height: 100px
+  height: 50px
   padding: 20px 40px
-  margin-top: -170px
-  position: absolute
-  right: 40px
-  width: 65%
-  min-width: 800px
+  min-width: 1000px
+  margin: 0 0 20px 500px
 
   div
     display: flex
     align-items: center
     justify-content: space-between
-    margin-top: 20px
 
   h4
     margin: 0
 
   .ng-select.custom
-    min-width: 150px
-    width: 18%
+    min-width: 180px
+    width: 15%
+
+    .ng-value-container .ng-placeholder
+      text-overflow: ellipsis
 
   .search-btn
     cursor: pointer
     height: 20px
 
-@media screen and (max-width: 1280px)
+@media screen and (max-width: 1660px)
   .table-title
-    color: #FFF
+    opacity: 0
 
   .search
-    right: 0
+    margin-left: 80px

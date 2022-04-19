@@ -8,9 +8,6 @@
   </div>
   
   <div class="search">
-    <h4>
-      Search Filters
-    </h4>
     <div>
       <ng-select class="custom" [(ngModel)]="selectedSubmissionGroupOption" placeholder="Submission Group" (change)="handleSearchFilterChange('submissionGroup', selectedSubmissionGroupOption)">
         <ng-option
@@ -39,7 +36,7 @@
         </ng-option>
       </ng-select>
 
-      <ng-select class="custom last-select" [(ngModel)]="selectedStatusOption" placeholder="Status" (change)="handleSearchFilterChange('status', selectedStatusOption)">
+      <ng-select class="custom last-select" [(ngModel)]="selectedStatusOption" placeholder="Submission Status" (change)="handleSearchFilterChange('status', selectedStatusOption)">
         <ng-option *ngFor="let statusOption of options.statusOptions" [value]="statusOption">
           {{statusOption}}
         </ng-option>
@@ -48,7 +45,6 @@
       <img class="search-btn" (click)="search()" src="assets/img/search.png" >
     </div>
   </div>
-
   <table>
     <colgroup span="12"></colgroup>
     <thead>
@@ -59,7 +55,7 @@
     <tbody>
       <tr *ngFor="let plan of plans; index as i;">
         <td>{{plan.submissionGroup}}</td>
-        <td>{{plan.planName}}</td>
+        <td class="left-aligned">{{plan.planName}}</td>
         <td>{{plan.paidThroughPeriod}}</td>
         <td>
           <a routerLink="/plans/{{plan.submissionControl}}" target='_blank' rel='noopener noreferrer'>

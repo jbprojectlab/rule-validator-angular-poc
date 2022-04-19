@@ -116,8 +116,8 @@ export class PlansComponent implements OnInit {
     let filtered: Plan[] = []
 
     this.getPlans().subscribe((response) => {
-      this.plans = response
-      // this.plans = dummyPlans
+      // this.plans = response
+      this.plans = dummyPlans
       console.log('response on search:  ', response)
       
       this.isSearching = true
@@ -182,8 +182,8 @@ export class PlansComponent implements OnInit {
     this.getPlans().subscribe((response) => {
       console.log('response on init:  ', response)
       // if(!this.initialPlans.length) this.initialPlans = dummyPlans
-      this.plans = response
-      // this.plans = dummyPlans
+      // this.plans = response
+      this.plans = dummyPlans
       this.getOptions()
     })
 
