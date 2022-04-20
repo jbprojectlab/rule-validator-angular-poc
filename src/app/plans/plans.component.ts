@@ -12,7 +12,6 @@ import dummyPlans from './plans.json'
 
 export class PlansComponent implements OnInit {
   plans: Plan[] = []
-  // initialPlans: Plan[] = []
   searchFilter: Plan = {}
   isSearching: boolean = false
   
@@ -112,60 +111,68 @@ export class PlansComponent implements OnInit {
     this.options.statusOptions = this.getUniqueOptions(this.plans, 'status')
   }
 
-  search() {
+  filterPlans() {
     let filtered: Plan[] = []
 
-    this.getPlans().subscribe((response) => {
-      // this.plans = response
-      this.plans = dummyPlans
-      console.log('response on search:  ', response)
-      
-      this.isSearching = true
-
-      for(let i = 0; i < this.plans.length; i += 1) {
-        const plan = this.plans[i]
-        const filteredPlan: Plan = {
-          planName: plan.planName,
-          submissionControl: plan.submissionControl,
-          submissionReceivedDate: plan.submissionReceivedDate,
-          mode: plan.mode,
-          lastUpdated: plan.lastUpdated,
-          planValidationDue: plan.planValidationDue,
-          reportScoreL2: plan.reportScoreL2
-        }
-  
-        let submissionGroup = plan.submissionGroup,
-        paidThroughPeriod = plan.paidThroughPeriod,
-        submissionCurrentState = plan.submissionCurrentState,
-        category = plan.category,
-        status = plan.status
-        
-        if(!this.searchFilter.submissionGroup || this.searchFilter.submissionGroup === submissionGroup) {
-          filteredPlan.submissionGroup = submissionGroup
-        } else continue
-  
-        if(!this.searchFilter.paidThroughPeriod || this.searchFilter.paidThroughPeriod === paidThroughPeriod) {
-          filteredPlan.paidThroughPeriod = paidThroughPeriod
-        } else continue
-  
-        if(!this.searchFilter.submissionCurrentState || this.searchFilter.submissionCurrentState === submissionCurrentState) {
-          filteredPlan.submissionCurrentState = submissionCurrentState
-        } else continue
-  
-        if(!this.searchFilter.category || this.searchFilter.category === category) {
-          filteredPlan.category = category
-        } else continue
-
-        if(!this.searchFilter.status || this.searchFilter.status === status) {
-          filteredPlan.status = status
-        } else continue
-  
-        filtered.push(filteredPlan)
+    for(let i = 0; i < this.plans.length; i += 1) {
+      const plan = this.plans[i]
+      const filteredPlan: Plan = {
+        planName: plan.planName,
+        submissionControl: plan.submissionControl,
+        submissionReceivedDate: plan.submissionReceivedDate,
+        mode: plan.mode,
+        lastUpdated: plan.lastUpdated,
+        planValidationDue: plan.planValidationDue,
+        reportScoreL2: plan.reportScoreL2
       }
-  
-      this.selectedPaidThroughPeriodOption = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
-      this.plans = filtered
-    })
+
+      let submissionGroup = plan.submissionGroup,
+      paidThroughPeriod = plan.paidThroughPeriod,
+      submissionCurrentState = plan.submissionCurrentState,
+      category = plan.category,
+      status = plan.status
+      
+      if(!this.searchFilter.submissionGroup || this.searchFilter.submissionGroup === submissionGroup) {
+        filteredPlan.submissionGroup = submissionGroup
+      } else continue
+
+      if(!this.searchFilter.paidThroughPeriod || this.searchFilter.paidThroughPeriod === paidThroughPeriod) {
+        filteredPlan.paidThroughPeriod = paidThroughPeriod
+      } else continue
+
+      if(!this.searchFilter.submissionCurrentState || this.searchFilter.submissionCurrentState === submissionCurrentState) {
+        filteredPlan.submissionCurrentState = submissionCurrentState
+      } else continue
+
+      if(!this.searchFilter.category || this.searchFilter.category === category) {
+        filteredPlan.category = category
+      } else continue
+
+      if(!this.searchFilter.status || this.searchFilter.status === status) {
+        filteredPlan.status = status
+      } else continue
+
+      filtered.push(filteredPlan)
+    }
+
+    this.selectedPaidThroughPeriodOption = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
+    this.plans = filtered
+  }
+
+  search() {
+    this.filterPlans()
+    console.log('plans on search:  ', this.plans)
+    if(!this.plans.length || this.selectedPaidThroughPeriodOption !== this.plans[0].paidThroughPeriod) {
+      console.log('changing paid through period from:  ', this.plans[0].paidThroughPeriod, '  to:  ', this.selectedPaidThroughPeriodOption)
+      this.getPlans().subscribe((response) => {
+        this.plans = response
+        // this.plans = dummyPlans
+        console.log('response on search:  ', response)
+        
+        this.isSearching = true
+        this.filterPlans()
+      })
+    }
   }
 
   constructor(private http: HttpClient) {}
@@ -173,7 +180,8 @@ export class PlansComponent implements OnInit {
   getPlans(): Observable<any> {
     const currentPaidDate = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
     const url = `http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/list?paiddate=${currentPaidDate}`
-    return this.http.get('http://date.jsontest.com')
+    return this.http.get(url)
+    // return this.http.get('http://date.jsontest.com')
   }
 
   ngOnInit(): void {
@@ -181,9 +189,8 @@ export class PlansComponent implements OnInit {
 
     this.getPlans().subscribe((response) => {
       console.log('response on init:  ', response)
-      // if(!this.initialPlans.length) this.initialPlans = dummyPlans
-      // this.plans = response
-      this.plans = dummyPlans
+      this.plans = response
+      // this.plans = dummyPlans
       this.getOptions()
     })
 
