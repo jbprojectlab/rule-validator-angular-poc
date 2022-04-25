@@ -12,7 +12,7 @@ import dummyPlans from './plans.json'
 
 export class PlansComponent implements OnInit {
   plans: Plan[] = []
-  initialsPlans: Plan[] = []
+  initialPlans: Plan[] = []
   searchFilter: Plan = {}
   isSearching: boolean = false
   
@@ -112,15 +112,11 @@ export class PlansComponent implements OnInit {
     this.options.statusOptions = this.getUniqueOptions(this.plans, 'status')
   }
 
-  emptySearch: boolean = false
-
   filterPlans() {
     let filtered: Plan[] = []
-    let currentPlans: Plan[] = this.emptySearch ? this.initialsPlans : this.plans
-    console.log('current plans:  ', currentPlans)
 
-    for(let i = 0; i < currentPlans.length; i += 1) {
-      const plan = currentPlans[i]
+    for(let i = 0; i < this.initialPlans.length; i += 1) {
+      const plan = this.initialPlans[i]
       const filteredPlan: Plan = {
         planName: plan.planName,
         submissionControl: plan.submissionControl,
@@ -161,24 +157,27 @@ export class PlansComponent implements OnInit {
     }
 
     this.selectedPaidThroughPeriodOption = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
-    console.log('filtered:  ', filtered, 'this.plans:  ', this.plans)
     this.plans = filtered
-    this.emptySearch = !this.plans.length
   }
 
+  paidThroughPeriod: string = this.getCurrentPaidDate()
+
   search() {
-    this.filterPlans()
-    console.log('plans on search:  ', this.plans)
-    if(!this.emptySearch && (!this.plans.length || this.selectedPaidThroughPeriodOption !== this.plans[0].paidThroughPeriod)) {
-      console.log('changing paid through period from:  ', this.plans[0].paidThroughPeriod, '  to:  ', this.selectedPaidThroughPeriodOption)
+    this.isSearching = true
+
+    if(this.paidThroughPeriod !== this.selectedPaidThroughPeriodOption) {
       this.getPlans().subscribe((response) => {
-        this.plans = response
-        // this.plans = dummyPlans
+        this.initialPlans = response
+        // this.initialPlans = dummyPlans
+        this.paidThroughPeriod = this.selectedPaidThroughPeriodOption
+
         console.log('response on search:  ', response)
         
-        this.isSearching = true
         this.filterPlans()
+        this.getOptions()
       })
+    } else {
+      this.filterPlans()
     }
   }
 
@@ -196,7 +195,7 @@ export class PlansComponent implements OnInit {
 
     this.getPlans().subscribe((response) => {
       console.log('response on init:  ', response)
-      if(!this.initialsPlans.length) this.initialsPlans = response
+      if(!this.initialPlans.length) this.initialPlans = dummyPlans
       this.plans = response
       // this.plans = dummyPlans
       this.getOptions()
