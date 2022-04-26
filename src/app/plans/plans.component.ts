@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Plan } from '../../d'
-import dummyPlans from './plans.json'
+// import dummyPlans from './plans.json'
 
 @Component({
   selector: 'app-plans',
@@ -194,8 +194,7 @@ export class PlansComponent implements OnInit {
     if(this.isSearching) this.isSearching = false
 
     this.getPlans().subscribe((response) => {
-      console.log('response on init:  ', response)
-      if(!this.initialPlans.length) this.initialPlans = dummyPlans
+      if(!this.initialPlans.length) this.initialPlans = response
       this.plans = response
       // this.plans = dummyPlans
       this.getOptions()

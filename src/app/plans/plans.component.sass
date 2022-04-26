@@ -1,14 +1,14 @@
 table
-  margin: 0 40px 40px 80px
+  margin: 0 40px 40px 0
   padding: 0
-  border: 1px solid #e5e9e8
-  border-radius: 25px
+  border: 1px solid var(--border-light-grey)
+  border-radius: var(--rounded-corner-border-radius)
   border-spacing: 0
   font-weight: 500
   overflow: hidden
 
   th
-    border-bottom: 1px solid #e5e9e8
+    border-bottom: 1px solid var(--border-light-grey)
     padding: 10px
     text-align: left
 
@@ -22,30 +22,31 @@ table
 
   tbody
     tr:nth-child(even)
-      background-color: #edf2f6
+      background-color: var(--background-shade-light-grey)
 
     tr:hover
-      background-color: #d6f2ff
+      background-color: var(--background-shade-blue)
     
     td
       padding: 10px
       text-align: center
 
       p
-        border-radius: 25px
-        color: white
+        border-radius: var(--rounded-corner-border-radius)
+        color: var(--white)
+        margin-left: 28px
         padding: 4px
         text-align: center
         width: 32px
 
       &.green p
-        background-color: rgba(93, 191, 64, 0.7)
+        background-color: var(--green)
 
       &.yellow p
-        background-color: rgba(249, 202, 6, 0.7)
+        background-color: var(--yellow)
 
       &.red p
-        background-color: rgba(229, 42, 26, 0.7)
+        background-color: var(--red)
 
       &.left-aligned
         text-align: left
@@ -70,7 +71,7 @@ table
 
 .plans-table
   padding: 0 40px
-  margin-top: 100px
+  margin-top: 120px
 
   table
     margin-right: 0
@@ -78,14 +79,14 @@ table
   .table-title
     position: absolute
     font-size: 24px
-    top: 140px
+    top: 148px
     left: 140px
 
 .plans-table-border
   border-bottom: 1px solid rgba(0, 0, 0, 0.5)
 
   th
-    background-color: #FFF
+    background-color: var(--white)
     color: rgba(255, 255, 255, 0.0)
     height: 14px
     line-height: 14px
@@ -93,12 +94,12 @@ table
     padding-bottom: 0
 
 .search
-  background-color: #edf2f6
-  border-radius: 20px
-  height: 50px
-  padding: 20px 40px
+  background-color: var(--background-shade-light-grey)
+  border-radius: var(--rounded-corner-border-radius)
+  height: 30px
+  padding: 20px 40px 40px
   min-width: 1000px
-  margin: 0 0 20px 500px
+  margin: 0 10px 25px 500px
 
   div
     display: flex
@@ -117,11 +118,18 @@ table
 
   .search-btn
     cursor: pointer
-    height: 20px
+    background: var(--white)
+    border: 2px solid var(--primary-blue-dark)
+    border-radius: var(--round-border-radius)
+    padding: 15px
+    margin: 0 -50px 20px 0
+
+    img
+      height: 20px
 
 @media screen and (max-width: 1660px)
   .table-title
     opacity: 0
 
   .search
-    margin-left: 80px
+    margin-left: 0px
