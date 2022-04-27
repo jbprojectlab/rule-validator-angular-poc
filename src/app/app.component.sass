@@ -23,19 +23,41 @@
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
+  .app-container
+    border-radius: var(--rounded-corner-border-radius)
+    position: absolute
+    top: 20px
+    left: 20px
+    right: 20px
+    bottom: 20px
+    overflow-y: scroll
+    height: calc(100vh - 40px)
+
+  .top-bar
+    border-radius: 25px 25px 0 0
+    background-color: var(--primary-blue-dark)
+    height: 20px
+    position: fixed
+    right: 20px
+    left: 20px
+    top: 20px
+    z-index: 1
+
+  .main-wrapper
+    padding: 20px
+
   .main-wrapper,
   .toolbar-wrapper
     background-color: var(--primary-blue-dark)
 
   .main-container
     border-radius: var(--rounded-corner-border-radius)
-    min-height: 100vh
 
   .main-container,
   .toolbar
     background-color: var(--white)
     border: 1px solid var(--white)
-    margin-left: 72px
+    margin-left: 52px
 
   h1,
   h2,
@@ -54,8 +76,8 @@
   .toolbar
     border-radius: 25px 25px 0 0
     position: absolute
-    top: 0
-    right: 0
+    top: 20px
+    right: 20px
     left: 32px
     height: 110px
     display: flex

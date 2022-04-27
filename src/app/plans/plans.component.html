@@ -66,7 +66,7 @@
         <td>{{plan.mode}}</td>
         <td>{{plan.status}}</td>
         <td>{{plan.submissionCurrentState}}</td>
-        <td>{{plan.lastUpdated | date:'MM/dd/yyyy'}}</td>
+        <td>{{plan.lastUpdated | date:'MM/dd/yyyy h:mm a'}}</td>
         <td>{{plan.planValidationDue | date:'MM/dd/yyyy'}}</td>
         <td *ngIf="plan.reportScoreL2 !== undefined" [ngClass]="{'green': plan.reportScoreL2 === 0, 'yellow': plan.reportScoreL2 > 0 && plan.reportScoreL2 < 1, 'red':  plan.reportScoreL2 >= 1}">
           <p>{{plan.reportScoreL2}}</p>

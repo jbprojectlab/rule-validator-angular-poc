@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Plan } from '../../d'
-// import dummyPlans from './plans.json'
+import dummyPlans from './plans.json'
 
 @Component({
   selector: 'app-plans',
@@ -167,8 +167,8 @@ export class PlansComponent implements OnInit {
 
     if(this.paidThroughPeriod !== this.selectedPaidThroughPeriodOption) {
       this.getPlans().subscribe((response) => {
-        this.initialPlans = response
-        // this.initialPlans = dummyPlans
+        // this.initialPlans = response
+        this.initialPlans = dummyPlans
         this.paidThroughPeriod = this.selectedPaidThroughPeriodOption
 
         console.log('response on search:  ', response)
@@ -186,17 +186,17 @@ export class PlansComponent implements OnInit {
   getPlans(): Observable<any> {
     const currentPaidDate = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
     const url = `http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/list?paiddate=${currentPaidDate}`
-    return this.http.get(url)
-    // return this.http.get('http://date.jsontest.com')
+    // return this.http.get(url)
+    return this.http.get('http://date.jsontest.com')
   }
 
   ngOnInit(): void {
     if(this.isSearching) this.isSearching = false
 
     this.getPlans().subscribe((response) => {
-      if(!this.initialPlans.length) this.initialPlans = response
-      this.plans = response
-      // this.plans = dummyPlans
+      // if(!this.initialPlans.length) this.initialPlans = response
+      // this.plans = response
+      this.plans = dummyPlans
       this.getOptions()
     })
 
