@@ -4,18 +4,29 @@
   display: flex
   flex-wrap: wrap
   justify-content: center
-  margin: 200px 40px
-  padding: 40px
+  position: absolute
+  top: 120px
+  margin: 0 40px
+  padding: 20px
+  height: calc(100% - 240px)
+  overflow-y: scroll
+  scrollbar-width: none
+  -ms-overflow-style: none
+
+  &::-webkit-scrollbar
+    width: 0
+    height: 0
+
 
   .card
     all: unset
-    border-radius: var(--border-radius)
+    border-radius: var(--rounded-corner-border-radius)
     border: 1px solid var(--border-light-grey)
     color: #098BC9
     cursor: pointer
-    height: 400px
-    width: 400px
-    margin: 0 16px 32px
+    height: 300px
+    width: 340px
+    margin: 0 10px 20px
     display: flex
     flex-direction: column
     justify-content: start
@@ -37,6 +48,7 @@
     img
       border-radius: var(--border-radius)
       padding-bottom: 20px
+      height: 50%
       width: 100%
       margin: 0
 
@@ -54,5 +66,5 @@
     span
       position: absolute
       right: 40px
-      bottom: 20px
+      bottom: 10px
 

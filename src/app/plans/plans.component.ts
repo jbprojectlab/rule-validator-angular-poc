@@ -105,7 +105,7 @@ export class PlansComponent implements OnInit {
     }
   }
 
-  getOptions() {
+  filterOptions() {
     this.options.submissionGroupOptions = this.getUniqueOptions(this.plans, 'submissionGroup')
     this.options.submissionCurrentStateOptions = this.getUniqueOptions(this.plans, 'submissionCurrentState')
     this.options.categoryOptions = this.getUniqueOptions(this.plans, 'category')
@@ -183,6 +183,12 @@ export class PlansComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
+  getOptions(): Observable<any> {
+    const url = 'http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/filters'
+    return this.http.get(url)
+    // return this.http.get('http://date.jsontest.com')
+  }
+
   getPlans(): Observable<any> {
     const currentPaidDate = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
     const url = `http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/list?paiddate=${currentPaidDate}`
@@ -193,13 +199,21 @@ export class PlansComponent implements OnInit {
   ngOnInit(): void {
     if(this.isSearching) this.isSearching = false
 
-    this.getPlans().subscribe((response) => {
+    this.getOptions().subscribe((response: any) => {
+      console.log('options response: ', response)
+      this.options = {
+        submissionGroupOptions: response.submissionGroup,
+        submissionCurrentStateOptions: response.submissionCurrentState,
+        categoryOptions: response.category,
+        statusOptions: response.submissionStatus,
+        paidThroughPeriodOptions: this.getPaidThroughPeriodOptions()
+      }
+    })
+
+    this.getPlans().subscribe((response: Plan[]) => {
       if(!this.initialPlans.length) this.initialPlans = response
       this.plans = response
       // this.plans = dummyPlans
-      this.getOptions()
     })
-
-    this.options.paidThroughPeriodOptions = this.getPaidThroughPeriodOptions()
   }
 }
