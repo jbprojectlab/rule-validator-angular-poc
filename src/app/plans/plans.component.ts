@@ -174,7 +174,6 @@ export class PlansComponent implements OnInit {
         console.log('response on search:  ', response)
         
         this.filterPlans()
-        this.getOptions()
       })
     } else {
       this.filterPlans()
