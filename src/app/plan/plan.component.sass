@@ -1,89 +1,130 @@
-.plan-header
-  align-items: center
-  background-color: #edf2f6
-  border-radius: var(--corner-border-radius)
-  display: flex
-  height: 100px
-  justify-content: space-between
-  margin: 120px 40px 20px
-  min-width: 600px
-  -webkit-box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
-  -moz-box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
-  box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
+.plan-container
+  position: absolute
+  left: 80px
+  right: 0
+  height: calc(100vh - 100px)
+  overflow-y: scroll
+  scrollbar-width: none
+  -ms-overflow-style: none
 
-  ul
+  &::-webkit-scrollbar
+    width: 0
+    height: 0
+
+  .plan-header
     align-items: center
-    border-right: 1px solid rgba(0, 2, 3, 0.5)
-    color: rgba(0, 2, 3, 0.5)
-    display: flex
-    height: 100%
-    list-style-type: none
-    flex-basis: 70%
-
-    li
-      margin-right: 20px
-
-      h4
-        font-weight: 400
-
-      p
-        font-weight: 600
-
-  div
-    display: flex
-    flex-basis: 30%
-    justify-content: center
-    margin-right: 20px
-
-  button
-    border: none
-    border-radius: var(--rounded-corner-border-radius)
-    color: #fff
-    cursor: pointer
-    height: 32px
-    margin-left: 20px
-    width: 100px
-
-    &:first-child
-      background-color: #5dbf40
-
-    &:last-child
-      background-color: #e52a1a
-
-.plan
-  background-color: #098BC9
-  border-radius: var(--corner-border-radius)
-  color: #fff
-  margin: 40px
-  padding: 8px 8px 2px 8px
-  min-width: 600px
-
-  .checklist-header
-    display: flex
-    align-items: center
-    justify-content: space-between
-
-    h1
-      margin-left: 20px
-
-    img
-      height: 24px
-      margin: 4px 12px
-
-    .show-table-img
-      cursor: pointer
-      height: 12px
-      margin: 4px 20px
-
-  &.closed .show-table-img
-    transform: rotate(270deg) 
-
-
-  .plan-table-wrapper
     background-color: #edf2f6
     border-radius: var(--corner-border-radius)
-    color: rgba(0, 2, 3, 0.5)
-    margin-bottom: 12px
+    display: flex
+    height: 100px
+    justify-content: space-between
+    margin: 120px 40px 20px
+    min-width: 600px
+    -webkit-box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
+    -moz-box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
+    box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
+
+    ul
+      align-items: center
+      border-right: 1px solid rgba(0, 2, 3, 0.5)
+      color: rgba(0, 2, 3, 0.5)
+      display: flex
+      height: 100%
+      list-style-type: none
+      flex-basis: 70%
+
+      li
+        margin-right: 20px
+
+        h4
+          font-weight: 400
+
+        p
+          font-weight: 600
+
+    div
+      display: flex
+      flex-basis: 30%
+      justify-content: center
+      margin-right: 20px
+
+    button
+      border: none
+      border-radius: var(--rounded-corner-border-radius)
+      color: #fff
+      cursor: pointer
+      height: 32px
+      margin-left: 20px
+      width: 100px
+
+      &:first-child
+        background-color: #5dbf40
+
+      &:last-child
+        background-color: #e52a1a
+
+  .plan-report-selection-buttons
+    display: flex
+    height: 100px
+    justify-content: space-between
+    margin: 0 80px
+
+    div
+      display: flex
+      flex-direction: column
+      align-items: center
+
+      span
+        border-radius: var(--round-border-radius)
+        border: 1px solid var(--primary-blue-dark)
+        display: flex
+        align-items: center
+        padding: 10px
+        height: 20px
+        width: 20px
+
+        img
+          height: 20px
+
+      h5
+        font-size: 10px
+        white-space: nowrap
+        margin: 8px 0
+
+  .plan
+    background-color: #098BC9
+    border-radius: var(--corner-border-radius)
+    color: #fff
+    margin: 40px
+    padding: 8px 8px 2px 8px
+    min-width: 600px
+
+    .checklist-header
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+      h1
+        margin-left: 20px
+
+      img
+        height: 24px
+        margin: 4px 12px
+
+      .show-table-img
+        cursor: pointer
+        height: 12px
+        margin: 4px 20px
+
+    &.closed .show-table-img
+      transform: rotate(270deg) 
+
+
+    .plan-table-wrapper
+      background-color: #edf2f6
+      border-radius: var(--corner-border-radius)
+      color: rgba(0, 2, 3, 0.5)
+      margin-bottom: 12px
 
 @media screen and (max-width: 1600px)
   .plan

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Plan } from '../../d'
-// import dummyPlans from './plans.json'
+import dummyPlans from './plans.json'
 
 @Component({
   selector: 'app-plans',
@@ -155,8 +155,8 @@ export class PlansComponent implements OnInit {
 
     if(this.paidThroughPeriod !== this.selectedPaidThroughPeriodOption || this.submissionGroup != this.selectedSubmissionGroupOption) {
       this.getPlans().subscribe((response) => {
-        this.initialPlans = response
-        // this.initialPlans = dummyPlans
+        // this.initialPlans = response
+        this.initialPlans = dummyPlans
         this.paidThroughPeriod = this.selectedPaidThroughPeriodOption
 
         console.log('response on search:  ', response)
@@ -172,8 +172,8 @@ export class PlansComponent implements OnInit {
 
   getOptions(): Observable<any> {
     const url = 'http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/filters'
-    return this.http.get(url)
-    // return this.http.get('http://date.jsontest.com')
+    // return this.http.get(url)
+    return this.http.get('http://date.jsontest.com')
   }
 
   getUrl() {
@@ -191,8 +191,8 @@ export class PlansComponent implements OnInit {
   getPlans(): Observable<any> {
     const url = this.getUrl()
     console.log('url:   ', url)
-    return this.http.get(url)
-    // return this.http.get('http://date.jsontest.com')
+    // return this.http.get(url)
+    return this.http.get('http://date.jsontest.com')
   }
 
   ngOnInit(): void {
@@ -210,9 +210,9 @@ export class PlansComponent implements OnInit {
     })
 
     this.getPlans().subscribe((response: Plan[]) => {
-      if(!this.initialPlans.length) this.initialPlans = response
-      this.plans = response
-      // this.plans = dummyPlans
+      // if(!this.initialPlans.length) this.initialPlans = response
+      // this.plans = response
+      this.plans = dummyPlans
     })
   }
 }
