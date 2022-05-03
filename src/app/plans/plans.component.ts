@@ -71,12 +71,6 @@ export class PlansComponent implements OnInit {
   selectedCategoryOption!: string;
   selectedStatusOption!: string;
 
-  getUniqueOptions(plans: Plan[], key: string) {
-    // @ts-ignore
-    const uniqueOptions = [...new Set(plans.map((plan: Plan) => plan[key]))]
-    return uniqueOptions
-  }
-
   submissionGroupOptions!: string[] | any[]
   paidThroughPeriodOptions!: string[] | any[] 
   submissionCurrentStateOptions!: string[] | any[]
@@ -103,13 +97,6 @@ export class PlansComponent implements OnInit {
       // @ts-ignore
       this.searchFilter[key] = value
     }
-  }
-
-  filterOptions() {
-    this.options.submissionGroupOptions = this.getUniqueOptions(this.plans, 'submissionGroup')
-    this.options.submissionCurrentStateOptions = this.getUniqueOptions(this.plans, 'submissionCurrentState')
-    this.options.categoryOptions = this.getUniqueOptions(this.plans, 'category')
-    this.options.statusOptions = this.getUniqueOptions(this.plans, 'status')
   }
 
   filterPlans() {
@@ -156,16 +143,17 @@ export class PlansComponent implements OnInit {
       filtered.push(filteredPlan)
     }
 
-    this.selectedPaidThroughPeriodOption = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
+    // this.selectedPaidThroughPeriodOption = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
     this.plans = filtered
   }
 
   paidThroughPeriod: string = this.getCurrentPaidDate()
+  submissionGroup: string = ""
 
   search() {
     this.isSearching = true
 
-    if(this.paidThroughPeriod !== this.selectedPaidThroughPeriodOption) {
+    if(this.paidThroughPeriod !== this.selectedPaidThroughPeriodOption || this.submissionGroup != this.selectedSubmissionGroupOption) {
       this.getPlans().subscribe((response) => {
         this.initialPlans = response
         // this.initialPlans = dummyPlans
@@ -182,6 +170,18 @@ export class PlansComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
+  getUrl() {
+    let url = 'http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/list'
+    if(this.selectedPaidThroughPeriodOption && this.selectedSubmissionGroupOption) {
+      url += `?paiddate=${this.selectedPaidThroughPeriodOption}&submissionGroup=${this.selectedSubmissionGroupOption}`
+    } else if(this.selectedPaidThroughPeriodOption) {
+      url += `?paiddate=${this.selectedPaidThroughPeriodOption}`
+    } else if(this.selectedSubmissionGroupOption) {
+      url += `?submissionGroup=${this.selectedSubmissionGroupOption}`
+    }
+    return url
+  }
+
   getOptions(): Observable<any> {
     const url = 'http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/filters'
     return this.http.get(url)
@@ -189,8 +189,8 @@ export class PlansComponent implements OnInit {
   }
 
   getPlans(): Observable<any> {
-    const currentPaidDate = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
-    const url = `http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/list?paiddate=${currentPaidDate}`
+    const url = this.getUrl()
+    console.log('url:   ', url)
     return this.http.get(url)
     // return this.http.get('http://date.jsontest.com')
   }
