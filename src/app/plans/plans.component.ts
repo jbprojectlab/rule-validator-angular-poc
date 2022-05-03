@@ -170,6 +170,12 @@ export class PlansComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
+  getOptions(): Observable<any> {
+    const url = 'http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/filters'
+    return this.http.get(url)
+    // return this.http.get('http://date.jsontest.com')
+  }
+
   getUrl() {
     let url = 'http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/list'
     if(this.selectedPaidThroughPeriodOption && this.selectedSubmissionGroupOption) {
@@ -180,12 +186,6 @@ export class PlansComponent implements OnInit {
       url += `?submissionGroup=${this.selectedSubmissionGroupOption}`
     }
     return url
-  }
-
-  getOptions(): Observable<any> {
-    const url = 'http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/filters'
-    return this.http.get(url)
-    // return this.http.get('http://date.jsontest.com')
   }
 
   getPlans(): Observable<any> {
