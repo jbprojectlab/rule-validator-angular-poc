@@ -3,18 +3,13 @@
   left: 80px
   right: 0
   height: calc(100vh - 100px)
-  overflow-y: scroll
-  scrollbar-width: none
-  -ms-overflow-style: none
-
-  &::-webkit-scrollbar
-    width: 0
-    height: 0
+  border-bottom: 1px solid transparent
+  border-radius: var(--rounded-corner-border-radius)
 
   .plan-header
     align-items: center
     background-color: #edf2f6
-    border-radius: var(--corner-border-radius)
+    border-radius: var(--rounded-corner-border-radius)
     display: flex
     height: 100px
     justify-content: space-between
@@ -82,6 +77,7 @@
         padding: 10px
         height: 20px
         width: 20px
+        cursor: pointer
 
         img
           height: 20px
@@ -93,11 +89,19 @@
 
   .plan
     background-color: #098BC9
-    border-radius: var(--corner-border-radius)
+    border-radius: var(--rounded-corner-border-radius)
     color: #fff
-    margin: 40px
+    margin: 0 40px
     padding: 8px 8px 2px 8px
     min-width: 600px
+    height: calc(100vh - 480px)
+    overflow-y: scroll
+    scrollbar-width: none
+    -ms-overflow-style: none
+
+    &::-webkit-scrollbar
+      width: 0
+      height: 0
 
     .checklist-header
       display: flex
@@ -122,7 +126,7 @@
 
     .plan-table-wrapper
       background-color: #edf2f6
-      border-radius: var(--corner-border-radius)
+      border-radius: var(--rounded-corner-border-radius)
       color: rgba(0, 2, 3, 0.5)
       margin-bottom: 12px
 
