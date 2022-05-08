@@ -1,0 +1,8 @@
+<div>
+  <div *ngFor="let product of products" class="report-menu">
+    <h5>{{product.name}}</h5>
+    <div *ngFor="let menuItem of menuItems">
+      <span>{{menuItem}}</span>
+    </div>
+  </div>
+</div>

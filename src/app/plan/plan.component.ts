@@ -9,10 +9,15 @@ import mockPlan, { mockPlanDescription } from './mock-plan'
 export class PlanComponent implements OnInit {
   planDescription: any = mockPlanDescription;
   plan: any = mockPlan;
+  visibleTab: number = 1
   level2ChecklistIsOpen: boolean = true
   rejectsTableIsOpen: boolean = false
   transformationsTableIsOpen: boolean = false
   analyticalWarningsTableIsOpen: boolean = false
+
+  selectTab(tab: number) {
+    this.visibleTab = tab
+  }
 
   toggleCheckList2() {
     this.level2ChecklistIsOpen = !this.level2ChecklistIsOpen

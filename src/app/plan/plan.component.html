@@ -36,39 +36,46 @@
       <h5>L1 Certification Report</h5>
     </div>
     <div>      
-      <span>
+      <span (click)="selectTab(1)">
         <img src="assets/img/graph-black.png" />
       </span>
-      <h5>L1 Certification Report</h5>
+      <h5>L2 Certification Report</h5>
     </div>
     <div>      
-      <span>
+      <span (click)="selectTab(2)">
         <img src="assets/img/checklist-black.png" />
       </span>
-      <h5>L1 Certification Report</h5>
+      <h5>L2 Checklist</h5>
     </div>
     <div>      
       <span>
         <img src="assets/img/graph-black.png" />
       </span>
-      <h5>L1 Certification Report</h5>
+      <h5>Field Distribution Report</h5>
     </div>
   </div>
 
-  <div *ngIf="plan.rejects" class="plan" [ngClass]="{'closed': !level2ChecklistIsOpen}">
-    <div class="checklist-header">
-      <h1>L2 Checklist</h1>
-      <img src="assets/img/show-more-white.png" (click)="toggleChecklist(2)" class="show-table-img"/>
-    </div>
-    <div *ngIf="level2ChecklistIsOpen">
-      <div class="plan-table-wrapper">
-        <app-plan-table [title]="'Rejects'" [tableData]="plan.rejects" [rejectsTableIsOpen]="rejectsTableIsOpen" [toggleTable]="toggleRejectsTable"></app-plan-table>
+  <div *ngIf="visibleTab === 1">
+    L2 Certification Report
+    <app-certification-report></app-certification-report>
+  </div>
+
+  <div *ngIf="visibleTab === 2">
+    <div *ngIf="plan.rejects" class="plan" [ngClass]="{'closed': !level2ChecklistIsOpen}">
+      <div class="checklist-header">
+        <h1>L2 Checklist</h1>
+        <img src="assets/img/show-more-white.png" (click)="toggleChecklist(2)" class="show-table-img"/>
       </div>
-      <div class="plan-table-wrapper">
-        <app-plan-table [title]="'Transformations'" [tableData]="plan.transformations" [transformationsTableIsOpen]="transformationsTableIsOpen" [toggleTable]="toggleTransformationsTable"></app-plan-table>
-      </div>
-      <div class="plan-table-wrapper">
-        <app-plan-table [title]="'Analytical Warnings'" [tableData]="plan.analyticalWarnings" [analyticalWarningsTableIsOpen]="analyticalWarningsTableIsOpen" [toggleTable]="toggleAnalyticalWarningsTable"></app-plan-table>
+      <div *ngIf="level2ChecklistIsOpen">
+        <div class="plan-table-wrapper">
+          <app-plan-table [title]="'Rejects'" [tableData]="plan.rejects" [rejectsTableIsOpen]="rejectsTableIsOpen" [toggleTable]="toggleRejectsTable"></app-plan-table>
+        </div>
+        <div class="plan-table-wrapper">
+          <app-plan-table [title]="'Transformations'" [tableData]="plan.transformations" [transformationsTableIsOpen]="transformationsTableIsOpen" [toggleTable]="toggleTransformationsTable"></app-plan-table>
+        </div>
+        <div class="plan-table-wrapper">
+          <app-plan-table [title]="'Analytical Warnings'" [tableData]="plan.analyticalWarnings" [analyticalWarningsTableIsOpen]="analyticalWarningsTableIsOpen" [toggleTable]="toggleAnalyticalWarningsTable"></app-plan-table>
+        </div>
       </div>
     </div>
   </div>

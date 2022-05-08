@@ -14,6 +14,7 @@ import { ClipboardComponent } from './clipboard/clipboard.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlanComponent } from './plan/plan.component';
 import { PlanTableComponent } from './plan-table/plan-table.component';
+import { CertificationReportComponent } from './certification-report/certification-report.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { PlanTableComponent } from './plan-table/plan-table.component';
     DashboardComponent,
     PlanComponent,
     PlanTableComponent,
+    CertificationReportComponent,
   ],
   imports: [
     BrowserModule,
