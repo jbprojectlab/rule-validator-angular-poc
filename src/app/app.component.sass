@@ -42,6 +42,10 @@
     -moz-box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
     box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
 
+    &.hidden-nav-margin
+      margin-left: 0
+      width: 100%
+
   p
     margin: 0
 
@@ -109,6 +113,9 @@
         height: 5px
         margin-left: 6px
 
+  .main-container.hidden-nav-margin .toolbar
+    left: 60px
+
   footer
     position: absolute
     bottom: 0
@@ -116,7 +123,7 @@
     padding: 20px
 
     &.hidden-nav-margin
-        margin-left: 20px
+      margin-left: 40px
 
   @media screen and (max-width: 760px)
     .toolbar .user-dd

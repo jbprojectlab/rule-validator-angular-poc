@@ -28,6 +28,7 @@ export class AppComponent {
             const segments = event.url.split('/')
             console.log(segments)
             if(segments[1] && segments[1] === 'plans' && segments[2] || segments[1] === 'home') {
+              console.log('Nav hidden')
               this.navIsHidden = true
             } else if(this.navIsHidden) {
               this.navIsHidden = false

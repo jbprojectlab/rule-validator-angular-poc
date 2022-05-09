@@ -8,11 +8,25 @@ import reportData from './report-data.json'
 })
 export class CertificationReportComponent implements OnInit {
   products: any = reportData
-  menuItems: any = reportData.map(section => Object.keys(section.data))
+  menuItems: any = []
+  
+  getMenuItems() {
+    // [{title:  'Product 1', items: ['foo', 'bar']}]
+    const menuItems: any = []
+    for(let i = 0; i < this.products.length; i += 1) {
+      let product = this.products[i]
+      let section: any = {}
+      section.title = product.name
+      section.items = Object.keys(product.data)
+      menuItems.push(section)
+    }
+    return menuItems
+  }
 
   constructor() { }
 
   ngOnInit(): void {
+    this.menuItems = this.getMenuItems()
   }
 
 }
