@@ -1,4 +1,9 @@
-<div class="report-menu">
+<span class="open" (click)="openMenu()">
+  <img src="assets/img/menu.png" />
+</span>
+
+<div *ngIf="menuIsOpen" class="report-menu">
+  <span class="close" (click)="closeMenu()">&#10005;</span>
   <div *ngFor="let section of menuItems">
     <div class="menu-section">
       <h5>{{section.title}}</h5>
@@ -7,4 +12,72 @@
       </div>
     </div>
   </div>
+</div>
+
+<div *ngFor="let product of products; index as i">
+  <h4>{{product.title}}</h4>
+  <table *ngIf="product.data">
+    <thead>
+      <tr>
+        <th>Metric Description</th>
+        <th>Computed Value</th>
+        <th>Pass Indicator</th>
+        <th>Rule Weight Percent</th>
+        <th>Score</th>
+        <th>Error Msg</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of product.data; index as i">
+        <td>{{row.metricDescription}}</td>
+        <td>{{row.computedValue}}</td>
+        <td>{{row.passIndicator}}</td>
+        <td>{{row.ruleWeightPercent}}</td>
+        <td>{{row.score}}</td>
+        <td>{{row.errorMsg}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table *ngIf="product.data2">
+    <thead>
+      <tr>
+        <th>Column Value</th>
+        <th>Total Valid Amount</th>
+        <th>Total Reject Amount</th>
+        <th>Total Amount</th>
+        <th>% Rejected</th>
+        <th>Total Amount -- Excluding Denied / Secondary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of product.data; index as i">
+        <td>{{row.columnValue}}</td>
+        <td>{{row.totalValidAmount}}</td>
+        <td>{{row.totalRejectAmount}}</td>
+        <td>{{row.totalAmount}}</td>
+        <td>{{row.percentRejected}}</td>
+        <td>{{row.totalAmountExcludedDenied}}</td>
+        <td>{{row.estimatedAverage}}</td>
+        <td>{{row.errorMsg}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table *ngIf="product.data3">
+    <thead>
+      <tr>
+        <th>Scripts in submission</th>
+        <th>Scripts in submission</th>
+        <th>Error Msg</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of product.data; index as i">
+        <td>{{row.scriptsInSubmission}}</td>
+        <td>{{row.scriptsInSubmission2}}</td>
+        <td>{{row.errorMsg}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

@@ -1,0 +1,173 @@
+[
+  {
+    "title": "",
+    "data": [
+      {
+        "metricDescription": "Financial bal- Submitted amt (Facility header + Professional & other services) > 4% overall $ rejected",
+        "computedValue": "0.5432",
+        "passIndicator": "P",
+        "ruleWeightPercent": "1",
+        "score": "0",
+        "errorMsg": ""
+      },
+      {
+        "metricDescription": "Financial bal- Non-Covered amt (Facility header + Professional & other services) > 4% overall $$ rejected",
+        "computedValue": "0.7821",
+        "passIndicator": "P",
+        "ruleWeightPercent": "1",
+        "score": "0",
+        "errorMsg": ""
+      },
+      {
+        "metricDescription": "Financial bal- Submitted amt (Facility header + Professional & other services) > 4% overall $ rejected",
+        "computedValue": "0.5432",
+        "passIndicator": "P",
+        "ruleWeightPercent": "1",
+        "score": "0",
+        "errorMsg": ""
+      },
+      {
+        "metricDescription": "Financial bal- Non-Covered amt (Facility header + Professional & other services) > 4% overall $$ rejected",
+        "computedValue": "0.7821",
+        "passIndicator": "P",
+        "ruleWeightPercent": "1",
+        "score": "0",
+        "errorMsg": ""
+      },
+      {
+        "metricDescription": "Financial bal- Submitted amt (Facility header + Professional & other services) > 4% overall $ rejected",
+        "computedValue": "0.5432",
+        "passIndicator": "P",
+        "ruleWeightPercent": "1",
+        "score": "0",
+        "errorMsg": ""
+      },
+      {
+        "metricDescription": "Financial bal- Non-Covered amt (Facility header + Professional & other services) > 4% overall $$ rejected",
+        "computedValue": "0.7821",
+        "passIndicator": "P",
+        "ruleWeightPercent": "1",
+        "score": "0",
+        "errorMsg": ""
+      }
+    ]
+  },
+  {
+    "title": "Product",
+    "data": [
+      {
+        "metricDescription": "Product File 5% total rejected records",
+        "computedValue": "0.0000",
+        "passIndicator": "P",
+        "ruleWeightPercent": "1",
+        "score": "0",
+        "errorMsg": "Failed due to threshold exceeded"
+      },
+      {
+        "metricDescription": "Product File 5% total rejected records",
+        "computedValue": "0.0000",
+        "passIndicator": "P",
+        "ruleWeightPercent": "1",
+        "score": "0",
+        "errorMsg": "Failed due to threshold exceeded"
+      }
+    ]
+  },
+  {
+    "title": "Facility Header",
+    "data": [
+      {
+        "metricDescription": "Facility header file > 5% total records",
+        "computedValue": "0.9876",
+        "passIndicator": "P",
+        "ruleWeightPercent": "0.35",
+        "score": "0",
+        "errorMsg": "Failed due to threshold exceeded"
+      },
+      {
+        "metricDescription": "Facility header file > 5% total records",
+        "computedValue": "0.9876",
+        "passIndicator": "P",
+        "ruleWeightPercent": "0.35",
+        "score": "0",
+        "errorMsg": "Failed due to threshold exceeded"
+      }
+    ],
+    "data2": [
+      {
+        "columnValue": "Submitted Amount",
+        "totalValidAmount": "$758,955,493.90",
+        "totalRejectAmount": "$620,980,783.90",
+        "totalAmount": "$760,989,890.98",
+        "percentRejected": "0.89",
+        "totalAmountExcludingDenied": "$669,518,811.90",
+        "estimatedAverage": "$163.11",
+        "errorMsg": "Failed due to threshold exceeded"
+      }
+    ]
+  },
+  {
+    "title": "Pharmacy",
+    "data": [
+      {
+        "columnValue": "Submitted Amount",
+        "totalValidAmount": "$758,955,493.90",
+        "totalRejectAmount": "$620,980,783.90",
+        "totalAmount": "$760,989,890.98",
+        "percentRejected": "0.89",
+        "totalAmountExcludingDenied": "$669,518,811.90",
+        "estimatedAverage": "$163.11",
+        "errorMsg": "Failed due to threshold exceeded"
+      }
+    ],
+    "data2": [
+      {
+        "columnValue": "Copay",
+        "totalValidAmount": "$265,897,765.80",
+        "totalRejectAmount": "$1,678,342.88",
+        "totalAmount": "$39,989,875.88",
+        "percentRejected": "1.01",
+        "totalAmountExcludingDenied": "$653,987,812.23",
+        "estimatedAverage": "$0.00",
+        "errorMsg": "Failed due to threshold exceeded"
+      }
+    ],
+    "data3": [
+      {
+        "scriptsInSubmission": "Valid records",
+        "scriptsInSubmission2": "475,159",
+        "errorMsg": "Failed due to threshold exceeded"
+      },
+      {
+        "scriptsInSubmission": "Voided records",
+        "scriptsInSubmission2": "29,416",
+        "errorMsg": "Failed due to threshold exceeded"
+      }
+    ]
+  },
+  {
+    "title": "Pharmacy Benefit Tiers",
+    "data": [
+      {
+        "fieldInValue": "09",
+        "frequencyCount": "821",
+        "errorMsg": "Failed due to threshold exceeded"
+      },
+      {
+        "fieldInValue": "08",
+        "frequencyCount": "2,319",
+        "errorMsg": "Failed due to threshold exceeded"
+      }
+    ],
+    "data2": [
+      {
+        "metricDescription": "Account report file > 10% total rejected records",
+        "computedValue": "0.0000",
+        "passIndicator": "P",
+        "ruleWeightPercent": "1",
+        "score": "0",
+        "errorMsg": "Failed due to threshold exceeded"
+      }
+    ]
+  }
+]

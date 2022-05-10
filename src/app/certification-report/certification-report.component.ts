@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import reportData from './report-data.json'
+import productData from './product-data.json'
 
 @Component({
   selector: 'app-certification-report',
@@ -7,8 +8,21 @@ import reportData from './report-data.json'
   styleUrls: ['./certification-report.component.sass']
 })
 export class CertificationReportComponent implements OnInit {
-  products: any = reportData
+  products: any = productData
   menuItems: any = []
+  menuIsOpen: boolean = false
+
+  openMenu() {
+    if(!this.menuIsOpen) {
+      this.menuIsOpen = true
+    }
+  }
+
+  closeMenu() {
+    if(this.menuIsOpen) {
+      this.menuIsOpen = false
+    }
+  }
   
   getMenuItems() {
     // [{title:  'Product 1', items: ['foo', 'bar']}]
@@ -28,5 +42,4 @@ export class CertificationReportComponent implements OnInit {
   ngOnInit(): void {
     this.menuItems = this.getMenuItems()
   }
-
 }
