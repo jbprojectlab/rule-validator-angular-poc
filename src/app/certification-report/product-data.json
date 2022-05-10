@@ -110,6 +110,24 @@
     "title": "Pharmacy",
     "data": [
       {
+        "metricDescription": "Product File 5% total rejected records",
+        "computedValue": "0.0000",
+        "passIndicator": "P",
+        "ruleWeightPercent": "1",
+        "score": "0",
+        "errorMsg": "Failed due to threshold exceeded"
+      },
+      {
+        "metricDescription": "Facility header file > 5% total records",
+        "computedValue": "0.9876",
+        "passIndicator": "P",
+        "ruleWeightPercent": "0.35",
+        "score": "0",
+        "errorMsg": "Failed due to threshold exceeded"
+      }
+    ],
+    "data2": [
+      {
         "columnValue": "Submitted Amount",
         "totalValidAmount": "$758,955,493.90",
         "totalRejectAmount": "$620,980,783.90",
@@ -118,9 +136,7 @@
         "totalAmountExcludingDenied": "$669,518,811.90",
         "estimatedAverage": "$163.11",
         "errorMsg": "Failed due to threshold exceeded"
-      }
-    ],
-    "data2": [
+      },
       {
         "columnValue": "Copay",
         "totalValidAmount": "$265,897,765.80",
