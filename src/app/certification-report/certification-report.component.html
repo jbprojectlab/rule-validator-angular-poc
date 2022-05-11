@@ -21,6 +21,8 @@
     loop through headers -- product.tables[i][0]
     loop through rows -- product.tables[i][1] -->
 
+    <!-- [ngClass]="[menu1 ? 'class1' : '',  menu2 ? 'class1' : '', (something && (menu1 || menu2)) ? 'class2' : '']" -->
+
 <div class="scroll-y">
   <div *ngFor="let product of products; index as i">
     <h4 *ngIf="product.title.length">{{product.title}}</h4>
@@ -30,16 +32,19 @@
         <thead>
           <tr>
             <th class="no-width"></th>
-            <th *ngFor="let header of table[0]; index as k">
+            <!-- <th *ngFor="let header of table[0]; index as k" [ngClass]="{'left-align':  k === 0 || k === table[0].length - 1}">
+              {{header}}
+            </th> -->
+            <th *ngFor="let header of table[0]; index as k" [ngClass]="[k === 0 || k === table[0].length - 1 ? 'left-align' : '', k === 0 ? 'less-padding' : '']">
               {{header}}
             </th>
           </tr>
         </thead>
         <tbody *ngIf="i === 0 || expandedTableIndexes[i][j]">
-          <tr *ngFor="let row of table[1]; index as n">
+          <tr *ngFor="let row of table[1]; index as m">
             <td
-              *ngFor="let cell of row; index as o"
-              [ngClass]="{'left-align': cell.length > 100}"
+              *ngFor="let cell of row; index as n"
+              [ngClass]="[n === 1 || n === row.length - 1 ? 'left-align' : '', n === row.length - 1 ? 'more-padding' : '']"
             >
               <p *ngIf="cell === 'ok_flag'">
                 <img src="assets/img/flag-green.png" />
@@ -63,10 +68,10 @@
           </tr>
         </tbody>
         <tbody *ngIf="i !== 0 && !expandedTableIndexes[i][j]">
-          <tr *ngFor="let row of filterByFlags(table[1]); index as n">
+          <tr *ngFor="let row of filterByFlags(table[1]); index as m">
             <td
-              *ngFor="let cell of row; index as o"
-              [ngClass]="{'left-align': cell.length > 100}"
+              *ngFor="let cell of row; index as n"
+              [ngClass]="[n === 1 || n === row.length - 1 ? 'left-align' : '', n === row.length - 1 ? 'more-padding' : '']"
             >
               <p *ngIf="cell === 'ok_flag'">
                 <img src="assets/img/flag-green.png" />
