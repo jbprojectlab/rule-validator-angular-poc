@@ -14,128 +14,34 @@
   </div>
 </div>
 
+<!-- loop through products
+  product title
+
+  loop through product.tables
+    loop through headers -- product.tables[i][0]
+    loop through rows -- product.tables[i][1] -->
+
 <div class="scroll-y">
   <div *ngFor="let product of products; index as i">
     <h4 *ngIf="product.title.length">{{product.title}}</h4>
-    <div *ngIf="product.title === 'Pharmacy Benefit Tiers'">
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Field In Value</th>
-              <th>Frequency Count</th>
-              <th>Error Msg</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let row of product.data; index as i">
-              <td>{{row.fieldInValue}}</td>
-              <td>{{row.frequencyCount}}</td>
-              <td>{{row.errorMsg}}</td>
-            </tr>
-          </tbody>
-        </table>
-        <button>Show More &plus;</button>
-      </div>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Metric Description</th>
-              <th>Computed Value</th>
-              <th>Pass Indicator</th>
-              <th>Rule Weight Percent</th>
-              <th>Score</th>
-              <th>Error Msg</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let row of product.data2; index as i">
-              <td>{{row.metricDescription}}</td>
-              <td>{{row.computedValue}}</td>
-              <td>{{row.passIndicator}}</td>
-              <td>{{row.ruleWeightPercent}}</td>
-              <td>{{row.score}}</td>
-              <td>{{row.errorMsg}}</td>
-            </tr>
-          </tbody>
-        </table>
-        <button>Show More &plus;</button>
-      </div>
-    </div>
-
-    <div>
-      <table *ngIf="product.data && product.title !== 'Pharmacy Benefit Tiers'">
+    <div *ngFor="let table of product.tables; index as j">
+      <table>
         <thead>
           <tr>
-            <th>Metric Description</th>
-            <th>Computed Value</th>
-            <th>Pass Indicator</th>
-            <th>Rule Weight Percent</th>
-            <th>Score</th>
-            <th>Error Msg</th>
+            <th *ngFor="let header of table[0]; index as k">
+              {{header}}
+            </th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let row of product.data; index as i">
-            <td>{{row.metricDescription}}</td>
-            <td>{{row.computedValue}}</td>
-            <td>{{row.passIndicator}}</td>
-            <td>{{row.ruleWeightPercent}}</td>
-            <td>{{row.score}}</td>
-            <td>{{row.errorMsg}}</td>
+          <tr *ngFor="let row of table[1]; index as n">
+            <td *ngFor="let cell of row; index as o">
+              {{cell}}
+            </td>
           </tr>
         </tbody>
       </table>
-      <button *ngIf="product.data && product.title !== 'Pharmacy Benefit Tiers'">Show More &plus;</button>
-    </div>
-  
-    <div>      
-      <table *ngIf="product.data2 && product.title !== 'Pharmacy Benefit Tiers'">
-        <thead>
-          <tr>
-            <th>Column Value</th>
-            <th>Total Valid Amount</th>
-            <th>Total Reject Amount</th>
-            <th>Total Amount</th>
-            <th>% Rejected</th>
-            <th>Total Amount -- Excluding Denied / Secondary</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of product.data2; index as i">
-            <td>{{row.columnValue}}</td>
-            <td>{{row.totalValidAmount}}</td>
-            <td>{{row.totalRejectAmount}}</td>
-            <td>{{row.totalAmount}}</td>
-            <td>{{row.percentRejected}}</td>
-            <td>{{row.totalAmountExcludedDenied}}</td>
-            <td>{{row.estimatedAverage}}</td>
-            <td>{{row.errorMsg}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <button *ngIf="product.data2 && product.title !== 'Pharmacy Benefit Tiers'">Show More &plus;</button>
-    </div>
-  
-    <div>
-      <table *ngIf="product.data3">
-        <thead>
-          <tr>
-            <th>Scripts in submission</th>
-            <th>Scripts in submission</th>
-            <th>Error Msg</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of product.data3; index as i">
-            <td>{{row.scriptsInSubmission}}</td>
-            <td>{{row.scriptsInSubmission2}}</td>
-            <td>{{row.errorMsg}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <button *ngIf="product.data3 && product.title !== 'Pharmacy Benefit Tiers'">Show More &plus;</button>
+      <button (click)="showLess(i)">Show Less &minus;</button>
     </div>
   </div>
 </div>
