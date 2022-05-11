@@ -26,22 +26,76 @@
     <h4 *ngIf="product.title.length">{{product.title}}</h4>
     <div *ngFor="let table of product.tables; index as j">
       <table>
+        <colgroup [span]="table[0].length"></colgroup>
         <thead>
           <tr>
+            <th class="no-width"></th>
             <th *ngFor="let header of table[0]; index as k">
               {{header}}
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngIf="i === 0 || expandedTableIndexes[i][j]">
           <tr *ngFor="let row of table[1]; index as n">
-            <td *ngFor="let cell of row; index as o">
-              {{cell}}
+            <td
+              *ngFor="let cell of row; index as o"
+              [ngClass]="{'left-align': cell.length > 100}"
+            >
+              <p *ngIf="cell === 'ok_flag'">
+                <img src="assets/img/flag-green.png" />
+              </p>
+              <p *ngIf="cell === 'information_flag'">
+                <img src="assets/img/flag-yellow.png" />
+              </p>
+              <p *ngIf="cell === 'warning_flag'">
+                <img src="assets/img/flag-orange.png" />
+              </p>
+              <p *ngIf="cell === 'critical_flag'">
+                <img src="assets/img/flag-red.png" />
+              </p>
+              <p *ngIf="!cell.includes('flag')">
+                {{cell}}
+              </p>
             </td>
+          </tr>
+          <tr class="bottom-row">
+            <td></td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="i !== 0 && !expandedTableIndexes[i][j]">
+          <tr *ngFor="let row of filterByFlags(table[1]); index as n">
+            <td
+              *ngFor="let cell of row; index as o"
+              [ngClass]="{'left-align': cell.length > 100}"
+            >
+              <p *ngIf="cell === 'ok_flag'">
+                <img src="assets/img/flag-green.png" />
+              </p>
+              <p *ngIf="cell === 'information_flag'">
+                <img src="assets/img/flag-yellow.png" />
+              </p>
+              <p *ngIf="cell === 'warning_flag'">
+                <img src="assets/img/flag-orange.png" />
+              </p>
+              <p *ngIf="cell === 'critical_flag'">
+                <img src="assets/img/flag-red.png" />
+              </p>
+              <p *ngIf="!cell.includes('flag')">
+                {{cell}}
+              </p>
+            </td>
+          </tr>
+          <tr class="bottom-row">
+            <td></td>
           </tr>
         </tbody>
       </table>
-      <button (click)="showLess(i)">Show Less &minus;</button>
+      <div *ngIf="expandedTableIndexes[i][j]" class="show-less-button-container">
+        <button (click)="showLess(i, j)">Show Less &minus;</button>
+      </div>
+      <div *ngIf="i !== 0 && !expandedTableIndexes[i][j]" class="show-less-button-container">
+        <button (click)="showMore(i, j)">Show More &plus;</button>
+      </div>
     </div>
   </div>
 </div>

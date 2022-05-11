@@ -11,16 +11,9 @@ export class CertificationReportComponent implements OnInit {
   products: any = productData
   menuItems: any = []
   menuIsOpen: boolean = false
-  // expandedTableIndexes: any[] = productData.map(({data, data2, data3}, idx) => ({
-  //   idx,
-  //   data,
-  //   data2,
-  //   data3
-  // }))
 
-  expandedTableIndexes: any[] = []
-
-  // expandedTableIndexes: any[] = productData.map((product, idx) => product.tables.map((table, idx) => idx))
+  // @ts-ignore
+  expandedTableIndexes: any[] = productData.map((product, i) => product.tables[0][1].map((row, j) => false))
 
   openMenu() {
     if(!this.menuIsOpen) {
@@ -34,36 +27,42 @@ export class CertificationReportComponent implements OnInit {
     }
   }
 
-  showMore(idx: number) {
-    this.expandedTableIndexes.push(idx)
+  filterByFlags(arr: any[]) {
+    return arr.filter(x => x[0].includes('flag'))
+  }
+
+  showMore(i: number, j: number) {
+    this.expandedTableIndexes[i][j] = true
+    console.log('showing more:   ', this.expandedTableIndexes)
   }
   
-  showLess(idx: number) {
-    this.expandedTableIndexes = this.expandedTableIndexes.filter(i => i !== idx)
+  showLess(i: number, j: number) {
+    console.log(i, j)
+    this.expandedTableIndexes[i][j] = false
     console.log('showing less:  ', this.expandedTableIndexes)
   }
 
-  logTableRows() {
-    for(let i = 0; i < this.products.length; i += 1) {
-      let product = this.products[i]
-      console.log('product title:  ', product.title)
+  // logTableRows() {
+  //   for(let i = 0; i < this.products.length; i += 1) {
+  //     let product = this.products[i]
+  //     console.log('product title:  ', product.title)
 
-      for(let j = 0; j < product.tables.length; j += 1) {
-        let table = product.tables[j]
+  //     for(let j = 0; j < product.tables.length; j += 1) {
+  //       let table = product.tables[j]
         
-        for(let k = 0; k < table.length; k += 1) {
+  //       for(let k = 0; k < table.length; k += 1) {
 
-          console.log('subtable:   ', table)
+  //         console.log('subtable:   ', table)
           
-          for(let m = 0; m < table[0].length; m += 1) {
-            console.log('header:    ', table[0][m])
-          }
+  //         for(let m = 0; m < table[0].length; m += 1) {
+  //           console.log('header:    ', table[0][m])
+  //         }
 
-          console.log('row:   ', table[k])
-        }
-      }
-    }
-  }
+  //         console.log('row:   ', table[k])
+  //       }
+  //     }
+  //   }
+  // }
   
   getMenuItems() {
     // [{title:  'Product 1', items: ['foo', 'bar']}]
@@ -82,6 +81,7 @@ export class CertificationReportComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuItems = this.getMenuItems()
-    this.logTableRows()
+    // this.logTableRows()
+    console.log(this.expandedTableIndexes)
   }
 }

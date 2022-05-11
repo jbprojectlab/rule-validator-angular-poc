@@ -13,6 +13,7 @@
         ],
         [
           [
+            "",
             "Financial bal- Submitted amt (Facility header + Professional & other services) > 4% overall $ rejected",
             "0.5432",
             "P",
@@ -21,6 +22,7 @@
             ""
           ],
           [
+            "",
             "Financial bal- Non-Covered amt (Facility header + Professional & other services) > 4% overall $$ rejected",
             "0.7821",
             "P",
@@ -29,6 +31,7 @@
             ""
           ],
           [
+            "",
             "Financial bal- Submitted amt (Facility header + Professional & other services) > 4% overall $ rejected",
             "0.5432",
             "P",
@@ -37,6 +40,7 @@
             ""
           ],
           [
+            "",
             "Financial bal- Non-Covered amt (Facility header + Professional & other services) > 4% overall $$ rejected",
             "0.7821",
             "P",
@@ -45,6 +49,7 @@
             ""
           ],
           [
+            "",
             "Financial bal- Submitted amt (Facility header + Professional & other services) > 4% overall $ rejected",
             "0.5432",
             "P",
@@ -53,6 +58,7 @@
             ""
           ],
           [
+            "",
             "Financial bal- Non-Covered amt (Facility header + Professional & other services) > 4% overall $$ rejected",
             "0.7821",
             "P",
@@ -68,7 +74,7 @@
     "title": "Product",
     "tables": [
       [
-        [  
+        [
           "Metric Description",
           "Computed Value",
           "Pass Indicator",
@@ -78,6 +84,7 @@
         ],
         [
           [
+            "information_flag",
             "Product File 5% total rejected records",
             "0.0000",
             "P",
@@ -86,6 +93,25 @@
             "Failed due to threshold exceeded"
           ],
           [
+            "ok_flag",
+            "Product File 5% total rejected records",
+            "0.0000",
+            "P",
+            "1",
+            "0",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "",
+            "Product File 5% total rejected records",
+            "0.0000",
+            "P",
+            "1",
+            "0",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "ok_flag",
             "Product File 5% total rejected records",
             "0.0000",
             "P",
@@ -101,7 +127,7 @@
     "title": "Facility Header",
     "tables": [
       [
-        [  
+        [
           "Metric Description",
           "Computed Value",
           "Pass Indicator",
@@ -111,6 +137,7 @@
         ],
         [
           [
+            "warning_flag",
             "Facility header file > 5% total records",
             "0.9876",
             "P",
@@ -119,6 +146,25 @@
             "Failed due to threshold exceeded"
           ],
           [
+            "critical_flag",
+            "Facility header file > 5% total records",
+            "0.9876",
+            "P",
+            "0.35",
+            "0",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "information_flag",
+            "Facility header file > 5% total records",
+            "0.9876",
+            "P",
+            "0.35",
+            "0",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "",
             "Facility header file > 5% total records",
             "0.9876",
             "P",
@@ -141,6 +187,7 @@
         ],
         [
           [
+            "warning_flag",
             "Submitted Amount",
             "$758,955,493.90",
             "$620,980,783.90",
@@ -148,6 +195,17 @@
             "0.89",
             "$669,518,811.90",
             "$163.11",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "critical_flag",
+            "Copay",
+            "$265,897,765.80",
+            "$1,678,342.88",
+            "$39,989,875.88",
+            "1.01",
+            "$653,987,812.23",
+            "$0.00",
             "Failed due to threshold exceeded"
           ]
         ]
@@ -168,6 +226,7 @@
         ],
         [
           [
+            "information_flag",
             "Product File 5% total rejected records",
             "0.0000",
             "P",
@@ -176,6 +235,25 @@
             "Failed due to threshold exceeded"
           ],
           [
+            "ok_flag",
+            "Facility header file > 5% total records",
+            "0.9876",
+            "P",
+            "0.35",
+            "0",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "",
+            "Product File 5% total rejected records",
+            "0.0000",
+            "P",
+            "1",
+            "0",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "",
             "Facility header file > 5% total records",
             "0.9876",
             "P",
@@ -198,6 +276,7 @@
         ],
         [
           [
+            "warning_flag",
             "Submitted Amount",
             "$758,955,493.90",
             "$620,980,783.90",
@@ -208,6 +287,29 @@
             "Failed due to threshold exceeded"
           ],
           [
+            "critical_flag",
+            "Copay",
+            "$265,897,765.80",
+            "$1,678,342.88",
+            "$39,989,875.88",
+            "1.01",
+            "$653,987,812.23",
+            "$0.00",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "",
+            "Submitted Amount",
+            "$758,955,493.90",
+            "$620,980,783.90",
+            "$760,989,890.98",
+            "0.89",
+            "$669,518,811.90",
+            "$163.11",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "",
             "Copay",
             "$265,897,765.80",
             "$1,678,342.88",
@@ -227,11 +329,13 @@
         ],
         [
           [
+            "warning_flag",
             "Valid records",
             "475,159",
             "Failed due to threshold exceeded"
           ],
           [
+            "",
             "Voided records",
             "29,416",
             "Failed due to threshold exceeded"
@@ -251,11 +355,37 @@
         ],
         [
           [
+            "information_flag",
             "09",
             "821",
             "Failed due to threshold exceeded"
           ],
           [
+            "ok_flag",
+            "08",
+            "2,319",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "",
+            "09",
+            "821",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "",
+            "08",
+            "2,319",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "",
+            "09",
+            "821",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "",
             "08",
             "2,319",
             "Failed due to threshold exceeded"
@@ -273,6 +403,25 @@
         ],
         [
           [
+            "ok_flag",
+            "Account report file > 10% total rejected records",
+            "0.0000",
+            "P",
+            "1",
+            "0",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "",
+            "Account report file > 10% total rejected records",
+            "0.0000",
+            "P",
+            "1",
+            "0",
+            "Failed due to threshold exceeded"
+          ],
+          [
+            "",
             "Account report file > 10% total rejected records",
             "0.0000",
             "P",

@@ -37,15 +37,16 @@ span.open
       margin-left: 4px
 
 .scroll-y
-  height: calc(100vh - 460px)
+  height: calc(100vh - 500px)
   margin: 0 40px
   background-color: var(--background-shade-light-grey)
+  border: 1px solid var(--background-shade-light-grey)
   border-radius: var(--rounded-corner-border-radius)
   border-spacing: 0
   padding: 20px
 
   h4
-    margin-top: 40px
+    margin-top: 80px
 
 table
   background-color: var(--white)
@@ -53,18 +54,50 @@ table
   border-radius: var(--rounded-corner-border-radius)
   margin-bottom: 20px
   width: 100%
+  padding: 0
+  border-spacing: 0
 
-  th, td
+  th
+    border-bottom: 1px solid var(--border-light-grey)
+    padding: 10px
+    text-align: left
+    padding: 20px
     text-align: center
 
-button, input[type="submit"], input[type="reset"]
-  background: var(--secondary-blue)
-  border-radius: var(--rounded-corner-border-radius)
-  color: var(--white)
-  border: none
-  padding: 6px 12px
-  margin-bottom: 20px
-  margin-top: -400px
-  font: inherit
-  cursor: pointer
-  outline: inherit
+  th,
+  td
+    color: rgba(0, 2, 3, 0.5)
+
+  tbody
+    tr:nth-child(odd)
+      background-color: var(--background-shade-blue)
+
+    tr:hover
+      background-color: var(--background-shade-dark-grey)
+    
+    tr.bottom-row
+      background-color: rgba(255, 255, 255, 0)
+      opacity: 0
+    
+    td
+      padding: 10px
+      text-align: center
+      white-space: nowrap
+
+      &.left-align
+        text-align: left
+
+.show-less-button-container
+  float: right
+  margin-bottom: 40px
+
+  button, input[type="submit"], input[type="reset"]
+    background: var(--secondary-blue)
+    border-radius: var(--rounded-corner-border-radius)
+    color: var(--white)
+    border: none
+    padding: 6px 12px
+    font: inherit
+    cursor: pointer
+    outline: inherit
+    width: 200px
