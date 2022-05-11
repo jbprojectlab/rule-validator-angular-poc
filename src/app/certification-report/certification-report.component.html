@@ -14,14 +14,32 @@
   </div>
 </div>
 
+<div class="header">
+  <h4>L2 Certification Report</h4>
+  <img src="assets/img/flag-blue.png" (click)="openFlagMenu()" />
+</div>
+
+<div *ngIf="flagMenuIsOpen" class="flag-menu">
+  <span>
+    <p>Critical</p>
+  </span>
+  <span>
+    <p>Warning</p>
+  </span>
+  <span>
+    <p>Information</p>
+  </span>
+  <span>
+    <p>Ok</p>
+  </span>
+</div>
+
 <!-- loop through products
   product title
 
   loop through product.tables
     loop through headers -- product.tables[i][0]
     loop through rows -- product.tables[i][1] -->
-
-    <!-- [ngClass]="[menu1 ? 'class1' : '',  menu2 ? 'class1' : '', (something && (menu1 || menu2)) ? 'class2' : '']" -->
 
 <div class="scroll-y">
   <div *ngFor="let product of products; index as i">
@@ -32,9 +50,6 @@
         <thead>
           <tr>
             <th class="no-width"></th>
-            <!-- <th *ngFor="let header of table[0]; index as k" [ngClass]="{'left-align':  k === 0 || k === table[0].length - 1}">
-              {{header}}
-            </th> -->
             <th *ngFor="let header of table[0]; index as k" [ngClass]="[k === 0 || k === table[0].length - 1 ? 'left-align' : '', k === 0 ? 'less-padding' : '']">
               {{header}}
             </th>

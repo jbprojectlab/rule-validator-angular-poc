@@ -41,6 +41,49 @@ span.open
       margin: 12px 4px
       cursor: pointer
 
+.header
+  display: flex
+  width: calc(100% - 120px)
+  margin: -20px 60px 20px
+  justify-content: space-between
+
+  h4
+    margin: 0
+
+  img
+    margin-right: 20px
+    cursor: pointer
+
+.flag-menu
+  position: absolute
+  right: 80px
+  top: 350px
+  display: flex
+  flex-direction: column
+  border-radius: var(--corner-border-radius)
+  background-color: var(--dark-blue-bg)
+  color: var(--white)
+  padding: 0 8px
+  width: 280px
+  font-size: 16px
+  font-weight: bold
+
+  span
+    padding: 8px
+
+    p
+      border-radius: var(--rounded-corner-border-radius)
+      padding: 16px 32px
+      margin: 0
+      cursor: pointer
+
+      &:hover,
+      &.active
+        background-color: var(--primary-blue-dark)
+  
+  span:not(:nth-child(0))
+    border-bottom: 1px solid var(--background-shade-dark-grey)
+
 .scroll-y
   height: calc(100vh - 500px)
   margin: 0 40px

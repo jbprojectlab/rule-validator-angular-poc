@@ -11,6 +11,7 @@ export class CertificationReportComponent implements OnInit {
   products: any = productData
   menuItems: any = []
   menuIsOpen: boolean = false
+  flagMenuIsOpen: boolean = false
 
   // @ts-ignore
   expandedTableIndexes: any[] = productData.map((product, i) => product.tables[0][1].map((row, j) => false))
@@ -27,6 +28,17 @@ export class CertificationReportComponent implements OnInit {
     }
   }
 
+  openFlagMenu() {
+    if(!this.flagMenuIsOpen) {
+      this.flagMenuIsOpen = true
+    }
+  }
+
+  closeFlagMenu() {
+    if(this.flagMenuIsOpen) {
+      this.flagMenuIsOpen = false
+    }
+  }
   filterByFlags(arr: any[]) {
     return arr.filter(x => x[0].includes('flag'))
   }
@@ -43,7 +55,6 @@ export class CertificationReportComponent implements OnInit {
   }
 
   getMenuItems() {
-    // [{title:  'Product 1', items: ['foo', 'bar']}]
     const menuItems: any = []
     for(let i = 1; i < this.products.length; i += 1) {
       let product = this.products[i]
@@ -62,62 +73,16 @@ export class CertificationReportComponent implements OnInit {
 
   scrollToTable(tableId: number) {
     console.log('scroll to tableId:   ', tableId)
-    // inside ngAfterViewInit() to make sure the list items render or inside ngAfterViewChecked() if you are anticipating live data using @Inputs
     const table = document.getElementById('item-' + tableId);
-    // null check to ensure that the element actually exists
     if(table) {
       table.scrollIntoView(true);
     }
   }
 
-  // <button (click)="scroll(target)"></button>
-  // <div #target>Your target</div>
-
-
-  // scroll(el: HTMLElement) {
-  //   el.scrollIntoView();
-  // }
-
-  // getMenuItems() {
-  //   // [{title:  'Product 1', items: ['foo', 'bar']}]
-  //   const menuItems: any = []
-  //   for(let i = 0; i < reportData.length; i += 1) {
-  //     let product = reportData[i]
-  //     let section: any = {}
-  //     section.title = product.name
-  //     section.items = Object.keys(product.data)
-  //     menuItems.push(section)
-  //   }
-  //   return menuItems
-  // }
-
-  // logTableRows() {
-  //   for(let i = 0; i < this.products.length; i += 1) {
-  //     let product = this.products[i]
-  //     console.log('product title:  ', product.title)
-
-  //     for(let j = 0; j < product.tables.length; j += 1) {
-  //       let table = product.tables[j]
-        
-  //       for(let k = 0; k < table.length; k += 1) {
-
-  //         console.log('subtable:   ', table)
-          
-  //         for(let m = 0; m < table[0].length; m += 1) {
-  //           console.log('header:    ', table[0][m])
-  //         }
-
-  //         console.log('row:   ', table[k])
-  //       }
-  //     }
-  //   }
-  // }
-
   constructor() { }
 
   ngOnInit(): void {
     this.menuItems = this.getMenuItems()
-    // this.logTableRows()
     console.log(this.expandedTableIndexes)
   }
 }
