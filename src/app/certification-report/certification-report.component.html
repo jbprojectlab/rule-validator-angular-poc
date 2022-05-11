@@ -4,11 +4,11 @@
 
 <div *ngIf="menuIsOpen" class="report-menu">
   <span class="close" (click)="closeMenu()">&#10005;</span>
-  <div *ngFor="let section of menuItems">
+  <div *ngFor="let section of menuItems; index as i">
     <div class="menu-section">
-      <h5>{{section.title}}</h5>
+      <h4>{{section.title}}</h4>
       <div *ngFor="let item of section.items">
-        <span>{{item}}</span>
+        <h6 id="item-{{i}}" (click)="scrollToTable(item.slice(6))">{{item}}</h6>
       </div>
     </div>
   </div>

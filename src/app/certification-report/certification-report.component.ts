@@ -42,6 +42,55 @@ export class CertificationReportComponent implements OnInit {
     console.log('showing less:  ', this.expandedTableIndexes)
   }
 
+  getMenuItems() {
+    // [{title:  'Product 1', items: ['foo', 'bar']}]
+    const menuItems: any = []
+    for(let i = 1; i < this.products.length; i += 1) {
+      let product = this.products[i]
+      let section: any = {
+        title: '',
+        items: []
+      }
+      section.title = product.title
+      for(let j = 0; j < product.tables.length; j += 1) {
+        section.items.push('Table ' + (j + 1))
+      }
+      menuItems.push(section)
+    }
+    return menuItems
+  }
+
+  scrollToTable(tableId: number) {
+    console.log('scroll to tableId:   ', tableId)
+    // inside ngAfterViewInit() to make sure the list items render or inside ngAfterViewChecked() if you are anticipating live data using @Inputs
+    const table = document.getElementById('item-' + tableId);
+    // null check to ensure that the element actually exists
+    if(table) {
+      table.scrollIntoView(true);
+    }
+  }
+
+  // <button (click)="scroll(target)"></button>
+  // <div #target>Your target</div>
+
+
+  // scroll(el: HTMLElement) {
+  //   el.scrollIntoView();
+  // }
+
+  // getMenuItems() {
+  //   // [{title:  'Product 1', items: ['foo', 'bar']}]
+  //   const menuItems: any = []
+  //   for(let i = 0; i < reportData.length; i += 1) {
+  //     let product = reportData[i]
+  //     let section: any = {}
+  //     section.title = product.name
+  //     section.items = Object.keys(product.data)
+  //     menuItems.push(section)
+  //   }
+  //   return menuItems
+  // }
+
   // logTableRows() {
   //   for(let i = 0; i < this.products.length; i += 1) {
   //     let product = this.products[i]
@@ -63,19 +112,6 @@ export class CertificationReportComponent implements OnInit {
   //     }
   //   }
   // }
-  
-  getMenuItems() {
-    // [{title:  'Product 1', items: ['foo', 'bar']}]
-    const menuItems: any = []
-    for(let i = 0; i < reportData.length; i += 1) {
-      let product = reportData[i]
-      let section: any = {}
-      section.title = product.name
-      section.items = Object.keys(product.data)
-      menuItems.push(section)
-    }
-    return menuItems
-  }
 
   constructor() { }
 
