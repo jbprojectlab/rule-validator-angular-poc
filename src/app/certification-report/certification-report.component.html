@@ -16,21 +16,21 @@
 
 <div class="header">
   <h4>L2 Certification Report</h4>
-  <img src="assets/img/flag-blue.png" (click)="openFlagMenu()" />
+  <img src="assets/img/flag-blue.png" (click)="toggleFlagMenu()" />
 </div>
 
 <div *ngIf="flagMenuIsOpen" class="flag-menu">
   <span>
-    <p>Critical</p>
+    <p (click)="filterTablesByFlag('critical_flag')">Critical</p>
   </span>
   <span>
-    <p>Warning</p>
+    <p (click)="filterTablesByFlag('warning_flag')">Warning</p>
   </span>
   <span>
-    <p>Information</p>
+    <p (click)="filterTablesByFlag('information_flag')">Information</p>
   </span>
   <span>
-    <p>Ok</p>
+    <p (click)="filterTablesByFlag('ok_flag')">Ok</p>
   </span>
 </div>
 
@@ -83,7 +83,7 @@
           </tr>
         </tbody>
         <tbody *ngIf="i !== 0 && !expandedTableIndexes[i][j]">
-          <tr *ngFor="let row of filterByFlags(table[1]); index as m">
+          <tr *ngFor="let row of filterTableByFlags(table[1]); index as m">
             <td
               *ngFor="let cell of row; index as n"
               [ngClass]="[n === 1 || n === row.length - 1 ? 'left-align' : '', n === row.length - 1 ? 'more-padding' : '']"

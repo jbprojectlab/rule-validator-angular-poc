@@ -28,19 +28,46 @@ export class CertificationReportComponent implements OnInit {
     }
   }
 
-  openFlagMenu() {
-    if(!this.flagMenuIsOpen) {
-      this.flagMenuIsOpen = true
-    }
+  toggleFlagMenu() {
+    this.flagMenuIsOpen = !this.flagMenuIsOpen
   }
 
-  closeFlagMenu() {
-    if(this.flagMenuIsOpen) {
-      this.flagMenuIsOpen = false
-    }
-  }
-  filterByFlags(arr: any[]) {
+  filterTableByFlags(arr: any[]) {
     return arr.filter(x => x[0].includes('flag'))
+  }
+
+  filterTablesByFlag(flagType: string) {
+    // this.products = this.products.map((product: any) => product.tables[0][1].filter((row: any) => row[0].includes(flagType)))
+    // console.log('filtered products:   ', this.products.map((product: any) => product.tables[0][1].filter((row: any) => row[0].includes(flagType))))
+
+    const filtered = []
+
+    for(let i = 0; i < this.products.length; i += 1) {
+      let product = this.products[i]
+      // console.log('product:   ', product)
+
+      for(let j = 0; j < product.tables.length; j += 1) {
+        let table = product.tables[j][1].filter((row: any) => row[0] === flagType)
+        // console.log('table:  ', table)
+
+        // for(let k = 0; k < table.length; k += 1) {
+        //   let row = table[k]
+        //   // console.log('row:   ', row)
+
+        //   if(row[0] === flagType) {
+        //     console.log('filtered row:  ', row)
+        //   }
+
+        product.tables[j][1] = table
+        console.log('table:  ', table)
+      }
+      filtered.push(product)
+    }
+    this.products = filtered
+
+    // this.products = this.products.map((product: any) => product.tables[0][1].filter((row: any) => row[0].includes(flagType)))
+    this.expandedTableIndexes = this.expandedTableIndexes.map(x => x.map((y: boolean) => false))
+    // console.log('expandedTables:  ', this.expandedTableIndexes)
   }
 
   showMore(i: number, j: number) {
@@ -83,6 +110,6 @@ export class CertificationReportComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuItems = this.getMenuItems()
-    console.log(this.expandedTableIndexes)
+    // console.log(this.expandedTableIndexes)
   }
 }
