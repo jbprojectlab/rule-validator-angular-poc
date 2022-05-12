@@ -40,34 +40,30 @@ export class CertificationReportComponent implements OnInit {
     // this.products = this.products.map((product: any) => product.tables[0][1].filter((row: any) => row[0].includes(flagType)))
     // console.log('filtered products:   ', this.products.map((product: any) => product.tables[0][1].filter((row: any) => row[0].includes(flagType))))
 
-    const filtered = []
+    console.log('productData:   ', productData)
+    this.products = productData
+    const filtered = [this.products[0]]
 
-    for(let i = 0; i < this.products.length; i += 1) {
+    for(let i = 1; i < this.products.length; i += 1) {
       let product = this.products[i]
-      // console.log('product:   ', product)
-
       for(let j = 0; j < product.tables.length; j += 1) {
         let table = product.tables[j][1].filter((row: any) => row[0] === flagType)
-        // console.log('table:  ', table)
-
-        // for(let k = 0; k < table.length; k += 1) {
-        //   let row = table[k]
-        //   // console.log('row:   ', row)
-
-        //   if(row[0] === flagType) {
-        //     console.log('filtered row:  ', row)
-        //   }
-
         product.tables[j][1] = table
-        console.log('table:  ', table)
       }
       filtered.push(product)
     }
     this.products = filtered
-
-    // this.products = this.products.map((product: any) => product.tables[0][1].filter((row: any) => row[0].includes(flagType)))
     this.expandedTableIndexes = this.expandedTableIndexes.map(x => x.map((y: boolean) => false))
-    // console.log('expandedTables:  ', this.expandedTableIndexes)
+  }
+
+  productHasTables(product: any) {
+    for(let i = 0; i < product.tables.length; i += 1) {
+      const table = product.tables[i]
+      for(let j = 1; j < table.length; j += 1) {
+        if(table[j].length) return true
+      }
+    }
+    return false
   }
 
   showMore(i: number, j: number) {
