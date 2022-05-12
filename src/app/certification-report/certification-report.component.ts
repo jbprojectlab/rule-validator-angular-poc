@@ -38,15 +38,8 @@ export class CertificationReportComponent implements OnInit {
   }
 
   filterTablesByFlag(flagType: string) {
-    // console.log('flagType:  ', flagType)
-    console.log('productData:   ', productData)
-    
     this.products = JSON.parse(JSON.stringify(productData))
-    // console.log('products:  ', this.products)
-
     const filtered = [this.products[0]]
-
-    // let products = this.products.map((product: any) => product)
 
     for(let i = 1; i < this.products.length; i += 1) {
       let product = this.products[i]
@@ -59,9 +52,6 @@ export class CertificationReportComponent implements OnInit {
     }
     this.products = [...filtered]
     this.expandedTableIndexes = this.expandedTableIndexes.map(x => x.map((y: boolean) => false))
-
-    console.log('filtered:  ', filtered)
-    // console.log('this.products after filter:   ', this.products)
   }
 
   productHasTables(product: any) {
