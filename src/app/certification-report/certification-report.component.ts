@@ -8,13 +8,14 @@ import productData from './product-data.json'
   styleUrls: ['./certification-report.component.sass']
 })
 export class CertificationReportComponent implements OnInit {
-  products: any = productData
+  initialProducts: any = JSON.parse(JSON.stringify(productData)) 
+  products: any = this.initialProducts
   menuItems: any = []
   menuIsOpen: boolean = false
   flagMenuIsOpen: boolean = false
 
   // @ts-ignore
-  expandedTableIndexes: any[] = productData.map((product, i) => product.tables[0][1].map((row, j) => false))
+  expandedTableIndexes: any[] = this.initialProducts.map((product, i) => product.tables[0][1].map((row, j) => false))
 
   openMenu() {
     if(!this.menuIsOpen) {
@@ -37,28 +38,36 @@ export class CertificationReportComponent implements OnInit {
   }
 
   filterTablesByFlag(flagType: string) {
-    // this.products = this.products.map((product: any) => product.tables[0][1].filter((row: any) => row[0].includes(flagType)))
-    // console.log('filtered products:   ', this.products.map((product: any) => product.tables[0][1].filter((row: any) => row[0].includes(flagType))))
-
+    // console.log('flagType:  ', flagType)
     console.log('productData:   ', productData)
-    this.products = productData
+    
+    this.products = JSON.parse(JSON.stringify(productData))
+    // console.log('products:  ', this.products)
+
     const filtered = [this.products[0]]
+
+    // let products = this.products.map((product: any) => product)
 
     for(let i = 1; i < this.products.length; i += 1) {
       let product = this.products[i]
-      for(let j = 0; j < product.tables.length; j += 1) {
-        let table = product.tables[j][1].filter((row: any) => row[0] === flagType)
-        product.tables[j][1] = table
+      const tables = product.tables.map((table: any) => table)
+      for(let j = 0; j < tables.length; j += 1) {
+        let table = tables[j][1].filter((row: any) => row[0] === flagType)
+        tables[j][1] = table
       }
       filtered.push(product)
     }
-    this.products = filtered
+    this.products = [...filtered]
     this.expandedTableIndexes = this.expandedTableIndexes.map(x => x.map((y: boolean) => false))
+
+    console.log('filtered:  ', filtered)
+    // console.log('this.products after filter:   ', this.products)
   }
 
   productHasTables(product: any) {
-    for(let i = 0; i < product.tables.length; i += 1) {
-      const table = product.tables[i]
+    const tables = product.tables.map((table: any) => table)
+    for(let i = 0; i < tables.length; i += 1) {
+      const table = tables[i]
       for(let j = 1; j < table.length; j += 1) {
         if(table[j].length) return true
       }
@@ -106,6 +115,5 @@ export class CertificationReportComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuItems = this.getMenuItems()
-    // console.log(this.expandedTableIndexes)
   }
 }
