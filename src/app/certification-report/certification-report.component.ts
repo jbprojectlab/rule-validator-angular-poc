@@ -66,14 +66,14 @@ export class CertificationReportComponent implements OnInit {
   }
 
   showMore(i: number, j: number) {
+    const initProducts = JSON.parse(JSON.stringify(productData))
     this.expandedTableIndexes[i][j] = true
-    console.log('showing more:   ', this.expandedTableIndexes)
+    const table = initProducts[i].tables[j][1]
+    this.products[i].tables[j][1] = table
   }
   
   showLess(i: number, j: number) {
-    console.log(i, j)
     this.expandedTableIndexes[i][j] = false
-    console.log('showing less:  ', this.expandedTableIndexes)
   }
 
   getMenuItems() {
