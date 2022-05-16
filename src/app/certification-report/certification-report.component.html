@@ -7,9 +7,9 @@
   <span class="menu-header" (click)="resetFilter()">Products</span>
   <div *ngFor="let section of menuItems; index as i">
     <div class="menu-section">
-      <h4>{{section.title}}</h4>
+      <h4 (click)="filterTablesByProduct(section.title)">{{section.title}}</h4>
       <div *ngFor="let item of section.items">
-        <h6 id="item-{{i}}" (click)="filterTables(section.title, i)">{{item}}</h6>
+        <h6 id="item-{{i}}" (click)="filterTablesByTable(section.title, i)">{{item}}</h6>
       </div>
     </div>
   </div>

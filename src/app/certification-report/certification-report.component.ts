@@ -37,10 +37,23 @@ export class CertificationReportComponent implements OnInit {
     this.products = JSON.parse(JSON.stringify(productData))
   }
 
-  filterTables(title: string, tableIdx: number) {
+  filterTablesByProduct(title: string) {
+    const products = JSON.parse(JSON.stringify(productData))
+    const filtered = [products[0]]
+
+    for(let i = 1; i < products.length; i += 1) {
+      let product = products[i]
+      if(product.title === title) {
+        filtered.push(product)
+      }
+    }
+    this.products = [...filtered]
+    this.expandedTableIndexes = this.expandedTableIndexes.map(x => x.map((y: boolean) => false))
+  }
+
+  filterTablesByTable(title: string, tableIdx: number) {
     const products = JSON.parse(JSON.stringify(productData))
     let filteredTable = []
-    const filtered = [products[0]]
     const filteredProduct: any = {
       title,
       tables: []
@@ -50,11 +63,9 @@ export class CertificationReportComponent implements OnInit {
       let product = products[i]
       if(product.title === title) {
         filteredTable = product.tables[tableIdx]
-        console.log('filteredTable:  ', filteredTable)
         filteredProduct.tables.push(filteredTable)
       }
     }
-    console.log('filtered:  ', filtered)
     this.products = [products[0], filteredProduct]
     this.expandedTableIndexes = this.expandedTableIndexes.map(x => x.map((y: boolean) => false))
   }
