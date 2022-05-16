@@ -4,11 +4,12 @@
 
 <div *ngIf="menuIsOpen" class="report-menu">
   <span class="close" (click)="closeMenu()">&#10005;</span>
+  <span class="menu-header" (click)="resetFilter()">Products</span>
   <div *ngFor="let section of menuItems; index as i">
     <div class="menu-section">
       <h4>{{section.title}}</h4>
       <div *ngFor="let item of section.items">
-        <h6 id="item-{{i}}" (click)="scrollToTable(item.slice(6))">{{item}}</h6>
+        <h6 id="item-{{i}}" (click)="filterTables(section.title, i)">{{item}}</h6>
       </div>
     </div>
   </div>
@@ -45,7 +46,7 @@
   <div *ngFor="let product of products; index as i">
     <h4 *ngIf="product.title.length && productHasTables(product)">{{product.title}}</h4>
     <div *ngFor="let table of product.tables; index as j">
-      <table *ngIf="i === 0 || table[1].length">
+      <table *ngIf="i === 0 || table[1] && table[1].length">
         <colgroup [span]="table[0].length"></colgroup>
         <thead>
           <tr>
@@ -110,7 +111,7 @@
           </tr>
         </tbody>
       </table>
-      <div *ngIf="table[1].length">
+      <div *ngIf="table[1] && table[1].length">
         <div *ngIf="expandedTableIndexes[i][j]" class="show-less-button-container">
           <button (click)="showLess(i, j)">Show Less &minus;</button>
         </div>

@@ -33,6 +33,32 @@ export class CertificationReportComponent implements OnInit {
     this.flagMenuIsOpen = !this.flagMenuIsOpen
   }
 
+  resetFilter() {
+    this.products = JSON.parse(JSON.stringify(productData))
+  }
+
+  filterTables(title: string, tableIdx: number) {
+    const products = JSON.parse(JSON.stringify(productData))
+    let filteredTable = []
+    const filtered = [products[0]]
+    const filteredProduct: any = {
+      title,
+      tables: []
+    }
+
+    for(let i = 1; i < products.length; i += 1) {
+      let product = products[i]
+      if(product.title === title) {
+        filteredTable = product.tables[tableIdx]
+        console.log('filteredTable:  ', filteredTable)
+        filteredProduct.tables.push(filteredTable)
+      }
+    }
+    console.log('filtered:  ', filtered)
+    this.products = [products[0], filteredProduct]
+    this.expandedTableIndexes = this.expandedTableIndexes.map(x => x.map((y: boolean) => false))
+  }
+
   filterTableByFlags(arr: any[]) {
     return arr.filter(x => x[0].includes('flag'))
   }
@@ -67,9 +93,9 @@ export class CertificationReportComponent implements OnInit {
 
   showMore(i: number, j: number) {
     const initProducts = JSON.parse(JSON.stringify(productData))
-    this.expandedTableIndexes[i][j] = true
     const table = initProducts[i].tables[j][1]
     this.products[i].tables[j][1] = table
+    this.expandedTableIndexes[i][j] = true
   }
   
   showLess(i: number, j: number) {
