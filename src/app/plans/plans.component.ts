@@ -65,13 +65,13 @@ export class PlansComponent implements OnInit {
     return dateOptions
   }
 
-  selectedSubmissionGroupOption!: string;
+  selectedSubmissionGroupOption!: number;
   selectedPaidThroughPeriodOption: string = this.getCurrentPaidDate();
   selectedSubmissionCurrentStateOption!: string;
   selectedCategoryOption!: string;
   selectedStatusOption!: string;
 
-  submissionGroupOptions!: string[] | any[]
+  submissionGroupOptions!: number[] | any[]
   paidThroughPeriodOptions!: string[] | any[] 
   submissionCurrentStateOptions!: string[] | any[]
   categoryOptions!: string[] | any[]
@@ -86,7 +86,7 @@ export class PlansComponent implements OnInit {
   }
 
   handleSearchFilterChange(key: string, value: string | number) {
-    if(key === 'paidThroughPeriod') {
+    if(key === 'paidThroughPeriod' || key === 'submissionGroup') {
       this.getPlans()
     }
     
@@ -119,8 +119,11 @@ export class PlansComponent implements OnInit {
       submissionCurrentState = plan.submissionCurrentState,
       category = plan.category,
       status = plan.status
+
+      let submissionGroupSearchFilter: number = Number(this.searchFilter.submissionGroup)
+      let submissionGroupNumber: number = Number(submissionGroup)
       
-      if(!this.searchFilter.submissionGroup || this.searchFilter.submissionGroup === submissionGroup) {
+      if(!this.searchFilter.submissionGroup || submissionGroupSearchFilter === submissionGroupNumber) {
         filteredPlan.submissionGroup = submissionGroup
       } else continue
 
@@ -148,7 +151,7 @@ export class PlansComponent implements OnInit {
   }
 
   paidThroughPeriod: string = this.getCurrentPaidDate()
-  submissionGroup: string = ""
+  submissionGroup: number = 0
 
   search() {
     this.isSearching = true
