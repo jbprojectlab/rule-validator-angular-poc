@@ -17,30 +17,8 @@
 
 <div class="header">
   <h4>L2 Certification Report</h4>
-  <img src="assets/img/flag-blue.png" (click)="toggleFlagMenu()" />
+  <img src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
 </div>
-
-<div *ngIf="flagMenuIsOpen" class="flag-menu">
-  <span>
-    <p (click)="filterTablesByFlag('critical_flag')">Critical</p>
-  </span>
-  <span>
-    <p (click)="filterTablesByFlag('warning_flag')">Warning</p>
-  </span>
-  <span>
-    <p (click)="filterTablesByFlag('information_flag')">Information</p>
-  </span>
-  <span>
-    <p (click)="filterTablesByFlag('ok_flag')">Ok</p>
-  </span>
-</div>
-
-<!-- loop through products
-  product title
-
-  loop through product.tables
-    loop through headers -- product.tables[i][0]
-    loop through rows -- product.tables[i][1] -->
 
 <div class="scroll-y">
   <div *ngFor="let product of products; index as i">
@@ -62,17 +40,8 @@
               *ngFor="let cell of row; index as n"
               [ngClass]="[n === 1 || n === row.length - 1 ? 'left-align' : '', n === row.length - 1 ? 'more-padding' : '']"
             >
-              <p *ngIf="cell === 'ok_flag'">
-                <img src="assets/img/flag-green.png" />
-              </p>
-              <p *ngIf="cell === 'information_flag'">
-                <img src="assets/img/flag-yellow.png" />
-              </p>
               <p *ngIf="cell === 'warning_flag'">
-                <img src="assets/img/flag-orange.png" />
-              </p>
-              <p *ngIf="cell === 'critical_flag'">
-                <img src="assets/img/flag-red.png" />
+                <img src="assets/img/flag-yellow.png" />
               </p>
               <p *ngIf="!cell.includes('flag')">
                 {{cell}}

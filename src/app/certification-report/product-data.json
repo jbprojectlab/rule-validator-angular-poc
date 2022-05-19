@@ -84,7 +84,7 @@
         ],
         [
           [
-            "information_flag",
+            "warning_flag",
             "Product File 5% total rejected records",
             "0.0000",
             "P",
@@ -93,7 +93,7 @@
             "Failed due to threshold exceeded"
           ],
           [
-            "ok_flag",
+            "warning_flag",
             "Product File 5% total rejected records",
             "0.0000",
             "P",
@@ -111,7 +111,7 @@
             "Failed due to threshold exceeded"
           ],
           [
-            "ok_flag",
+            "warning_flag",
             "Product File 5% total rejected records",
             "0.0000",
             "P",
@@ -146,7 +146,7 @@
             "Failed due to threshold exceeded"
           ],
           [
-            "critical_flag",
+            "warning_flag",
             "Facility header file > 5% total records",
             "0.9876",
             "P",
@@ -155,7 +155,7 @@
             "Failed due to threshold exceeded"
           ],
           [
-            "information_flag",
+            "warning_flag",
             "Facility header file > 5% total records",
             "0.9876",
             "P",
@@ -198,7 +198,7 @@
             "Failed due to threshold exceeded"
           ],
           [
-            "critical_flag",
+            "warning_flag",
             "Copay",
             "$265,897,765.80",
             "$1,678,342.88",
@@ -226,7 +226,7 @@
         ],
         [
           [
-            "information_flag",
+            "warning_flag",
             "Product File 5% total rejected records",
             "0.0000",
             "P",
@@ -235,7 +235,7 @@
             "Failed due to threshold exceeded"
           ],
           [
-            "ok_flag",
+            "warning_flag",
             "Facility header file > 5% total records",
             "0.9876",
             "P",
@@ -287,7 +287,7 @@
             "Failed due to threshold exceeded"
           ],
           [
-            "critical_flag",
+            "warning_flag",
             "Copay",
             "$265,897,765.80",
             "$1,678,342.88",
@@ -355,13 +355,13 @@
         ],
         [
           [
-            "information_flag",
+            "warning_flag",
             "09",
             "821",
             "Failed due to threshold exceeded"
           ],
           [
-            "ok_flag",
+            "warning_flag",
             "08",
             "2,319",
             "Failed due to threshold exceeded"
@@ -403,7 +403,7 @@
         ],
         [
           [
-            "ok_flag",
+            "warning_flag",
             "Account report file > 10% total rejected records",
             "0.0000",
             "P",

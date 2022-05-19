@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import reportData from './report-data.json'
 import productData from './product-data.json'
 
 @Component({
@@ -12,7 +11,8 @@ export class CertificationReportComponent implements OnInit {
   products: any = this.initialProducts
   menuItems: any = []
   menuIsOpen: boolean = false
-  flagMenuIsOpen: boolean = false
+  tablesFilteredByFlag: boolean = false
+  flagImgSrc: string = 'flag.png'
 
   // @ts-ignore
   expandedTableIndexes: any[] = this.initialProducts.map((product, i) => product.tables[0][1].map((row, j) => true))
@@ -29,12 +29,9 @@ export class CertificationReportComponent implements OnInit {
     }
   }
 
-  toggleFlagMenu() {
-    this.flagMenuIsOpen = !this.flagMenuIsOpen
-  }
-
   resetFilter() {
     this.products = JSON.parse(JSON.stringify(productData))
+    this.tablesFilteredByFlag = false
   }
 
   filterTablesByProduct(title: string) {
@@ -74,7 +71,7 @@ export class CertificationReportComponent implements OnInit {
     return arr.filter(x => x[0].includes('flag'))
   }
 
-  filterTablesByFlag(flagType: string) {
+  filterTablesByFlag() {
     this.products = JSON.parse(JSON.stringify(productData))
     const filtered = []
 
@@ -82,13 +79,24 @@ export class CertificationReportComponent implements OnInit {
       let product = this.products[i]
       const tables = product.tables.map((table: any) => table)
       for(let j = 0; j < tables.length; j += 1) {
-        let table = tables[j][1].filter((row: any) => row[0] === flagType)
+        let table = tables[j][1].filter((row: any) => row[0] === 'warning_flag')
         tables[j][1] = table
       }
       filtered.push(product)
     }
     this.products = [...filtered]
     this.expandedTableIndexes = this.expandedTableIndexes.map(x => x.map((y: boolean) => false))
+    this.tablesFilteredByFlag = true
+  }
+
+  toggleFlagFilter() {
+    if(this.tablesFilteredByFlag) {
+      this.flagImgSrc = 'flag.png'
+      this.resetFilter()
+    } else {
+      this.flagImgSrc = 'flag-yellow.png'
+      this.filterTablesByFlag()
+    }
   }
 
   productHasTables(product: any) {
