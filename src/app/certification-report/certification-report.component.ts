@@ -15,7 +15,7 @@ export class CertificationReportComponent implements OnInit {
   flagMenuIsOpen: boolean = false
 
   // @ts-ignore
-  expandedTableIndexes: any[] = this.initialProducts.map((product, i) => product.tables[0][1].map((row, j) => false))
+  expandedTableIndexes: any[] = this.initialProducts.map((product, i) => product.tables[0][1].map((row, j) => true))
 
   openMenu() {
     if(!this.menuIsOpen) {
@@ -39,9 +39,9 @@ export class CertificationReportComponent implements OnInit {
 
   filterTablesByProduct(title: string) {
     const products = JSON.parse(JSON.stringify(productData))
-    const filtered = [products[0]]
+    const filtered = []
 
-    for(let i = 1; i < products.length; i += 1) {
+    for(let i = 0; i < products.length; i += 1) {
       let product = products[i]
       if(product.title === title) {
         filtered.push(product)
@@ -59,14 +59,14 @@ export class CertificationReportComponent implements OnInit {
       tables: []
     }
 
-    for(let i = 1; i < products.length; i += 1) {
+    for(let i = 0; i < products.length; i += 1) {
       let product = products[i]
       if(product.title === title) {
         filteredTable = product.tables[tableIdx]
         filteredProduct.tables.push(filteredTable)
       }
     }
-    this.products = [products[0], filteredProduct]
+    this.products = [filteredProduct]
     this.expandedTableIndexes = this.expandedTableIndexes.map(x => x.map((y: boolean) => false))
   }
 
@@ -76,9 +76,9 @@ export class CertificationReportComponent implements OnInit {
 
   filterTablesByFlag(flagType: string) {
     this.products = JSON.parse(JSON.stringify(productData))
-    const filtered = [this.products[0]]
+    const filtered = []
 
-    for(let i = 1; i < this.products.length; i += 1) {
+    for(let i = 0; i < this.products.length; i += 1) {
       let product = this.products[i]
       const tables = product.tables.map((table: any) => table)
       for(let j = 0; j < tables.length; j += 1) {
@@ -115,7 +115,7 @@ export class CertificationReportComponent implements OnInit {
 
   getMenuItems() {
     const menuItems: any = []
-    for(let i = 1; i < this.products.length; i += 1) {
+    for(let i = 0; i < this.products.length; i += 1) {
       let product = this.products[i]
       let section: any = {
         title: '',
@@ -142,5 +142,6 @@ export class CertificationReportComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuItems = this.getMenuItems()
+    console.log('PRODUCTS:   ', this.products)
   }
 }
