@@ -1,6 +1,6 @@
 [
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202112",
 		"submissionControl": 23456,
@@ -14,7 +14,7 @@
 		"reportScoreL2": 0.2
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202112",
 		"submissionControl": 23457,
@@ -28,7 +28,7 @@
 		"reportScoreL2": 1.2
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202112",
 		"submissionControl": 23458,
@@ -42,7 +42,7 @@
 		"reportScoreL2": 0.7
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202112",
 		"submissionControl": 23459,
@@ -56,7 +56,7 @@
 		"reportScoreL2": 0
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202112",
 		"submissionControl": 23460,
@@ -70,7 +70,7 @@
 		"reportScoreL2": 0.25
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202112",
 		"submissionControl": 23461,
@@ -84,7 +84,7 @@
 		"reportScoreL2": 0.8
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23462,
@@ -98,7 +98,7 @@
 		"reportScoreL2": 0
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23463,
@@ -112,7 +112,7 @@
 		"reportScoreL2": 1.1
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23464,
@@ -126,7 +126,7 @@
 		"reportScoreL2": 0.1
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23465,
@@ -140,7 +140,7 @@
 		"reportScoreL2": 0.9
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23466,
@@ -154,7 +154,7 @@
 		"reportScoreL2": 1.3
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23467,
@@ -169,7 +169,7 @@
 	},
 
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202108",
 		"submissionControl": 23468,
@@ -183,7 +183,7 @@
 		"reportScoreL2": 0
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202108",
 		"submissionControl": 23469,
@@ -197,7 +197,7 @@
 		"reportScoreL2": 0.4
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202108",
 		"submissionControl": 23470,
@@ -211,7 +211,7 @@
 		"reportScoreL2": 0.8
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202108",
 		"submissionControl": 23471,
@@ -225,7 +225,7 @@
 		"reportScoreL2": 1.4
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202108",
 		"submissionControl": 23472,
@@ -239,7 +239,7 @@
 		"reportScoreL2": 1.5
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202108",
 		"submissionControl": 23473,
@@ -254,7 +254,7 @@
 	},
 
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23474,
@@ -268,7 +268,7 @@
 		"reportScoreL2": 0.2
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Tennessee",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23475,
@@ -282,7 +282,7 @@
 		"reportScoreL2": 1.4
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23476,
@@ -296,7 +296,7 @@
 		"reportScoreL2": 0.4
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23477,
@@ -310,7 +310,7 @@
 		"reportScoreL2": 0.9
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23478,
@@ -324,7 +324,7 @@
 		"reportScoreL2": 1.5
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23479,
@@ -338,7 +338,7 @@
 		"reportScoreL2": 1.4
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23480,
@@ -352,7 +352,7 @@
 		"reportScoreL2": 0
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202108",
 		"submissionControl": 23481,
@@ -366,7 +366,7 @@
 		"reportScoreL2": 0.7
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23482,
@@ -380,7 +380,7 @@
 		"reportScoreL2": 0.2
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202112",
 		"submissionControl": 23483,
@@ -394,7 +394,7 @@
 		"reportScoreL2": 0.2
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202112",
 		"submissionControl": 23484,
@@ -408,7 +408,7 @@
 		"reportScoreL2": 0
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202112",
 		"submissionControl": 23485,
@@ -422,7 +422,7 @@
 		"reportScoreL2": 0
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202112",
 		"submissionControl": 23486,
@@ -436,7 +436,7 @@
 		"reportScoreL2": 0.7
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202112",
 		"submissionControl": 23487,
@@ -450,7 +450,7 @@
 		"reportScoreL2": 0.5
 	},
 	{
-		"submissionGroup": "100105678",
+		"submissionGroup": 100105678,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202112",
 		"submissionControl": 23488,
@@ -464,7 +464,7 @@
 		"reportScoreL2": 0.75
 	},
 		{
-		"submissionGroup": "100105678",
+		"submissionGroup": 100105678,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23489,
@@ -478,7 +478,7 @@
 		"reportScoreL2": 1.4
 	},
 	{
-		"submissionGroup": "100104321",
+		"submissionGroup": 100104321,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23490,
@@ -492,7 +492,7 @@
 		"reportScoreL2": 0.1
 	},
 	{
-		"submissionGroup": "100104321",
+		"submissionGroup": 100104321,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202108",
 		"submissionControl": 23491,
@@ -506,7 +506,7 @@
 		"reportScoreL2": 0.2
 	},
 	{
-		"submissionGroup": "100104321",
+		"submissionGroup": 100104321,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202108",
 		"submissionControl": 23492,
@@ -520,7 +520,7 @@
 		"reportScoreL2": 0.75
 	},
 	{
-		"submissionGroup": "100109876",
+		"submissionGroup": 100109876,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23493,
@@ -534,7 +534,7 @@
 		"reportScoreL2": 1
 	},
 	{
-		"submissionGroup": "100109876",
+		"submissionGroup": 100109876,
 		"planName": "Arkansas",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23494,
@@ -548,7 +548,7 @@
 		"reportScoreL2": 0
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Florida",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23495,
@@ -562,7 +562,7 @@
 		"reportScoreL2": 1.1
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Florida",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23496,
@@ -576,7 +576,7 @@
 		"reportScoreL2": 0
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Florida",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23497,
@@ -590,7 +590,7 @@
 		"reportScoreL2": 0.5
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Florida",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23498,
@@ -604,7 +604,7 @@
 		"reportScoreL2": 1.2
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Florida",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23499,
@@ -618,7 +618,7 @@
 		"reportScoreL2": 0
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Florida",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23500,
@@ -632,7 +632,7 @@
 		"reportScoreL2": 0.5
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Florida",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23501,
@@ -646,7 +646,7 @@
 		"reportScoreL2": 1.4
 	},
 	{
-		"submissionGroup": "100105678",
+		"submissionGroup": 100105678,
 		"planName": "Florida",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23502,
@@ -660,7 +660,7 @@
 		"reportScoreL2": 0
 	},
 	{
-		"submissionGroup": "100104321",
+		"submissionGroup": 100104321,
 		"planName": "Florida",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23503,
@@ -674,7 +674,7 @@
 		"reportScoreL2": 0.5
 	},
 	{
-		"submissionGroup": "100101234",
+		"submissionGroup": 100101234,
 		"planName": "Florida",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23504,
@@ -688,7 +688,7 @@
 		"reportScoreL2": 1.2
 	},
 	{
-		"submissionGroup": "100105678",
+		"submissionGroup": 100105678,
 		"planName": "Florida",
 		"paidThroughPeriod": "202108",
 		"submissionControl": 23505,
@@ -702,7 +702,7 @@
 		"reportScoreL2": 0
 	},
 	{
-		"submissionGroup": "100104321",
+		"submissionGroup": 100104321,
 		"planName": "Florida",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23506,
@@ -716,7 +716,7 @@
 		"reportScoreL2": 0.5
 	},
 	{
-		"submissionGroup": "100109876",
+		"submissionGroup": 100109876,
 		"planName": "Florida",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23507,
@@ -730,7 +730,7 @@
 		"reportScoreL2": 1.3
 	},
 	{
-		"submissionGroup": "100105678",
+		"submissionGroup": 100105678,
 		"planName": "Florida",
 		"paidThroughPeriod": "202108",
 		"submissionControl": 23508,
@@ -744,7 +744,7 @@
 		"reportScoreL2": 0
 	},
 	{
-		"submissionGroup": "100109876",
+		"submissionGroup": 100109876,
 		"planName": "Florida",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23509,
@@ -758,7 +758,7 @@
 		"reportScoreL2": 0.5
 	},
 	{
-		"submissionGroup": "100109876",
+		"submissionGroup": 100109876,
 		"planName": "Florida",
 		"paidThroughPeriod": "202110",
 		"submissionControl": 23510,
@@ -772,7 +772,7 @@
 		"reportScoreL2": 1.2
 	},
 	{
-		"submissionGroup": "100105678",
+		"submissionGroup": 100105678,
 		"planName": "Florida",
 		"paidThroughPeriod": "202108",
 		"submissionControl": 23511,
@@ -786,7 +786,7 @@
 		"reportScoreL2": 0
 	},
 	{
-		"submissionGroup": "100109876",
+		"submissionGroup": 100109876,
 		"planName": "Florida",
 		"paidThroughPeriod": "202106",
 		"submissionControl": 23512,

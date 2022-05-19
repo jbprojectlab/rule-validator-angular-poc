@@ -30,21 +30,19 @@
   .app-container
     background-color: var(--primary-blue-dark)
     border-radius: var(--rounded-corner-border-radius)
-    position: absolute
-    top: 20px
-    left: 20px
-    right: 20px
-    bottom: 20px
+    min-height: 100%
+    width: calc(100% - 40px)
 
   .main-container
     border-radius: var(--rounded-corner-border-radius)
     background-color: var(--white)
-    height: 100%
-    width: calc(100% - 80px)
+    min-height: 100%
+    width: calc(100% - 60px)
     margin-left: 80px
     -webkit-box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
     -moz-box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
     box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
+    padding: 120px 0
 
     &.hidden-nav-margin
       margin-left: 0
