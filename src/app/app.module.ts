@@ -15,6 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlanComponent } from './plan/plan.component';
 import { PlanTableComponent } from './plan-table/plan-table.component';
 import { CertificationReportComponent } from './certification-report/certification-report.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CertificationReportComponent } from './certification-report/certificati
     PlanComponent,
     PlanTableComponent,
     CertificationReportComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

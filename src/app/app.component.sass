@@ -42,7 +42,7 @@
     -webkit-box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
     -moz-box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
     box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
-    padding: 120px 0
+    padding-top: 120px
 
     &.hidden-nav-margin
       margin-left: 0
@@ -57,14 +57,15 @@
   .toolbar
     border-radius: 25px 25px 0 0
     position: absolute
-    top: 0
-    right: 0
+    top: 10px
+    right: 10px
     left: 128px
     height: 110px
     display: flex
     align-items: center
     color: white
     font-weight: 600
+    z-index: 3
 
     #logo
       margin-right: 120px
@@ -117,15 +118,6 @@
 
   .main-container.hidden-nav-margin .toolbar
     left: 60px
-
-  footer
-    position: absolute
-    bottom: 0
-    margin: 0 40px
-    padding: 20px
-
-    &.hidden-nav-margin
-      margin-left: 40px
 
   @media screen and (max-width: 760px)
     .toolbar .user-dd

@@ -14,27 +14,26 @@ export class AppComponent {
   constructor(private router: Router) {
     //Router subscriber
     this.router.events.subscribe((event: Event) => {
-        if (event instanceof NavigationStart) {
-            //do something on start activity
-        }
+      if (event instanceof NavigationStart) {
+        //do something on start activity
+      }
 
-        if (event instanceof NavigationError) {
-            // Handle error
-            console.error(event.error);
-        }
+      if (event instanceof NavigationError) {
+        // Handle error
+        console.error(event.error);
+      }
 
-        if (event instanceof NavigationEnd) {
-            //do something on end activity
-            const segments = event.url.split('/')
-            console.log(segments)
-            if(segments[1] && segments[1] === 'plans' && segments[2] || segments[1] === 'home') {
-              console.log('Nav hidden')
-              this.navIsHidden = true
-            } else if(this.navIsHidden) {
-              this.navIsHidden = false
-            }
+      if (event instanceof NavigationEnd) {
+        //do something on end activity
+        const segments = event.url.split('/')
+        console.log(segments)
+        if(segments[1] && segments[1] === 'plans' && segments[2] || segments[1] === 'home') {
+          console.log('Nav hidden')
+          this.navIsHidden = true
+        } else if(this.navIsHidden) {
+          this.navIsHidden = false
         }
+      }
     });
-}
-  
+  }
 }

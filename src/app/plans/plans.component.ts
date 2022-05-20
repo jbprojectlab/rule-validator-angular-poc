@@ -15,6 +15,7 @@ export class PlansComponent implements OnInit {
   initialPlans: Plan[] = []
   searchFilter: Plan = {}
   isSearching: boolean = false
+  panelTop: boolean = false
   
   headers = [
     'Submission Group / Plan Code',
@@ -219,5 +220,17 @@ export class PlansComponent implements OnInit {
       // this.initialPlans = dummyPlans
       this.plans = dummyPlans
     })
+  
+    document.body.addEventListener('scroll', (e: any) => {
+      console.log('scrolling:   ', document.body.scrollTop)
+      if(document.body.scrollTop > 20) {
+        console.log('set to true')
+        this.panelTop = true
+      } else {
+        console.log('set to false')
+        this.panelTop = false
+      }
+    })
   }
+
 }

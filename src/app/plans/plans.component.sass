@@ -1,5 +1,5 @@
 table
-  margin: 0 40px 40px 0
+  margin-right: 40px
   padding: 0
   border: 1px solid var(--border-light-grey)
   border-radius: var(--rounded-corner-border-radius)
@@ -69,8 +69,21 @@ table
     height: 20px
     padding: 0 20px
 
+.white-bg-panel
+  position: absolute
+  top: 20px
+  right: 20px
+  left: 100px
+  height: 205px
+  z-index: 1
+  background-color: var(--white)
+
+  &.panel-top
+    top: 0
+    height: 225px
+
 .plans-table
-  margin-right: 0
+  margin: 100px 0 0
   padding: 0 40px
 
   table
@@ -79,8 +92,9 @@ table
   .table-title
     position: absolute
     font-size: 24px
-    top: 30px
-    left: 70px
+    top: 160px
+    left: 140px
+    z-index: 2
 
 .plans-table-border
   border-bottom: 1px solid rgba(0, 0, 0, 0.5)
@@ -98,7 +112,10 @@ table
   border-radius: var(--rounded-corner-border-radius)
   height: 30px
   padding: 20px 0 40px 40px
-  margin: 0 0 25px 500px
+  right: 50px
+  position: absolute
+  z-index: 2
+  margin-top: -110px
 
   div
     display: flex
