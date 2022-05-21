@@ -32,6 +32,7 @@ export class CertificationReportComponent implements OnInit {
   resetFilter() {
     this.products = JSON.parse(JSON.stringify(productData))
     this.tablesFilteredByFlag = false
+    this.expandedTableIndexes = this.expandedTableIndexes.map(x => x.map((y: boolean) => true))
   }
 
   filterTablesByProduct(title: string) {
