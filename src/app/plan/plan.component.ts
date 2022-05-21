@@ -14,6 +14,7 @@ export class PlanComponent implements OnInit {
   rejectsTableIsOpen: boolean = false
   transformationsTableIsOpen: boolean = false
   analyticalWarningsTableIsOpen: boolean = false
+  panelTop: boolean = false
 
   selectTab(tab: number) {
     this.visibleTab = tab
@@ -64,7 +65,12 @@ export class PlanComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.plan)
+    document.body.addEventListener('scroll', (e: any) => {
+      if(document.body.scrollTop > 20) {
+        this.panelTop = true
+      } else {
+        this.panelTop = false
+      }
+    })
   }
-
 }

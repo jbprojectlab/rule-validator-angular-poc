@@ -1,7 +1,20 @@
-.plan-container
-  min-height: 100%
-  border-bottom: 1px solid transparent
-  border-radius: var(--rounded-corner-border-radius)
+.white-bg-panel
+  position: absolute
+  top: 20px
+  right: 20px
+  left: 20px
+  height: 340px
+  z-index: 1
+  background-color: var(--white)
+
+  &.panel-top
+    top: 0
+    height: 360px
+
+.plan-header-wrapper
+  position: absolute
+  width: calc(100% - 20px)
+  z-index: 2
 
   .plan-header
     align-items: center
@@ -10,7 +23,7 @@
     display: flex
     height: 100px
     justify-content: space-between
-    margin: 20px 40px
+    margin: 0 40px
     min-width: 600px
     -webkit-box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
     -moz-box-shadow: 0 6px 4px -4px rgba(0, 2, 3, 0.2)
@@ -24,6 +37,7 @@
       height: 100%
       list-style-type: none
       flex-basis: 70%
+      margin: 0
 
       li
         margin-right: 20px
@@ -59,6 +73,7 @@
     display: flex
     height: 100px
     justify-content: center
+    margin-top: 20px
 
     div
       display: flex
@@ -87,6 +102,12 @@
         white-space: nowrap
         margin: 12px 0
 
+.plan-container
+  min-height: 100%
+  border-bottom: 1px solid transparent
+  border-radius: var(--rounded-corner-border-radius)
+  margin-top: 220px
+
   .plan
     background-color: #098BC9
     border-radius: var(--rounded-corner-border-radius)
@@ -94,14 +115,6 @@
     margin: 0 40px
     padding: 8px 8px 2px 8px
     min-width: 600px
-    height: calc(100vh - 480px)
-    overflow-y: scroll
-    scrollbar-width: none
-    -ms-overflow-style: none
-
-    &::-webkit-scrollbar
-      width: 0
-      height: 0
 
     .checklist-header
       display: flex

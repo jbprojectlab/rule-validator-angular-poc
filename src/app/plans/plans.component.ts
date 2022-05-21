@@ -222,15 +222,11 @@ export class PlansComponent implements OnInit {
     })
   
     document.body.addEventListener('scroll', (e: any) => {
-      console.log('scrolling:   ', document.body.scrollTop)
       if(document.body.scrollTop > 20) {
-        console.log('set to true')
         this.panelTop = true
       } else {
-        console.log('set to false')
         this.panelTop = false
       }
     })
   }
-
 }

@@ -1,3 +1,18 @@
+.header
+  position: absolute
+  display: flex
+  width: calc(100% - 120px)
+  margin: -40px 60px 20px
+  justify-content: space-between
+  z-index: 2
+
+  h4
+    margin: 0
+
+  img
+    margin-right: 40px
+    cursor: pointer
+
 span.open
   cursor: pointer
   position: absolute
@@ -6,6 +21,7 @@ span.open
   background-color: var(--primary-blue-dark)
   border-radius: 0 var(--round-border-radius) var(--round-border-radius) 0
   padding: 12px 8px 8px 4px
+  z-index: 2
 
 .report-menu
   border: 1px solid var(--white)
@@ -17,10 +33,11 @@ span.open
   padding: 20px
   position: absolute
   top: 300px
-  left: 8px
+  left: 18px
   width: 140px
   cursor: pointer
   color: var(--white)
+  z-index: 2
 
   span.close
     right: 8px
@@ -42,51 +59,8 @@ span.open
       font-size: 12px
       margin: 12px 4px
 
-.header
-  display: flex
-  width: calc(100% - 120px)
-  margin: -20px 60px 20px
-  justify-content: space-between
-
-  h4
-    margin: 0
-
-  img
-    margin-right: 40px
-    cursor: pointer
-
-.flag-menu
-  position: absolute
-  right: 100px
-  top: 350px
-  display: flex
-  flex-direction: column
-  border-radius: var(--corner-border-radius)
-  background-color: var(--dark-blue-bg)
-  color: var(--white)
-  padding: 0 8px
-  width: 280px
-  font-size: 16px
-  font-weight: bold
-
-  span
-    padding: 8px
-
-    p
-      border-radius: var(--rounded-corner-border-radius)
-      padding: 16px 32px
-      margin: 0
-      cursor: pointer
-
-      &:hover,
-      &.active
-        background-color: var(--primary-blue-dark)
-  
-  span:not(:nth-child(1))
-    border-top: 1px solid var(--background-shade-dark-grey)
-
 .certification-report
-  margin: 0 40px 40px
+  margin: 240px 40px 40px
   background-color: var(--background-shade-light-grey)
   border: 1px solid var(--background-shade-light-grey)
   border-radius: var(--rounded-corner-border-radius)

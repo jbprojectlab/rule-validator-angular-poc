@@ -13,6 +13,7 @@ export class CertificationReportComponent implements OnInit {
   menuIsOpen: boolean = false
   tablesFilteredByFlag: boolean = false
   flagImgSrc: string = 'flag.png'
+  panelTop: boolean = false
 
   // @ts-ignore
   expandedTableIndexes: any[] = this.initialProducts.map((product, i) => product.tables[0][1].map((row, j) => true))
@@ -24,6 +25,7 @@ export class CertificationReportComponent implements OnInit {
   }
 
   closeMenu() {
+    console.log('closing menu')
     if(this.menuIsOpen) {
       this.menuIsOpen = false
     }
@@ -139,11 +141,16 @@ export class CertificationReportComponent implements OnInit {
     return menuItems
   }
 
-  scrollToTable(tableId: number) {
-    console.log('scroll to tableId:   ', tableId)
-    const table = document.getElementById('item-' + tableId);
+  scrollToTable(productIdx: number, tableIdx: number, lastTable: boolean) {
+    console.log('scroll to tableId:   ', productIdx, tableIdx)
+    const table = document.getElementById(`item-${productIdx}-${tableIdx}`);
     if(table) {
       table.scrollIntoView(true);
+      if(lastTable) console.log('last table')
+      if(!lastTable) {
+        document.body.scrollTop = document.body.scrollTop - 420
+      }
+      this.closeMenu()
     }
   }
 

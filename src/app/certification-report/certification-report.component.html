@@ -1,30 +1,31 @@
+<div class="header">
+  <h4>L2 Certification Report</h4>
+  <img src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
+</div>
+
 <span class="open" (click)="openMenu()">
   <img src="assets/img/menu.png" />
 </span>
 
 <div *ngIf="menuIsOpen" class="report-menu">
   <span class="close" (click)="closeMenu()">&#10005;</span>
-  <span class="menu-header" (click)="resetFilter()">Products</span>
-  <div *ngFor="let section of menuItems; index as i">
+  <span class="menu-header">Products</span>
+  <div *ngFor="let section of menuItems; index as productIdx">
     <div class="menu-section">
-      <h4 (click)="filterTablesByProduct(section.title)">{{section.title}}</h4>
-      <div *ngFor="let item of section.items">
-        <h6 id="item-{{i}}" (click)="filterTablesByTable(section.title, i)">{{item}}</h6>
+      <h4 (click)="scrollToTable(productIdx, 0, false)">{{section.title}}</h4>
+      <div *ngFor="let item of section.items; index as tableIdx">
+        <h6 (click)="scrollToTable(productIdx, tableIdx, (productIdx === menuItems.length - 1 && tableIdx === section.items.length - 1))">{{item}}</h6>
+        <!-- id="item-{{productIdx}}-{{tableIdx}}" -->
       </div>
     </div>
   </div>
-</div>
-
-<div class="header">
-  <h4>L2 Certification Report</h4>
-  <img src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
 </div>
 
 <div class="certification-report">
   <div *ngFor="let product of products; index as i">
     <h4 *ngIf="product.title.length && productHasTables(product)">{{product.title}}</h4>
     <div *ngFor="let table of product.tables; index as j">
-      <table *ngIf="table[1] && table[1].length">
+      <table *ngIf="table[1] && table[1].length" id="item-{{i}}-{{j}}">
         <colgroup [span]="table[0].length"></colgroup>
         <thead>
           <tr>
