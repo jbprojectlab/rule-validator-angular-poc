@@ -20,7 +20,7 @@
   <img src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
 </div>
 
-<div class="scroll-y">
+<div class="certification-report">
   <div *ngFor="let product of products; index as i">
     <h4 *ngIf="product.title.length && productHasTables(product)">{{product.title}}</h4>
     <div *ngFor="let table of product.tables; index as j">
