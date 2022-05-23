@@ -21,6 +21,14 @@
   </div>
 </div>
 
+<div class="report-score-container">
+  <div>
+    <h4>Total Count</h4>
+    <span>0.5</span>
+  </div>
+  <span class="score-indicator">Pass</span>
+</div>
+
 <div class="certification-report">
   <div *ngFor="let product of products; index as i">
     <h4 *ngIf="product.title.length && productHasTables(product)">{{product.title}}</h4>

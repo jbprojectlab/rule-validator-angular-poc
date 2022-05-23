@@ -59,6 +59,35 @@ span.open
       font-size: 12px
       margin: 12px 4px
 
+.report-score-container
+  position: absolute
+  right: 160px
+  display: flex
+  width: 140px
+  margin-top: -64px
+  z-index: 2
+  align-items: center
+  justify-content: space-between
+  text-align: center
+
+  h4
+    font-weight: 400
+    margin: 8px 0
+
+  span:not(.score-indicator)
+    font-size: 20px
+
+  .score-indicator
+    background: var(--secondary-blue-green)
+    border-radius: var(--round-border-radius)
+    color: var(--white)
+    padding: 10px
+    height: 20px
+    width: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+
 .certification-report
   margin: 240px 40px 40px
   background-color: var(--background-shade-light-grey)
