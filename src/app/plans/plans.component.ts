@@ -16,6 +16,8 @@ export class PlansComponent implements OnInit {
   searchFilter: Plan = {}
   isSearching: boolean = false
   panelTop: boolean = false
+  selectedSortingColumn: string = 'Submission Group / Plan Code'
+  sortIsAscending: boolean = true
   
   headers = [
     'Submission Group / Plan Code',
@@ -173,6 +175,12 @@ export class PlansComponent implements OnInit {
   }
 
   sortByColumn(columnHeader: string) {
+    if(columnHeader === this.selectedSortingColumn) {
+      this.sortIsAscending = !this.sortIsAscending
+    } else {
+      this.selectedSortingColumn = columnHeader
+    }
+
     const columnNames = {
       "Submission Group / Plan Code": 'submissionGroup',
       "Plan Name": 'planName',
@@ -191,7 +199,11 @@ export class PlansComponent implements OnInit {
     const columnName = columnNames[columnHeader]
     // @ts-ignore
     const columnType = typeof this.plans[0][columnName]
-    this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? a[columnName] - b[columnName] : ('' + a[columnName]).localeCompare(b[columnName]))
+    if(this.sortIsAscending) {
+      this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? a[columnName] - b[columnName] : ('' + a[columnName]).localeCompare(b[columnName]))
+    } else {
+      this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? b[columnName] - a[columnName] : ('' + b[columnName]).localeCompare(a[columnName]))      
+    }
   }
 
   constructor(private http: HttpClient) {}

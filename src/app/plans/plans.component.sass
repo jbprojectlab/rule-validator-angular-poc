@@ -9,13 +9,16 @@ table
 
   th
     border-bottom: 1px solid var(--border-light-grey)
-    padding: 10px
-    text-align: left
     cursor: pointer
-
-  th
     padding: 20px
     text-align: center
+
+    .sorted-column-arrow
+      width: 10px
+      margin-left: 4px
+
+      &.ascending
+        transform: rotate(180deg)
 
   th,
   td

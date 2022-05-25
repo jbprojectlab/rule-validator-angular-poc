@@ -50,7 +50,10 @@
     <colgroup span="12"></colgroup>
     <thead>
       <tr>
-        <th *ngFor="let header of headers; index as i;" (click)="sortByColumn(header)">{{header}}</th>
+        <th *ngFor="let header of headers; index as i;" (click)="sortByColumn(header)">
+          {{header}}
+          <img *ngIf="selectedSortingColumn === header" src="assets/img/show-more.png" [ngClass]="[sortIsAscending ? 'ascending sorted-column-arrow' : 'sorted-column-arrow']"/>
+        </th>
       </tr>
     </thead>
     <tbody>
