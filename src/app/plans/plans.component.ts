@@ -147,7 +147,6 @@ export class PlansComponent implements OnInit {
       filtered.push(filteredPlan)
     }
 
-    // this.selectedPaidThroughPeriodOption = this.selectedPaidThroughPeriodOption || this.getCurrentPaidDate()
     this.plans = filtered
   }
 
@@ -171,6 +170,28 @@ export class PlansComponent implements OnInit {
     } else {
       this.filterPlans()
     }
+  }
+
+  sortByColumn(columnHeader: string) {
+    const columnNames = {
+      "Submission Group / Plan Code": 'submissionGroup',
+      "Plan Name": 'planName',
+      "Paid Through Period": 'paidThroughPeriod',
+      "Submission Control #": 'submissionControl',
+      "Date Submission Received": 'submissionReceivedDate',
+      "Category": 'category',
+      "Mode": 'mode',
+      "Submission Status": 'status',
+      "Submission Current State": 'submissionCurrentState',
+      "Last Updated": 'lastUpdated',
+      "Plan Validation Due": 'planValidationDue',
+      "L2 Report Score": 'reportScoreL2'
+    }
+    // @ts-ignore
+    const columnName = columnNames[columnHeader]
+    // @ts-ignore
+    const columnType = typeof this.plans[0][columnName]
+    this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? a[columnName] - b[columnName] : ('' + a[columnName]).localeCompare(b[columnName]))
   }
 
   constructor(private http: HttpClient) {}

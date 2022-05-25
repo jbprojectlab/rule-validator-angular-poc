@@ -50,7 +50,7 @@
     <colgroup span="12"></colgroup>
     <thead>
       <tr>
-        <th *ngFor="let header of headers; index as i;">{{header}}</th>
+        <th *ngFor="let header of headers; index as i;" (click)="sortByColumn(header)">{{header}}</th>
       </tr>
     </thead>
     <tbody>
