@@ -51,7 +51,7 @@
     <thead>
       <tr>
         <th *ngFor="let header of headers; index as i;" (click)="sortByColumn(header)">
-          {{header}}
+          <p>{{header}}</p>
           <img *ngIf="selectedSortingColumn === header" src="assets/img/show-more.png" [ngClass]="[sortIsAscending ? 'ascending sorted-column-arrow' : 'sorted-column-arrow']"/>
         </th>
       </tr>
