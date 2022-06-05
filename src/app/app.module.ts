@@ -6,37 +6,40 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PlansComponent } from './plans/plans.component';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SelectComponent } from './select/select.component';
-import { ClipboardComponent } from './clipboard/clipboard.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PlanComponent } from './plan/plan.component';
-import { PlanTableComponent } from './plan-table/plan-table.component';
-import { CertificationReportComponent } from './certification-report/certification-report.component';
+import { PlansComponent } from './pages/plans/plans.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ClipboardComponent } from './pages/clipboard/clipboard.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { PlanComponent } from './pages/plan/plan.component';
+import { PlanTableComponent } from './pages/plan/components/plan-table/plan-table.component';
+import { CertificationReportComponent } from './pages/plan/components/certification-report/certification-report.component';
 import { FooterComponent } from './footer/footer.component';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
+import { PlanFilterPipe } from './pages/plans/pipes/plan-filter.pipe';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlansComponent,
     HomeComponent,
-    NavbarComponent,
-    SelectComponent,
     ClipboardComponent,
     DashboardComponent,
     PlanComponent,
     PlanTableComponent,
     CertificationReportComponent,
-    FooterComponent,
+    FooterComponent
+    PlanFilterPipe,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     NgSelectModule,
-    FormsModule
+    FormsModule,
+    CoreModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

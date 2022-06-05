@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { PlansComponent } from './plans/plans.component';
-import { PlanComponent } from './plan/plan.component';
-import { ClipboardComponent } from './clipboard/clipboard.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PlansComponent } from './pages/plans/plans.component';
+import { PlanComponent } from './pages/plan/plan.component';
+import { ClipboardComponent } from './pages/clipboard/clipboard.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },

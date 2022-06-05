@@ -1,0 +1,72 @@
+[
+  {
+    "submissionGroup":889,
+    "submissionControl":6231,
+    "planName":"GENROCKET_2",
+    "paidThroughPeriod":"202110",
+    "submissionCurrentState":"Submission Received",
+    "mode":"Production",
+    "status":"Active",
+    "category":"Combined",
+    "submissionReceivedDate":"2022-03-02",
+    "lastUpdated":1646253977506,
+    "planValidationDueDate":"2022-03-08",
+    "score":0.0
+  },
+  {
+    "submissionGroup":888,
+    "submissionControl":6231,
+    "planName":"GENROCKET_2",
+    "paidThroughPeriod":"202110",
+    "submissionCurrentState":"Submission Received",
+    "mode":"Production",
+    "status":"Active",
+    "category":"Combined",
+    "submissionReceivedDate":"2022-03-02",
+    "lastUpdated":1646253977506,
+    "planValidationDueDate":"2022-03-08",
+    "score":0.0
+  },
+  {
+    "submissionGroup":887,
+    "submissionControl":6231,
+    "planName":"GENROCKET_2",
+    "paidThroughPeriod":"202205",
+    "submissionCurrentState":"Submission Received",
+    "mode":"Production",
+    "status":"Active",
+    "category":"Combined",
+    "submissionReceivedDate":"2022-03-02",
+    "lastUpdated":1646253977506,
+    "planValidationDueDate":"2022-03-08",
+    "score":0.0
+  },
+  {
+    "submissionGroup":886,
+    "submissionControl":6231,
+    "planName":"GENROCKET_2",
+    "paidThroughPeriod":"202111",
+    "submissionCurrentState":"Submission Received",
+    "mode":"Production",
+    "status":"Active",
+    "category":"Combined",
+    "submissionReceivedDate":"2022-03-02",
+    "lastUpdated":1646253977506,
+    "planValidationDueDate":"2022-03-08",
+    "score":0.0
+  },
+  {
+    "submissionGroup":885,
+    "submissionControl":6231,
+    "planName":"GENROCKET_2",
+    "paidThroughPeriod":"202112",
+    "submissionCurrentState":"Submission Received",
+    "mode":"Production",
+    "status":"Active",
+    "category":"Combined",
+    "submissionReceivedDate":"2022-03-02",
+    "lastUpdated":1646253977506,
+    "planValidationDueDate":"2022-03-08",
+    "score":0.0
+  }
+]

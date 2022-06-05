@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'rule-validator-angular-poc'`, () => {
+  it(`should have as title 'rule-validator'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('rule-validator-angular-poc');
+    expect(app.title).toEqual('rule-validator');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('rule-validator-angular-poc app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('rule-validator app is running!');
   });
 });

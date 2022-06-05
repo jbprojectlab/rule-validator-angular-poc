@@ -1,0 +1,169 @@
+table
+  margin-right: 40px
+  padding: 0
+  border: 1px solid var(--border-light-grey)
+  border-radius: var(--rounded-corner-border-radius)
+  border-spacing: 0
+  font-weight: 500
+  width: 100%
+
+  th
+    border-bottom: 1px solid var(--border-light-grey)
+    cursor: pointer
+    padding: 20px
+
+    p
+      text-align: center
+      display: inline
+
+    .sorted-column-arrow
+      width: 10px
+      margin: 6px 0 0 10px
+      display: inline
+      position: absolute
+
+      &.ascending
+        transform: rotate(180deg)
+
+  th,
+  td
+    color: #4D646B
+    opacity: 0.73
+    font-size: 20px
+
+  tbody
+    tr:nth-child(even)
+      background-color: var(--background-shade-light-grey)
+
+    tr:hover
+      background-color: var(--background-shade-blue)
+    
+    td
+      padding: 10px
+      text-align: center
+
+      p
+        border-radius: var(--rounded-corner-border-radius)
+        color: var(--white)
+        margin-left: 28px
+        padding: 4px
+        text-align: center
+        width: 32px
+
+      &.green p
+        background-color: var(--green)
+
+      &.yellow p
+        background-color: var(--yellow)
+
+      &.red p
+        background-color: var(--light-red)
+
+      &.left-aligned
+        text-align: left
+
+      a
+        color: #5f696b
+
+.no-results-msg
+  font-size: 24px
+  margin-top: 140px
+  text-align: center
+
+.plans-table-header
+  align-items: center
+  display: flex
+  width: 100%
+
+  img
+    cursor: pointer
+    height: 20px
+    padding: 0 20px
+
+.white-bg-panel
+  position: absolute
+  top: 20px
+  right: 20px
+  left: 100px
+  height: 205px
+  z-index: 1
+  background-color: var(--white)
+
+  &.panel-top
+    top: 0
+    height: 225px
+
+.plans-table
+  margin: 100px 0 0
+  padding: 0 40px
+  margin-top: 30px
+
+  table
+    margin-right: 0
+  
+  .table-title
+    position: absolute
+    font-size: 24px
+    top: 160px
+    left: 140px
+    z-index: 2
+
+.plans-table-border
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5)
+
+  th
+    background-color: var(--white)
+    color: rgba(255, 255, 255, 0.0)
+    height: 14px
+    line-height: 14px
+    padding-top: 0
+    padding-bottom: 0
+
+.search
+  background-color: var(--background-shade-light-grey)
+  border-radius: var(--rounded-corner-border-radius)
+  height: 30px
+  padding: 20px 0 40px 40px
+  right: 50px
+  position: absolute
+  z-index: 2
+  margin-top: -100px
+
+  div
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  h4
+    margin: 0
+
+  .ng-select.custom
+    min-width: 180px
+    width: 15%
+
+    .ng-value-container .ng-placeholder
+      text-overflow: ellipsis
+      color: #3A5B6A
+      opacity: 1
+      font-size: 16px
+
+  .search-btn
+    cursor: pointer
+    background: var(--white)
+    border: 2px solid var(--primary-blue-dark)
+    border-radius: var(--round-border-radius)
+    padding: 15px
+    margin: 0 0 20px 10px
+
+    img
+      height: 20px
+
+@media screen and (max-width: 1660px)
+  .table-title
+    opacity: 0
+
+  .search
+    margin-left: 0px
+
+@media screen and (max-width: 1200px)
+  .search

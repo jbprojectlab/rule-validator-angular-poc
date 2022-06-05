@@ -1,14 +1,18 @@
 {
-  "name": "rule-validator-angular-poc",
+  "name": "rule-validator",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.config.json",
-    "start-server": "nodemon server/index.js --watch",
+    "start-server": "node server/index.js --watch",
     "build": "ng build",
+    "build:prod": "ng lint & ng build --configuration=production",
+    "build:dev": "ng lint & ng build --configuration=development",
+    "build:uat": "ng lint & ng build --configuration=deploy",
     "watch": "ng build --watch --configuration development",
     "seed": "node seed.js",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -21,23 +25,26 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@ng-select/ng-select": "^8.1.1",
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.2",
-    "chalk": "^2.4.1",
-    "concurrently": "^7.0.0",
-    "express": "^4.14.0",
-    "pg": "^7.4.3",
     "rxjs": "~7.5.0",
-    "sequelize": "^4.37.8",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.2",
+    "@angular-eslint/builder": "13.2.1",
+    "@angular-eslint/eslint-plugin": "13.2.1",
+    "@angular-eslint/eslint-plugin-template": "13.2.1",
+    "@angular-eslint/schematics": "13.2.1",
+    "@angular-eslint/template-parser": "13.2.1",
     "@angular/cli": "~13.2.2",
     "@angular/compiler-cli": "~13.2.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "5.17.0",
+    "@typescript-eslint/parser": "5.17.0",
+    "chalk": "^2.4.1",
+    "eslint": "^8.12.0",
+    "express": "^4.14.0",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -45,6 +52,7 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "morgan": "^1.10.0",
+    "sequelize": "^4.37.8",
     "typescript": "~4.5.2"
   }
 }

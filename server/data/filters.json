@@ -1,0 +1,74 @@
+{
+    "submissionGroup":
+    [
+        "020",
+        "110",
+        "121",
+        "150",
+        "260",
+        "290",
+        "301",
+        "310",
+        "320",
+        "340",
+        "361",
+        "362",
+        "363",
+        "370",
+        "378",
+        "37F",
+        "37N",
+        "380",
+        "400",
+        "430",
+        "443",
+        "460",
+        "510",
+        "560",
+        "590",
+        "611",
+        "680",
+        "690",
+        "700",
+        "710",
+        "720",
+        "770",
+        "785",
+        "800",
+        "803",
+        "889",
+        "890",
+        "FEP",
+        "G01"
+    ],
+    "submissionStatus":
+    [
+        "Active",
+        "Terminated",
+        "Completed"
+    ],
+    "category":
+    [
+        "Combined",
+        "Medical",
+        "Non-Claims",
+        "Pharmacy"
+    ],
+    "submissionCurrentState":
+    [
+        "Level 1 - Failed",
+        "Level 1 - Pass",
+        "Level 2 - Failed",
+        "Level 2 - Pass",
+        "Level 3 - Failed,",
+        "Level 3 - Pass",
+        "Level 4 - Failed",
+        "Level 4 - in Process",
+        "Level 4 - Pass",
+        "Processing Restarted",
+        "Processing Stopped/Resubmit",
+        "Ready: Level 1 Review",
+        "Submission Received",
+        "Submission Under Review"
+    ]
+}

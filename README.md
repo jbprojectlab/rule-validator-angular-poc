@@ -1,12 +1,28 @@
-# Rule Validator -- Angular POC
+# Project Overview
 
-Proof of concept for Blue Cross Blue Shield America Rule Validator UI
+
+# Technologies Used
+
+* Angular ~13.2
+* Typescript ~4.5.2
+* RXJS ~7.5.0
+* SASS
+
+# Requirements
+- node 12.20.0;
+- npm 6.14.15
+
+# Rule Validator
+
+Blue Cross Blue Shield America Rule Validator UI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:65302/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Run `npm run start-server` for starting a local server with mock data. 
 
 ## Code scaffolding
 
@@ -14,7 +30,12 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Separate build commands are used for each environment.
+The build artifacts will be stored in the `dist/` directory.
+
+Run `npm run build:prod` to build for production. 
+Run `npm run build:uat` to build for deploy. 
+Run `npm run build:dev` to build for develop. 
 
 ## Running unit tests
 
