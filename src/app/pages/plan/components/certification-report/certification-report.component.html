@@ -11,9 +11,9 @@
   <span class="close" (click)="closeMenu()">&#10005;</span>
   <div *ngFor="let section of menuItems; index as menuItemIdx">
     <div class="menu-section">
-      <h4 (click)="scrollToTable(camelize(section.title))">{{section.title}}</h4>
+      <h4 (click)="scrollToTable(camelize(section.title), false)">{{section.title}}</h4>
       <div *ngFor="let tableName of section.tableNames; index as tableNameIdx">
-        <h6 (click)="scrollToTable(camelize(section.title), camelize(tableName))">{{tableName}}</h6>
+        <h6 (click)="scrollToTable(camelize(section.title), (menuItemIdx === menuItems.length - 1 && tableNameIdx === section.tableNames.length - 1), camelize(tableName))">{{tableName}}</h6>
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@
 
 <div class="certification-report">
   <div *ngFor="let report of reports; index as i">
-    <h4 *ngIf="report.fileName" id="item-{{camelize(report.fileName)}}">{{report.fileName}}</h4>
+    <h4 *ngIf="report.fileName" id="item-{{camelize(report.fileName)}}" [ngClass]="i === 0 ? 'first-filename' : ''">{{report.fileName}}</h4>
     <div>
       <table *ngIf="report.metricTable" id="item-{{camelize(report.fileName)}}-metricTable">
         <colgroup span="8"></colgroup>

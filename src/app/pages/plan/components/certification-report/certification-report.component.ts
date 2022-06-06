@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import productData from './product-data.json';
 import reportData from './L2-cert-report-data.json';
 
 @Component({
@@ -103,11 +102,14 @@ export class CertificationReportComponent implements OnInit {
     }).replace(/\s+/g, '')
   }
 
-  scrollToTable(reportName: string, tableName?: string) {
+  scrollToTable(reportName: string, lastTable: boolean, tableName?: string) {
     const table = tableName ? document.getElementById(`item-${reportName}-${tableName}`) : document.getElementById(`item-${reportName}`);
     if(table) {
       table.scrollIntoView(true);
       this.closeMenu();
+      if(!lastTable) {
+        document.body.scrollTop = document.body.scrollTop - 440;
+      };
     }
   }
 
