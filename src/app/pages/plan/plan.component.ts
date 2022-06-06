@@ -65,7 +65,7 @@ export class PlanComponent {
 
   ngOnInit(): void {
     document.body.addEventListener('scroll', (e: any) => {
-      if(document.body.scrollTop > 20) {
+      if (document.body.scrollTop > 20) {
         this.panelTop = true;
       } else {
         this.panelTop = false;

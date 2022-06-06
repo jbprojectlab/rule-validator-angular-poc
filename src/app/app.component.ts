@@ -17,15 +17,15 @@ export class AppComponent {
       if (event instanceof NavigationEnd) {
         const segments = event.url.split('/');
 
-        if(segments[1] && segments[1] === 'plans' && segments[2]) {
+        if (segments[1] && segments[1] === 'plans' && segments[2]) {
           this.navIsHidden = true;
-        } else if(this.navIsHidden) {
+        } else if (this.navIsHidden) {
           this.navIsHidden = false;
         }
 
-        if(segments[1] === 'home' || !segments[1].length) {
+        if (segments[1] === 'home' || !segments[1].length) {
           this.landingPageMargin = true;
-        } else if(this.landingPageMargin) {
+        } else if (this.landingPageMargin) {
           this.landingPageMargin = false;
         }
       }

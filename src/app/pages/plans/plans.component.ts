@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Plan } from 'app/core/types/plan';
 import { PlansService } from './services/plans.service';
-import { environment } from 'environments/environment';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
@@ -58,13 +57,13 @@ export class PlansComponent implements OnInit, OnDestroy {
   ];
 
   constructor(
-    private planService: PlansService
+    private plansService: PlansService
   ) { }
 
   ngOnInit(): void {
     if (this.isSearching) this.isSearching = false;
 
-    this.planService.getOptions().subscribe((response: any) => {
+    this.plansService.getOptions().subscribe((response: any) => {
       this.options = {
         submissionGroupOptions: response.submissionGroup,
         submissionCurrentStateOptions: response.submissionCurrentState,
@@ -76,7 +75,7 @@ export class PlansComponent implements OnInit, OnDestroy {
     this.getPlans();
 
     document.body.addEventListener('scroll', (e: any) => {
-      if(document.body.scrollTop > 20) {
+      if (document.body.scrollTop > 20) {
         this.panelTop = true;
       } else {
         this.panelTop = false;
@@ -156,23 +155,23 @@ export class PlansComponent implements OnInit, OnDestroy {
       let submissionGroupSearchFilter: number = Number(this.searchFilter.submissionGroup);
       let submissionGroupNumber: number = Number(submissionGroup);
       
-      if(!this.searchFilter.submissionGroup || submissionGroupSearchFilter === submissionGroupNumber) {
+      if (!this.searchFilter.submissionGroup || submissionGroupSearchFilter === submissionGroupNumber) {
         filteredPlan.submissionGroup = submissionGroup;
       } else continue;
 
-      if(!this.searchFilter.paidThroughPeriod || this.searchFilter.paidThroughPeriod === paidThroughPeriod) {
+      if (!this.searchFilter.paidThroughPeriod || this.searchFilter.paidThroughPeriod === paidThroughPeriod) {
         filteredPlan.paidThroughPeriod = paidThroughPeriod;
       } else continue;
 
-      if(!this.searchFilter.submissionCurrentState || this.searchFilter.submissionCurrentState === submissionCurrentState) {
+      if (!this.searchFilter.submissionCurrentState || this.searchFilter.submissionCurrentState === submissionCurrentState) {
         filteredPlan.submissionCurrentState = submissionCurrentState
       } else continue;
 
-      if(!this.searchFilter.category || this.searchFilter.category === category) {
+      if (!this.searchFilter.category || this.searchFilter.category === category) {
         filteredPlan.category = category;
       } else continue;
 
-      if(!this.searchFilter.status || this.searchFilter.status === status) {
+      if (!this.searchFilter.status || this.searchFilter.status === status) {
         filteredPlan.status = status;
       } else continue;
 
@@ -192,7 +191,7 @@ export class PlansComponent implements OnInit, OnDestroy {
   }
 
   sortByColumn(columnHeader: string) {
-    if(columnHeader === this.selectedSortingColumn) {
+    if (columnHeader === this.selectedSortingColumn) {
       this.sortIsAscending = !this.sortIsAscending;
     } else {
       this.selectedSortingColumn = columnHeader;
@@ -216,27 +215,15 @@ export class PlansComponent implements OnInit, OnDestroy {
     const columnName = columnNames[columnHeader];
     // @ts-ignore
     const columnType = typeof this.plans[0][columnName];
-    if(this.sortIsAscending) {
+    if (this.sortIsAscending) {
       this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? a[columnName] - b[columnName] : ('' + a[columnName]).localeCompare(b[columnName]));
     } else {
       this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? b[columnName] - a[columnName] : ('' + b[columnName]).localeCompare(a[columnName])) ;     
     }
   }
 
-  getUrl() {
-    let url = 'http://mdcdappl2r05lv.bcbsa.com:8085/api/summary/list';
-    if(this.selectedPaidThroughPeriodOption && this.selectedSubmissionGroupOption) {
-      url += `?paiddate=${this.selectedPaidThroughPeriodOption}&submissionGroup=${this.selectedSubmissionGroupOption}`;
-    } else if(this.selectedPaidThroughPeriodOption) {
-      url += `?paiddate=${this.selectedPaidThroughPeriodOption}`;
-    } else if(this.selectedSubmissionGroupOption) {
-      url += `?submissionGroup=${this.selectedSubmissionGroupOption}`;
-    }
-    return url;
-  }
-
   public getPlans() {
-    this.planService.getPlans(this.selectedPaidThroughPeriodOption, this.selectedSubmissionGroupOption)
+    this.plansService.getPlans(this.selectedPaidThroughPeriodOption, this.selectedSubmissionGroupOption)
     .pipe(takeUntil(this.destroyed$))
     .subscribe((data: Plan[]) => {
       if (data && data.length) {
