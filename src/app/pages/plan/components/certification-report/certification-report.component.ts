@@ -93,16 +93,39 @@ export class CertificationReportComponent implements OnInit {
   }
 
   getMenuItems() {
+    this.menuItems = this.reports.map((report: any, index: number) => {
+      console.log(report.fileName)
+      let sections: any = {
+        title: report.fileName,
+        tableNames: []
+      }
+      if(report.metricTable) sections.tableNames.push('Metric Table')
+      if(report.financialSummary) sections.tableNames.push('Financial Summary')
+      if(report.rxTable) sections.tableNames.push('Rx Table')
+      if(report.frequencyCountTable) sections.tableNames.push('Frequency Count Table')
+      return sections
+    })
   }
 
-  scrollToTable(productIdx: number, tableIdx: number, lastTable: boolean) {
+  camelize(str: string) {
+    return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
+      return index === 0 ? word.toLowerCase() : word.toUpperCase()
+    }).replace(/\s+/g, '')
+  }
+
+  scrollToTable(reportName: string, tableName?: string) {
+    const table = tableName ? document.getElementById(`item-${reportName}-${tableName}`) : document.getElementById(`item-${reportName}`);
+    if(table) {
+      table.scrollIntoView(true);
+      this.closeMenu();
+    }
   }
 
   constructor() { }
 
   ngOnInit(): void {
-    this.menuItems = this.getMenuItems();
-    this.initializeExpandedTables()
-    console.log('expandedTables:  ', this.expandedTables)
+    this.getMenuItems();
+    console.log('this.menuItems:  ', this.menuItems);
+    this.initializeExpandedTables();
   }
 }

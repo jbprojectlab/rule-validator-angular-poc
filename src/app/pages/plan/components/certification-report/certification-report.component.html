@@ -7,6 +7,18 @@
   <img src="assets/img/menu.png" />
 </span>
 
+<div *ngIf="menuIsOpen" class="report-menu">
+  <span class="close" (click)="closeMenu()">&#10005;</span>
+  <div *ngFor="let section of menuItems; index as menuItemIdx">
+    <div class="menu-section">
+      <h4 (click)="scrollToTable(camelize(section.title))">{{section.title}}</h4>
+      <div *ngFor="let tableName of section.tableNames; index as tableNameIdx">
+        <h6 (click)="scrollToTable(camelize(section.title), camelize(tableName))">{{tableName}}</h6>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="report-score-container">
   <div>
     <h4>Total Count</h4>
@@ -17,9 +29,9 @@
 
 <div class="certification-report">
   <div *ngFor="let report of reports; index as i">
-    <h4 *ngIf="report.fileName">{{report.fileName}}</h4>
+    <h4 *ngIf="report.fileName" id="item-{{camelize(report.fileName)}}">{{report.fileName}}</h4>
     <div>
-      <table *ngIf="report.metricTable" id="scrollId">
+      <table *ngIf="report.metricTable" id="item-{{camelize(report.fileName)}}-metricTable">
         <colgroup span="8"></colgroup>
         <thead>
           <tr>
@@ -80,7 +92,7 @@
     </div>
 
     <div>
-      <table *ngIf="report.financialSummary" id="scrollId">
+      <table *ngIf="report.financialSummary" id="item-{{camelize(report.fileName)}}-financialSummary">
         <colgroup span="10"></colgroup>
         <thead>
           <tr>
@@ -147,7 +159,7 @@
     </div>
 
     <div>
-      <table *ngIf="report.rxTable" id="scrollId">
+      <table *ngIf="report.rxTable" id="item-{{camelize(report.fileName)}}-rxTable">
         <colgroup span="4"></colgroup>
         <thead>
           <tr>
@@ -172,7 +184,7 @@
     </div>
 
     <div>
-      <table *ngIf="report.frequencyCountTable" id="scrollId">
+      <table *ngIf="report.frequencyCountTable" id="item-{{camelize(report.fileName)}}-frequencyCountTable">
         <colgroup span="2"></colgroup>
         <thead>
           <tr>
