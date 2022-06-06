@@ -18,14 +18,7 @@ export class CertificationReportComponent implements OnInit {
   tablesFilteredByFlag: boolean = false;
   flagImgSrc: string = 'flag.png';
   panelTop: boolean = false;
-  expandedTables: any[] = this.reports.map((report: any, index: number) => {
-    let expandedState: any = {}
-    if(report.metricTable) expandedState.metricTable = true
-    if(report.financialSummary) expandedState.financialSummary = true
-    if(report.rxTable) expandedState.rxTable = true
-    if(report.frequencyCountTable) expandedState.frequencyCountTable = true
-    return expandedState
-  })
+  expandedTables: any[] = []
 
   openMenu() {
     if(!this.menuIsOpen) {
@@ -39,7 +32,21 @@ export class CertificationReportComponent implements OnInit {
     }
   }
 
+  initializeExpandedTables() {
+    this.expandedTables = this.reports.map((report: any, index: number) => {
+      let expandedState: any = {}
+      if(report.metricTable) expandedState.metricTable = true
+      if(report.financialSummary) expandedState.financialSummary = true
+      if(report.rxTable) expandedState.rxTable = true
+      if(report.frequencyCountTable) expandedState.frequencyCountTable = true
+      return expandedState
+    })
+  }
+
   resetFilter() {
+    this.reports = this.initialReports
+    this.tablesFilteredByFlag = false;
+    this.initializeExpandedTables()
   }
 
   filterTablesByProduct(title: string) {
@@ -48,13 +55,26 @@ export class CertificationReportComponent implements OnInit {
   filterTablesByTable(title: string, tableIdx: number) {
   }
 
-  filterTableByFlags(table: any[]) {
-  }
-
   filterTablesByFlag() {
+    this.expandedTables = this.reports.map((report: any, index: number) => {
+      let expandedState: any = {}
+      if(report.metricTable) expandedState.metricTable = false
+      if(report.financialSummary) expandedState.financialSummary = false
+      if(report.rxTable) expandedState.rxTable = false
+      if(report.frequencyCountTable) expandedState.frequencyCountTable = false
+      return expandedState
+    })
+    this.tablesFilteredByFlag = true
   }
 
   toggleFlagFilter() {
+    if(this.tablesFilteredByFlag) {
+      this.flagImgSrc = 'flag.png';
+      this.resetFilter();
+    } else {
+      this.flagImgSrc = 'flag-yellow.png';
+      this.filterTablesByFlag();
+    }
   }
 
   productHasTables(product: any) {
@@ -82,6 +102,7 @@ export class CertificationReportComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuItems = this.getMenuItems();
+    this.initializeExpandedTables()
     console.log('expandedTables:  ', this.expandedTables)
   }
 }
