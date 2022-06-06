@@ -13,7 +13,6 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PlanComponent } from './pages/plan/plan.component';
 import { PlanTableComponent } from './pages/plan/components/plan-table/plan-table.component';
 import { CertificationReportComponent } from './pages/plan/components/certification-report/certification-report.component';
-import { FooterComponent } from './footer/footer.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { PlanFilterPipe } from './pages/plans/pipes/plan-filter.pipe';
@@ -29,7 +28,6 @@ import { CommonModule } from '@angular/common';
     PlanComponent,
     PlanTableComponent,
     CertificationReportComponent,
-    FooterComponent
     PlanFilterPipe,
   ],
   imports: [

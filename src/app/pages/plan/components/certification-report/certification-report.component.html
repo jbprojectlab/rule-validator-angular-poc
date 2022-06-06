@@ -7,96 +7,189 @@
   <img src="assets/img/menu.png" />
 </span>
 
-<div *ngIf="menuIsOpen" class="report-menu">
-  <span class="close" (click)="closeMenu()">&#10005;</span>
-  <span class="menu-header">Products</span>
-  <div *ngFor="let section of menuItems; index as productIdx">
-    <div class="menu-section">
-      <h4 (click)="scrollToTable(productIdx, 0, false)">{{section.title}}</h4>
-      <div *ngFor="let item of section.items; index as tableIdx">
-        <h6 (click)="scrollToTable(productIdx, tableIdx, (productIdx === menuItems.length - 1 && tableIdx === section.items.length - 1))">{{item}}</h6>
-        <!-- id="item-{{productIdx}}-{{tableIdx}}" -->
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="report-score-container">
   <div>
     <h4>Total Count</h4>
-    <span>0.5</span>
+    <span>{{score}}</span>
   </div>
   <span class="score-indicator">Pass</span>
 </div>
 
 <div class="certification-report">
-  <div *ngFor="let product of products; index as i">
-    <h4 *ngIf="product.title.length && productHasTables(product)">{{product.title}}</h4>
-    <div *ngFor="let table of product.tables; index as j">
-      <table *ngIf="table[1] && table[1].length" id="item-{{i}}-{{j}}">
-        <colgroup [span]="table[0].length"></colgroup>
+  <div *ngFor="let report of reports; index as i">
+    <h4 *ngIf="report.fileName">{{report.fileName}}</h4>
+    <div>
+      <table *ngIf="report.metricTable" id="scrollId">
+        <colgroup span="8"></colgroup>
         <thead>
           <tr>
             <th class="no-width"></th>
-            <th *ngFor="let header of table[0]; index as k" [ngClass]="[k === 0 || k === table[0].length - 1 ? 'left-align' : '', k === 0 ? 'less-padding' : '']">
-              {{header}}
-            </th>
+            <th>Metric Order Number</th>
+            <th>Metric Description</th>
+            <th>Computed Value</th>
+            <th>Pass Indicator</th>
+            <th>Rule Weight Percent</th>
+            <th>Score</th>
+            <th>Error Msg</th>
           </tr>
         </thead>
-        <tbody *ngIf="expandedTableIndexes[i][j]">
-          <tr *ngFor="let row of table[1]; index as m">
-            <td
-              *ngFor="let cell of row; index as n"
-              [ngClass]="[n === 1 || n === row.length - 1 ? 'left-align' : '', n === row.length - 1 ? 'more-padding' : '']"
-            >
-              <p *ngIf="cell === 'warning_flag'">
-                <img src="assets/img/flag-yellow.png" />
-              </p>
-              <p *ngIf="!cell.includes('flag')">
-                {{cell}}
-              </p>
+        <tbody *ngIf="expandedTables[i].metricTable">
+          <tr *ngFor="let row of report.metricTable">
+            <td [ngClass]="!row.flag ? 'more-padding' : ''">
+              <img *ngIf="row.flag" src="assets/img/flag-yellow.png" />
             </td>
+            <td>{{row.metricOrderNumber}}</td>
+            <td>{{row.metricDescription}}</td>
+            <td>{{row.computedValue}}</td>
+            <td>{{row.passIndicator}}</td>
+            <td>{{row.ruleWeightPercent}}</td>
+            <td>{{row.score}}</td>
+            <td>{{row.errorMessage}}</td>
           </tr>
           <tr class="bottom-row">
             <td></td>
           </tr>
         </tbody>
-        <tbody *ngIf="!expandedTableIndexes[i][j]">
-          <tr *ngFor="let row of filterTableByFlags(table[1]); index as m">
-            <td
-              *ngFor="let cell of row; index as n"
-              [ngClass]="[n === 1 || n === row.length - 1 ? 'left-align' : '', n === row.length - 1 ? 'more-padding' : '']"
-            >
-              <p *ngIf="cell === 'ok_flag'">
-                <img src="assets/img/flag-green.png" />
-              </p>
-              <p *ngIf="cell === 'information_flag'">
-                <img src="assets/img/flag-yellow.png" />
-              </p>
-              <p *ngIf="cell === 'warning_flag'">
-                <img src="assets/img/flag-orange.png" />
-              </p>
-              <p *ngIf="cell === 'critical_flag'">
-                <img src="assets/img/flag-red.png" />
-              </p>
-              <p *ngIf="!cell.includes('flag')">
-                {{cell}}
-              </p>
+        <tbody *ngIf="!expandedTables[i].metricTable">
+          <tr *ngFor="let row of report.metricTable">
+            <td *ngIf="row.flag">
+              <img src="assets/img/flag-yellow.png" />
             </td>
+            <td *ngIf="row.flag">{{row.metricOrderNumber}}</td>
+            <td *ngIf="row.flag">{{row.metricDescription}}</td>
+            <td *ngIf="row.flag">{{row.computedValue}}</td>
+            <td *ngIf="row.flag">{{row.passIndicator}}</td>
+            <td *ngIf="row.flag">{{row.ruleWeightPercent}}</td>
+            <td *ngIf="row.flag">{{row.score}}</td>
+            <td *ngIf="row.flag">{{row.errorMessage}}</td>
           </tr>
           <tr class="bottom-row">
             <td></td>
           </tr>
         </tbody>
       </table>
-      <div *ngIf="table[1] && table[1].length">
-        <div *ngIf="expandedTableIndexes[i][j]" class="show-less-button-container">
-          <button (click)="showLess(i, j)">Show Less &minus;</button>
+
+      <div *ngIf="report.metricTable.length">
+        <div *ngIf="expandedTables[i].metricTable" class="show-less-button-container">
+          <button (click)="showLess(i, 'metricTable')">Show Less &minus;</button>
         </div>
-        <div *ngIf="!expandedTableIndexes[i][j]" class="show-less-button-container">
-          <button (click)="showMore(i, j)">Show More &plus;</button>
+        <div *ngIf="!expandedTables[i].metricTable" class="show-less-button-container">
+          <button (click)="showMore(i, 'metricTable')">Show More &plus;</button>
         </div>
       </div>
+    </div>
+
+    <div>
+      <table *ngIf="report.financialSummary" id="scrollId">
+        <colgroup span="10"></colgroup>
+        <thead>
+          <tr>
+            <th class="no-width"></th>
+            <th>Column Name</th>
+            <th>Financial Order Number</th>
+            <th>Total Valid Amount</th>
+            <th>Total Rejected Amount</th>
+            <th>Total Amount</th>
+            <th>Total Amount Excluding Denied Secondary</th>
+            <th>Total Amount Outpatient Facility Only</th>
+            <th>Estimated Average Per Valid Script</th>
+            <th>Error Msg</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="expandedTables[i].financialSummary">
+          <tr *ngFor="let row of report.financialSummary">
+            <td [ngClass]="!row.flag ? 'more-padding' : ''">
+              <img *ngIf="row.flag" src="assets/img/flag-yellow.png" />
+            </td>
+            <td>{{row.columnName}}</td>
+            <td>{{row.financialOrderNumber}}</td>
+            <td>{{row.totalValidAmount}}</td>
+            <td>{{row.totalAmount}}</td>
+            <td>{{row.percentRejected}}</td>
+            <td>{{row.totalAmountExcludingDeniedSecondary}}</td>
+            <td>{{row.totalAmountOutpatientFacilityOnly}}</td>
+            <td>{{row.estimatedAveragePerValidScript}}</td>
+            <td>{{row.errorMessage}}</td>
+          </tr>
+          <tr class="bottom-row">
+            <td></td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="!expandedTables[i].financialSummary">
+          <tr *ngFor="let row of report.financialSummary">
+            <td *ngIf="row.flag">
+              <img src="assets/img/flag-yellow.png" />
+            </td>
+            <td *ngIf="row.flag">{{row.columnName}}</td>
+            <td *ngIf="row.flag">{{row.financialOrderNumber}}</td>
+            <td *ngIf="row.flag">{{row.totalValidAmount}}</td>
+            <td *ngIf="row.flag">{{row.totalAmount}}</td>
+            <td *ngIf="row.flag">{{row.percentRejected}}</td>
+            <td *ngIf="row.flag">{{row.totalAmountExcludingDeniedSecondary}}</td>
+            <td *ngIf="row.flag">{{row.totalAmountOutpatientFacilityOnly}}</td>
+            <td *ngIf="row.flag">{{row.estimatedAveragePerValidScript}}</td>
+            <td *ngIf="row.flag">{{row.errorMessage}}</td>
+          </tr>
+          <tr class="bottom-row">
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="report.financialSummary">
+        <div *ngIf="expandedTables[i].financialSummary" class="show-less-button-container">
+          <button (click)="showLess(i, 'financialSummary')">Show Less &minus;</button>
+        </div>
+        <div *ngIf="!expandedTables[i].financialSummary" class="show-less-button-container">
+          <button (click)="showMore(i, 'financialSummary')">Show More &plus;</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <table *ngIf="report.rxTable" id="scrollId">
+        <colgroup span="4"></colgroup>
+        <thead>
+          <tr>
+            <th>Valid Records</th>
+            <th>Voided Records</th>
+            <th>Rejected Records</th>
+            <th>Total Records</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of report.rxTable">
+            <td>{{row.validRecords}}</td>
+            <td>{{row.voidedRecords}}</td>
+            <td>{{row.rejectedRecords}}</td>
+            <td>{{row.totalRecords}}</td>
+          </tr>
+          <tr class="bottom-row">
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <table *ngIf="report.frequencyCountTable" id="scrollId">
+        <colgroup span="2"></colgroup>
+        <thead>
+          <tr>
+            <th>Field Value</th>
+            <th>Frequency Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of report.frequencyCountTable">
+            <td>{{row.fieldValue}}</td>
+            <td>{{row.frequencyCount}}</td>
+          </tr>
+          <tr class="bottom-row">
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
