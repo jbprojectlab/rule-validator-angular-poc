@@ -6,6 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent {
+  panelTop: boolean = false;
 
   constructor() { }
+
+  ngOnInit(): void {
+    document.body.addEventListener('scroll', (e: any) => {
+      if(document.body.scrollTop > 20) {
+        this.panelTop = true;
+      } else {
+        this.panelTop = false;
+      }
+    })
+  }
 }

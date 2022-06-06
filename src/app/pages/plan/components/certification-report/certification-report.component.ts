@@ -17,7 +17,6 @@ export class CertificationReportComponent implements OnInit {
   menuIsOpen: boolean = false;
   tablesFilteredByFlag: boolean = false;
   flagImgSrc: string = 'flag.png';
-  panelTop: boolean = false;
   expandedTables: any[] = []
 
   openMenu() {
@@ -49,12 +48,6 @@ export class CertificationReportComponent implements OnInit {
     this.initializeExpandedTables()
   }
 
-  filterTablesByProduct(title: string) {
-  }
-
-  filterTablesByTable(title: string, tableIdx: number) {
-  }
-
   filterTablesByFlag() {
     this.expandedTables = this.reports.map((report: any, index: number) => {
       let expandedState: any = {}
@@ -75,9 +68,6 @@ export class CertificationReportComponent implements OnInit {
       this.flagImgSrc = 'flag-yellow.png';
       this.filterTablesByFlag();
     }
-  }
-
-  productHasTables(product: any) {
   }
 
   showMore(i: number, table: string) {

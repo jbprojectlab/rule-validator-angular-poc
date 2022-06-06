@@ -1,5 +1,5 @@
 <div class="app-container">
-  <div [ngClass]="[navIsHidden ? ('main-container hidden-nav-margin') : ('main-container')]">
+  <div [ngClass]="[navIsHidden ? ('main-container hidden-nav-margin') : ('main-container')]" [ngClass]="[landingPageMargin ? ('landing-page-margin main-container') : ('main-container')]">
     <div class="toolbar" role="banner">
       <img
         id="logo"
