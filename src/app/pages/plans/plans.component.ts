@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Plan } from 'app/core/types/plan';
-import { PlansService } from './Services/plans.service';
+import { PlansService } from './services/plans.service';
 import { environment } from 'environments/environment';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
