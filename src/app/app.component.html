@@ -1,5 +1,5 @@
 <div class="app-container">
-  <div [ngClass]="[navIsHidden ? 'hidden-nav-margin main-container' : 'main-container', landingPageMargin ? 'landing-page-margin main-container' : 'main-container']">
+  <div [ngClass]="[navIsHidden ? ('main-container hidden-nav-margin') : ('main-container')]">
     <div class="toolbar" role="banner">
       <img
         id="logo"
@@ -22,5 +22,8 @@
       </div>
     </div>
     <router-outlet></router-outlet>
+    <footer [ngClass]="{'hidden-nav-margin': navIsHidden}">
+      &copy; 2022. All rights reserved
+    </footer>
   </div>
 </div>

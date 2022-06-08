@@ -1,6 +1,4 @@
-<div [ngClass]="panelTop ? 'white-bg-panel panel-top' : 'white-bg-panel'"></div>
-
-<div class="plan-header-wrapper">
+<div class="plan-container">
   <div class="plan-header">
     <ul>
       <li>
@@ -56,9 +54,7 @@
       <h5>Field Distribution Report</h5>
     </div>
   </div>
-</div>
 
-<div class="plan-container">
   <div *ngIf="visibleTab === 1">
     <app-certification-report></app-certification-report>
   </div>
@@ -83,5 +79,3 @@
     </div>
   </div>
 </div>
-
-<app-footer></app-footer>

@@ -1,16 +1,24 @@
 table
-  margin-right: 40px
+  margin: 0 var(--40px) var(--40px) 0
   padding: 0
   border: 1px solid var(--border-light-grey)
   border-radius: var(--rounded-corner-border-radius)
   border-spacing: 0
   font-weight: 500
-  width: 100%
+  overflow: scroll
+  height: calc(100vh - 360px)
+  display: block
+  scrollbar-width: none
+  -ms-overflow-style: none
+
+  &::-webkit-scrollbar
+    width: 0
+    height: 0
 
   th
     border-bottom: 1px solid var(--border-light-grey)
-    cursor: pointer
-    padding: 20px
+    padding: 10px
+    text-align: left
 
     p
       text-align: center
@@ -23,6 +31,9 @@ table
 
       &.ascending
         transform: rotate(180deg)
+
+  th
+    text-align: center
 
   th,
   td
@@ -78,32 +89,21 @@ table
     height: 20px
     padding: 0 20px
 
-.white-bg-panel
-  position: absolute
-  top: 20px
-  right: 20px
-  left: 100px
-  height: 250px
-  z-index: 1
-  background-color: var(--white)
-
-  &.panel-top
-    top: 0
-    height: 270px
-
 .plans-table
-  margin: 150px 0 0
+  position: absolute
+  top: 7.5rem
+  right: 0
+  left: 80px
   padding: 0 40px
+  margin-top: 30px
 
   table
     margin-right: 0
   
   .table-title
-    position: absolute
-    font-size: 24px
-    top: 180px
-    left: 160px
-    z-index: 2
+    font-size: 1.563rem
+    color: #363535
+    opacity: 1
 
 .plans-table-border
   border-bottom: 1px solid rgba(0, 0, 0, 0.5)
@@ -119,12 +119,11 @@ table
 .search
   background-color: var(--background-shade-light-grey)
   border-radius: var(--rounded-corner-border-radius)
-  height: 30px
-  padding: 20px 0 40px 40px
-  right: 50px
-  position: absolute
-  z-index: 2
-  margin-top: -120px
+  height: 1.875rem
+  font-size: 1rem
+  padding: var(--20px) 0 var(--40px) var(--40px)
+  margin-bottom: 2.063rem
+
 
   div
     display: flex
@@ -155,12 +154,19 @@ table
     img
       height: 20px
 
-@media screen and (max-width: 1660px)
+
+
+@media only screen and (min-width: 1280px)
+  .search-container
+    display: column
+  
   .table-title
-    opacity: 0
+    margin-bottom: var(--20px)
+    
+@media only screen and (min-width: 1400px)
+  .search-container
+    display: flex
+    justify-content: space-between
+    align-items: baseline
 
-  .search
-    margin-left: 0px
-
-@media screen and (max-width: 1200px)
-  .search
+      
