@@ -72,9 +72,9 @@
         <td>{{plan.status}}</td>
         <td>{{plan.submissionCurrentState}}</td>
         <td>{{plan.lastUpdated | date:'MM/dd/yyyy h:mm a'}}</td>
-        <td>{{plan.planValidationDue | date:'MM/dd/yyyy'}}</td>
-        <td *ngIf="plan.reportScoreL2 !== undefined" [ngClass]="{'green': plan.reportScoreL2 === 0, 'yellow': plan.reportScoreL2 > 0 && plan.reportScoreL2 < 1, 'red':  plan.reportScoreL2 >= 1}">
-          <p>{{plan.reportScoreL2}}</p>
+        <td>{{plan.planValidationDueDate | date:'MM/dd/yyyy'}}</td>
+        <td *ngIf="plan.score !== undefined" [ngClass]="{'green': plan.score === 0, 'yellow': plan.score > 0 && plan.score < 1, 'red':  plan.score >= 1}">
+          <p>{{plan.score}}</p>
         </td>
       </tr>
     </tbody>

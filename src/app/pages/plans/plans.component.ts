@@ -131,56 +131,6 @@ export class PlansComponent implements OnInit, OnDestroy {
     }
   }
 
-  filterPlans() {
-    let filtered: Plan[] = []
-
-    for(let i = 0; i < this.plans.length; i += 1) {
-      const plan = this.plans[i];
-      const filteredPlan: Plan = {
-        planName: plan.planName,
-        submissionControl: plan.submissionControl,
-        submissionReceivedDate: plan.submissionReceivedDate,
-        mode: plan.mode,
-        lastUpdated: plan.lastUpdated,
-        planValidationDue: plan.planValidationDue,
-        reportScoreL2: plan.reportScoreL2
-      }
-
-      let submissionGroup = plan.submissionGroup,
-      paidThroughPeriod = plan.paidThroughPeriod,
-      submissionCurrentState = plan.submissionCurrentState,
-      category = plan.category,
-      status = plan.status
-
-      let submissionGroupSearchFilter: number = Number(this.searchFilter.submissionGroup);
-      let submissionGroupNumber: number = Number(submissionGroup);
-      
-      if (!this.searchFilter.submissionGroup || submissionGroupSearchFilter === submissionGroupNumber) {
-        filteredPlan.submissionGroup = submissionGroup;
-      } else continue;
-
-      if (!this.searchFilter.paidThroughPeriod || this.searchFilter.paidThroughPeriod === paidThroughPeriod) {
-        filteredPlan.paidThroughPeriod = paidThroughPeriod;
-      } else continue;
-
-      if (!this.searchFilter.submissionCurrentState || this.searchFilter.submissionCurrentState === submissionCurrentState) {
-        filteredPlan.submissionCurrentState = submissionCurrentState
-      } else continue;
-
-      if (!this.searchFilter.category || this.searchFilter.category === category) {
-        filteredPlan.category = category;
-      } else continue;
-
-      if (!this.searchFilter.status || this.searchFilter.status === status) {
-        filteredPlan.status = status;
-      } else continue;
-
-      filtered.push(filteredPlan);
-    }
-
-    this.plans = filtered;
-  }
-
   search() {
     this.isSearching = true;
     if (this.paidThroughPeriod !== this.selectedPaidThroughPeriodOption || this.submissionGroup != this.selectedSubmissionGroupOption) {
@@ -191,6 +141,7 @@ export class PlansComponent implements OnInit, OnDestroy {
   }
 
   sortByColumn(columnHeader: string) {
+    console.log('sorting plans:  ', this.plans)
     if (columnHeader === this.selectedSortingColumn) {
       this.sortIsAscending = !this.sortIsAscending;
     } else {
@@ -208,17 +159,17 @@ export class PlansComponent implements OnInit, OnDestroy {
       "Submission Status": 'status',
       "Submission Current State": 'submissionCurrentState',
       "Last Updated": 'lastUpdated',
-      "Plan Validation Due": 'planValidationDue',
-      "L2 Report Score": 'reportScoreL2'
+      "Plan Validation Due": 'planValidationDueDate',
+      "L2 Report Score": 'score'
     };
     // @ts-ignore
     const columnName = columnNames[columnHeader];
     // @ts-ignore
     const columnType = typeof this.plans[0][columnName];
     if (this.sortIsAscending) {
-      this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? a[columnName] - b[columnName] : ('' + a[columnName]).localeCompare(b[columnName]));
+      this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? a[columnName] - b[columnName] : ('' + a[columnName]).localeCompare(b[columnName])); 
     } else {
-      this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? b[columnName] - a[columnName] : ('' + b[columnName]).localeCompare(a[columnName])) ;     
+      this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? b[columnName] - a[columnName] : ('' + b[columnName]).localeCompare(a[columnName]));     
     }
   }
 

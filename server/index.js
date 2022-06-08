@@ -17,6 +17,6 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).send(err.message || 'Internal server error')
 })
 
-app.listen(PORT, () => console.log(`studiously serving silly sounds on port ${PORT}`))
+app.listen(PORT, () => console.log(`Express server running on port ${PORT}`))
 
 module.exports = app
