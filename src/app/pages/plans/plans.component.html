@@ -1,51 +1,49 @@
 <app-navbar></app-navbar>
-
 <div [ngClass]="panelTop ? 'white-bg-panel panel-top' : 'white-bg-panel'"></div>
 
 <div class="plans-table">
-  <div class="table-title">
-    NDW - Summary Page
-  </div>
+    <div class="table-title">
+      NDW - Summary Page
+    </div>
+    <div class="search">
+      <div>
+        <ng-select class="custom" [(ngModel)]="selectedSubmissionGroupOption" placeholder="Submission Group" (change)="handleSearchFilterChange('submissionGroup', selectedSubmissionGroupOption)">
+          <ng-option
+            *ngFor="let submissionGroupOption of options.submissionGroupOptions"
+            [value]="submissionGroupOption"
+          >
+            {{submissionGroupOption}}
+          </ng-option>
+        </ng-select>
+        
+        <ng-select class="custom" [(ngModel)]="selectedPaidThroughPeriodOption" placeholder="Paid Through Period" (change)="handleSearchFilterChange('paidThroughPeriod', selectedPaidThroughPeriodOption)">
+          <ng-option *ngFor="let paidThroughPeriodOption of options.paidThroughPeriodOptions" [value]="paidThroughPeriodOption">
+            {{paidThroughPeriodOption || getCurrentPaidDate()}}
+          </ng-option>
+        </ng-select>
   
-  <div class="search">
-    <div>
-      <ng-select class="custom" [(ngModel)]="selectedSubmissionGroupOption" placeholder="Submission Group" (change)="handleSearchFilterChange('submissionGroup', selectedSubmissionGroupOption)">
-        <ng-option
-          *ngFor="let submissionGroupOption of options.submissionGroupOptions"
-          [value]="submissionGroupOption"
-        >
-          {{submissionGroupOption}}
-        </ng-option>
-      </ng-select>
-      
-      <ng-select class="custom" [(ngModel)]="selectedPaidThroughPeriodOption" placeholder="Paid Through Period" (change)="handleSearchFilterChange('paidThroughPeriod', selectedPaidThroughPeriodOption)">
-        <ng-option *ngFor="let paidThroughPeriodOption of options.paidThroughPeriodOptions" [value]="paidThroughPeriodOption">
-          {{paidThroughPeriodOption || getCurrentPaidDate()}}
-        </ng-option>
-      </ng-select>
-
-      <ng-select class="custom" [(ngModel)]="selectedSubmissionState" placeholder="Submission Current State" >
-        <ng-option *ngFor="let submissionCurrentStateOption of options.submissionCurrentStateOptions" [value]="submissionCurrentStateOption">
-          {{submissionCurrentStateOption}}
-        </ng-option>
-      </ng-select>
-
-      <ng-select class="custom last-select" [(ngModel)]="selectedCategory" placeholder="Category" >
-        <ng-option *ngFor="let categoryOption of options.categoryOptions" [value]="categoryOption">
-          {{categoryOption}}
-        </ng-option>
-      </ng-select>
-
-      <ng-select class="custom last-select" [(ngModel)]="selectedStatus" placeholder="Submission Status" >
-        <ng-option *ngFor="let statusOption of options.statusOptions" [value]="statusOption">
-          {{statusOption}}
-        </ng-option>
-      </ng-select>
-      <div class="search-btn" (click)="search()">
-        <img src="assets/img/search.png" >
+        <ng-select class="custom" [(ngModel)]="selectedSubmissionState" placeholder="Submission Current State" >
+          <ng-option *ngFor="let submissionCurrentStateOption of options.submissionCurrentStateOptions" [value]="submissionCurrentStateOption">
+            {{submissionCurrentStateOption}}
+          </ng-option>
+        </ng-select>
+  
+        <ng-select class="custom last-select" [(ngModel)]="selectedCategory" placeholder="Category" >
+          <ng-option *ngFor="let categoryOption of options.categoryOptions" [value]="categoryOption">
+            {{categoryOption}}
+          </ng-option>
+        </ng-select>
+  
+        <ng-select class="custom last-select" [(ngModel)]="selectedStatus" placeholder="Submission Status" >
+          <ng-option *ngFor="let statusOption of options.statusOptions" [value]="statusOption">
+            {{statusOption}}
+          </ng-option>
+        </ng-select>
+        <div class="search-btn" (click)="search()">
+          <img src="assets/img/search.png" >
+        </div>
       </div>
     </div>
-  </div>
   <table>
     <colgroup span="12"></colgroup>
     <thead>
@@ -81,5 +79,3 @@
   </table>
   <div *ngIf="(!plans || !plans.length) && isSearching" class="no-results-msg">No plans match your search</div>
 </div>
-
-<app-footer></app-footer>

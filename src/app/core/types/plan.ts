@@ -9,7 +9,7 @@ export interface Plan {
   status?: string;
   submissionCurrentState?: string;
   lastUpdated?: string;
-  planValidationDueDate?: string;
-  score?: number;
+  planValidationDue?: string;
+  reportScoreL2?: number;
 }
   

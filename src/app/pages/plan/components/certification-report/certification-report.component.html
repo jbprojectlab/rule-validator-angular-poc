@@ -45,7 +45,7 @@
             <th>Error Msg</th>
           </tr>
         </thead>
-        <tbody *ngIf="expandedTables[i].metricTable">
+        <tbody *ngIf="expandedTables[i]?.metricTable">
           <tr *ngFor="let row of report.metricTable">
             <td [ngClass]="!row.flag ? 'more-padding' : ''">
               <img *ngIf="row.flag" src="assets/img/flag-yellow.png" />
@@ -62,7 +62,7 @@
             <td></td>
           </tr>
         </tbody>
-        <tbody *ngIf="!expandedTables[i].metricTable">
+        <tbody *ngIf="!expandedTables[i]?.metricTable">
           <tr *ngFor="let row of report.metricTable">
             <td *ngIf="row.flag">
               <img src="assets/img/flag-yellow.png" />
@@ -81,11 +81,11 @@
         </tbody>
       </table>
 
-      <div *ngIf="report.metricTable.length">
-        <div *ngIf="expandedTables[i].metricTable" class="show-less-button-container">
+      <div *ngIf="report?.metricTable?.length">
+        <div *ngIf="expandedTables[i]?.metricTable" class="show-less-button-container">
           <button (click)="showLess(i, 'metricTable')">Show Less &minus;</button>
         </div>
-        <div *ngIf="!expandedTables[i].metricTable" class="show-less-button-container">
+        <div *ngIf="!expandedTables[i]?.metricTable" class="show-less-button-container">
           <button (click)="showMore(i, 'metricTable')">Show More &plus;</button>
         </div>
       </div>
@@ -108,7 +108,7 @@
             <th>Error Msg</th>
           </tr>
         </thead>
-        <tbody *ngIf="expandedTables[i].financialSummary">
+        <tbody *ngIf="expandedTables[i]?.financialSummary">
           <tr *ngFor="let row of report.financialSummary">
             <td [ngClass]="!row.flag ? 'more-padding' : ''">
               <img *ngIf="row.flag" src="assets/img/flag-yellow.png" />
@@ -127,7 +127,7 @@
             <td></td>
           </tr>
         </tbody>
-        <tbody *ngIf="!expandedTables[i].financialSummary">
+        <tbody *ngIf="!expandedTables[i]?.financialSummary">
           <tr *ngFor="let row of report.financialSummary">
             <td *ngIf="row.flag">
               <img src="assets/img/flag-yellow.png" />
@@ -149,10 +149,10 @@
       </table>
 
       <div *ngIf="report.financialSummary">
-        <div *ngIf="expandedTables[i].financialSummary" class="show-less-button-container">
+        <div *ngIf="expandedTables[i]?.financialSummary" class="show-less-button-container">
           <button (click)="showLess(i, 'financialSummary')">Show Less &minus;</button>
         </div>
-        <div *ngIf="!expandedTables[i].financialSummary" class="show-less-button-container">
+        <div *ngIf="!expandedTables[i]?.financialSummary" class="show-less-button-container">
           <button (click)="showMore(i, 'financialSummary')">Show More &plus;</button>
         </div>
       </div>

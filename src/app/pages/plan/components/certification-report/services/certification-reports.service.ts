@@ -17,7 +17,6 @@ export class CertificationReportsService {
   }
 
   handleError(error: any) {
-    console.error(error)
     return []
   }
 }

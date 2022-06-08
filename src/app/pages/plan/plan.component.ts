@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import mockPlan, { mockPlanDescription } from './mock-plan'
 
 @Component({
@@ -6,7 +6,7 @@ import mockPlan, { mockPlanDescription } from './mock-plan'
   templateUrl: './plan.component.html',
   styleUrls: ['./plan.component.sass']
 })
-export class PlanComponent {
+export class PlanComponent implements OnInit {
   planDescription: any = mockPlanDescription;
   plan: any = mockPlan;
   visibleTab: number = 1;
