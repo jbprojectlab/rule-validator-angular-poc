@@ -90,15 +90,22 @@ span.open
     margin-top: 8px
 
 .certification-report
-  margin: 280px 40px 40px
   background-color: var(--background-shade-light-grey)
   border: 1px solid var(--background-shade-light-grey)
   border-radius: var(--rounded-corner-border-radius)
   border-spacing: 0
   padding: 20px 20px 80px
+  height: 27vh
+  //height: calc(100vh - 430px)
+  overflow: auto
+  border-radius: 20px
 
   h4:not(.first-filename)
     margin-top: 80px
+
+@media only screen and (min-width: 1280px)
+  .certification-report
+    height: 14vh
 
 table
   background-color: var(--white)
@@ -162,3 +169,7 @@ table
     cursor: pointer
     outline: inherit
     width: 200px
+
+.certificate-report-container
+  margin: 0px 40px 40px
+  border-radius: 20px

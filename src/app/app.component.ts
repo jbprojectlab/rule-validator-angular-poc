@@ -25,6 +25,7 @@ export class AppComponent {
 
         if (segments[1] === 'home' || !segments[1].length) {
           this.landingPageMargin = true;
+          this.navIsHidden = true;
         } else if (this.landingPageMargin) {
           this.landingPageMargin = false;
         }

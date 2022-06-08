@@ -4,42 +4,42 @@ nav
   display: flex
   flex-direction: column
   align-items: center
-  padding-top: 80px
+  padding-top: var(--80px)
   position: fixed
-  left: 10px
-  top: 40px
-  bottom: 40px
-  max-height: calc(100% - 40px)
-  width: 80px
+  left: var(--25px)
+  top: var(--40px)
+  bottom: var(--40px)
+  max-height: calc(100% - var(--40px))
+  width: var(--80px)
 
   a
     display: flex
     align-items: center
     justify-content: center
-    margin-bottom: 60px
-    height: 100px
-    min-height: 80px
-    width: 80px
+    margin-bottom: 3.75rem
+    height: var(--100px)
+    min-height: var(--80px)
+    width: var(--80px)
 
   img
     filter: brightness(0) invert(1)
-    width: 30px
+    width: 1.875rem
     margin-bottom: 17px
-    margin-left: 13px
+    margin-left: 18px
 
   .active
     // background: white
     // border-radius: var(--round-border-radius) 0 0 var(--round-border-radius)
-    margin-right: -32px
+    margin-right: -23px
     background-image: url('/assets/img/Subtraction 1.svg')
-    background-size: 43%
+    background-size: 65%
     background-repeat: no-repeat
     display: flex
     flex-wrap: wrap
-    background-size: 45px 118px
+    //background-size: 39px 7.375rem
     background-position-y: -13px
-    background-position-x: 26px
-    margin-left: 9px
+    background-position-x: var(--26px)
+    
 
     img
       filter: none
