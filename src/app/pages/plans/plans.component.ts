@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Plan } from 'app/core/types/plan';
-import { PlansService } from './services/plans.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { PlansService } from './services/plans.service';
 
 @Component({
   selector: 'app-plans',
@@ -55,15 +55,14 @@ export class PlansComponent implements OnInit, OnDestroy {
     'Plan Validation Due',
     'L2 Report Score'
   ];
-
   constructor(
-    private plansService: PlansService
+    private planService: PlansService
   ) { }
 
   ngOnInit(): void {
     if (this.isSearching) this.isSearching = false;
 
-    this.plansService.getOptions().subscribe((response: any) => {
+    this.planService.getOptions().subscribe((response: any) => {
       this.options = {
         submissionGroupOptions: response.submissionGroup,
         submissionCurrentStateOptions: response.submissionCurrentState,
@@ -73,7 +72,6 @@ export class PlansComponent implements OnInit, OnDestroy {
       };
     })
     this.getPlans();
-
     document.body.addEventListener('scroll', (e: any) => {
       if (document.body.scrollTop > 20) {
         this.panelTop = true;
@@ -141,13 +139,12 @@ export class PlansComponent implements OnInit, OnDestroy {
   }
 
   sortByColumn(columnHeader: string) {
-    console.log('sorting plans:  ', this.plans)
     if (columnHeader === this.selectedSortingColumn) {
       this.sortIsAscending = !this.sortIsAscending;
     } else {
       this.selectedSortingColumn = columnHeader;
     }
-
+    
     const columnNames = {
       "Submission Group / Plan Code": 'submissionGroup',
       "Plan Name": 'planName',
@@ -159,22 +156,22 @@ export class PlansComponent implements OnInit, OnDestroy {
       "Submission Status": 'status',
       "Submission Current State": 'submissionCurrentState',
       "Last Updated": 'lastUpdated',
-      "Plan Validation Due": 'planValidationDueDate',
-      "L2 Report Score": 'score'
+      "Plan Validation Due": 'planValidationDue',
+      "L2 Report Score": 'reportScoreL2'
     };
     // @ts-ignore
     const columnName = columnNames[columnHeader];
     // @ts-ignore
     const columnType = typeof this.plans[0][columnName];
     if (this.sortIsAscending) {
-      this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? a[columnName] - b[columnName] : ('' + a[columnName]).localeCompare(b[columnName])); 
+      this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? a[columnName] - b[columnName] : ('' + a[columnName]).localeCompare(b[columnName]));
     } else {
-      this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? b[columnName] - a[columnName] : ('' + b[columnName]).localeCompare(a[columnName]));     
+      this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? b[columnName] - a[columnName] : ('' + b[columnName]).localeCompare(a[columnName])) ;     
     }
   }
 
   public getPlans() {
-    this.plansService.getPlans(this.selectedPaidThroughPeriodOption, this.selectedSubmissionGroupOption)
+    this.planService.getPlans(this.selectedPaidThroughPeriodOption, this.selectedSubmissionGroupOption)
     .pipe(takeUntil(this.destroyed$))
     .subscribe((data: Plan[]) => {
       if (data && data.length) {
@@ -184,7 +181,7 @@ export class PlansComponent implements OnInit, OnDestroy {
       }
     })
   }
-      
+
   ngOnDestroy() {
     this.destroyed$.next(true);
   }

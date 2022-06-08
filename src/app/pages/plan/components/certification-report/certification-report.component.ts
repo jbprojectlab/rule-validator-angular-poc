@@ -2,18 +2,19 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CertificationReportsService } from './services/certification-reports.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { L2Report, SubmissionReport } from 'app/core/types/submissionReport';
 
 @Component({
   selector: 'app-certification-report',
   templateUrl: './certification-report.component.html',
   styleUrls: ['./certification-report.component.sass']
 })
-export class CertificationReportComponent implements OnInit {
-  initialReports: any = []
-  reports: any = this.initialReports;
-  totalFlag: number = this.reports.totalFlag;
-  totalPassFail: string = this.reports.totalPassFail;
-  score: number = this.reports.totalScore;
+export class CertificationReportComponent implements OnInit, OnDestroy {
+  initialReports!: SubmissionReport;
+  reports: L2Report[] = [];
+  totalFlag: number = this.initialReports?.totalFlag;
+  totalPassFail: string = this.initialReports?.totalPassFail;
+  score: number = this.initialReports?.totalScore;
   menuItems: any = [];
   menuIsOpen: boolean = false;
   tablesFilteredByFlag: boolean = false;
@@ -26,9 +27,15 @@ export class CertificationReportComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getCertificationReports();
-    this.getMenuItems();
-    this.initializeExpandedTables();
+    this.certificationReportsService.getCertificationReportData()
+    .pipe(takeUntil(this.destroyed$))
+    .subscribe((data: SubmissionReport) => {
+        this.initialReports = data;
+        this.reports = (data && data) ? data.l2Reports : []
+        this.getMenuItems();
+        this.initializeExpandedTables();
+    })
+    
   }
 
   openMenu() {
@@ -55,7 +62,7 @@ export class CertificationReportComponent implements OnInit {
   }
 
   resetFilter() {
-    this.reports = this.initialReports;
+    this.reports = this.initialReports?.l2Reports;
     this.tablesFilteredByFlag = false;
     this.initializeExpandedTables();
   }
@@ -123,18 +130,6 @@ export class CertificationReportComponent implements OnInit {
         document.body.scrollTop = document.body.scrollTop - 440;
       }
     }
-  }
-
-  public getCertificationReports() {
-    this.certificationReportsService.getCertificationReportData()
-    .pipe(takeUntil(this.destroyed$))
-    .subscribe((data: any[]) => {
-      if (data && data.length) {
-        this.initialReports = data;
-      } else {
-        this.initialReports = [];
-      }
-    })
   }
 
   ngOnDestroy() {

@@ -1,9 +1,9 @@
 [
   {
-    "submissionGroup":886,
+    "submissionGroup":889,
     "submissionControl":6231,
     "planName":"GENROCKET_2",
-    "paidThroughPeriod":"202111",
+    "paidThroughPeriod":"202110",
     "submissionCurrentState":"Submission Received",
     "mode":"Production",
     "status":"Active",
@@ -42,10 +42,10 @@
     "score":0.0
   },
   {
-    "submissionGroup":889,
+    "submissionGroup":886,
     "submissionControl":6231,
     "planName":"GENROCKET_2",
-    "paidThroughPeriod":"202110",
+    "paidThroughPeriod":"202111",
     "submissionCurrentState":"Submission Received",
     "mode":"Production",
     "status":"Active",

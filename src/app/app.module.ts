@@ -16,7 +16,6 @@ import { CertificationReportComponent } from './pages/plan/components/certificat
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { PlanFilterPipe } from './pages/plans/pipes/plan-filter.pipe';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
