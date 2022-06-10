@@ -1,8 +1,3 @@
-<div class="header">
-  <h4>L2 Certification Report</h4>
-  <img src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
-</div>
-
 <span class="open" (click)="openMenu()">
   <img src="assets/img/menu.png" />
 </span>
@@ -19,19 +14,29 @@
   </div>
 </div>
 
-<div class="report-score-container">
-  <div>
-    <h4>Total Count</h4>
-    <span>{{score}}</span>
+<div class="filter-score-container">
+  <div class="header">
+    <h4>L2 Certification Report</h4>
   </div>
-  <span class="score-indicator">{{totalPassFail}}</span>
+  
+  <div class="report-score-container">
+    <div>
+      <h4>Total Count</h4>
+      <span>{{initialReports?.totalscore}}</span>
+    </div>
+    <span class="score-indicator">{{initialReports?.totalPassFail}}</span>
+    <img src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
+  </div>
+
 </div>
+
 
 <div class="certificate-report-container">
   <div class="certification-report">
     <div *ngFor="let report of reports; index as i">
       <h4 *ngIf="report.fileName" id="item-{{camelize(report.fileName)}}" [ngClass]="i === 0 ? 'first-filename' : ''">{{report.fileName}}</h4>
-      <div>
+     
+      <div *ngIf="report.metricTable?.length!==0">
         <table *ngIf="report.metricTable" id="item-{{camelize(report.fileName)}}-metricTable">
           <colgroup span="8"></colgroup>
           <thead>
@@ -64,18 +69,20 @@
             </tr>
           </tbody>
           <tbody *ngIf="!expandedTables[i]?.metricTable">
-            <tr *ngFor="let row of report.metricTable">
-              <td *ngIf="row.flag">
-                <img src="assets/img/flag-yellow.png" />
-              </td>
-              <td *ngIf="row.flag">{{row.metricOrderNumber}}</td>
-              <td *ngIf="row.flag">{{row.metricDescription}}</td>
-              <td *ngIf="row.flag">{{row.computedValue}}</td>
-              <td *ngIf="row.flag">{{row.passIndicator}}</td>
-              <td *ngIf="row.flag">{{row.ruleWeightPercent}}</td>
-              <td *ngIf="row.flag">{{row.score}}</td>
-              <td *ngIf="row.flag">{{row.errorMessage}}</td>
-            </tr>
+            <ng-container  *ngFor="let row of report.metricTable">
+              <tr  *ngIf="row.flag">
+                <td >
+                  <img src="assets/img/flag-yellow.png" />
+                </td>
+                <td >{{row.metricOrderNumber}}</td>
+                <td >{{row.metricDescription}}</td>
+                <td >{{row.computedValue}}</td>
+                <td >{{row.passIndicator}}</td>
+                <td >{{row.ruleWeightPercent}}</td>
+                <td >{{row.score}}</td>
+                <td >{{row.errorMessage}}</td>
+              </tr>
+            </ng-container>
             <tr class="bottom-row">
               <td></td>
             </tr>
@@ -92,7 +99,7 @@
         </div>
       </div>
   
-      <div>
+      <div *ngIf="report.financialSummary?.length!==0">
         <table *ngIf="report.financialSummary" id="item-{{camelize(report.fileName)}}-financialSummary">
           <colgroup span="10"></colgroup>
           <thead>
@@ -129,20 +136,22 @@
             </tr>
           </tbody>
           <tbody *ngIf="!expandedTables[i]?.financialSummary">
-            <tr *ngFor="let row of report.financialSummary">
-              <td *ngIf="row.flag">
-                <img src="assets/img/flag-yellow.png" />
-              </td>
-              <td *ngIf="row.flag">{{row.columnName}}</td>
-              <td *ngIf="row.flag">{{row.financialOrderNumber}}</td>
-              <td *ngIf="row.flag">{{row.totalValidAmount}}</td>
-              <td *ngIf="row.flag">{{row.totalAmount}}</td>
-              <td *ngIf="row.flag">{{row.percentRejected}}</td>
-              <td *ngIf="row.flag">{{row.totalAmountExcludingDeniedSecondary}}</td>
-              <td *ngIf="row.flag">{{row.totalAmountOutpatientFacilityOnly}}</td>
-              <td *ngIf="row.flag">{{row.estimatedAveragePerValidScript}}</td>
-              <td *ngIf="row.flag">{{row.errorMessage}}</td>
-            </tr>
+            <ng-container *ngFor="let row of report.financialSummary">
+              <tr  *ngIf="row.flag">
+                <td >
+                  <img src="assets/img/flag-yellow.png" />
+                </td>
+                <td >{{row.columnName}}</td>
+                <td >{{row.financialOrderNumber}}</td>
+                <td >{{row.totalValidAmount}}</td>
+                <td >{{row.totalAmount}}</td>
+                <td >{{row.percentRejected}}</td>
+                <td >{{row.totalAmountExcludingDeniedSecondary}}</td>
+                <td >{{row.totalAmountOutpatientFacilityOnly}}</td>
+                <td >{{row.estimatedAveragePerValidScript}}</td>
+                <td >{{row.errorMessage}}</td>
+              </tr>
+            </ng-container>
             <tr class="bottom-row">
               <td></td>
             </tr>
@@ -159,7 +168,7 @@
         </div>
       </div>
   
-      <div>
+      <div *ngIf="report.rxTable?.length!==0">
         <table *ngIf="report.rxTable" id="item-{{camelize(report.fileName)}}-rxTable">
           <colgroup span="4"></colgroup>
           <thead>
@@ -184,7 +193,7 @@
         </table>
       </div>
   
-      <div>
+      <div *ngIf="report.frequencyCountTable?.length!==0">
         <table *ngIf="report.frequencyCountTable" id="item-{{camelize(report.fileName)}}-frequencyCountTable">
           <colgroup span="2"></colgroup>
           <thead>

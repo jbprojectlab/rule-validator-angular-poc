@@ -7,9 +7,11 @@ table
   font-weight: 500
   overflow: scroll
   height: calc(100vh - 360px)
-  display: block
+  display: inline-block
   scrollbar-width: none
   -ms-overflow-style: none
+  //width: 100%
+  width: calc(100% - 5px)
 
   &::-webkit-scrollbar
     width: 0
@@ -19,6 +21,7 @@ table
     border-bottom: 1px solid var(--border-light-grey)
     padding: 10px
     text-align: left
+    cursor: pointer
 
     p
       text-align: center
@@ -93,8 +96,9 @@ table
   position: absolute
   top: 7.5rem
   right: 0
-  left: 80px
-  padding: 0 40px
+  left: 75px
+  //padding: 0 40px
+  margin: 0px 20px
   margin-top: 30px
 
   table
@@ -121,8 +125,9 @@ table
   border-radius: var(--rounded-corner-border-radius)
   height: 1.875rem
   font-size: 1rem
-  padding: var(--20px) 0 var(--40px) var(--40px)
+  padding: var(--20px) var(--20px) var(--40px) var(--40px)
   margin-bottom: 2.063rem
+  margin-right: 5px
 
 
   div

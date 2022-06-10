@@ -2,16 +2,16 @@
   {
     "submissionGroup":889,
     "submissionControl":6231,
-    "planName":"GENROCKET_2",
+    "planName":"GENROCKET_1",
     "paidThroughPeriod":"202110",
     "submissionCurrentState":"Submission Received",
     "mode":"Production",
-    "status":"Active",
+    "status":"Completed",
     "category":"Combined",
     "submissionReceivedDate":"2022-03-02",
     "lastUpdated":1646253977506,
-    "planValidationDueDate":"2022-03-08",
-    "score":0.0
+    "planValidationDueDate":"2022-03-25",
+    "score":1.0
   },
   {
     "submissionGroup":888,
@@ -25,12 +25,12 @@
     "submissionReceivedDate":"2022-03-02",
     "lastUpdated":1646253977506,
     "planValidationDueDate":"2022-03-08",
-    "score":0.0
+    "score":2.0
   },
   {
     "submissionGroup":887,
     "submissionControl":6231,
-    "planName":"GENROCKET_2",
+    "planName":"GENROCKET_3",
     "paidThroughPeriod":"202205",
     "submissionCurrentState":"Submission Received",
     "mode":"Production",
@@ -38,35 +38,35 @@
     "category":"Combined",
     "submissionReceivedDate":"2022-03-02",
     "lastUpdated":1646253977506,
-    "planValidationDueDate":"2022-03-08",
-    "score":0.0
+    "planValidationDueDate":"2022-03-09",
+    "score":3.0
   },
   {
     "submissionGroup":886,
     "submissionControl":6231,
-    "planName":"GENROCKET_2",
+    "planName":"GENROCKET_4",
     "paidThroughPeriod":"202111",
     "submissionCurrentState":"Submission Received",
     "mode":"Production",
-    "status":"Active",
-    "category":"Combined",
+    "status":"Terminated",
+    "category":"Medical",
     "submissionReceivedDate":"2022-03-02",
     "lastUpdated":1646253977506,
-    "planValidationDueDate":"2022-03-08",
-    "score":0.0
+    "planValidationDueDate":"2022-05-08",
+    "score":1.0
   },
   {
     "submissionGroup":885,
     "submissionControl":6231,
-    "planName":"GENROCKET_2",
+    "planName":"GENROCKET_5",
     "paidThroughPeriod":"202112",
     "submissionCurrentState":"Submission Received",
     "mode":"Production",
-    "status":"Active",
+    "status":"Non-Claims",
     "category":"Combined",
     "submissionReceivedDate":"2022-03-02",
     "lastUpdated":1646253977506,
-    "planValidationDueDate":"2022-03-08",
-    "score":0.0
+    "planValidationDueDate":"2022-04-08",
+    "score":5.0
   }
 ]
