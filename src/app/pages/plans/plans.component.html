@@ -7,16 +7,15 @@
     </div>
     <div class="search">
       <div>
-        <ng-select class="custom" [(ngModel)]="selectedSubmissionGroupOption" placeholder="Submission Group" (change)="handleSearchFilterChange('submissionGroup', selectedSubmissionGroupOption)">
+        <ng-select class="custom" [(ngModel)]="selectedSubmissionGroupOption" placeholder="Submission Group" (change)="handleSearchFilterChange('submissionGroup')">
           <ng-option
             *ngFor="let submissionGroupOption of options.submissionGroupOptions"
-            [value]="submissionGroupOption"
-          >
+            [value]="submissionGroupOption" >
             {{submissionGroupOption}}
           </ng-option>
         </ng-select>
         
-        <ng-select class="custom" [(ngModel)]="selectedPaidThroughPeriodOption" placeholder="Paid Through Period" (change)="handleSearchFilterChange('paidThroughPeriod', selectedPaidThroughPeriodOption)">
+        <ng-select class="custom" [(ngModel)]="selectedPaidThroughPeriodOption" placeholder="Paid Through Period" (change)="handleSearchFilterChange('paidThroughPeriod')">
           <ng-option *ngFor="let paidThroughPeriodOption of options.paidThroughPeriodOptions" [value]="paidThroughPeriodOption">
             {{paidThroughPeriodOption || getCurrentPaidDate()}}
           </ng-option>
@@ -39,15 +38,15 @@
             {{statusOption}}
           </ng-option>
         </ng-select>
-        <div class="search-btn" (click)="search()">
+        <!-- <div class="search-btn" (click)="search()">
           <img src="assets/img/search.png" >
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
   
   
-
+<div>
   <table>
     <colgroup span="12"></colgroup>
     <thead>
@@ -64,7 +63,7 @@
         <td class="left-aligned">{{plan.planName}}</td>
         <td>{{plan.paidThroughPeriod}}</td>
         <td>
-          <a routerLink="/plans/{{plan.submissionControl}}" target='_blank' rel='noopener noreferrer'>
+          <a routerLink="/plans/{{plan.submissionControl}}/{{submissionType}}" target='_blank' rel='noopener noreferrer'>
             {{plan.submissionControl}}
           </a>
         </td>
@@ -81,5 +80,8 @@
       </tr>
     </tbody>
   </table>
+
+</div>
+
   <div *ngIf="(!plans || !plans.length) && isSearching" class="no-results-msg">No plans match your search</div>
 </div>

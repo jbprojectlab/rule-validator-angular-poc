@@ -1,9 +1,9 @@
 export interface SubmissionReport {
     submissionId: 1;
 	submissionType: string;
-	totalScore: 0;
+	totalscore: 0;
     totalPassFail: string;
-    totalFlag: number;
+    total_Flag: number;
     l2Reports: L2Report[];
 }
 
@@ -26,6 +26,9 @@ export interface MatricTableData {
     flag: number;
     fileOrderNumber: number;
     errorMessage: string;
+    totalPassFail:string;
+    total_Flag:number;
+
 }
 
 export interface FinancialSummary {

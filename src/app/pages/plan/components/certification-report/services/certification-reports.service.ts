@@ -11,8 +11,8 @@ import { catchError } from 'rxjs/operators';
 export class CertificationReportsService {
   constructor(private http: HttpClient) { }
 
-  public getCertificationReportData(): Observable<any> {
-    let url: string = `${environment.host}/api/l2-certification-reports`;
+  public getCertificationReportData(subId: string, subType: string): Observable<any> {
+    let url: string = `${environment.host}/api/db/report?submissionId=${subId}&submissionType=${subType}`
     return this.http.get<any>(url).pipe(catchError(this.handleError));
   }
 

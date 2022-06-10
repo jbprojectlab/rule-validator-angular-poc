@@ -3,6 +3,7 @@ import { CertificationReportsService } from './services/certification-reports.se
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { L2Report, SubmissionReport } from 'app/core/types/submissionReport';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-certification-report',
@@ -12,9 +13,6 @@ import { L2Report, SubmissionReport } from 'app/core/types/submissionReport';
 export class CertificationReportComponent implements OnInit, OnDestroy {
   initialReports!: SubmissionReport;
   reports: L2Report[] = [];
-  totalFlag: number = this.initialReports?.totalFlag;
-  totalPassFail: string = this.initialReports?.totalPassFail;
-  score: number = this.initialReports?.totalScore;
   menuItems: any = [];
   menuIsOpen: boolean = false;
   tablesFilteredByFlag: boolean = false;
@@ -22,16 +20,23 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
   expandedTables: any[] = [];
   destroyed$: Subject<boolean> = new Subject();
 
+  private submissionId!: string;
+  private submissionType!: string;
+
   constructor(
+    private activatedRoute: ActivatedRoute,
     private certificationReportsService: CertificationReportsService
-  ) { }
+  ) {
+    this.submissionId = activatedRoute.snapshot.params['submissionId'];
+    this.submissionType = activatedRoute.snapshot.params['submissionType'];
+   }
 
   ngOnInit(): void {
-    this.certificationReportsService.getCertificationReportData()
+    this.certificationReportsService.getCertificationReportData(this.submissionId, this.submissionType)
     .pipe(takeUntil(this.destroyed$))
     .subscribe((data: SubmissionReport) => {
         this.initialReports = data;
-        this.reports = (data && data) ? data.l2Reports : []
+        this.reports = (data && data) ? data.l2Reports : [];
         this.getMenuItems();
         this.initializeExpandedTables();
     })
@@ -116,9 +121,13 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
   }
 
   camelize(str: string) {
-    return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
-      return index === 0 ? word.toLowerCase() : word.toUpperCase();
-    }).replace(/\s+/g, '');
+    if(str) {
+      return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
+        return index === 0 ? word.toLowerCase() : word.toUpperCase();
+      }).replace(/\s+/g, '');
+    } else {
+      return '';
+    }
   }
 
   scrollToTable(reportName: string, lastTable: boolean, tableName?: string) {

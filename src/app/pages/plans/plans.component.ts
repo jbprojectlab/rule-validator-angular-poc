@@ -12,7 +12,6 @@ import { PlansService } from './services/plans.service';
 
 export class PlansComponent implements OnInit, OnDestroy {
   plans: Plan[] = [];
-  searchFilter: Plan = {};
   isSearching: boolean = false;
   panelTop: boolean = false;
   selectedSortingColumn: string = 'Submission Group / Plan Code';
@@ -40,6 +39,8 @@ export class PlansComponent implements OnInit, OnDestroy {
     categoryOptions: this.categoryOptions,
     statusOptions: this.statusOptions
   };
+
+  submissionType: string = 'non-ANTHEM'
 
   headers = [
     'Submission Group / Plan Code',
@@ -107,25 +108,20 @@ export class PlansComponent implements OnInit, OnDestroy {
   getPaidThroughPeriodOptions() {
     let currentDate = this.getCurrentPaidDate();
     const dateOptions: string[] = [currentDate];
-    for (let i = 0; i < 133; i += 1) {
+    for (let i = 0; i < 135; i += 1) {
       let nextDate = this.formatNextPaidDateOption(currentDate);
       currentDate = nextDate;
-      dateOptions.push(currentDate);
+      if(currentDate.slice(-2) !== '00') {
+        dateOptions.push(currentDate)
+      }
     }
     return dateOptions;
   }
 
 
-  handleSearchFilterChange(key: string, value: string | number) {
+  handleSearchFilterChange(key: string) {
     if (key === 'paidThroughPeriod' || key === 'submissionGroup') {
       this.getPlans();
-    }
-    if (!value) {
-      // @ts-ignore
-      delete this.searchFilter[key];
-    } else {
-      // @ts-ignore
-      this.searchFilter[key] = value;
     }
   }
 
@@ -156,17 +152,17 @@ export class PlansComponent implements OnInit, OnDestroy {
       "Submission Status": 'status',
       "Submission Current State": 'submissionCurrentState',
       "Last Updated": 'lastUpdated',
-      "Plan Validation Due": 'planValidationDue',
-      "L2 Report Score": 'reportScoreL2'
+      "Plan Validation Due": 'planValidationDueDate',
+      "L2 Report Score": 'score'
     };
     // @ts-ignore
     const columnName = columnNames[columnHeader];
     // @ts-ignore
     const columnType = typeof this.plans[0][columnName];
     if (this.sortIsAscending) {
-      this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? a[columnName] - b[columnName] : ('' + a[columnName]).localeCompare(b[columnName]));
+      this.plans = [...this.plans.sort((a: any, b: any) => columnType === 'number' ? a[columnName] - b[columnName] : ('' + a[columnName]).localeCompare(b[columnName]))];
     } else {
-      this.plans = this.plans.sort((a: any, b: any) => columnType === 'number' ? b[columnName] - a[columnName] : ('' + b[columnName]).localeCompare(a[columnName])) ;     
+      this.plans = [...this.plans.sort((a: any, b: any) => columnType === 'number' ? b[columnName] - a[columnName] : ('' + b[columnName]).localeCompare(a[columnName]))];     
     }
   }
 
