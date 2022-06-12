@@ -31,9 +31,9 @@
 </div>
 
 
-<div class="certificate-report-container">
+<div>
   <div class="certification-report">
-    <div *ngFor="let report of reports; index as i">
+    <div class="v-scrollbar" *ngFor="let report of reports; index as i">
       <h4 *ngIf="report.fileName" id="item-{{camelize(report.fileName)}}" [ngClass]="i === 0 ? 'first-filename' : ''">{{report.fileName}}</h4>
      
       <div *ngIf="report.metricTable?.length!==0">
@@ -216,4 +216,3 @@
     </div>
   </div>
 </div>
-

@@ -1,17 +1,21 @@
+:host
+  display: flex
+  flex-grow: 1
+
 table
-  margin: 0 var(--40px) var(--40px) 0
+  //margin: 0 var(--40px) var(--40px) 0
   padding: 0
   border: 1px solid var(--border-light-grey)
   border-radius: var(--rounded-corner-border-radius)
   border-spacing: 0
   font-weight: 500
   overflow: scroll
-  height: calc(100vh - 360px)
+  height: calc(100vh - 290px)
   display: inline-block
   scrollbar-width: none
   -ms-overflow-style: none
   //width: 100%
-  width: calc(100% - 5px)
+  width: calc(100vw - 159px)
 
   &::-webkit-scrollbar
     width: 0
@@ -26,6 +30,7 @@ table
     p
       text-align: center
       display: inline
+      font-size: px
 
     .sorted-column-arrow
       width: 10px
@@ -93,19 +98,21 @@ table
     padding: 0 20px
 
 .plans-table
-  position: absolute
-  top: 7.5rem
-  right: 0
-  left: 75px
+  //position: absolute
+  //top: 7.5rem
+  //right: 0
+  //left: 80px
   //padding: 0 40px
-  margin: 0px 20px
-  margin-top: 30px
+  //margin-top: 30px
+  margin: 0 30px 0 30px
+  display: flex
+  flex-direction: column
 
   table
     margin-right: 0
   
   .table-title
-    font-size: 1.563rem
+    font-size: 16px
     color: #363535
     opacity: 1
 
@@ -123,11 +130,13 @@ table
 .search
   background-color: var(--background-shade-light-grey)
   border-radius: var(--rounded-corner-border-radius)
-  height: 1.875rem
-  font-size: 1rem
-  padding: var(--20px) var(--20px) var(--40px) var(--40px)
+  //height: 1.875rem
+  max-height: 60px
+  font-size: 12px
+  padding: 20px 15px 10px
   margin-bottom: 2.063rem
-  margin-right: 5px
+  margin-top: 25px
+
 
 
   div
@@ -139,7 +148,7 @@ table
     margin: 0
 
   .ng-select.custom
-    min-width: 180px
+    min-width: 170px
     width: 15%
 
     .ng-value-container .ng-placeholder
@@ -147,6 +156,15 @@ table
       color: #3A5B6A
       opacity: 1
       font-size: 16px
+
+  .ng-select.small
+    min-width: 150px
+
+  .ng-select.large
+    min-width: 180px
+
+  ::ng-deep .ng-select .ng-select-container
+    min-height: 34.5px !important
 
   .search-btn
     cursor: pointer
@@ -159,14 +177,17 @@ table
     img
       height: 20px
 
+.search-container
+  display: flex
+  justify-content: space-between
+  align-items: center
 
-
-@media only screen and (min-width: 1280px)
-  .search-container
-    display: column
+//@media only screen and (min-width: 1280px)
+ // .search-container
+ //   display: column
   
-  .table-title
-    margin-bottom: var(--20px)
+.table-title
+  margin-bottom: var(--20px)
     
 @media only screen and (min-width: 1400px)
   .search-container
