@@ -21,7 +21,7 @@
   
   <div class="report-score-container">
     <div>
-      <h4>Total Count</h4>
+      <h4>Total Score</h4>
       <span>{{initialReports?.totalscore}}</span>
     </div>
     <span class="score-indicator">{{initialReports?.totalPassFail}}</span>
@@ -42,7 +42,6 @@
           <thead>
             <tr>
               <th class="no-width"></th>
-              <th>Metric Order Number</th>
               <th>Metric Description</th>
               <th>Computed Value</th>
               <th>Pass Indicator</th>
@@ -56,7 +55,6 @@
               <td [ngClass]="!row.flag ? 'more-padding' : ''">
                 <img *ngIf="row.flag" src="assets/img/flag-yellow.png" />
               </td>
-              <td>{{row.metricOrderNumber}}</td>
               <td>{{row.metricDescription}}</td>
               <td>{{row.computedValue}}</td>
               <td>{{row.passIndicator}}</td>
@@ -71,16 +69,16 @@
           <tbody *ngIf="!expandedTables[i]?.metricTable">
             <ng-container  *ngFor="let row of report.metricTable">
               <tr  *ngIf="row.flag">
-                <td >
+                <td>
                   <img src="assets/img/flag-yellow.png" />
                 </td>
-                <td >{{row.metricOrderNumber}}</td>
-                <td >{{row.metricDescription}}</td>
-                <td >{{row.computedValue}}</td>
-                <td >{{row.passIndicator}}</td>
-                <td >{{row.ruleWeightPercent}}</td>
-                <td >{{row.score}}</td>
-                <td >{{row.errorMessage}}</td>
+                <td>{{row.metricOrderNumber}}</td>
+                <td>{{row.metricDescription}}</td>
+                <td>{{row.computedValue}}</td>
+                <td>{{row.passIndicator}}</td>
+                <td>{{row.ruleWeightPercent}}</td>
+                <td>{{row.score}}</td>
+                <td>{{row.errorMessage}}</td>
               </tr>
             </ng-container>
             <tr class="bottom-row">
@@ -138,18 +136,18 @@
           <tbody *ngIf="!expandedTables[i]?.financialSummary">
             <ng-container *ngFor="let row of report.financialSummary">
               <tr  *ngIf="row.flag">
-                <td >
+                <td>
                   <img src="assets/img/flag-yellow.png" />
                 </td>
-                <td >{{row.columnName}}</td>
-                <td >{{row.financialOrderNumber}}</td>
-                <td >{{row.totalValidAmount}}</td>
-                <td >{{row.totalAmount}}</td>
-                <td >{{row.percentRejected}}</td>
-                <td >{{row.totalAmountExcludingDeniedSecondary}}</td>
-                <td >{{row.totalAmountOutpatientFacilityOnly}}</td>
-                <td >{{row.estimatedAveragePerValidScript}}</td>
-                <td >{{row.errorMessage}}</td>
+                <td>{{row.columnName}}</td>
+                <td>{{row.financialOrderNumber}}</td>
+                <td>{{row.totalValidAmount}}</td>
+                <td>{{row.totalAmount}}</td>
+                <td>{{row.percentRejected}}</td>
+                <td>{{row.totalAmountExcludingDeniedSecondary}}</td>
+                <td>{{row.totalAmountOutpatientFacilityOnly}}</td>
+                <td>{{row.estimatedAveragePerValidScript}}</td>
+                <td>{{row.errorMessage}}</td>
               </tr>
             </ng-container>
             <tr class="bottom-row">
