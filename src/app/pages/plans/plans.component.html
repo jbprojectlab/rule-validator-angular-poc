@@ -21,13 +21,13 @@
           </ng-option>
         </ng-select>
   
-        <ng-select class="custom" [(ngModel)]="selectedSubmissionState" placeholder="Submission Current State" >
+        <ng-select class="custom large" [(ngModel)]="selectedSubmissionState" placeholder="Submission Current State" >
           <ng-option *ngFor="let submissionCurrentStateOption of options.submissionCurrentStateOptions" [value]="submissionCurrentStateOption">
             {{submissionCurrentStateOption}}
           </ng-option>
         </ng-select>
   
-        <ng-select class="custom last-select" [(ngModel)]="selectedCategory" placeholder="Category" >
+        <ng-select class="custom small last-select" [(ngModel)]="selectedCategory" placeholder="Category" >
           <ng-option *ngFor="let categoryOption of options.categoryOptions" [value]="categoryOption">
             {{categoryOption}}
           </ng-option>

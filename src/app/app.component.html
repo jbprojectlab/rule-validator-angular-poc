@@ -1,23 +1,23 @@
 <div class="app-container">
   <div [ngClass]="[navIsHidden ? ('main-container hidden-nav-margin') : ('main-container')]">
     <div class="toolbar" role="banner">
-      <img
-        id="logo"
-        [ngClass]="{'hidden-nav-margin': navIsHidden}"
-        width="100"
-        alt="BCBSA Logo"
-        src="../assets/img/logo.svg"
-      />
-      <div class="user-dd">
-        <div>
-          <h3>Hello, User</h3>
-          <h6>Welcome back to BlueCross BlueShield</h6>
-        </div>
-        <div>
-          <img class="user-dd-triangle" src="assets/img/triangle.png" />
-          <img class="user-photo" src="https://randomuser.me/api/portraits/men/64.jpg" />
-          <img class="user-dd-arrow" src="assets/img/show-more.png" />
-          
+      <div>
+        <img id="logo" src="../assets/img//logo.svg" alt="bcbsa-logo">
+      </div>
+      <div>
+        <div class="user-dd">
+          <div class="wlc-msg">
+            <div>Hello, User</div>
+            <div>Welcome back to BlueCross BlueShield</div>
+          </div>
+          <div class="user-profile-container">
+            <img class="user-dd-triangle" src="assets/img/triangle.png" />
+            <div class="user-profile">
+              <img class="user-photo" src="https://randomuser.me/api/portraits/men/64.jpg" />
+              <img class="user-dd-arrow" src="assets/img/show-more.png" />  
+            </div>
+          </div>
+         
         </div>
       </div>
     </div>

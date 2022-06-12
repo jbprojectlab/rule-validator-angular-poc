@@ -15,13 +15,14 @@
 
 span.open
   cursor: pointer
-  position: absolute
+  //position: absolute
+  position: fixed
   top: 340px
-  left: 10px
+  //left: 10px
   background-color: var(--primary-blue-dark)
   border-radius: 0 var(--round-border-radius) var(--round-border-radius) 0
   padding: 12px 8px 8px 4px
-  z-index: 2
+  //z-index: 2
 
 .report-menu
   border: 1px solid var(--white)
@@ -92,31 +93,31 @@ span.open
     margin-top: 8px
 
 .certification-report
+  margin: 0px 40px 10px 40px
   background-color: var(--background-shade-light-grey)
   border: 1px solid var(--background-shade-light-grey)
   border-radius: var(--rounded-corner-border-radius)
   border-spacing: 0
   padding: 15px
-  height: calc(100vh - 531px)
-  min-height: 7vh
-  //height: calc(100vh - 430px)
-  overflow: auto
+  padding-right: 1px
+  padding-bottom: 10px
   border-radius: 20px
 
   h4:not(.first-filename)
     margin-top: 80px
 
-// @media only screen and (min-width: 1280px)
-//   .certification-report
-//     height: 14vh
+  .v-scrollbar
+    height: calc(100vh - 475px)
+    overflow: auto
 
 table
   background-color: var(--white)
   border: 1px solid var(--background-shade-dark-grey)
   border-radius: var(--rounded-corner-border-radius)
-  margin-bottom: 20px
-  width: 100%
+  //margin-bottom: 20px
+  width: calc(100% - 20px)
   padding: 0
+  margin: 10px
   border-spacing: 0
   //display: block
 
@@ -176,6 +177,17 @@ table
     outline: inherit
     width: 200px
 
-.certificate-report-container
-  margin: 0px 25px 20px 52px
-  border-radius: 20px
+
+::-webkit-scrollbar 
+    // Width of vertical scroll bar
+    width: 8px
+    // Height of horizontal scroll bar
+    height: 10px
+
+::-webkit-scrollbar-thumb
+  border-radius: 8px
+  background: #c2c9d2
+
+::-webkit-scrollbar-thumb:hover
+  background: #bbbcbf
+  
