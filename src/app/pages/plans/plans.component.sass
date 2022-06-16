@@ -1,21 +1,15 @@
 :host
   display: flex
-  flex-grow: 1
 
 table
-  //margin: 0 var(--40px) var(--40px) 0
-  padding: 0
   border: 1px solid var(--border-light-grey)
   border-radius: var(--rounded-corner-border-radius)
   border-spacing: 0
   font-weight: 500
-  overflow: scroll
-  height: calc(100vh - 290px)
-  display: inline-block
   scrollbar-width: none
   -ms-overflow-style: none
-  //width: 100%
-  width: calc(100vw - 159px)
+  width: 100%
+  flex-grow: 1
 
   &::-webkit-scrollbar
     width: 0
@@ -97,24 +91,22 @@ table
     height: 20px
     padding: 0 20px
 
-.plans-table
-  //position: absolute
-  //top: 7.5rem
-  //right: 0
-  //left: 80px
-  //padding: 0 40px
-  //margin-top: 30px
-  margin: 0 30px 0 30px
+.plans-container
   display: flex
   flex-direction: column
+  height: 100%
 
   table
     margin-right: 0
+    height: 100%
   
   .table-title
     font-size: 16px
     color: #363535
     opacity: 1
+
+.plans-table-container
+  flex-grow: 1
 
 .plans-table-border
   border-bottom: 1px solid rgba(0, 0, 0, 0.5)
@@ -130,12 +122,13 @@ table
 .search
   background-color: var(--background-shade-light-grey)
   border-radius: var(--rounded-corner-border-radius)
-  //height: 1.875rem
-  max-height: 60px
-  font-size: 12px
-  padding: 20px 15px 10px
+  display: flex
+  align-items: flex-start
+  gap: 10px
+  height: 45px
+  font-size: 1rem
+  padding: 20px
   margin-bottom: 2.063rem
-  margin-top: 25px
 
 
 
@@ -163,8 +156,8 @@ table
   .ng-select.large
     min-width: 180px
 
-  ::ng-deep .ng-select .ng-select-container
-    min-height: 34.5px !important
+  //::ng-deep .ng-select .ng-select-container
+    //min-height: 34.5px !important
 
   .search-btn
     cursor: pointer

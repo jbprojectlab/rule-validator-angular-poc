@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CertificationReportsService } from './services/certification-reports.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { L2Report, SubmissionReport } from 'app/core/types/submissionReport';
+import { L2Report, MatricTableData, SubmissionReport } from 'app/core/types/submissionReport';
 import { ActivatedRoute } from '@angular/router';
+import { CertificationReportsService } from '../../services/certification-reports.service';
+import { ElementSchemaRegistry } from '@angular/compiler';
 
 @Component({
   selector: 'app-certification-report',
@@ -13,15 +14,19 @@ import { ActivatedRoute } from '@angular/router';
 export class CertificationReportComponent implements OnInit, OnDestroy {
   initialReports!: SubmissionReport;
   reports: L2Report[] = [];
+  metricTable: MatricTableData[] =[];
   menuItems: any = [];
   menuIsOpen: boolean = false;
   tablesFilteredByFlag: boolean = false;
   flagImgSrc: string = 'flag.png';
   expandedTables: any[] = [];
   destroyed$: Subject<boolean> = new Subject();
+  showScore = false;
+  scoreContainer: any;
 
   private submissionId!: string;
   private submissionType!: string;
+  sections: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -39,7 +44,11 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
         this.reports = (data && data) ? data.l2Reports : [];
         this.getMenuItems();
         this.initializeExpandedTables();
-    })
+    });
+
+    this.metricTable.forEach((_covenants) => {
+      _covenants.expandScore = false;
+    });
     
   }
 
@@ -60,7 +69,7 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
       let expandedState: any = {};
       if (report.metricTable) expandedState.metricTable = true;
       if (report.financialSummary) expandedState.financialSummary = true;
-      if (report.rxTable) expandedState.rxTable = true;
+      if (report.frxTable) expandedState.frxTable = true;
       if (report.frequencyCountTable) expandedState.frequencyCountTable = true;
       return expandedState;
     })
@@ -77,7 +86,7 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
       let expandedState: any = {};
       if (report.metricTable) expandedState.metricTable = false;
       if (report.financialSummary) expandedState.financialSummary = false;
-      if (report.rxTable) expandedState.rxTable = false;
+      if (report.frxTable) expandedState.frxTable = false;
       if (report.frequencyCountTable) expandedState.frequencyCountTable = false;
       return expandedState;
     })
@@ -107,16 +116,24 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
   }
 
   getMenuItems() {
-    this.menuItems = this.reports.map((report: any, index: number) => {
-      let sections: any = {
+    this.reports.forEach(function(element: { [x: string]: any; }){
+      for (var key in element) {
+          if (element[key] && element[key].length === 0) {
+              delete element[key]
+          }
+      }
+      });
+    this.menuItems = this.reports.map((report: any, index: number) => {  
+      this.sections={
         title: report.fileName,
         tableNames: []
       };
-      if (report.metricTable) sections.tableNames.push('Metric Table');
-      if (report.financialSummary) sections.tableNames.push('Financial Summary');
-      if (report.rxTable) sections.tableNames.push('Rx Table');
-      if (report.frequencyCountTable) sections.tableNames.push('Frequency Count Table');
-      return sections;
+
+      if (report.metricTable) this.sections.tableNames.push('Metric Table');
+      if (report.financialSummary) this.sections.tableNames.push('Financial Summary');
+      if (report.frxTable) this.sections.tableNames.push('Rx Table');
+      if (report.frequencyCountTable) this.sections.tableNames.push('Frequency Count Table');
+      return this.sections;
     })
   }
 
@@ -139,6 +156,21 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
         document.body.scrollTop = document.body.scrollTop - 440;
       }
     }
+  }
+
+  // toggleScore(row:any){
+  //   console.log(row)
+  //   this.scoreContainer = row;
+  //   this.showScore = !this.showScore;
+  //   var table = document.getElementById("metric-table") as HTMLTableElement;
+  //   table.append('<div class="expand-score">helloo</div>');
+
+  // }
+
+  expandScore(row:any){
+    console.log(row)
+    var coll = document.getElementsByClassName("collapsible");
+
   }
 
   ngOnDestroy() {

@@ -1,6 +1,4 @@
-<app-navbar></app-navbar>
-
-<div class="plans-table">
+<div class="plans-container">
   <div class="search-container">
     <div class="table-title">
       NDW - Summary Page
@@ -46,9 +44,9 @@
   </div>
   
   
-<div>
-  <table>
-    <colgroup span="12"></colgroup>
+<div class="plans-table-container">
+  <table >
+    <!-- <colgroup ></colgroup> -->
     <thead>
       <tr>
         <th *ngFor="let header of headers; index as i;" (click)="sortByColumn(header)">

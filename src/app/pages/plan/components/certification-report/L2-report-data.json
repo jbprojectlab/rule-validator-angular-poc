@@ -35,7 +35,7 @@
 					"errorMessage": "error message String"
 				}
 			],
-			"4rxTable": [
+			"frxTable": [
 				{
 					"validRecords": "<Valid_Records - from 4RX Query>",
 					"voidedRecords": "<Voided_Records - from 4RX Query>",

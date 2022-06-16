@@ -1,4 +1,5 @@
-<div class="app-container">
+<div class="app-container" [class.hidden-nav]="navIsHidden">
+  <app-navbar *ngIf="!navIsHidden"></app-navbar>
   <div [ngClass]="[navIsHidden ? ('main-container hidden-nav-margin') : ('main-container')]">
     <div class="toolbar" role="banner">
       <div>
@@ -7,11 +8,11 @@
       <div>
         <div class="user-dd">
           <div class="wlc-msg">
-            <div>Hello, User</div>
-            <div>Welcome back to BlueCross BlueShield</div>
+            <div>User</div>
+            <!-- <div>Welcome back to BlueCross BlueShield</div> -->
           </div>
           <div class="user-profile-container">
-            <img class="user-dd-triangle" src="assets/img/triangle.png" />
+            <!-- <img class="user-dd-triangle" src="assets/img/triangle.png" /> -->
             <div class="user-profile">
               <img class="user-photo" src="https://randomuser.me/api/portraits/men/64.jpg" />
               <img class="user-dd-arrow" src="assets/img/show-more.png" />  

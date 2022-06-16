@@ -12,7 +12,7 @@ export interface L2Report {
     fileOrderNumber: number;
     metricTable?: MatricTableData[];
     financialSummary?: FinancialSummary[];
-    rxTable?: RxTable[];
+    frxTable?: RxTable[];
     frequencyCountTable?: FrequencyCountTable[];
 }
 
@@ -28,7 +28,7 @@ export interface MatricTableData {
     errorMessage: string;
     totalPassFail:string;
     total_Flag:number;
-
+    expandScore: boolean;
 }
 
 export interface FinancialSummary {
@@ -46,10 +46,10 @@ export interface FinancialSummary {
 }
 
 export interface RxTable {
-    validRecords: number;
-    voidedRecords: number;
-    rejectedRecords: number;
-    totalRecords: number; 
+    ValidRecords: number;
+    VoidedRecords: number;
+    RejectedRecords: number;
+    TotalRecords: number; 
 }
 
 export interface FrequencyCountTable {

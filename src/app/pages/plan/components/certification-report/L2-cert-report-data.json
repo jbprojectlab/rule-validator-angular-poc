@@ -151,7 +151,7 @@
           "errorMessage": "Failed due to threshold exceeded"
         }
       ],
-      "rxTable": [
+      "frxTable": [
         {
           "validRecords": 0,
           "voidedRecords": 1,
