@@ -18,6 +18,8 @@
             {{paidThroughPeriodOption || getCurrentPaidDate()}}
           </ng-option>
         </ng-select>
+
+        <ndw-datepicker></ndw-datepicker>
   
         <ng-select class="custom large" [(ngModel)]="selectedSubmissionState" placeholder="Submission Current State" >
           <ng-option *ngFor="let submissionCurrentStateOption of options.submissionCurrentStateOptions" [value]="submissionCurrentStateOption">

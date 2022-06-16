@@ -16,6 +16,7 @@ import { CertificationReportComponent } from './pages/plan/components/certificat
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { PlanFilterPipe } from './pages/plans/pipes/plan-filter.pipe';
+import { DatepickerComponent } from './pages/plans/components/datepicker/datepicker.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PlanFilterPipe } from './pages/plans/pipes/plan-filter.pipe';
     PlanTableComponent,
     CertificationReportComponent,
     PlanFilterPipe,
+    DatepickerComponent,
   ],
   imports: [
     BrowserModule,
