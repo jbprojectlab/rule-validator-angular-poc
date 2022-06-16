@@ -1,0 +1,584 @@
+{
+	"submissionId": 1,
+	"submissionType": "Non-Anthem",
+	"totalscore": 0,
+	"l2Reports": [
+		{
+			"fileName": "FACILITY_HEADER",
+			"fileOrderNumber": 1,
+			"metricTable": [
+				{
+					"metricOrderNumber": 43,
+					"metricDescription": "Facility Header File > 5% total records",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 44,
+					"metricDescription": "Facility Header.Member ZIP Code on Claim >2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 47,
+					"metricDescription": "Facility Header.ICD-9 Diagnosis Code - Principal > 1% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 50,
+					"metricDescription": "Facility Header.Category of Service > .5% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 53,
+					"metricDescription": "Facility Header.Claim Payment Status > 1% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 55,
+					"metricDescription": "Facility Header.Place of Service > 2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 105,
+					"metricDescription": "Fac Header.ProviderBillingID & Fac Header.BillingProviderContractStatus & Provider Match rejection Facility Header: Percent of Non-Void records where Billing Provider Contracting Status is 'Y' + Records rejected due to Billing Provider could not be matched to the Provider in the Provider Master > 10%",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 106,
+					"metricDescription": "FacHeader.ProviderRenderingID & FacHeader.RenderingProviderContractStatus & ProviderMatch rejection Facility Header: Percent of Non-Void records where Rendering Provider Contracting Status is 'Y' + Records rejected due to Rendering Provider could not be matched to the Provider in the Provider Master  > 10%",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 109,
+					"metricDescription": "FH.ProviderBillingID & FH.BillingProviderContractStatus & FH.HostPlanIDCd & Provider Match 1:M A= count of non-VOID Fac claims and Bill Provider Contract Status = 'Y' and Host ID = 'HOM' and matched 1:many for their Bill Provider ID. B= count of non-VOID Fac claims and Bill Provider Contract Status = 'Y' and Host ID = 'HOM'. If A/B>5%  FAIL",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 110,
+					"metricDescription": "FH.ProviderRenderingID & FH.RenderingProviderContractStatus & FH.HostPlanIDCh & Provider Match 1:M A= count of non-VOID Fac claims and Rend Provider Contract Status = 'Y' and Host ID = 'HOM' and matched 1:many for their Rend Provider ID. B= count of non-VOIDn Fac claims and Rend Provider Contract Status = 'Y' and Host ID = 'HOM'. If A/B>5% FAIL",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 57,
+					"metricDescription": "Facility Claim Details File > 5% total records",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 58,
+					"metricDescription": "Facility Claim Details.CPT & HCPCS Codes > 2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 60,
+					"metricDescription": "Facility Claim Details.Claim Payment Status > 1% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 62,
+					"metricDescription": "Facility Claim Details.Revenue Code > 1% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 64,
+					"metricDescription": "Professional & Other Services File 5% total rejected records",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 65,
+					"metricDescription": "Professional & Other Services.Member ZIP Code on Claim > 2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 68,
+					"metricDescription": "Professional & Other Services.ICD-9 Diagnosis Code - Principal > 1% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 70,
+					"metricDescription": "Professional & Other Services.CPT & HCPCS Codes > 1% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 72,
+					"metricDescription": "Professional & Other Services.Category of Service > .5% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 76,
+					"metricDescription": "Professional & Other Services.Claim Payment Status > 1% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 78,
+					"metricDescription": "Professional & Other Services.Place of Service > 2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 107,
+					"metricDescription": "ProfOthServ.ProviderBillingID & ProfOthServ.BillingProviderContractStatus & Provider Match rejectio Professional & Other Services: Percent of Non-Void records where Billing Provider Contracting Status is 'Y' + Records rejected due to Billing Provider could not be matched to the Provider in the Provider Master > 10%",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 108,
+					"metricDescription": "ProfOthServ.ProviderRenderingID & ProfOthServ.RenderingProviderContractStatus & Provider Match reje Professional & Other Services: Percent of Non-Void records where Rendering Provider Contracting Status is 'Y' + Records rejected due to Rendering Provider could not be matched to the Provider in the Provider Master  > 10%",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 111,
+					"metricDescription": "PFO.ProviderBillingID & PFO.BillingProviderContractStatus & PFO.HostPlanIDCode & Provider Match 1:M A= count of non-VOID PFO claims and Bill Provider Contract Status = 'Y' and Host ID = 'HOM' and matched 1:many for their Bill Provider ID. B= count of non-VOID PFO claims and Bill Provider Contract Status = 'Y' and Host ID = 'HOM'. If A/B>5%  FAIL",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 112,
+					"metricDescription": "PFO.ProviderRenderingID & PFO.RenderingProviderContractStatus & PFO.HostPlanIDCd & ProviderMtch 1:M A= count of non-VOID PFO claims and Rend Provider Contract Status = 'Y' and Host ID = 'HOM' and matched 1:many for their Rend Provider ID. B= count of non-VOID PFO claims and Rend Provider Contracting Status = 'Y' and Host ID = 'HOM'. If A/B>5%  FAIL",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 81,
+					"metricDescription": "Financial Balance - Allowed Amount (Pharmacy) > 2% overall $$ rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 82,
+					"metricDescription": "Financial Balance - Non-Covered Amount (Pharmacy) > 4% overall $$ rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 83,
+					"metricDescription": "Financial Balance - Payment Amount (Pharmacy) > 2% overall $$ rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 84,
+					"metricDescription": "Financial Balance - Submitted Amount (Pharmacy) > 4% overall $$ rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 85,
+					"metricDescription": "Pharmacy File 5% total rejected records",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 86,
+					"metricDescription": "Pharmacy.Member ZIP Code on Claim > 2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 87,
+					"metricDescription": "Pharmacy.Member ZIP Code on Claim > 1% = '99999', '     ', or '00000'",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 89,
+					"metricDescription": "Pharmacy.Billing Provider ID > 10% = all NINES",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 90,
+					"metricDescription": "Pharmacy.Billing Provider Specialty & Pharmacy.Category of Service (% of records where Pharmacy.Billing Provider Specialty <> 'A5') minus (Pharmacy.Category of Service = 'VOID') > 1%",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 93,
+					"metricDescription": "Pharmacy.Benefit Payment Status Code < 96% = 'Y'",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "F"
+				},
+				{
+					"metricOrderNumber": 94,
+					"metricDescription": "Pharmacy.Category of Service > .5% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 95,
+					"metricDescription": "Pharmacy.Category of Service < 97% = 'PHARM'",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "F"
+				},
+				{
+					"metricOrderNumber": 96,
+					"metricDescription": "Pharmacy.Category of Service > 3% = 'VOID'",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 97,
+					"metricDescription": "Pharmacy.Claim Payment Status > 1% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 98,
+					"metricDescription": "Pharmacy.Compound Code > 2% = '2'",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 99,
+					"metricDescription": "Pharmacy.Formulary Indicator > 20% = 'N'",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 100,
+					"metricDescription": "Pharmacy.Place of Service > 1% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 101,
+					"metricDescription": "Pharmacy.Product Service ID > 5% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 102,
+					"metricDescription": "Pharmacy.Product Service ID > 5% = all NINES",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 103,
+					"metricDescription": "Pharmacy.Average Wholesale Price (AWP) Submitted Amount & Pharmacy.Category of Service (% of records where Pharmacy.AWP Submitted Amount = '$0.00') minus (Pharmacy.Category of Service = 'VOID') > 2%",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 17,
+					"metricDescription": "Member File 10% total rejected records",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 18,
+					"metricDescription": "Member.Date of Birth > 2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 19,
+					"metricDescription": "Member.Member Gender > 2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 24,
+					"metricDescription": "Member.Member Medical COB Code > 2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 26,
+					"metricDescription": "Member.Member Pharmacy COB Code > 2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 27,
+					"metricDescription": "Member.Pharmacy Benefit Indicator > 2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 28,
+					"metricDescription": "Member.MH/CD Benefit Indicator > 2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 30,
+					"metricDescription": "Member.Medical Benefit Indicator > 2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 32,
+					"metricDescription": "Member.Hospital Benefit Indicator > 2% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 34,
+					"metricDescription": "Member.BHI Network Category - Facility > 1% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 36,
+					"metricDescription": "Member.BHI Network Category - Professional > 1% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 41,
+					"metricDescription": "Member.Pharmacy Benefit Tiers (% records where PHARMACY BENEFIT TIER = '98') minus (% records where PHARMACY CARVE OUT SUBMISSION INDICATOR = 'C' or 'X') > 1%",
+					"computedValue": 0,
+					"ruleWeightPercent": 0,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 10,
+					"metricDescription": "Product File 5% total rejected records",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 11,
+					"metricDescription": "Product.BHI Product Category > 1% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 12,
+					"metricDescription": "Product Client Contract File 5% total rejected records",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 13,
+					"metricDescription": "Product Client Contract.Industry Grouping - SIC Code > 1% rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 104,
+					"metricDescription": "Account Report File >10% total rejected records",
+					"computedValue": 100,
+					"ruleWeightPercent": 0,
+					"score": 100,
+					"passIndicator": "F"
+				},
+				{
+					"metricOrderNumber": 1,
+					"metricDescription": "Financial Balance - Allowed Amount (Facility Header + Professional & Other Services) > 2% overall $$ rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 2,
+					"metricDescription": "Financial Balance - Submitted Amount (Facility Header + Professional & Other Services) > 4% overall $$ rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 3,
+					"metricDescription": "Financial Balance - Non-Covered Amount (Facility Header + Professional & Other Services) > 4% overall $$ rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 4,
+					"metricDescription": "Financial Balance - Payment Amount (Facility Header + Professional & Other Services) > 2% overall $$ rejected",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 5,
+					"metricDescription": "Financial Balance - Inpatient/Outpatient Facility Header & Detail Variance - Submitted Amount > 2% variance in the sum of valid detail records compared to the header record",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 6,
+					"metricDescription": "Financial Balance - Outpatient Facility Header & Detail Variance - Allowed Amount > 2% variance in the sum of valid detail records compared to the header record",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 7,
+					"metricDescription": "Financial Balance - Outpatient Facility Header & Detail Variance - Submitted Amount > 2% variance in the sum of valid detail records compared to the header record",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 8,
+					"metricDescription": "Financial Balance - Outpatient Facility Header & Detail Variance - Non-Covered Amount > 2% variance in the sum of valid detail records compared to the header record",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				},
+				{
+					"metricOrderNumber": 9,
+					"metricDescription": "Financial Balance - Outpatient Facility Header & Detail Variance - Payment Amount > 2% variance in the sum of valid detail records compared to the header record",
+					"computedValue": 0,
+					"ruleWeightPercent": 1,
+					"score": 0,
+					"passIndicator": "P"
+				}
+			],
+			"financialSummary": null,
+			"frxTable": null,
+			"frequencyCountTable": null
+		}
+	]
+}

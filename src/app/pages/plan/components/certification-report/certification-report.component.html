@@ -3,12 +3,16 @@
 </span>
 
 <div *ngIf="menuIsOpen" class="report-menu">
-  <span class="close" (click)="closeMenu()">&#10005;</span>
-  <div *ngFor="let section of menuItems; index as menuItemIdx">
-    <div class="menu-section">
-      <h4 (click)="scrollToTable(camelize(section.title), false)">{{section.title}}</h4>
-      <div *ngFor="let tableName of section.tableNames; index as tableNameIdx">
-        <h6 (click)="scrollToTable(camelize(section.title), (menuItemIdx === menuItems.length - 1 && tableNameIdx === section.tableNames.length - 1), camelize(tableName))">{{tableName}}</h6>
+  <div class="v-scroll">
+    <span class="close" (click)="closeMenu()">&#10005;</span>
+    <div *ngFor="let section of menuItems; index as menuItemIdx">
+      <div class="menu-section">
+        <h4 (click)="scrollToTable(camelize(section.title), false)">{{section.title}}</h4>
+        <div *ngFor="let tableName of section.tableNames; index as tableNameIdx">
+          <h6
+            (click)="scrollToTable(camelize(section.title), (menuItemIdx === menuItems.length - 1 && tableNameIdx === section.tableNames.length - 1), camelize(tableName))">
+            {{tableName}}</h6>
+        </div>
       </div>
     </div>
   </div>
@@ -18,7 +22,7 @@
   <div class="header">
     <h4>L2 Certification Report</h4>
   </div>
-  
+
   <div class="report-score-container">
     <div>
       <h4>Total Score</h4>
@@ -31,51 +35,74 @@
 </div>
 
 
-<div>
-  <div class="certification-report">
-    <div class="v-scrollbar" *ngFor="let report of reports; index as i">
+<div class="certification-report">
+  <!-- <div class="v-scrollbar"> -->
+    <div *ngFor="let report of reports; index as i">
       <h4 *ngIf="report.fileName" id="item-{{camelize(report.fileName)}}" [ngClass]="i === 0 ? 'first-filename' : ''">{{report.fileName}}</h4>
      
-      <div *ngIf="report.metricTable?.length!==0">
+      <div class="table-container" *ngIf="report.metricTable?.length!==0">
         <table *ngIf="report.metricTable" id="item-{{camelize(report.fileName)}}-metricTable">
-          <colgroup span="8"></colgroup>
+          <colgroup span="7"></colgroup>
           <thead>
             <tr>
               <th class="no-width"></th>
-              <th>Metric Description</th>
+              <th class="left-align">Metric Description</th>
               <th>Computed Value</th>
               <th>Pass Indicator</th>
               <th>Rule Weight Percent</th>
-              <th>Score</th>
+              <th style="width: 55px">Score</th>
               <th>Error Msg</th>
             </tr>
           </thead>
-          <tbody *ngIf="expandedTables[i]?.metricTable">
-            <tr *ngFor="let row of report.metricTable">
-              <td [ngClass]="!row.flag ? 'more-padding' : ''">
-                <img *ngIf="row.flag" src="assets/img/flag-yellow.png" />
-              </td>
-              <td>{{row.metricDescription}}</td>
-              <td>{{row.computedValue}}</td>
-              <td>{{row.passIndicator}}</td>
-              <td>{{row.ruleWeightPercent}}</td>
-              <td>{{row.score}}</td>
-              <td>{{row.errorMessage}}</td>
-            </tr>
+          <tbody *ngIf="expandedTables[i]?.metricTable" id="metric-table">
+            <ng-container *ngFor="let row of report.metricTable odd as isOdd; even as isEven;">
+              <tr [ngClass]="{ 'odd': isOdd, 'even': isEven }">
+                <td [ngClass]="!row.flag ? 'more-padding' : ''">
+                  <img *ngIf="row.flag" src="assets/img/flag-yellow.png" />
+                </td>
+                <td class="left-align">{{row.metricDescription}}</td>
+                <td>{{row.computedValue}}</td>
+                <td>{{row.passIndicator ? row.passIndicator :' - '}}</td>
+                <td>{{row.ruleWeightPercent}}</td>
+                <td>
+                  <div class="show-score" (click)="row.expandScore= !row.expandScore">
+                    <div *ngIf="row.expandScore" class="triangle"></div>
+                    {{row.score}}
+                  </div>
+                </td>
+                <td>{{row.errorMessage}}</td>
+              </tr>
+              <tr *ngIf="row.expandScore" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
+                <td colspan="12">
+                  <div class="expand-score text-center">
+                    <div class="score-header">
+                      <div class="th1">
+                        Score Value
+                      </div>
+                      <div class="th2">
+                        November - April score
+                      </div>
+                    </div>
+                    NOV :6
+
+                  </div>
+                </td>
+              </tr>
+            </ng-container>
+
             <tr class="bottom-row">
               <td></td>
             </tr>
           </tbody>
           <tbody *ngIf="!expandedTables[i]?.metricTable">
-            <ng-container  *ngFor="let row of report.metricTable">
-              <tr  *ngIf="row.flag">
+            <ng-container *ngFor="let row of report.metricTable ">
+              <tr *ngIf="row.flag">
                 <td>
                   <img src="assets/img/flag-yellow.png" />
                 </td>
-                <td>{{row.metricOrderNumber}}</td>
-                <td>{{row.metricDescription}}</td>
+                <td class="left-align">{{row.metricDescription}}</td>
                 <td>{{row.computedValue}}</td>
-                <td>{{row.passIndicator}}</td>
+                <td>{{row.passIndicator ? row.passIndicator :' - '}}</td>
                 <td>{{row.ruleWeightPercent}}</td>
                 <td>{{row.score}}</td>
                 <td>{{row.errorMessage}}</td>
@@ -87,7 +114,7 @@
           </tbody>
         </table>
   
-        <div *ngIf="report?.metricTable?.length">
+        <div class="table-container" *ngIf="report?.metricTable?.length">
           <div *ngIf="expandedTables[i]?.metricTable" class="show-less-button-container">
             <button (click)="showLess(i, 'metricTable')">Show Less &minus;</button>
           </div>
@@ -97,14 +124,13 @@
         </div>
       </div>
   
-      <div *ngIf="report.financialSummary?.length!==0">
+      <div class="table-container" *ngIf="report.financialSummary?.length!==0">
         <table *ngIf="report.financialSummary" id="item-{{camelize(report.fileName)}}-financialSummary">
           <colgroup span="10"></colgroup>
           <thead>
             <tr>
               <th class="no-width"></th>
-              <th>Column Name</th>
-              <th>Financial Order Number</th>
+              <th>Column Value</th>
               <th>Total Valid Amount</th>
               <th>Total Rejected Amount</th>
               <th>Total Amount</th>
@@ -115,18 +141,17 @@
             </tr>
           </thead>
           <tbody *ngIf="expandedTables[i]?.financialSummary">
-            <tr *ngFor="let row of report.financialSummary">
+            <tr *ngFor="let row of report.financialSummary odd as isOdd; even as isEven;" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
               <td [ngClass]="!row.flag ? 'more-padding' : ''">
                 <img *ngIf="row.flag" src="assets/img/flag-yellow.png" />
               </td>
               <td>{{row.columnName}}</td>
-              <td>{{row.financialOrderNumber}}</td>
-              <td>{{row.totalValidAmount}}</td>
-              <td>{{row.totalAmount}}</td>
-              <td>{{row.percentRejected}}</td>
-              <td>{{row.totalAmountExcludingDeniedSecondary}}</td>
-              <td>{{row.totalAmountOutpatientFacilityOnly}}</td>
-              <td>{{row.estimatedAveragePerValidScript}}</td>
+              <td>{{row.totalValidAmount |currency:'USD':'symbol-narrow'}}</td>
+              <td>{{row.percentRejected}}%</td>
+              <td>{{row.totalAmount |currency:'USD':'symbol-narrow'}}</td>
+              <td>{{row.totalAmountExcludingDeniedSecondary |currency:'USD':'symbol-narrow'}}</td>
+              <td>{{row.totalAmountOutpatientFacilityOnly ? (row.totalAmountOutpatientFacilityOnly|currency:'USD':'symbol-narrow') :'-'}}</td>
+              <td>{{row.estimatedAveragePerValidScript ? (row.estimatedAveragePerValidScript|currency:'USD':'symbol-narrow') :'-'}}</td>
               <td>{{row.errorMessage}}</td>
             </tr>
             <tr class="bottom-row">
@@ -135,18 +160,19 @@
           </tbody>
           <tbody *ngIf="!expandedTables[i]?.financialSummary">
             <ng-container *ngFor="let row of report.financialSummary">
-              <tr  *ngIf="row.flag">
+              <tr *ngIf="row.flag">
                 <td>
                   <img src="assets/img/flag-yellow.png" />
                 </td>
                 <td>{{row.columnName}}</td>
-                <td>{{row.financialOrderNumber}}</td>
-                <td>{{row.totalValidAmount}}</td>
-                <td>{{row.totalAmount}}</td>
-                <td>{{row.percentRejected}}</td>
-                <td>{{row.totalAmountExcludingDeniedSecondary}}</td>
-                <td>{{row.totalAmountOutpatientFacilityOnly}}</td>
-                <td>{{row.estimatedAveragePerValidScript}}</td>
+                <!-- <td >{{row.financialOrderNumber}}</td> -->
+                <td>{{row.columnName}}</td>
+                <td>{{row.totalValidAmount |currency:'USD':'symbol-narrow'}}</td>
+                <td>{{row.percentRejected}}%</td>
+                <td>{{row.totalAmount |currency:'USD':'symbol-narrow'}}</td>
+                <td>{{row.totalAmountExcludingDeniedSecondary |currency:'USD':'symbol-narrow'}}</td>
+                <td>{{row.totalAmountOutpatientFacilityOnly ? (row.totalAmountOutpatientFacilityOnly|currency:'USD':'symbol-narrow') :'-'}}</td>
+                <td>{{row.estimatedAveragePerValidScript ? (row.estimatedAveragePerValidScript|currency:'USD':'symbol-narrow') :'-'}}</td>
                 <td>{{row.errorMessage}}</td>
               </tr>
             </ng-container>
@@ -156,7 +182,7 @@
           </tbody>
         </table>
   
-        <div *ngIf="report.financialSummary">
+        <div class="table-container" *ngIf="report.financialSummary">
           <div *ngIf="expandedTables[i]?.financialSummary" class="show-less-button-container">
             <button (click)="showLess(i, 'financialSummary')">Show Less &minus;</button>
           </div>
@@ -166,8 +192,8 @@
         </div>
       </div>
   
-      <div *ngIf="report.rxTable?.length!==0">
-        <table *ngIf="report.rxTable" id="item-{{camelize(report.fileName)}}-rxTable">
+      <div class="table-container" *ngIf="report.frxTable?.length!==0">
+        <table *ngIf="report.frxTable" id="item-{{camelize(report.fileName)}}-rxTable">
           <colgroup span="4"></colgroup>
           <thead>
             <tr>
@@ -178,11 +204,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let row of report.rxTable">
-              <td>{{row.validRecords}}</td>
-              <td>{{row.voidedRecords}}</td>
-              <td>{{row.rejectedRecords}}</td>
-              <td>{{row.totalRecords}}</td>
+            <tr *ngFor="let row of report.frxTable">
+              <td>{{row.ValidRecords}}</td>
+              <td>{{row.VoidedRecords}}</td>
+              <td>{{row.RejectedRecords}}</td>
+              <td>{{row.TotalRecords}}</td>
             </tr>
             <tr class="bottom-row">
               <td></td>
@@ -191,7 +217,7 @@
         </table>
       </div>
   
-      <div *ngIf="report.frequencyCountTable?.length!==0">
+      <div class="table-container" *ngIf="report.frequencyCountTable?.length!==0">
         <table *ngIf="report.frequencyCountTable" id="item-{{camelize(report.fileName)}}-frequencyCountTable">
           <colgroup span="2"></colgroup>
           <thead>
@@ -212,5 +238,5 @@
         </table>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 </div>
