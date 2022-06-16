@@ -17,6 +17,9 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { PlanFilterPipe } from './pages/plans/pipes/plan-filter.pipe';
 import { DatepickerComponent } from './pages/plans/components/datepicker/datepicker.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -38,9 +41,12 @@ import { DatepickerComponent } from './pages/plans/components/datepicker/datepic
     NgSelectModule,
     FormsModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    NoopAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [MatNativeDateModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
