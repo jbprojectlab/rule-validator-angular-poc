@@ -13,13 +13,31 @@
           </ng-option>
         </ng-select>
         
-        <ng-select class="custom" [(ngModel)]="selectedPaidThroughPeriodOption" placeholder="Paid Through Period" (change)="handleSearchFilterChange('paidThroughPeriod')">
+        <!-- <ng-select class="custom" [(ngModel)]="selectedPaidThroughPeriodOption" placeholder="Paid Through Period" (change)="handleSearchFilterChange('paidThroughPeriod')">
           <ng-option *ngFor="let paidThroughPeriodOption of options.paidThroughPeriodOptions" [value]="paidThroughPeriodOption">
             {{paidThroughPeriodOption || getCurrentPaidDate()}}
           </ng-option>
-        </ng-select>
+        </ng-select> -->
 
-        <ndw-datepicker></ndw-datepicker>
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>Month and Year</mat-label>
+          <input matInput [matDatepicker]="dp" [(ngModel)]="selectedPaidThroughPeriodOption">
+          <mat-hint>MM/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp
+                          startView="multi-year"
+                          (change)="handleSearchFilterChange('paidThroughPeriod')"
+                          panelClass="example-month-picker">
+          </mat-datepicker>
+        </mat-form-field> -->
+
+        <!-- <app-datepicker></app-datepicker> -->
+
+        <mat-form-field>
+          <input #dpInput matInput [matDatepicker]="dp" placeholder="datepicker" [formControl]="date">
+          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp (monthSelected)="monthSelected($event, dp, dpInput)" startView="multi-year"></mat-datepicker>
+        </mat-form-field>        
   
         <ng-select class="custom large" [(ngModel)]="selectedSubmissionState" placeholder="Submission Current State" >
           <ng-option *ngFor="let submissionCurrentStateOption of options.submissionCurrentStateOptions" [value]="submissionCurrentStateOption">

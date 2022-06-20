@@ -4,6 +4,13 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { PlansService } from './services/plans.service';
 
+import {FormControl} from '@angular/forms';
+import * as _moment from 'moment';
+// tslint:disable-next-line:no-duplicate-imports
+import {default as _rollupMoment, Moment} from 'moment';
+
+const moment = _rollupMoment || _moment;
+
 @Component({
   selector: 'app-plans',
   templateUrl: './plans.component.html',
@@ -19,19 +26,20 @@ export class PlansComponent implements OnInit, OnDestroy {
   destroyed$: Subject<boolean> = new Subject();
   paidThroughPeriod: string = this.getCurrentPaidDate();
   submissionGroup: number = 0;
-
+  date = new FormControl(moment());
+  
   selectedSubmissionGroupOption!: number;
   selectedPaidThroughPeriodOption: string = this.getCurrentPaidDate();
   selectedSubmissionState!: string;
   selectedCategory!: string;
   selectedStatus!: string;
-
+  
   submissionGroupOptions!: number[] | any[];
   paidThroughPeriodOptions!: string[] | any[];
   submissionCurrentStateOptions!: string[] | any[];
   categoryOptions!: string[] | any[];
   statusOptions!: string[] | any[];
-
+  
   options: any = {
     submissionGroupOptions: this.submissionGroupOptions,
     paidThroughPeriodOptions: this.paidThroughPeriodOptions,
@@ -39,9 +47,9 @@ export class PlansComponent implements OnInit, OnDestroy {
     categoryOptions: this.categoryOptions,
     statusOptions: this.statusOptions
   };
-
+  
   submissionType: string = 'non-ANTHEM'
-
+  
   headers = [
     'Submission Group / Plan Code',
     'Plan Name',
@@ -58,9 +66,10 @@ export class PlansComponent implements OnInit, OnDestroy {
   ];
   constructor(
     private planService: PlansService
-  ) { }
-
+    ) { }
+    
   ngOnInit(): void {
+    console.log('paidThroughPeriod:   ', this.paidThroughPeriod)
     if (this.isSearching) this.isSearching = false;
 
     this.planService.getOptions().subscribe((response: any) => {
@@ -69,7 +78,7 @@ export class PlansComponent implements OnInit, OnDestroy {
         submissionCurrentStateOptions: response.submissionCurrentState,
         categoryOptions: response.category,
         statusOptions: response.submissionStatus,
-        paidThroughPeriodOptions: this.getPaidThroughPeriodOptions()
+        // paidThroughPeriodOptions: this.getPaidThroughPeriodOptions()
       };
     })
     this.getPlans();
@@ -82,6 +91,18 @@ export class PlansComponent implements OnInit, OnDestroy {
     })
   }
 
+
+  // MONTH SELECTED *****************************************************************************
+
+  monthSelected(event: any, dp: any, input: any) {
+    console.log('date event:  ', event)
+    dp.close();
+    input.value = event.toISOString().split('-').join('').substring(0,6)
+    console.log('input value:  ', input.value)
+    this.selectedPaidThroughPeriodOption = input.value
+  }
+
+
   getCurrentPaidDate() {
     const currentDate = new Date();
     const currentYear = String(currentDate.getFullYear());
@@ -91,32 +112,32 @@ export class PlansComponent implements OnInit, OnDestroy {
     return currentPaidDate;
   }
 
-  formatNextPaidDateOption(currentDate: string) {
-    let nextDateYear = currentDate.slice(0, 4);
-    let nextDateMonth = String(Number(currentDate.slice(4)) - 1);
-    if (nextDateMonth === '-1') {
-      nextDateYear = String(Number(nextDateYear) - 1);
-      nextDateMonth = '12';
-    }
-    if (nextDateMonth.length < 2) {
-      nextDateMonth = '0' + nextDateMonth;
-    }
-    const nextDate = nextDateYear + nextDateMonth;
-    return nextDate;
-  }
+  // formatNextPaidDateOption(currentDate: string) {
+  //   let nextDateYear = currentDate.slice(0, 4);
+  //   let nextDateMonth = String(Number(currentDate.slice(4)) - 1);
+  //   if (nextDateMonth === '-1') {
+  //     nextDateYear = String(Number(nextDateYear) - 1);
+  //     nextDateMonth = '12';
+  //   }
+  //   if (nextDateMonth.length < 2) {
+  //     nextDateMonth = '0' + nextDateMonth;
+  //   }
+  //   const nextDate = nextDateYear + nextDateMonth;
+  //   return nextDate;
+  // }
 
-  getPaidThroughPeriodOptions() {
-    let currentDate = this.getCurrentPaidDate();
-    const dateOptions: string[] = [currentDate];
-    for (let i = 0; i < 135; i += 1) {
-      let nextDate = this.formatNextPaidDateOption(currentDate);
-      currentDate = nextDate;
-      if(currentDate.slice(-2) !== '00') {
-        dateOptions.push(currentDate)
-      }
-    }
-    return dateOptions;
-  }
+  // getPaidThroughPeriodOptions() {
+  //   let currentDate = this.getCurrentPaidDate();
+  //   const dateOptions: string[] = [currentDate];
+  //   for (let i = 0; i < 135; i += 1) {
+  //     let nextDate = this.formatNextPaidDateOption(currentDate);
+  //     currentDate = nextDate;
+  //     if(currentDate.slice(-2) !== '00') {
+  //       dateOptions.push(currentDate)
+  //     }
+  //   }
+  //   return dateOptions;
+  // }
 
 
   handleSearchFilterChange(key: string) {
@@ -125,14 +146,14 @@ export class PlansComponent implements OnInit, OnDestroy {
     }
   }
 
-  search() {
-    this.isSearching = true;
-    if (this.paidThroughPeriod !== this.selectedPaidThroughPeriodOption || this.submissionGroup != this.selectedSubmissionGroupOption) {
-      this.paidThroughPeriod = this.selectedPaidThroughPeriodOption;
-      this.submissionGroup = this.selectedSubmissionGroupOption;
-      this.getPlans();
-    }
-  }
+  // search() {
+  //   this.isSearching = true;
+  //   if (this.paidThroughPeriod !== this.selectedPaidThroughPeriodOption || this.submissionGroup != this.selectedSubmissionGroupOption) {
+  //     this.paidThroughPeriod = this.selectedPaidThroughPeriodOption;
+  //     this.submissionGroup = this.selectedSubmissionGroupOption;
+  //     this.getPlans();
+  //   }
+  // }
 
   sortByColumn(columnHeader: string) {
     if (columnHeader === this.selectedSortingColumn) {

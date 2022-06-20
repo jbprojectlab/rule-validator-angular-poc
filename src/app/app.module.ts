@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,11 +15,14 @@ import { PlanTableComponent } from './pages/plan/components/plan-table/plan-tabl
 import { CertificationReportComponent } from './pages/plan/components/certification-report/certification-report.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+// import { FormsModule,  } from '@angular/forms';
 import { PlanFilterPipe } from './pages/plans/pipes/plan-filter.pipe';
 import { DatepickerComponent } from './pages/plans/components/datepicker/datepicker.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -40,11 +43,14 @@ import { MatNativeDateModule } from '@angular/material/core';
     AppRoutingModule,
     NgSelectModule,
     FormsModule,
+    ReactiveFormsModule,
     CoreModule,
     SharedModule,
     NoopAnimationsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent]
