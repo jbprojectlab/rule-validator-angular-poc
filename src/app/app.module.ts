@@ -17,11 +17,10 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 // import { FormsModule,  } from '@angular/forms';
 import { PlanFilterPipe } from './pages/plans/pipes/plan-filter.pipe';
-import { DatepickerComponent } from './pages/plans/components/datepicker/datepicker.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
@@ -35,7 +34,6 @@ import { MatInputModule } from '@angular/material/input';
     PlanTableComponent,
     CertificationReportComponent,
     PlanFilterPipe,
-    DatepickerComponent,
   ],
   imports: [
     BrowserModule,

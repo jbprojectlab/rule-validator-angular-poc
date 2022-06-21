@@ -3,12 +3,10 @@ import { Plan } from 'app/core/types/plan';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { PlansService } from './services/plans.service';
-
 import {FormControl} from '@angular/forms';
 import * as _moment from 'moment';
 // tslint:disable-next-line:no-duplicate-imports
-import {default as _rollupMoment, Moment} from 'moment';
-
+import {default as _rollupMoment} from 'moment';
 const moment = _rollupMoment || _moment;
 
 @Component({
@@ -27,6 +25,7 @@ export class PlansComponent implements OnInit, OnDestroy {
   paidThroughPeriod: string = this.getCurrentPaidDate();
   submissionGroup: number = 0;
   date = new FormControl(moment());
+  mostRecentPaidPeriod = new Date(Date.now());
   
   selectedSubmissionGroupOption!: number;
   selectedPaidThroughPeriodOption: string = this.getCurrentPaidDate();
@@ -69,7 +68,6 @@ export class PlansComponent implements OnInit, OnDestroy {
     ) { }
     
   ngOnInit(): void {
-    console.log('paidThroughPeriod:   ', this.paidThroughPeriod)
     if (this.isSearching) this.isSearching = false;
 
     this.planService.getOptions().subscribe((response: any) => {
@@ -91,17 +89,13 @@ export class PlansComponent implements OnInit, OnDestroy {
     })
   }
 
-
   // MONTH SELECTED *****************************************************************************
 
   monthSelected(event: any, dp: any, input: any) {
-    console.log('date event:  ', event)
     dp.close();
-    input.value = event.toISOString().split('-').join('').substring(0,6)
-    console.log('input value:  ', input.value)
-    this.selectedPaidThroughPeriodOption = input.value
+    input.value = event.toISOString().split('-').join('').substring(0,6);
+    this.selectedPaidThroughPeriodOption = input.value;
   }
-
 
   getCurrentPaidDate() {
     const currentDate = new Date();
@@ -112,48 +106,11 @@ export class PlansComponent implements OnInit, OnDestroy {
     return currentPaidDate;
   }
 
-  // formatNextPaidDateOption(currentDate: string) {
-  //   let nextDateYear = currentDate.slice(0, 4);
-  //   let nextDateMonth = String(Number(currentDate.slice(4)) - 1);
-  //   if (nextDateMonth === '-1') {
-  //     nextDateYear = String(Number(nextDateYear) - 1);
-  //     nextDateMonth = '12';
-  //   }
-  //   if (nextDateMonth.length < 2) {
-  //     nextDateMonth = '0' + nextDateMonth;
-  //   }
-  //   const nextDate = nextDateYear + nextDateMonth;
-  //   return nextDate;
-  // }
-
-  // getPaidThroughPeriodOptions() {
-  //   let currentDate = this.getCurrentPaidDate();
-  //   const dateOptions: string[] = [currentDate];
-  //   for (let i = 0; i < 135; i += 1) {
-  //     let nextDate = this.formatNextPaidDateOption(currentDate);
-  //     currentDate = nextDate;
-  //     if(currentDate.slice(-2) !== '00') {
-  //       dateOptions.push(currentDate)
-  //     }
-  //   }
-  //   return dateOptions;
-  // }
-
-
   handleSearchFilterChange(key: string) {
     if (key === 'paidThroughPeriod' || key === 'submissionGroup') {
       this.getPlans();
     }
   }
-
-  // search() {
-  //   this.isSearching = true;
-  //   if (this.paidThroughPeriod !== this.selectedPaidThroughPeriodOption || this.submissionGroup != this.selectedSubmissionGroupOption) {
-  //     this.paidThroughPeriod = this.selectedPaidThroughPeriodOption;
-  //     this.submissionGroup = this.selectedSubmissionGroupOption;
-  //     this.getPlans();
-  //   }
-  // }
 
   sortByColumn(columnHeader: string) {
     if (columnHeader === this.selectedSortingColumn) {
@@ -188,9 +145,11 @@ export class PlansComponent implements OnInit, OnDestroy {
   }
 
   public getPlans() {
+    console.log('getting plans')
     this.planService.getPlans(this.selectedPaidThroughPeriodOption, this.selectedSubmissionGroupOption)
     .pipe(takeUntil(this.destroyed$))
     .subscribe((data: Plan[]) => {
+      console.log('data:  ', data)
       if (data && data.length) {
         this.plans = data;
       } else {
