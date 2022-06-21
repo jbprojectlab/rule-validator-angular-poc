@@ -1,6 +1,21 @@
 :host
   display: flex
 
+  .mat-form-field.mat-warn .mat-input-element,
+  .mat-form-field-invalid .mat-input-element
+    caret-color: #0000008a !important
+
+  ::ng-deep .mat-form-field-wrapper
+    height: 51px
+    margin-left: 10px
+
+  ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label
+    color: #0000008a !important
+
+  ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent,
+  ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline
+    background-color: rgba(0,0,0,0.38)
+
 table
   border: 1px solid var(--border-light-grey)
   border-radius: var(--rounded-corner-border-radius)
@@ -143,6 +158,7 @@ table
   .ng-select.custom
     min-width: 170px
     width: 15%
+    margin-left: 10px
 
     .ng-value-container .ng-placeholder
       text-overflow: ellipsis
@@ -187,5 +203,3 @@ table
     display: flex
     justify-content: space-between
     align-items: baseline
-
-      
