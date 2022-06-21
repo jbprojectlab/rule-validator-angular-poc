@@ -116,13 +116,14 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
   }
 
   getMenuItems() {
-    this.reports.forEach(function(element: { [x: string]: any; }){
+    this.reports.forEach(function(element: { [x: string]: any; }) {
       for (var key in element) {
-          if (element[key] && element[key].length === 0) {
-              delete element[key]
-          }
+        if (element[key] && element[key].length === 0) {
+           delete element[key]
+        }
       }
-      });
+    });
+
     this.menuItems = this.reports.map((report: any, index: number) => {  
       this.sections={
         title: report.fileName,
@@ -158,20 +159,10 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
     }
   }
 
-  // toggleScore(row:any){
+  // expandScore(row:any){
   //   console.log(row)
-  //   this.scoreContainer = row;
-  //   this.showScore = !this.showScore;
-  //   var table = document.getElementById("metric-table") as HTMLTableElement;
-  //   table.append('<div class="expand-score">helloo</div>');
-
+  //   var coll = document.getElementsByClassName("collapsible");
   // }
-
-  expandScore(row:any){
-    console.log(row)
-    var coll = document.getElementsByClassName("collapsible");
-
-  }
 
   ngOnDestroy() {
     this.destroyed$.next(true);

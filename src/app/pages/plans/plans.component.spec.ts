@@ -30,14 +30,6 @@ describe('PlansComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it ('should return the period with the previous month', () => {
-    expect(component.formatNextPaidDateOption('202210')).toBe('202209');
-  })
-
-  xit ('should return the period with the December month of the previous year', () => {
-    expect(component.formatNextPaidDateOption('202201')).toBe('202112');
-  })
-
   it ('should call the plans ', () => {
     component.getPlans();
     expect(mockPlansService.getPlans).toHaveBeenCalled();
@@ -48,7 +40,6 @@ describe('PlansComponent', () => {
     component.selectedSubmissionGroupOption = 500;
     component.paidThroughPeriod = '202205';
     component.submissionGroup = 300;
-    component.search();
     expect(mockPlansService.getPlans).toHaveBeenCalled();
   })
 
