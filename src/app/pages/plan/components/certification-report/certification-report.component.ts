@@ -37,19 +37,10 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
    }
 
   ngOnInit(): void {
-    this.certificationReportsService.getCertificationReportData(this.submissionId, this.submissionType)
-    .pipe(takeUntil(this.destroyed$))
-    .subscribe((data: SubmissionReport) => {
-        this.initialReports = data;
-        this.reports = (data && data) ? data.l2Reports : [];
-        this.getMenuItems();
-        this.initializeExpandedTables();
-    });
-
+    this.getCertificationReportData();
     this.metricTable.forEach((_covenants) => {
       _covenants.expandScore = false;
     });
-    
   }
 
   openMenu() {
@@ -163,6 +154,17 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
   //   console.log(row)
   //   var coll = document.getElementsByClassName("collapsible");
   // }
+
+  public getCertificationReportData() {
+    this.certificationReportsService.getCertificationReportData(this.submissionId, this.submissionType)
+    .pipe(takeUntil(this.destroyed$))
+    .subscribe((data: SubmissionReport) => {
+        this.initialReports = data;
+        this.reports = (data && data) ? data.l2Reports : [];
+        this.getMenuItems();
+        this.initializeExpandedTables();
+    });
+  }
 
   ngOnDestroy() {
     this.destroyed$.next(true);

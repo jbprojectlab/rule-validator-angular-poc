@@ -30,7 +30,7 @@ describe('PlansComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it ('should call the plans ', () => {
+  it('should call the plans ', () => {
     component.getPlans();
     expect(mockPlansService.getPlans).toHaveBeenCalled();
   })

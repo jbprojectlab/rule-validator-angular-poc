@@ -5,7 +5,6 @@ import { takeUntil } from 'rxjs/operators';
 import { PlansService } from './services/plans.service';
 import {FormControl} from '@angular/forms';
 import * as _moment from 'moment';
-// tslint:disable-next-line:no-duplicate-imports
 import {default as _rollupMoment} from 'moment';
 const moment = _rollupMoment || _moment;
 
@@ -64,13 +63,13 @@ export class PlansComponent implements OnInit, OnDestroy {
     'L2 Report Score'
   ];
   constructor(
-    private planService: PlansService
+    private plansService: PlansService
     ) { }
     
   ngOnInit(): void {
     if (this.isSearching) this.isSearching = false;
 
-    this.planService.getOptions().subscribe((response: any) => {
+    this.plansService.getOptions().subscribe((response: any) => {
       this.options = {
         submissionGroupOptions: response.submissionGroup,
         submissionCurrentStateOptions: response.submissionCurrentState,
@@ -145,11 +144,9 @@ export class PlansComponent implements OnInit, OnDestroy {
   }
 
   public getPlans() {
-    console.log('getting plans')
-    this.planService.getPlans(this.selectedPaidThroughPeriodOption, this.selectedSubmissionGroupOption)
+    this.plansService.getPlans(this.selectedPaidThroughPeriodOption, this.selectedSubmissionGroupOption)
     .pipe(takeUntil(this.destroyed$))
     .subscribe((data: Plan[]) => {
-      console.log('data:  ', data)
       if (data && data.length) {
         this.plans = data;
       } else {
