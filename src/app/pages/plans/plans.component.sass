@@ -1,16 +1,27 @@
+::ng-deep .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)
+  background: var(--background-shade-light-grey)
+
+::ng-deep .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical)
+  border-color: var(--background-shade-light-grey)
+
+::ng-deep .mat-calendar-body-cell:not(.mat-calendar-body-disabled)
+  &.mat-calendar-body-active
+    &:focus
+      .mat-calendar-body-cell-content:not(.mat-calendar-body-selected).mat-focus-indicator
+        background-color: var(--background-shade-light-grey)
+
 :host
   display: flex
 
   .mat-form-field.mat-warn .mat-input-element,
-  .mat-form-field-invalid .mat-input-element
-    caret-color: #0000008a !important
+  .mat-form-field-invalid .mat-input-element,
+  ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label
+    caret-color: #0000008a
+    color: #0000008a
 
   ::ng-deep .mat-form-field-wrapper
     height: 51px
     margin-left: 10px
-
-  ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label
-    color: #0000008a !important
 
   ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent,
   ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline
