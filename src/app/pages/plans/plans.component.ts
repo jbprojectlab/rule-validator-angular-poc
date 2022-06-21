@@ -76,7 +76,6 @@ export class PlansComponent implements OnInit, OnDestroy {
         submissionCurrentStateOptions: response.submissionCurrentState,
         categoryOptions: response.category,
         statusOptions: response.submissionStatus,
-        // paidThroughPeriodOptions: this.getPaidThroughPeriodOptions()
       };
     })
     this.getPlans();
@@ -89,12 +88,13 @@ export class PlansComponent implements OnInit, OnDestroy {
     })
   }
 
-  // MONTH SELECTED *****************************************************************************
-
   monthSelected(event: any, dp: any, input: any) {
     dp.close();
     input.value = event.toISOString().split('-').join('').substring(0,6);
-    this.selectedPaidThroughPeriodOption = input.value;
+    if(this.selectedPaidThroughPeriodOption !== input.value) {
+      this.selectedPaidThroughPeriodOption = input.value;
+      this.getPlans();
+    }
   }
 
   getCurrentPaidDate() {
@@ -107,7 +107,7 @@ export class PlansComponent implements OnInit, OnDestroy {
   }
 
   handleSearchFilterChange(key: string) {
-    if (key === 'paidThroughPeriod' || key === 'submissionGroup') {
+    if (key === 'submissionGroup') {
       this.getPlans();
     }
   }
