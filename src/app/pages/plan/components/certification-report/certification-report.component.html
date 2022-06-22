@@ -74,8 +74,8 @@
               </tr>
               <tr *ngIf="row.computedValueExpanded" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
                 <td colspan="12">
-                  <div class="expand-score text-center">
-                    <div class="score-header">
+                  <div class="expanded-computed-value text-center">
+                    <div class="expanded-computed-value-header">
                       <div class="th1">
                         Score Value
                       </div>
@@ -83,7 +83,7 @@
                         November - April score
                       </div>
                     </div>
-                    <div class="score-columns">
+                    <div class="computed-value-columns">
                       <div *ngFor="let valueHistoryColumn of row.valueHistory; index as valueHistoryIdx">
                           <h5>
                             {{valueHistoryColumn.cycleId}}
