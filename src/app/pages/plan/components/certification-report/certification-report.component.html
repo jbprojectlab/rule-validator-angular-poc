@@ -61,11 +61,14 @@
                   <img *ngIf="row.flag" src="assets/img/flag-yellow.png" />
                 </td>
                 <td class="left-align">{{row.metricDescription}}</td>
-                <td>
+                <td *ngIf="row.valueHistory && row.valueHistory.length">
                   <div class="computed-value" (click)="expandComputedValue(i, rowIdx)">
                     <div *ngIf="row.computedValueExpanded" class="triangle"></div>
                     {{row.computedValue}}
                   </div>
+                </td>
+                <td *ngIf="!row.valueHistory || !row.valueHistory.length">
+                  {{row.computedValue}}
                 </td>
                 <td>{{row.passIndicator ? row.passIndicator :' - '}}</td>
                 <td>{{row.ruleWeightPercent}}</td>
@@ -83,10 +86,10 @@
                         November - April score
                       </div>
                     </div>
-                    <div class="computed-value-columns">
+                    <div *ngIf="row.valueHistory && row.valueHistory.length" class="computed-value-columns">
                       <div *ngFor="let valueHistoryColumn of row.valueHistory; index as valueHistoryIdx">
                           <h5>
-                            {{valueHistoryColumn.cycleId}}
+                            {{formatCycleId(valueHistoryColumn.cycleId)}}
                           </h5>
                           <p>
                             {{valueHistoryColumn.computedValue}}

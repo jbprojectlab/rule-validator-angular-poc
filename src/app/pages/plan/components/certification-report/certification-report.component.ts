@@ -156,10 +156,30 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
     }
   }
 
-  // computedValueExpanded(row:any){
-  //   console.log(row)
-  //   var coll = document.getElementsByClassName("collapsible");
-  // }
+  formatCycleId(cycleId: string) {
+    const months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
+    ]
+    if(cycleId) {
+      const monthIdx = Number(cycleId.substring(4,6)) - 1
+      const month = months[monthIdx]
+      const year = cycleId.substring(2,4)
+      return month + ' ' + year
+    } else {
+      return ''
+    }
+  }
 
   public getCertificationReportData() {
     this.certificationReportsService.getCertificationReportData(this.submissionId, this.submissionType)
