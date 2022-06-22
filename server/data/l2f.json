@@ -19,7 +19,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 1,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]						
 				},
 				{
 					"metricOrderNumber": 3,
@@ -31,7 +57,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]						
 				},
 				{
 					"metricOrderNumber": 3,
@@ -43,7 +95,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 1,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]						
 				},
 				{
 					"metricOrderNumber": 3,
@@ -55,7 +133,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]						
 				},
 				{
 					"metricOrderNumber": 3,
@@ -67,7 +171,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]						
 				},
 				{
 					"metricOrderNumber": 3,
@@ -79,7 +209,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]						
 				},
 				{
 					"metricOrderNumber": 3,
@@ -91,7 +247,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]						
 				},
 				{
 					"metricOrderNumber": 3,
@@ -103,7 +285,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]						
 				},
 				{
 					"metricOrderNumber": 3,
@@ -115,7 +323,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]						
 				},
 				{
 					"metricOrderNumber": 3,
@@ -127,7 +361,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]						
 				},
 				{
 					"metricOrderNumber": 3,
@@ -139,7 +399,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]						
 				}
 			],
 			"financialSummary": [
@@ -269,7 +555,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]					
 				},
 				{
 					"metricOrderNumber": 4,
@@ -281,7 +593,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]					
 				},
 				{
 					"metricOrderNumber": 4,
@@ -293,7 +631,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]					
 				},
 				{
 					"metricOrderNumber": 4,
@@ -305,7 +669,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]					
 				},
 				{
 					"metricOrderNumber": 4,
@@ -317,7 +707,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]					
 				},
 				{
 					"metricOrderNumber": 4,
@@ -329,7 +745,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]					
 				},
 				{
 					"metricOrderNumber": 4,
@@ -341,7 +783,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]					
 				},
 				{
 					"metricOrderNumber": 4,
@@ -353,7 +821,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]					
 				},
 				{
 					"metricOrderNumber": 4,
@@ -365,7 +859,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]					
 				},
 				{
 					"metricOrderNumber": 4,
@@ -377,7 +897,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 1,
-					"errorMessage": "Computed Value exceeds threshold"
+					"errorMessage": "Computed Value exceeds threshold",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 4,
@@ -389,7 +935,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]					
 				},
 				{
 					"metricOrderNumber": 4,
@@ -401,7 +973,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "NA"
+					"errorMessage": "NA",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 4,
@@ -413,7 +1011,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 4,
@@ -425,7 +1049,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 4,
@@ -437,7 +1087,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 4,
@@ -449,7 +1125,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 4,
@@ -461,7 +1163,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 4,
@@ -473,7 +1201,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 4,
@@ -485,7 +1239,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 4,
@@ -497,7 +1277,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				}
 			],
 			"financialSummary": [
@@ -767,7 +1573,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 5,
@@ -779,7 +1611,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 5,
@@ -791,7 +1649,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 5,
@@ -803,7 +1687,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 5,
@@ -815,7 +1725,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 5,
@@ -827,7 +1763,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 5,
@@ -839,7 +1801,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 5,
@@ -851,7 +1839,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 5,
@@ -863,7 +1877,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 5,
@@ -875,7 +1915,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 5,
@@ -887,7 +1953,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 5,
@@ -899,7 +1991,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				}
 			],
 			"financialSummary": [],
@@ -920,7 +2038,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 6,
@@ -932,7 +2076,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				}
 			],
 			"financialSummary": [],
@@ -953,7 +2123,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 7,
@@ -965,7 +2161,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				}
 			],
 			"financialSummary": [],
@@ -986,7 +2208,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 1,
-					"errorMessage": "Computed Value exceeds threshold"
+					"errorMessage": "Computed Value exceeds threshold",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				}
 			],
 			"financialSummary": [],
@@ -1007,7 +2255,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 0,
@@ -1019,7 +2293,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 0,
@@ -1031,7 +2331,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 0,
@@ -1043,7 +2369,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 0,
@@ -1055,7 +2407,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 0,
@@ -1067,7 +2445,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 0,
@@ -1079,7 +2483,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 0,
@@ -1091,7 +2521,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 0,
@@ -1103,7 +2559,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				}
 			],
 			"financialSummary": [],
@@ -1124,7 +2606,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 1,
@@ -1136,7 +2644,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 1,
@@ -1148,7 +2682,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 1,
@@ -1160,7 +2720,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 1,
@@ -1172,7 +2758,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 1,
@@ -1184,7 +2796,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 1,
@@ -1196,7 +2834,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 1,
@@ -1208,7 +2872,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 1,
@@ -1220,7 +2910,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 1,
@@ -1232,7 +2948,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				}
 			],
 			"financialSummary": [
@@ -1350,7 +3092,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 2,
@@ -1362,7 +3130,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 2,
@@ -1374,7 +3168,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				},
 				{
 					"metricOrderNumber": 2,
@@ -1386,7 +3206,33 @@
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
-					"errorMessage": "-"
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
 				}
 			],
 			"financialSummary": [],

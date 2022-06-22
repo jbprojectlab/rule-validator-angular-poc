@@ -18,7 +18,7 @@ export class PlansComponent implements OnInit, OnDestroy {
   plans: Plan[] = [];
   isSearching: boolean = false;
   panelTop: boolean = false;
-  selectedSortingColumn: string = 'Submission Group / Plan Code';
+  selectedSortingColumn: string = 'Submission Group';
   sortIsAscending: boolean = true;
   destroyed$: Subject<boolean> = new Subject();
   paidThroughPeriod: string = this.getCurrentPaidDate();
@@ -119,7 +119,7 @@ export class PlansComponent implements OnInit, OnDestroy {
     }
     
     const columnNames = {
-      "Submission Group / Plan Code": 'submissionGroup',
+      "Submission Group": 'submissionGroup',
       "Plan Name": 'planName',
       "Paid Through Period": 'paidThroughPeriod',
       "Submission Control #": 'submissionControl',

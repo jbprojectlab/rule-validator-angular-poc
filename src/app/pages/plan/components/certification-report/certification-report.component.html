@@ -55,24 +55,24 @@
             </tr>
           </thead>
           <tbody *ngIf="expandedTables[i]?.metricTable" id="metric-table">
-            <ng-container *ngFor="let row of report.metricTable odd as isOdd; even as isEven;">
+            <ng-container *ngFor="let row of report.metricTable odd as isOdd; even as isEven; index as rowIdx">
               <tr [ngClass]="{ 'odd': isOdd, 'even': isEven }">
                 <td [ngClass]="!row.flag ? 'more-padding' : ''">
                   <img *ngIf="row.flag" src="assets/img/flag-yellow.png" />
                 </td>
                 <td class="left-align">{{row.metricDescription}}</td>
-                <td>{{row.computedValue}}</td>
-                <td>{{row.passIndicator ? row.passIndicator :' - '}}</td>
-                <td>{{row.ruleWeightPercent}}</td>
                 <td>
-                  <div class="show-score" (click)="row.expandScore= !row.expandScore">
-                    <div *ngIf="row.expandScore" class="triangle"></div>
-                    {{row.score}}
+                  <div class="computed-value" (click)="expandComputedValue(i, rowIdx)">
+                    <div *ngIf="row.computedValueExpanded" class="triangle"></div>
+                    {{row.computedValue}}
                   </div>
                 </td>
+                <td>{{row.passIndicator ? row.passIndicator :' - '}}</td>
+                <td>{{row.ruleWeightPercent}}</td>
+                <td>{{row.score}}</td>
                 <td>{{row.errorMessage}}</td>
               </tr>
-              <tr *ngIf="row.expandScore" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
+              <tr *ngIf="row.computedValueExpanded" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
                 <td colspan="12">
                   <div class="expand-score text-center">
                     <div class="score-header">
@@ -83,8 +83,16 @@
                         November - April score
                       </div>
                     </div>
-                    NOV :6
-
+                    <div class="score-columns">
+                      <div *ngFor="let valueHistoryColumn of row.valueHistory; index as valueHistoryIdx">
+                          <h5>
+                            {{valueHistoryColumn.cycleId}}
+                          </h5>
+                          <p>
+                            {{valueHistoryColumn.computedValue}}
+                          </p>
+                      </div>
+                    </div>
                   </div>
                 </td>
               </tr>

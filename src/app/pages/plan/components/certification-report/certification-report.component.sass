@@ -166,7 +166,7 @@ table
 .Mtable tr:nth-child(even)
   background-color: var(--background-shade-blue)
 
-.show-score
+.computed-value
   //width: 50px
   height: 23px
   position: relative
@@ -191,10 +191,9 @@ table
  
 
 .expand-score
-  height: 110px 
-  background: #DCF4FF 0% 0% no-repeat padding-box 
-  border: 1px solid #A8BCC2 
-  opacity: 1 
+  background: #DCF4FF 0% 0% no-repeat padding-box
+  border: 1px solid #A8BCC2
+  opacity: 1
   margin: 0px 32px
   border-bottom-left-radius: 20px
   border-bottom-right-radius: 20px
@@ -211,6 +210,14 @@ table
     .th2
       color: #878F91
       font-size: 10px
+
+  .score-columns
+    display: flex
+    justify-content: space-between
+    padding: 0 40px 0 20px
+
+    h5
+      font-weight: 500
 
 .odd
   background-color: var(--background-shade-blue)

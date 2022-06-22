@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { L2Report, MatricTableData, SubmissionReport } from 'app/core/types/submissionReport';
+import { L2Report, MetricTableData, SubmissionReport } from 'app/core/types/submissionReport';
 import { ActivatedRoute } from '@angular/router';
 import { CertificationReportsService } from '../../services/certification-reports.service';
 import { ElementSchemaRegistry } from '@angular/compiler';
@@ -14,7 +14,7 @@ import { ElementSchemaRegistry } from '@angular/compiler';
 export class CertificationReportComponent implements OnInit, OnDestroy {
   initialReports!: SubmissionReport;
   reports: L2Report[] = [];
-  metricTable: MatricTableData[] =[];
+  metricTable: MetricTableData[] =[];
   menuItems: any = [];
   menuIsOpen: boolean = false;
   tablesFilteredByFlag: boolean = false;
@@ -38,9 +38,15 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getCertificationReportData();
-    this.metricTable.forEach((_covenants) => {
-      _covenants.expandScore = false;
+    this.metricTable.forEach((row) => {
+      row.computedValueExpanded = false;
     });
+  }
+
+  expandComputedValue(reportIdx: number, rowIdx: number) {
+    console.log(reportIdx, rowIdx)
+    // @ts-ignore
+    this.reports[reportIdx].metricTable[rowIdx].computedValueExpanded = this.reports[reportIdx].metricTable[rowIdx].computedValueExpanded ? false : true
   }
 
   openMenu() {
@@ -150,7 +156,7 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
     }
   }
 
-  // expandScore(row:any){
+  // computedValueExpanded(row:any){
   //   console.log(row)
   //   var coll = document.getElementsByClassName("collapsible");
   // }
