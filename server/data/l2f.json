@@ -18,7 +18,7 @@
 					"passIndicator": null,
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
-					"flag": 0,
+					"flag": 1,
 					"errorMessage": "-"
 				},
 				{
@@ -42,7 +42,7 @@
 					"passIndicator": null,
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
-					"flag": 0,
+					"flag": 1,
 					"errorMessage": "-"
 				},
 				{

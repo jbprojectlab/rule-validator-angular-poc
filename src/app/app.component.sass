@@ -1,11 +1,15 @@
 :host
+  .spacing-wrapper
+    padding: 10px
+    min-height: calc(100% - 20px)
+    display: flex
+
   .app-container
     background-color: var(--primary-blue-dark)
     border-radius: var(--rounded-corner-border-radius)
     display: flex
-    margin: 10px
     min-width: 1240px
-    min-height: calc(100% - 20px)
+    flex-grow: 1
 
     &.hidden-nav
       background-color: var(--white)

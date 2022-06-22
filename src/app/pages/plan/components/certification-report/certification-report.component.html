@@ -29,7 +29,7 @@
       <span>{{initialReports?.totalscore}}</span>
     </div>
     <span class="score-indicator">{{initialReports?.totalPassFail}}</span>
-    <img src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
+    <img style="cursor: pointer;" src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
   </div>
 
 </div>
@@ -94,8 +94,8 @@
               <td></td>
             </tr>
           </tbody>
-          <tbody *ngIf="!expandedTables[i]?.metricTable">
-            <ng-container *ngFor="let row of report.metricTable ">
+          <tbody *ngIf="!expandedTables[i]?.metricTable" class="Mtable">
+            <ng-container *ngFor="let row of report.metricTable">
               <tr *ngIf="row.flag">
                 <td>
                   <img src="assets/img/flag-yellow.png" />
@@ -158,8 +158,8 @@
               <td></td>
             </tr>
           </tbody>
-          <tbody *ngIf="!expandedTables[i]?.financialSummary">
-            <ng-container *ngFor="let row of report.financialSummary">
+          <tbody *ngIf="!expandedTables[i]?.financialSummary" class="Mtable">
+            <ng-container *ngFor="let row of report.financialSummary ">
               <tr *ngIf="row.flag">
                 <td>
                   <img src="assets/img/flag-yellow.png" />
@@ -204,7 +204,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let row of report.frxTable">
+            <tr *ngFor="let row of report.frxTable odd as isOdd; even as isEven;" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
               <td>{{row.ValidRecords}}</td>
               <td>{{row.VoidedRecords}}</td>
               <td>{{row.RejectedRecords}}</td>
@@ -227,7 +227,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let row of report.frequencyCountTable">
+            <tr *ngFor="let row of report.frequencyCountTable odd as isOdd; even as isEven;" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
               <td>{{row.fieldValue}}</td>
               <td>{{row.frequencyCount}}</td>
             </tr>

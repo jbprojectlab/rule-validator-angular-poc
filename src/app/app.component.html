@@ -1,30 +1,32 @@
-<div class="app-container" [class.hidden-nav]="navIsHidden">
-  <app-navbar *ngIf="!navIsHidden"></app-navbar>
-  <div [ngClass]="[navIsHidden ? ('main-container hidden-nav-margin') : ('main-container')]">
-    <div class="toolbar" role="banner">
-      <div>
-        <img id="logo" src="../assets/img//logo.svg" alt="bcbsa-logo">
-      </div>
-      <div>
-        <div class="user-dd">
-          <div class="wlc-msg">
-            <div>User</div>
-            <!-- <div>Welcome back to BlueCross BlueShield</div> -->
-          </div>
-          <div class="user-profile-container">
-            <!-- <img class="user-dd-triangle" src="assets/img/triangle.png" /> -->
-            <div class="user-profile">
-              <img class="user-photo" src="https://randomuser.me/api/portraits/men/64.jpg" />
-              <img class="user-dd-arrow" src="assets/img/show-more.png" />  
+<div class="spacing-wrapper">
+  <div class="app-container" [class.hidden-nav]="navIsHidden">
+    <app-navbar *ngIf="!navIsHidden"></app-navbar>
+    <div [ngClass]="[navIsHidden ? ('main-container hidden-nav-margin') : ('main-container')]">
+      <div class="toolbar" role="banner">
+        <div>
+          <img id="logo" src="../assets/img//logo.svg" alt="bcbsa-logo">
+        </div>
+        <div>
+          <div class="user-dd">
+            <div class="wlc-msg">
+              <div>User</div>
+              <!-- <div>Welcome back to BlueCross BlueShield</div> -->
             </div>
+            <div class="user-profile-container">
+              <!-- <img class="user-dd-triangle" src="assets/img/triangle.png" /> -->
+              <div class="user-profile">
+                <img class="user-photo" src="https://randomuser.me/api/portraits/men/64.jpg" />
+                <img class="user-dd-arrow" src="assets/img/show-more.png" />  
+              </div>
+            </div>
+          
           </div>
-         
         </div>
       </div>
+      <router-outlet></router-outlet>
+      <footer [ngClass]="{'hidden-nav-margin': navIsHidden}">
+        &copy; 2022. All rights reserved
+      </footer>
     </div>
-    <router-outlet></router-outlet>
-    <footer [ngClass]="{'hidden-nav-margin': navIsHidden}">
-      &copy; 2022. All rights reserved
-    </footer>
   </div>
 </div>

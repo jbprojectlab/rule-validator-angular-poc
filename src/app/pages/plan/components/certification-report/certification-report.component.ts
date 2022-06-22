@@ -55,7 +55,7 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
     }
   }
 
-  initializeExpandedTables() {
+  private initializeExpandedTables() {
     this.expandedTables = this.reports.map((report: any, index: number) => {
       let expandedState: any = {};
       if (report.metricTable) expandedState.metricTable = true;
@@ -72,7 +72,7 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
     this.initializeExpandedTables();
   }
 
-  filterTablesByFlag() {
+  private filterTablesByFlag() {
     this.expandedTables = this.reports.map((report: any, index: number) => {
       let expandedState: any = {};
       if (report.metricTable) expandedState.metricTable = false;
@@ -106,7 +106,7 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
     }
   }
 
-  getMenuItems() {
+  private getMenuItems() {
     this.reports.forEach(function(element: { [x: string]: any; }) {
       for (var key in element) {
         if (element[key] && element[key].length === 0) {

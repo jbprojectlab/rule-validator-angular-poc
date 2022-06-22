@@ -18,33 +18,7 @@
           "score": 2,
           "flag": 1,
           "fileOrderNumber": 4,
-          "errorMessage": "Failed due to threshold exceeded",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
+          "errorMessage": "Failed due to threshold exceeded"
         },
         {
           "metricOrderNumber": "9876",
@@ -177,7 +151,7 @@
           "errorMessage": "Failed due to threshold exceeded"
         }
       ],
-      "rxTable": [
+      "frxTable": [
         {
           "validRecords": 0,
           "voidedRecords": 1,

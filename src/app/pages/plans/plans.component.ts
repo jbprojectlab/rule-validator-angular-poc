@@ -49,7 +49,7 @@ export class PlansComponent implements OnInit, OnDestroy {
   submissionType: string = 'non-ANTHEM'
   
   headers = [
-    'Submission Group / Plan Code',
+    'Submission Group',
     'Plan Name',
     'Paid Through Period',
     'Submission Control #',

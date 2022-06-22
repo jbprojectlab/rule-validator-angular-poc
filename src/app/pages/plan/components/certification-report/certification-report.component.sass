@@ -141,14 +141,11 @@ table
     padding-left: 10px
 
   tbody
-    // tr:nth-child(even)
-    //   background-color: var(--background-shade-blue)
+    // tr:nth-child(odd)
+    //   background-color: pink
 
-    // tr:hover
-    //   background-color: var(--background-shade-dark-grey)
-
-    // tr:nth-child(even)
-    //   background-color: var(--background-shade-blue)
+    tr:hover
+      background-color: var(--background-shade-dark-grey)
     
     tr.bottom-row
       background-color: rgba(255, 255, 255, 0)
@@ -163,6 +160,11 @@ table
 
       &.left-align
         text-align: left
+
+.Mtable tr:nth-child(odd)
+  background-color: var(--white)
+.Mtable tr:nth-child(even)
+  background-color: var(--background-shade-blue)
 
 .show-score
   //width: 50px

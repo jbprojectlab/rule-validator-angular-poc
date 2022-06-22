@@ -1,5 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CertificationReportComponent } from './certification-report.component';
 import { of } from 'rxjs';
@@ -34,6 +35,22 @@ describe('CertificationReportComponent', () => {
   it('should call the certification reports ', () => {
     component.getCertificationReportData();
     expect(mockCertificationReportService.getCertificationReportData).toHaveBeenCalled();
+  })
+
+  it('should open the menu', () => {
+    component.menuIsOpen = false;
+    component.openMenu();
+    fixture.detectChanges();
+    let menu = fixture.nativeElement.querySelector('.report-menu');
+    expect(menu).toBeTruthy();
+  })
+
+  it('should close the menu', () => {
+    component.menuIsOpen = true;
+    component.closeMenu();
+    fixture.detectChanges();
+    let menu = fixture.nativeElement.querySelector('.report-menu');
+    expect(menu).toBeFalsy();
   })
 
   describe('camelize', () => {

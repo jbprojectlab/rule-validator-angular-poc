@@ -12,6 +12,7 @@
     "watch": "ng build --watch --configuration development",
     "seed": "node seed.js",
     "test": "ng test",
+    "test:coverage": "ng test --no-watch --code-coverage",
     "lint": "ng lint"
   },
   "private": true,
@@ -42,6 +43,7 @@
     "@angular-eslint/template-parser": "13.2.1",
     "@angular/cli": "~13.2.2",
     "@angular/compiler-cli": "~13.2.0",
+    "@angular/language-service": "^13.2.2",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.17.0",
