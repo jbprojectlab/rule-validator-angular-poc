@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SubmissionReport } from 'app/core/types/submissionReport';
-import mockPlan from './mock-plan';
+import mockPlan, { mockPlanDescription } from './mock-plan';
 
 @Component({
   selector: 'app-plan',
@@ -9,6 +9,7 @@ import mockPlan from './mock-plan';
   styleUrls: ['./plan.component.sass']
 })
 export class PlanComponent implements OnInit {
+  planDescription: any = mockPlanDescription;
   plan: any = mockPlan;
   visibleTab: number = 1;
   level2ChecklistIsOpen: boolean = true;
