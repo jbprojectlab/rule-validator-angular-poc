@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import mockPlan, { mockPlanDescription } from './mock-plan'
+import { ActivatedRoute } from '@angular/router';
+import { SubmissionReport } from 'app/core/types/submissionReport';
+import mockPlan from './mock-plan';
 
 @Component({
   selector: 'app-plan',
@@ -7,7 +9,6 @@ import mockPlan, { mockPlanDescription } from './mock-plan'
   styleUrls: ['./plan.component.sass']
 })
 export class PlanComponent implements OnInit {
-  planDescription: any = mockPlanDescription;
   plan: any = mockPlan;
   visibleTab: number = 1;
   level2ChecklistIsOpen: boolean = true;
@@ -15,8 +16,9 @@ export class PlanComponent implements OnInit {
   transformationsTableIsOpen: boolean = false;
   analyticalWarningsTableIsOpen: boolean = false;
   panelTop: boolean = false;
-
-  constructor() { }
+  reportData!: SubmissionReport;
+  constructor(private activatedRoute: ActivatedRoute
+  ) { }
 
   selectTab(tab: number) {
     this.visibleTab = tab;
@@ -64,6 +66,9 @@ export class PlanComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe((response: any) => {
+      this.reportData = response.reportData;
+    });
     document.body.addEventListener('scroll', (e: any) => {
       if (document.body.scrollTop > 20) {
         this.panelTop = true;

@@ -18,7 +18,7 @@ export class PlansComponent implements OnInit, OnDestroy {
   plans: Plan[] = [];
   isSearching: boolean = false;
   panelTop: boolean = false;
-  selectedSortingColumn: string = 'Submission Group';
+  selectedSortingColumn: string = 'Submission Group / Plan Code';
   sortIsAscending: boolean = true;
   destroyed$: Subject<boolean> = new Subject();
   paidThroughPeriod: string = this.getCurrentPaidDate();
@@ -59,7 +59,7 @@ export class PlansComponent implements OnInit, OnDestroy {
     'Submission Status',
     'Submission Current State',
     'Last Updated',
-    'Plan Validation Due',
+    'Level 1 Validation Due Date',
     'L2 Report Score'
   ];
   constructor(
@@ -119,7 +119,7 @@ export class PlansComponent implements OnInit, OnDestroy {
     }
     
     const columnNames = {
-      "Submission Group": 'submissionGroup',
+      "Submission Group / Plan Code": 'submissionGroup',
       "Plan Name": 'planName',
       "Paid Through Period": 'paidThroughPeriod',
       "Submission Control #": 'submissionControl',
@@ -129,7 +129,7 @@ export class PlansComponent implements OnInit, OnDestroy {
       "Submission Status": 'status',
       "Submission Current State": 'submissionCurrentState',
       "Last Updated": 'lastUpdated',
-      "Plan Validation Due": 'planValidationDueDate',
+      "Level 1 Validation Due Date": 'planValidationDueDate',
       "L2 Report Score": 'score'
     };
     // @ts-ignore

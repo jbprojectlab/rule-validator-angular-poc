@@ -7,7 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlansComponent } from './pages/plans/plans.component';
-import { HomeComponent } from './pages/home/home.component';
 import { ClipboardComponent } from './pages/clipboard/clipboard.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PlanComponent } from './pages/plan/plan.component';
@@ -27,7 +26,6 @@ import { MatInputModule } from '@angular/material/input';
   declarations: [
     AppComponent,
     PlansComponent,
-    HomeComponent,
     ClipboardComponent,
     DashboardComponent,
     PlanComponent,

@@ -26,9 +26,9 @@
   <div class="report-score-container">
     <div>
       <h4>Total Score</h4>
-      <span>{{initialReports?.totalscore}}</span>
+      <span>{{initialReports?.totalScore}}</span>
     </div>
-    <span class="score-indicator">{{initialReports?.totalPassFail}}</span>
+    <span class="score-indicator" [ngClass]="{'green': initialReports.totalScore === 0, 'yellow': (initialReports.totalScore > 0 && initialReports.totalScore < 1),'red':  initialReports.totalScore >= 1  }">{{initialReports?.totalPassFail}}</span>
     <img style="cursor: pointer;" src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
   </div>
 
@@ -145,9 +145,10 @@
               <th>Total Valid Amount</th>
               <th>Total Rejected Amount</th>
               <th>Total Amount</th>
-              <th>Total Amount Excluding Denied Secondary</th>
-              <th>Total Amount Outpatient Facility Only</th>
-              <th>Estimated Average Per Valid Script</th>
+               <th>%Rejected</th>
+              <th *ngIf="displayColoumEnable(report.financialSummary,'totalAmountExcludingDeniedSecondary')">Total Amount Excluding Denied Secondary</th>
+              <th *ngIf="displayColoumEnable(report.financialSummary,'totalAmountOutpatientFacilityOnly')">Total Amount Outpatient Facility Only</th>
+              <th *ngIf="displayColoumEnable(report.financialSummary,'estimatedAveragePerValidScript')">Estimated Average Per Valid Script</th>
               <th>Error Msg</th>
             </tr>
           </thead>
@@ -158,11 +159,12 @@
               </td>
               <td>{{row.columnName}}</td>
               <td>{{row.totalValidAmount |currency:'USD':'symbol-narrow'}}</td>
-              <td>{{row.percentRejected}}%</td>
+              <td>{{row.totalRejectedAmount |currency:'USD':'symbol-narrow'}}</td>
               <td>{{row.totalAmount |currency:'USD':'symbol-narrow'}}</td>
-              <td>{{row.totalAmountExcludingDeniedSecondary |currency:'USD':'symbol-narrow'}}</td>
-              <td>{{row.totalAmountOutpatientFacilityOnly ? (row.totalAmountOutpatientFacilityOnly|currency:'USD':'symbol-narrow') :'-'}}</td>
-              <td>{{row.estimatedAveragePerValidScript ? (row.estimatedAveragePerValidScript|currency:'USD':'symbol-narrow') :'-'}}</td>
+              <td>{{row.percentRejected}}%</td>
+              <td  *ngIf="displayColoumEnable(report.financialSummary,'totalAmountExcludingDeniedSecondary')">{{row.totalAmountExcludingDeniedSecondary |currency:'USD':'symbol-narrow'}}</td>
+              <td  *ngIf="displayColoumEnable(report.financialSummary,'totalAmountOutpatientFacilityOnly')">{{row.totalAmountOutpatientFacilityOnly ? (row.totalAmountOutpatientFacilityOnly|currency:'USD':'symbol-narrow') :'-'}}</td>
+              <td  *ngIf="displayColoumEnable(report.financialSummary,'estimatedAveragePerValidScript')">{{row.estimatedAveragePerValidScript ? (row.estimatedAveragePerValidScript|currency:'USD':'symbol-narrow') :'-'}}</td>
               <td>{{row.errorMessage}}</td>
             </tr>
             <tr class="bottom-row">
@@ -176,14 +178,13 @@
                   <img src="assets/img/flag-yellow.png" />
                 </td>
                 <td>{{row.columnName}}</td>
-                <!-- <td >{{row.financialOrderNumber}}</td> -->
-                <td>{{row.columnName}}</td>
                 <td>{{row.totalValidAmount |currency:'USD':'symbol-narrow'}}</td>
-                <td>{{row.percentRejected}}%</td>
+                <td>{{row.totalRejectedAmount |currency:'USD':'symbol-narrow'}}</td>
                 <td>{{row.totalAmount |currency:'USD':'symbol-narrow'}}</td>
-                <td>{{row.totalAmountExcludingDeniedSecondary |currency:'USD':'symbol-narrow'}}</td>
-                <td>{{row.totalAmountOutpatientFacilityOnly ? (row.totalAmountOutpatientFacilityOnly|currency:'USD':'symbol-narrow') :'-'}}</td>
-                <td>{{row.estimatedAveragePerValidScript ? (row.estimatedAveragePerValidScript|currency:'USD':'symbol-narrow') :'-'}}</td>
+                <td>{{row.percentRejected}}%</td>
+                <td  *ngIf="displayColoumEnable(report.financialSummary,'totalAmountExcludingDeniedSecondary')">{{row.totalAmountExcludingDeniedSecondary |currency:'USD':'symbol-narrow'}}</td>
+                <td  *ngIf="displayColoumEnable(report.financialSummary,'totalAmountOutpatientFacilityOnly')">{{row.totalAmountOutpatientFacilityOnly ? (row.totalAmountOutpatientFacilityOnly|currency:'USD':'symbol-narrow') :'-'}}</td>
+                <td  *ngIf="displayColoumEnable(report.financialSummary,'estimatedAveragePerValidScript')">{{row.estimatedAveragePerValidScript ? (row.estimatedAveragePerValidScript|currency:'USD':'symbol-narrow') :'-'}}</td>
                 <td>{{row.errorMessage}}</td>
               </tr>
             </ng-container>

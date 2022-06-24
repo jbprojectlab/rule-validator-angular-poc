@@ -1,22 +1,27 @@
 export interface SubmissionReport {
-    submissionId: 1;
+    planName: string,
+	submissionGroupId: string,
+	submissionControlNumber: string,
+	paidThroughPeriod: string,
+	submissionMode: string;
+	submissionId: number;
 	submissionType: string;
-	totalscore: 0;
-    totalPassFail: string;
-    total_Flag: number;
-    l2Reports: L2Report[];
+	totalScore: 0;
+	totalPassFail: string;
+	total_Flag: number;
+	l2Reports: L2Report[];
 }
 
 export interface L2Report {
     fileName: string;
     fileOrderNumber: number;
-    metricTable?: MetricTableData[];
+    metricTable?: MatricTableData[];
     financialSummary?: FinancialSummary[];
     frxTable?: RxTable[];
     frequencyCountTable?: FrequencyCountTable[];
 }
 
-export interface MetricTableData {
+export interface MatricTableData {
     metricOrderNumber: string;
     metricDescription: string;
     computedValue: number;
@@ -28,8 +33,7 @@ export interface MetricTableData {
     errorMessage: string;
     totalPassFail:string;
     total_Flag:number;
-    computedValueExpanded: boolean;
-    valueHistory: ValueHistory[];
+    expandScore: boolean;
 }
 
 export interface FinancialSummary {
@@ -56,9 +60,4 @@ export interface RxTable {
 export interface FrequencyCountTable {
     fieldValue: string;
     frequencyCount: number;
-}
-
-export interface ValueHistory {
-    cycleId: string,
-    computedValue: string
 }

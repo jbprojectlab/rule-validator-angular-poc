@@ -1,17 +1,15 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { L2Report, MetricTableData, SubmissionReport } from 'app/core/types/submissionReport';
+import { FinancialSummary, L2Report, MetricTableData, SubmissionReport } from 'app/core/types/submissionReport';
 import { ActivatedRoute } from '@angular/router';
-import { CertificationReportsService } from '../../services/certification-reports.service';
-import { ElementSchemaRegistry } from '@angular/compiler';
 
 @Component({
   selector: 'app-certification-report',
   templateUrl: './certification-report.component.html',
   styleUrls: ['./certification-report.component.sass']
 })
-export class CertificationReportComponent implements OnInit, OnDestroy {
+export class CertificationReportComponent implements OnInit{
   initialReports!: SubmissionReport;
   reports: L2Report[] = [];
   metricTable: MetricTableData[] =[];
@@ -23,28 +21,26 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
   destroyed$: Subject<boolean> = new Subject();
   showScore = false;
   scoreContainer: any;
-
-  private submissionId!: string;
-  private submissionType!: string;
   sections: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private certificationReportsService: CertificationReportsService
-  ) {
-    this.submissionId = activatedRoute.snapshot.params['submissionId'];
-    this.submissionType = activatedRoute.snapshot.params['submissionType'];
-   }
+  ) {   }
 
   ngOnInit(): void {
-    this.getCertificationReportData();
+    this.activatedRoute.data.subscribe((response: any) => {
+      this.initialReports = response.reportData;
+      this.reports = (this.initialReports && this.initialReports) ? this.initialReports.l2Reports : [];
+      this.getMenuItems();
+      this.initializeExpandedTables();
+    });
+
     this.metricTable.forEach((row) => {
       row.computedValueExpanded = false;
-    });
+    })
   }
 
   expandComputedValue(reportIdx: number, rowIdx: number) {
-    console.log(reportIdx, rowIdx)
     // @ts-ignore
     this.reports[reportIdx].metricTable[rowIdx].computedValueExpanded = this.reports[reportIdx].metricTable[rowIdx].computedValueExpanded ? false : true
   }
@@ -181,18 +177,11 @@ export class CertificationReportComponent implements OnInit, OnDestroy {
     }
   }
 
-  public getCertificationReportData() {
-    this.certificationReportsService.getCertificationReportData(this.submissionId, this.submissionType)
-    .pipe(takeUntil(this.destroyed$))
-    .subscribe((data: SubmissionReport) => {
-        this.initialReports = data;
-        this.reports = (data && data) ? data.l2Reports : [];
-        this.getMenuItems();
-        this.initializeExpandedTables();
-    });
-  }
-
-  ngOnDestroy() {
-    this.destroyed$.next(true);
+  displayColoumEnable(summaryData: FinancialSummary[], fieldName: string): boolean {
+    let flag = false;
+    if (summaryData?.length!==0 && (fieldName === 'totalAmountExcludingDeniedSecondary' || fieldName === 'totalAmountOutpatientFacilityOnly' || fieldName === 'estimatedAveragePerValidScript')) {
+      flag = summaryData[0][fieldName] !== null;
+    }
+    return flag
   }
 }

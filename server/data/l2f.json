@@ -1,21 +1,26 @@
 {
+	"planName": "GENROCKET_2",
+	"submissionGroupId": "889",
+	"submissionControlNumber": "2830",
+	"paidThroughPeriod": "202001",
+	"submissionMode": "Production",
 	"submissionId": 2830,
-	"submissionType": "non-ANTHEM",
-	"totalscore": 0.0,
+	"submissionType": "non-ANTHEM", 
+	"totalScore": 0.0,
 	"totalPassFail": "PASS",
 	"total_Flag": 0,
 	"l2Reports": [
 		{
-			"fileName": "PROFESSIONAL_OTHER_SERVICE",
-			"fileOrderNumber": 3,
+			"fileName": "PRODUCT",
+			"fileOrderNumber": 6,
 			"metricTable": [
 				{
-					"metricOrderNumber": 3,
-					"metricDescription": "Professional & Other Services File 5% total rejected records",
+					"metricOrderNumber": 6,
+					"metricDescription": "Product File 5% total rejected records",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 1,
@@ -48,12 +53,12 @@
 					]						
 				},
 				{
-					"metricOrderNumber": 3,
-					"metricDescription": "Professional & Other Services.Member ZIP Code on Claim > 2% rejected",
+					"metricOrderNumber": 6,
+					"metricDescription": "Product.BHI Product Category > 1% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
+					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -83,15 +88,24 @@
 							"cycleId": "202205",
 							"computedValue": "19.48"
 						}
-					]						
-				},
+					]
+				}
+			],
+			"financialSummary": [],
+			"frxTable": [],
+			"frequencyCountTable": []
+		},
+		{
+			"fileName": "PRODUCT_CLIENT_CONTRACT",
+			"fileOrderNumber": 7,
+			"metricTable": [
 				{
-					"metricOrderNumber": 3,
-					"metricDescription": "Professional & Other Services.ICD-9 Diagnosis Code - Principal > 1% rejected",
+					"metricOrderNumber": 7,
+					"metricDescription": "Product Client Contract File 5% total rejected records",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 1,
@@ -121,15 +135,15 @@
 							"cycleId": "202205",
 							"computedValue": "19.48"
 						}
-					]						
+					]
 				},
 				{
-					"metricOrderNumber": 3,
-					"metricDescription": "Professional & Other Services.CPT & HCPCS Codes > 1% rejected",
+					"metricOrderNumber": 7,
+					"metricDescription": "Product Client Contract.Industry Grouping - SIC Code > 1% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -160,14 +174,23 @@
 							"computedValue": "19.48"
 						}
 					]						
-				},
+				}
+			],
+			"financialSummary": [],
+			"frxTable": [],
+			"frequencyCountTable": []
+		},
+		{
+			"fileName": "MEMBER",
+			"fileOrderNumber": 5,
+			"metricTable": [
 				{
-					"metricOrderNumber": 3,
-					"metricDescription": "Professional & Other Services.Category of Service > .5% rejected",
+					"metricOrderNumber": 5,
+					"metricDescription": "Member File 10% total rejected records",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -200,12 +223,12 @@
 					]						
 				},
 				{
-					"metricOrderNumber": 3,
-					"metricDescription": "Professional & Other Services.Claim Payment Status > 1% rejected",
+					"metricOrderNumber": 5,
+					"metricDescription": "Member.Date of Birth > 2% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -238,12 +261,12 @@
 					]						
 				},
 				{
-					"metricOrderNumber": 3,
-					"metricDescription": "Professional & Other Services.Place of Service > 2% rejected",
+					"metricOrderNumber": 5,
+					"metricDescription": "Member.Member Gender > 2% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -276,12 +299,12 @@
 					]						
 				},
 				{
-					"metricOrderNumber": 3,
-					"metricDescription": "ProfOthServ.ProviderBillingID & ProfOthServ.BillingProviderContractStatus & Provider Match rejectio Professional & Other Services: Percent of Non-Void records where Billing Provider Contracting Status is 'Y' + Records rejected due to Billing Provider could not be matched to the Provider in the Provider Master > 10%",
+					"metricOrderNumber": 5,
+					"metricDescription": "Member.Member Medical COB Code > 2% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
+					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -314,12 +337,12 @@
 					]						
 				},
 				{
-					"metricOrderNumber": 3,
-					"metricDescription": "ProfOthServ.ProviderRenderingID & ProfOthServ.RenderingProviderContractStatus & Provider Match reje Professional & Other Services: Percent of Non-Void records where Rendering Provider Contracting Status is 'Y' + Records rejected due to Rendering Provider could not be matched to the Provider in the Provider Master  > 10%",
+					"metricOrderNumber": 5,
+					"metricDescription": "Member.Member Pharmacy COB Code > 2% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
+					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -352,12 +375,12 @@
 					]						
 				},
 				{
-					"metricOrderNumber": 3,
-					"metricDescription": "PFO.ProviderBillingID & PFO.BillingProviderContractStatus & PFO.HostPlanIDCode & Provider Match 1:M A= count of non-VOID PFO claims and Bill Provider Contract Status = 'Y' and Host ID = 'HOM' and matched 1:many for their Bill Provider ID. B= count of non-VOID PFO claims and Bill Provider Contract Status = 'Y' and Host ID = 'HOM'. If A/B>5%  FAIL",
+					"metricOrderNumber": 5,
+					"metricDescription": "Member.Pharmacy Benefit Indicator > 2% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
+					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -390,12 +413,12 @@
 					]						
 				},
 				{
-					"metricOrderNumber": 3,
-					"metricDescription": "PFO.ProviderRenderingID & PFO.RenderingProviderContractStatus & PFO.HostPlanIDCd & ProviderMtch 1:M A= count of non-VOID PFO claims and Rend Provider Contract Status = 'Y' and Host ID = 'HOM' and matched 1:many for their Rend Provider ID. B= count of non-VOID PFO claims and Rend Provider Contracting Status = 'Y' and Host ID = 'HOM'. If A/B>5%  FAIL",
+					"metricOrderNumber": 5,
+					"metricDescription": "Member.MH/CD Benefit Indicator > 2% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
+					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -546,12 +569,12 @@
 			"fileOrderNumber": 4,
 			"metricTable": [
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Financial Balance - Allowed Amount (Pharmacy) > 2% overall $$ rejected",
+					"metricOrderNumber": 5,
+					"metricDescription": "Member.Medical Benefit Indicator > 2% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -584,12 +607,12 @@
 					]					
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Financial Balance - Non-Covered Amount (Pharmacy) > 4% overall $$ rejected",
+					"metricOrderNumber": 5,
+					"metricDescription": "Member.Hospital Benefit Indicator > 2% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -622,12 +645,12 @@
 					]					
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Financial Balance - Payment Amount (Pharmacy) > 2% overall $$ rejected",
+					"metricOrderNumber": 5,
+					"metricDescription": "Member.BHI Network Category - Facility > 1% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -660,12 +683,12 @@
 					]					
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Financial Balance - Submitted Amount (Pharmacy) > 4% overall $$ rejected",
+					"metricOrderNumber": 5,
+					"metricDescription": "Member.BHI Network Category - Professional > 1% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -698,12 +721,97 @@
 					]					
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy File 5% total rejected records",
+					"metricOrderNumber": 5,
+					"metricDescription": "Member.Pharmacy Benefit Tiers (% records where PHARMACY BENEFIT TIER = '98') minus (% records where PHARMACY CARVE OUT SUBMISSION INDICATOR = 'C' or 'X') > 1%",
+					"computedValue": "0",
+					"ruleWeightPercent": 0.0,
+					"score": 0.0,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+				}
+			],
+			"financialSummary": [],
+			"frxTable": [],
+			"frequencyCountTable": []
+		},
+		{
+			"fileName": "FACILITY_HEADER",
+			"fileOrderNumber": 1,
+			"metricTable": [
+				{
+					"metricOrderNumber": 1,
+					"metricDescription": "Facility Header.Member ZIP Code on Claim >2% rejected",
+					"computedValue": "0",
+					"ruleWeightPercent": 0.0,
+					"score": 0.0,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]					
+				},
+				{
+					"metricOrderNumber": 1,
+					"metricDescription": "Facility Header.ICD-9 Diagnosis Code - Principal > 1% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -736,12 +844,12 @@
 					]					
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Member ZIP Code on Claim > 2% rejected",
+					"metricOrderNumber": 1,
+					"metricDescription": "Facility Header.Category of Service > .5% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
+					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -774,12 +882,12 @@
 					]					
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Member ZIP Code on Claim > 1% = '99999', '     ', or '00000'",
+					"metricOrderNumber": 1,
+					"metricDescription": "Facility Header.Claim Payment Status > 1% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
+					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -812,88 +920,12 @@
 					]					
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Billing Provider ID > 10% = all NINES",
+					"metricOrderNumber": 1,
+					"metricDescription": "Facility Header.Place of Service > 2% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
+					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]					
-				},
-				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Billing Provider Specialty & Pharmacy.Category of Service (% of records where Pharmacy.Billing Provider Specialty <> 'A5') minus (Pharmacy.Category of Service = 'VOID') > 1%",
-					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
-					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]					
-				},
-				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Benefit Payment Status Code < 96% = 'Y'",
-					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
-					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 1,
@@ -926,12 +958,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Category of Service > .5% rejected",
+					"metricOrderNumber": 1,
+					"metricDescription": "Fac Header.ProviderBillingID & Fac Header.BillingProviderContractStatus & Provider Match rejection Facility Header: Percent of Non-Void records where Billing Provider Contracting Status is 'Y' + Records rejected due to Billing Provider could not be matched to the Provider in the Provider Master > 10%",
 					"computedValue": "0",
 					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -964,12 +996,12 @@
 					]					
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Category of Service < 97% = 'PHARM'",
+					"metricOrderNumber": 1,
+					"metricDescription": "FacHeader.ProviderRenderingID & FacHeader.RenderingProviderContractStatus & ProviderMatch rejection Facility Header: Percent of Non-Void records where Rendering Provider Contracting Status is 'Y' + Records rejected due to Rendering Provider could not be matched to the Provider in the Provider Master  > 10%",
 					"computedValue": "0",
 					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -1002,12 +1034,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Category of Service > 3% = 'VOID'",
+					"metricOrderNumber": 1,
+					"metricDescription": "FH.ProviderBillingID & FH.BillingProviderContractStatus & FH.HostPlanIDCd & Provider Match 1:M A= count of non-VOID Fac claims and Bill Provider Contract Status = 'Y' and Host ID = 'HOM' and matched 1:many for their Bill Provider ID. B= count of non-VOID Fac claims and Bill Provider Contract Status = 'Y' and Host ID = 'HOM'. If A/B>5%  FAIL",
 					"computedValue": "0",
 					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -1040,12 +1072,164 @@
 					]
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Claim Payment Status > 1% rejected",
+					"metricOrderNumber": 1,
+					"metricDescription": "FH.ProviderRenderingID & FH.RenderingProviderContractStatus & FH.HostPlanIDCh & Provider Match 1:M A= count of non-VOID Fac claims and Rend Provider Contract Status = 'Y' and Host ID = 'HOM' and matched 1:many for their Rend Provider ID. B= count of non-VOIDn Fac claims and Rend Provider Contract Status = 'Y' and Host ID = 'HOM'. If A/B>5% FAIL",
 					"computedValue": "0",
 					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+				}
+			],
+			"financialSummary": [
+                {
+                    "columnName": "Submitted Amount",
+                    "financialOrderNumber": 1,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 1.0,
+                    "errorMessage": "Amounts are Zero"
+                },
+                {
+                    "columnName": "Non-Covered Amount",
+                    "financialOrderNumber": 2,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 1.0,
+                    "errorMessage": "Amounts are Zero"
+                },
+                {
+                    "columnName": "Allowed Amount",
+                    "financialOrderNumber": 3,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 1.0,
+                    "errorMessage": "Amounts are Zero"
+                },
+                {
+                    "columnName": "Payment Amount",
+                    "financialOrderNumber": 4,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 1.0,
+                    "errorMessage": "Amounts are Zero"
+                },
+                {
+                    "columnName": "COB / TPL Amount",
+                    "financialOrderNumber": 5,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Coinsurance",
+                    "financialOrderNumber": 6,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Copay",
+                    "financialOrderNumber": 7,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Deductible",
+                    "financialOrderNumber": 8,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                }
+            ],
+			"frxTable": [],
+			"frequencyCountTable": []
+		},
+		{
+			"fileName": "FACILITY_DETAIL",
+			"fileOrderNumber": 2,
+			"metricTable": [
+				{
+					"metricOrderNumber": 2,
+					"metricDescription": "Facility Claim Details File > 5% total records",
+					"computedValue": "0",
+					"ruleWeightPercent": 1.0,
+					"score": 0.0,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -1078,12 +1262,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Compound Code > 2% = '2'",
+					"metricOrderNumber": 2,
+					"metricDescription": "Facility Claim Details.CPT & HCPCS Codes > 2% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
+					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -1116,12 +1300,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Formulary Indicator > 20% = 'N'",
+					"metricOrderNumber": 2,
+					"metricDescription": "Facility Claim Details.Claim Payment Status > 1% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
+					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -1154,12 +1338,59 @@
 					]
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Place of Service > 1% rejected",
+					"metricOrderNumber": 2,
+					"metricDescription": "Facility Claim Details.Revenue Code > 1% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
+					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+				}
+			],
+			"financialSummary": [],
+			"frxTable": [],
+			"frequencyCountTable": []
+		},
+		{
+			"fileName": "PROFESSIONAL_OTHER_SERVICE",
+			"fileOrderNumber": 3,
+			"metricTable": [
+				{
+					"metricOrderNumber": 3,
+					"metricDescription": "Professional & Other Services File 5% total rejected records",
+					"computedValue": "0",
+					"ruleWeightPercent": 1.0,
+					"score": 0.0,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -1192,88 +1423,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Product Service ID > 5% rejected",
+					"metricOrderNumber": 3,
+					"metricDescription": "Professional & Other Services.Member ZIP Code on Claim > 2% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
-				},
-				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Product Service ID > 5% = all NINES",
-					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
-					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
-				},
-				{
-					"metricOrderNumber": 4,
-					"metricDescription": "Pharmacy.Average Wholesale Price (AWP) Submitted Amount & Pharmacy.Category of Service (% of records where Pharmacy.AWP Submitted Amount = '$0.00') minus (Pharmacy.Category of Service = 'VOID') > 2%",
-					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
-					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -1512,64 +1667,12 @@
 					"errorMessage": "-"
 				},
 				{
-					"columnName": "Total Amount Paid",
-					"financialOrderNumber": 18.0,
-					"totalValidAmount": 0.0,
-					"totalAmount": 0.0,
-					"percentRejected": 0.0,
-					"totalAmountExcludingDeniedSecondary": 0.0,
-					"totalAmountOutpatientFacilityOnly": null,
-					"estimatedAveragePerValidScript": null,
-					"flag": 1.0,
-					"errorMessage": "Amounts are Zero"
-				}
-			],
-			"frxTable": [
-				{
-					"ValidRecords": 120000,
-					"VoidedRecords": 0,
-					"RejectedRecords": 0,
-					"TotalRecords": 120000
-				}
-			],
-			"frequencyCountTable": [
-				{
-					"fieldValue": "02                                                          ",
-					"frequencyCount": 71
-				},
-				{
-					"fieldValue": "01                                                          ",
-					"frequencyCount": 6717
-				},
-				{
-					"fieldValue": "98                                                          ",
-					"frequencyCount": 78436
-				},
-				{
-					"fieldValue": "f39RJCdyiYz",
-					"frequencyCount": 100973
-				},
-				{
-					"fieldValue": "04                                                          ",
-					"frequencyCount": 154223
-				},
-				{
-					"fieldValue": "03                                                          ",
-					"frequencyCount": 161770
-				}
-			]
-		},
-		{
-			"fileName": "MEMBER",
-			"fileOrderNumber": 5,
-			"metricTable": [
-				{
-					"metricOrderNumber": 5,
-					"metricDescription": "Member File 10% total rejected records",
+					"metricOrderNumber": 3,
+					"metricDescription": "Professional & Other Services.ICD-9 Diagnosis Code - Principal > 1% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -1602,12 +1705,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 5,
-					"metricDescription": "Member.Date of Birth > 2% rejected",
+					"metricOrderNumber": 3,
+					"metricDescription": "Professional & Other Services.CPT & HCPCS Codes > 1% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -1640,12 +1743,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 5,
-					"metricDescription": "Member.Member Gender > 2% rejected",
+					"metricOrderNumber": 3,
+					"metricDescription": "Professional & Other Services.Category of Service > .5% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -1678,12 +1781,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 5,
-					"metricDescription": "Member.Member Medical COB Code > 2% rejected",
+					"metricOrderNumber": 3,
+					"metricDescription": "Professional & Other Services.Claim Payment Status > 1% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -1716,12 +1819,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 5,
-					"metricDescription": "Member.Member Pharmacy COB Code > 2% rejected",
+					"metricOrderNumber": 3,
+					"metricDescription": "Professional & Other Services.Place of Service > 2% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -1754,240 +1857,367 @@
 					]
 				},
 				{
-					"metricOrderNumber": 5,
-					"metricDescription": "Member.Pharmacy Benefit Indicator > 2% rejected",
-					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
-					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
-				},
-				{
-					"metricOrderNumber": 5,
-					"metricDescription": "Member.MH/CD Benefit Indicator > 2% rejected",
-					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
-					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
-				},
-				{
-					"metricOrderNumber": 5,
-					"metricDescription": "Member.Medical Benefit Indicator > 2% rejected",
-					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
-					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
-				},
-				{
-					"metricOrderNumber": 5,
-					"metricDescription": "Member.Hospital Benefit Indicator > 2% rejected",
-					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
-					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
-				},
-				{
-					"metricOrderNumber": 5,
-					"metricDescription": "Member.BHI Network Category - Facility > 1% rejected",
-					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
-					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
-				},
-				{
-					"metricOrderNumber": 5,
-					"metricDescription": "Member.BHI Network Category - Professional > 1% rejected",
-					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
-					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
-				},
-				{
-					"metricOrderNumber": 5,
-					"metricDescription": "Member.Pharmacy Benefit Tiers (% records where PHARMACY BENEFIT TIER = '98') minus (% records where PHARMACY CARVE OUT SUBMISSION INDICATOR = 'C' or 'X') > 1%",
+					"metricOrderNumber": 3,
+					"metricDescription": "ProfOthServ.ProviderBillingID & ProfOthServ.BillingProviderContractStatus & Provider Match rejectio Professional & Other Services: Percent of Non-Void records where Billing Provider Contracting Status is 'Y' + Records rejected due to Billing Provider could not be matched to the Provider in the Provider Master > 10%",
 					"computedValue": "0",
 					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+				},
+				{
+					"metricOrderNumber": 3,
+					"metricDescription": "ProfOthServ.ProviderRenderingID & ProfOthServ.RenderingProviderContractStatus & Provider Match reje Professional & Other Services: Percent of Non-Void records where Rendering Provider Contracting Status is 'Y' + Records rejected due to Rendering Provider could not be matched to the Provider in the Provider Master  > 10%",
+					"computedValue": "0",
+					"ruleWeightPercent": 0.0,
+					"score": 0.0,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+				},
+				{
+					"metricOrderNumber": 3,
+					"metricDescription": "PFO.ProviderBillingID & PFO.BillingProviderContractStatus & PFO.HostPlanIDCode & Provider Match 1:M A= count of non-VOID PFO claims and Bill Provider Contract Status = 'Y' and Host ID = 'HOM' and matched 1:many for their Bill Provider ID. B= count of non-VOID PFO claims and Bill Provider Contract Status = 'Y' and Host ID = 'HOM'. If A/B>5%  FAIL",
+					"computedValue": "0",
+					"ruleWeightPercent": 0.0,
+					"score": 0.0,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+				},
+				{
+					"metricOrderNumber": 3,
+					"metricDescription": "PFO.ProviderRenderingID & PFO.RenderingProviderContractStatus & PFO.HostPlanIDCd & ProviderMtch 1:M A= count of non-VOID PFO claims and Rend Provider Contract Status = 'Y' and Host ID = 'HOM' and matched 1:many for their Rend Provider ID. B= count of non-VOID PFO claims and Rend Provider Contracting Status = 'Y' and Host ID = 'HOM'. If A/B>5%  FAIL",
+					"computedValue": "0",
+					"ruleWeightPercent": 0.0,
+					"score": 0.0,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+				}
+			],
+			"financialSummary": [
+                {
+                    "columnName": "Submitted Amount",
+                    "financialOrderNumber": 1,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 1.0,
+                    "errorMessage": "Amounts are Zero"
+                },
+                {
+                    "columnName": "Non-Covered Amount",
+                    "financialOrderNumber": 2,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 1.0,
+                    "errorMessage": "Amounts are Zero"
+                },
+                {
+                    "columnName": "Allowed Amount",
+                    "financialOrderNumber": 3,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 1.0,
+                    "errorMessage": "Amounts are Zero"
+                },
+                {
+                    "columnName": "Payment Amount",
+                    "financialOrderNumber": 4,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 1.0,
+                    "errorMessage": "Amounts are Zero"
+                },
+                {
+                    "columnName": "COB / TPL Amount",
+                    "financialOrderNumber": 5,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Coinsurance",
+                    "financialOrderNumber": 6,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Copay",
+                    "financialOrderNumber": 7,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Deductible",
+                    "financialOrderNumber": 8,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Fee for Service Equivalent",
+                    "financialOrderNumber": 9,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                }
+            ],
+			"frxTable": [],
+			"frequencyCountTable": []
+		},
+		{
+			"fileName": "PHARMACY",
+			"fileOrderNumber": 4,
+			"metricTable": [
+				{
+					"metricOrderNumber": 4,
+					"metricDescription": "Financial Balance - Allowed Amount (Pharmacy) > 2% overall $$ rejected",
+					"computedValue": "0",
+					"ruleWeightPercent": 1.0,
+					"score": 0.0,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+				},
+				{
+					"metricOrderNumber": 4,
+					"metricDescription": "Financial Balance - Non-Covered Amount (Pharmacy) > 4% overall $$ rejected",
+					"computedValue": "0",
+					"ruleWeightPercent": 1.0,
+					"score": 0.0,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+				},
+				{
+					"metricOrderNumber": 4,
+					"metricDescription": "Financial Balance - Payment Amount (Pharmacy) > 2% overall $$ rejected",
+					"computedValue": "0",
+					"ruleWeightPercent": 1.0,
+					"score": 0.0,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2029,12 +2259,12 @@
 			"fileOrderNumber": 6,
 			"metricTable": [
 				{
-					"metricOrderNumber": 6,
-					"metricDescription": "Product File 5% total rejected records",
+					"metricOrderNumber": 4,
+					"metricDescription": "Financial Balance - Submitted Amount (Pharmacy) > 4% overall $$ rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2067,12 +2297,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 6,
-					"metricDescription": "Product.BHI Product Category > 1% rejected",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy File 5% total rejected records",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2114,12 +2344,12 @@
 			"fileOrderNumber": 7,
 			"metricTable": [
 				{
-					"metricOrderNumber": 7,
-					"metricDescription": "Product Client Contract File 5% total rejected records",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Member ZIP Code on Claim > 2% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
+					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2152,12 +2382,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 7,
-					"metricDescription": "Product Client Contract.Industry Grouping - SIC Code > 1% rejected",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Member ZIP Code on Claim > 1% = '99999', '     ', or '00000'",
 					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
+					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2221,12 +2451,12 @@
 			"fileOrderNumber": 0,
 			"metricTable": [
 				{
-					"metricOrderNumber": 0,
-					"metricDescription": "Financial Balance - Allowed Amount (Facility Header + Professional & Other Services) > 2% overall $$ rejected",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Billing Provider ID > 10% = all NINES",
 					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
+					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2259,12 +2489,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 0,
-					"metricDescription": "Financial Balance - Submitted Amount (Facility Header + Professional & Other Services) > 4% overall $$ rejected",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Billing Provider Specialty & Pharmacy.Category of Service (% of records where Pharmacy.Billing Provider Specialty <> 'A5') minus (Pharmacy.Category of Service = 'VOID') > 1%",
 					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
+					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2297,12 +2527,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 0,
-					"metricDescription": "Financial Balance - Non-Covered Amount (Facility Header + Professional & Other Services) > 4% overall $$ rejected",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Benefit Payment Status Code < 96% = 'Y'",
 					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
+					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "F",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2335,12 +2565,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 0,
-					"metricDescription": "Financial Balance - Payment Amount (Facility Header + Professional & Other Services) > 2% overall $$ rejected",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Category of Service > .5% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
+					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2373,12 +2603,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 0,
-					"metricDescription": "Financial Balance - Inpatient/Outpatient Facility Header & Detail Variance - Submitted Amount > 2% variance in the sum of valid detail records compared to the header record",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Category of Service < 97% = 'PHARM'",
 					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
+					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "F",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2411,12 +2641,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 0,
-					"metricDescription": "Financial Balance - Outpatient Facility Header & Detail Variance - Allowed Amount > 2% variance in the sum of valid detail records compared to the header record",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Category of Service > 3% = 'VOID'",
 					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
+					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2449,12 +2679,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 0,
-					"metricDescription": "Financial Balance - Outpatient Facility Header & Detail Variance - Submitted Amount > 2% variance in the sum of valid detail records compared to the header record",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Claim Payment Status > 1% rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
+					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2487,12 +2717,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 0,
-					"metricDescription": "Financial Balance - Outpatient Facility Header & Detail Variance - Non-Covered Amount > 2% variance in the sum of valid detail records compared to the header record",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Compound Code > 2% = '2'",
 					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
+					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2525,12 +2755,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 0,
-					"metricDescription": "Financial Balance - Outpatient Facility Header & Detail Variance - Payment Amount > 2% variance in the sum of valid detail records compared to the header record",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Formulary Indicator > 20% = 'N'",
 					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
+					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2572,50 +2802,12 @@
 			"fileOrderNumber": 1,
 			"metricTable": [
 				{
-					"metricOrderNumber": 1,
-					"metricDescription": "Facility Header File > 5% total records",
-					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
-					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
-				},
-				{
-					"metricOrderNumber": 1,
-					"metricDescription": "Facility Header.Member ZIP Code on Claim >2% rejected",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Place of Service > 1% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2648,164 +2840,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 1,
-					"metricDescription": "Facility Header.ICD-9 Diagnosis Code - Principal > 1% rejected",
-					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
-					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
-				},
-				{
-					"metricOrderNumber": 1,
-					"metricDescription": "Facility Header.Category of Service > .5% rejected",
-					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
-					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
-				},
-				{
-					"metricOrderNumber": 1,
-					"metricDescription": "Facility Header.Claim Payment Status > 1% rejected",
-					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
-					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
-				},
-				{
-					"metricOrderNumber": 1,
-					"metricDescription": "Facility Header.Place of Service > 2% rejected",
-					"computedValue": "0",
-					"ruleWeightPercent": 1.0,
-					"score": 0.0,
-					"passIndicator": null,
-					"totalPassFail": "PASS",
-					"total_Flag": 0,
-					"flag": 0,
-					"errorMessage": "-",
-          "valueHistory": [
-						{
-							"cycleId": "202112",
-							"computedValue": "20.12"
-            },
-            {
-							"cycleId": "202201",
-							"computedValue": "18.00"
-            },
-            {
-							"cycleId": "202202",
-							"computedValue": "21.57"
-            },
-            {
-							"cycleId": "202203",
-							"computedValue": "17.94"
-            },
-            {
-							"cycleId": "202204",
-							"computedValue": "17.00"
-            },
-            {
-							"cycleId": "202205",
-							"computedValue": "19.48"
-						}
-					]
-				},
-				{
-					"metricOrderNumber": 1,
-					"metricDescription": "Fac Header.ProviderBillingID & Fac Header.BillingProviderContractStatus & Provider Match rejection Facility Header: Percent of Non-Void records where Billing Provider Contracting Status is 'Y' + Records rejected due to Billing Provider could not be matched to the Provider in the Provider Master > 10%",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Product Service ID > 5% rejected",
 					"computedValue": "0",
 					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2838,12 +2878,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 1,
-					"metricDescription": "FacHeader.ProviderRenderingID & FacHeader.RenderingProviderContractStatus & ProviderMatch rejection Facility Header: Percent of Non-Void records where Rendering Provider Contracting Status is 'Y' + Records rejected due to Rendering Provider could not be matched to the Provider in the Provider Master  > 10%",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Product Service ID > 5% = all NINES",
 					"computedValue": "0",
 					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2876,12 +2916,373 @@
 					]
 				},
 				{
-					"metricOrderNumber": 1,
-					"metricDescription": "FH.ProviderBillingID & FH.BillingProviderContractStatus & FH.HostPlanIDCd & Provider Match 1:M A= count of non-VOID Fac claims and Bill Provider Contract Status = 'Y' and Host ID = 'HOM' and matched 1:many for their Bill Provider ID. B= count of non-VOID Fac claims and Bill Provider Contract Status = 'Y' and Host ID = 'HOM'. If A/B>5%  FAIL",
+					"metricOrderNumber": 4,
+					"metricDescription": "Pharmacy.Average Wholesale Price (AWP) Submitted Amount & Pharmacy.Category of Service (% of records where Pharmacy.AWP Submitted Amount = '$0.00') minus (Pharmacy.Category of Service = 'VOID') > 2%",
 					"computedValue": "0",
 					"ruleWeightPercent": 0.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+        }
+			],
+			"financialSummary": [
+                {
+                    "columnName": "Allowed Amount",
+                    "financialOrderNumber": 1,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 909167.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 909167.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 1.0,
+                    "errorMessage": "Amounts are Zero"
+                },
+                {
+                    "columnName": "Non-Covered Amount",
+                    "financialOrderNumber": 2,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Payment Amount",
+                    "financialOrderNumber": 3,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 1.0,
+                    "errorMessage": "Amounts are Zero"
+                },
+                {
+                    "columnName": "Submitted Amount",
+                    "financialOrderNumber": 4,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 1.0,
+                    "errorMessage": "Amounts are Zero"
+                },
+                {
+                    "columnName": "Amount Applied to Periodic Deductible",
+                    "financialOrderNumber": 5,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Amount Attributed to Product Selection",
+                    "financialOrderNumber": 6,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Amount Attributed to Sales Tax",
+                    "financialOrderNumber": 7,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Amount of Copay/Co-Insurance",
+                    "financialOrderNumber": 8,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Average Wholesale Price (AWP) Submitted",
+                    "financialOrderNumber": 9,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Dispensing Fee Paid",
+                    "financialOrderNumber": 10,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Flat Sales Tax Amount Paid",
+                    "financialOrderNumber": 11,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Incentive Amount Paid",
+                    "financialOrderNumber": 12,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Ingredient Cost Paid",
+                    "financialOrderNumber": 13,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Other Amount Paid",
+                    "financialOrderNumber": 14,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Other Payer Amount Recognized",
+                    "financialOrderNumber": 15,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Patient Pay Amount",
+                    "financialOrderNumber": 16,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Percentage Sales Tax Amount Paid",
+                    "financialOrderNumber": 17,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 0.0,
+                    "errorMessage": "-"
+                },
+                {
+                    "columnName": "Total Amount Paid",
+                    "financialOrderNumber": 18,
+                    "totalValidAmount": 0.0,
+                    "totalAmount": 0.0,
+                    "totalRejectedAmount": 0.0,
+                    "percentRejected": 0.0,
+                    "totalAmountExcludingDeniedSecondary": 0.0,
+                    "totalAmountOutpatientFacilityOnly": null,
+                    "estimatedAveragePerValidScript": null,
+                    "flag": 1.0,
+                    "errorMessage": "Amounts are Zero"
+                }
+            ],
+			"frxTable": [
+				{
+					"ValidRecords": 120000,
+					"VoidedRecords": 0,
+					"RejectedRecords": 0,
+					"TotalRecords": 120000
+				}
+			],
+			"frequencyCountTable": [
+				{
+					"fieldValue": "02                                                          ",
+					"frequencyCount": 71
+				},
+				{
+					"fieldValue": "01                                                          ",
+					"frequencyCount": 6717
+				},
+				{
+					"fieldValue": "98                                                          ",
+					"frequencyCount": 78436
+				},
+				{
+					"fieldValue": "f39RJCdyiYz",
+					"frequencyCount": 100973
+				},
+				{
+					"fieldValue": "04                                                          ",
+					"frequencyCount": 154223
+				},
+				{
+					"fieldValue": "03                                                          ",
+					"frequencyCount": 161770
+				}
+			]
+		},
+		{
+			"fileName": "ACCT_RPT",
+			"fileOrderNumber": 15,
+			"metricTable": [
+				{
+					"metricOrderNumber": 15,
+					"metricDescription": "Account Report File >10% total rejected records",
+					"computedValue": "100",
+					"ruleWeightPercent": 0.0,
+					"score": 100.0,
+					"passIndicator": "F",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+				},
+			],
+			"financialSummary": [],
+			"frxTable": [],
+			"frequencyCountTable": []
+		},
+		{
+			"fileName": null,
+			"fileOrderNumber": 0,
+			"metricTable": [
+				{
+					"metricOrderNumber": 0,
+					"metricDescription": "Financial Balance - Allowed Amount (Facility Header + Professional & Other Services) > 2% overall $$ rejected",
+					"computedValue": "0",
+					"ruleWeightPercent": 1.0,
+					"score": 0.0,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -2914,12 +3315,126 @@
 					]
 				},
 				{
-					"metricOrderNumber": 1,
-					"metricDescription": "FH.ProviderRenderingID & FH.RenderingProviderContractStatus & FH.HostPlanIDCh & Provider Match 1:M A= count of non-VOID Fac claims and Rend Provider Contract Status = 'Y' and Host ID = 'HOM' and matched 1:many for their Rend Provider ID. B= count of non-VOIDn Fac claims and Rend Provider Contract Status = 'Y' and Host ID = 'HOM'. If A/B>5% FAIL",
+					"metricOrderNumber": 0,
+					"metricDescription": "Financial Balance - Submitted Amount (Facility Header + Professional & Other Services) > 4% overall $$ rejected",
 					"computedValue": "0",
-					"ruleWeightPercent": 0.0,
+					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+				},
+				{
+					"metricOrderNumber": 0,
+					"metricDescription": "Financial Balance - Non-Covered Amount (Facility Header + Professional & Other Services) > 4% overall $$ rejected",
+					"computedValue": "0",
+					"ruleWeightPercent": 1.0,
+					"score": 0.0,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+				},
+				{
+					"metricOrderNumber": 0,
+					"metricDescription": "Financial Balance - Payment Amount (Facility Header + Professional & Other Services) > 2% overall $$ rejected",
+					"computedValue": "0",
+					"ruleWeightPercent": 1.0,
+					"score": 0.0,
+					"passIndicator": "P",
+					"totalPassFail": "PASS",
+					"total_Flag": 0,
+					"flag": 0,
+					"errorMessage": "-",
+          "valueHistory": [
+						{
+							"cycleId": "202112",
+							"computedValue": "20.12"
+            },
+            {
+							"cycleId": "202201",
+							"computedValue": "18.00"
+            },
+            {
+							"cycleId": "202202",
+							"computedValue": "21.57"
+            },
+            {
+							"cycleId": "202203",
+							"computedValue": "17.94"
+            },
+            {
+							"cycleId": "202204",
+							"computedValue": "17.00"
+            },
+            {
+							"cycleId": "202205",
+							"computedValue": "19.48"
+						}
+					]
+				},
+				{
+					"metricOrderNumber": 0,
+					"metricDescription": "Financial Balance - Inpatient/Outpatient Facility Header & Detail Variance - Submitted Amount > 2% variance in the sum of valid detail records compared to the header record",
+					"computedValue": "0",
+					"ruleWeightPercent": 1.0,
+					"score": 0.0,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -3058,12 +3573,12 @@
 			"fileOrderNumber": 2,
 			"metricTable": [
 				{
-					"metricOrderNumber": 2,
-					"metricDescription": "Facility Claim Details File > 5% total records",
+					"metricOrderNumber": 0,
+					"metricDescription": "Financial Balance - Outpatient Facility Header & Detail Variance - Allowed Amount > 2% variance in the sum of valid detail records compared to the header record",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -3096,12 +3611,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 2,
-					"metricDescription": "Facility Claim Details.CPT & HCPCS Codes > 2% rejected",
+					"metricOrderNumber": 0,
+					"metricDescription": "Financial Balance - Outpatient Facility Header & Detail Variance - Submitted Amount > 2% variance in the sum of valid detail records compared to the header record",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -3134,12 +3649,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 2,
-					"metricDescription": "Facility Claim Details.Claim Payment Status > 1% rejected",
+					"metricOrderNumber": 0,
+					"metricDescription": "Financial Balance - Outpatient Facility Header & Detail Variance - Non-Covered Amount > 2% variance in the sum of valid detail records compared to the header record",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
@@ -3172,12 +3687,12 @@
 					]
 				},
 				{
-					"metricOrderNumber": 2,
-					"metricDescription": "Facility Claim Details.Revenue Code > 1% rejected",
+					"metricOrderNumber": 0,
+					"metricDescription": "Financial Balance - Outpatient Facility Header & Detail Variance - Payment Amount > 2% variance in the sum of valid detail records compared to the header record",
 					"computedValue": "0",
 					"ruleWeightPercent": 1.0,
 					"score": 0.0,
-					"passIndicator": null,
+					"passIndicator": "P",
 					"totalPassFail": "PASS",
 					"total_Flag": 0,
 					"flag": 0,
