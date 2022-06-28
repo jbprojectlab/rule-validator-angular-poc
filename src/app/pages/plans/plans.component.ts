@@ -87,6 +87,23 @@ export class PlansComponent implements OnInit, OnDestroy {
     })
   }
 
+  // formatPaidThroughPeriod(paidThroughPeriod: any) {
+  //   if(paidThroughPeriod) {
+  //     return paidThroughPeriod.toISOString().split('-').join('').substring(0,6)
+  //   } else {
+  //     return ''
+  //   }
+  // }
+
+  // monthSelected(event: any, dp: any, input: any) {
+  //   dp.close();
+  //   input.value = this.formatPaidThroughPeriod(event)
+  //   if(this.selectedPaidThroughPeriodOption !== input.value) {
+  //     this.selectedPaidThroughPeriodOption = input.value;
+  //     this.getPlans();
+  //   }
+  // }
+
   monthSelected(event: any, dp: any, input: any) {
     dp.close();
     input.value = event.toISOString().split('-').join('').substring(0,6);
@@ -105,8 +122,20 @@ export class PlansComponent implements OnInit, OnDestroy {
     return currentPaidDate;
   }
 
+  formatPaidThroughPeriod(paidThroughPeriod: any) {
+    if(paidThroughPeriod) {
+      return paidThroughPeriod.toISOString().split('-').join('').substring(1,7)
+    } else {
+      return ''
+    }
+  }
+
   handleSearchFilterChange(key: string) {
-    if (key === 'submissionGroup') {
+    console.log('handling search')
+    if (key === 'paidThroughPeriod') {
+      this.selectedPaidThroughPeriodOption = this.formatPaidThroughPeriod(this.selectedPaidThroughPeriodOption);
+      this.getPlans();
+    } else if (key === 'submissionGroup') {
       this.getPlans();
     }
   }
@@ -144,6 +173,7 @@ export class PlansComponent implements OnInit, OnDestroy {
   }
 
   public getPlans() {
+    console.log('getting plans:  ', this.selectedPaidThroughPeriodOption)
     this.plansService.getPlans(this.selectedPaidThroughPeriodOption, this.selectedSubmissionGroupOption)
     .pipe(takeUntil(this.destroyed$))
     .subscribe((data: Plan[]) => {
