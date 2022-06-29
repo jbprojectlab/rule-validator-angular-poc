@@ -1,0 +1,87 @@
+<span class="open" (click)="openMenu()">
+  <img src="assets/img/menu.png" />
+</span>
+
+<div *ngIf="menuIsOpen" class="report-menu">
+  <div class="v-scroll">
+    <span class="close" (click)="closeMenu()">&#10005;</span>
+    <div *ngFor="let section of menuItems; index as menuItemIdx">
+      <div class="menu-section">
+        <h4 (click)="scrollToTable(camelize(section.title), false)">{{section.title | uppercase}}</h4>
+        <div *ngFor="let tableName of section.tableNames; index as tableNameIdx">
+          <h6
+            (click)="scrollToTable(camelize(section.title), (menuItemIdx === menuItems.length - 1 && tableNameIdx === section.tableNames.length - 1), camelize(tableName))">
+            {{tableName}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="filter-score-container">
+  <div class="header">
+    <h4>L1 Certification Report</h4>
+  </div>
+
+  <div class="report-score-container">
+    <div>
+      <h4>Total Score</h4>
+      <span>{{initialReports?.totalScore}}</span>
+    </div>
+    <span class="score-indicator" [ngClass]="{'green': initialReports.totalScore === 0, 'yellow': (initialReports.totalScore > 0 && initialReports.totalScore < 1),'red':  initialReports.totalScore >= 1  }">{{initialReports?.totalPassFail}}</span>
+    <img style="cursor: pointer;" src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
+  </div>
+</div>
+<div>
+  <div class="mb-5 mt-3" *ngFor="let report of l1Reports,index as reportIndex">
+    <div class="l1-heading r">
+      <h4 id="item-{{camelize(report.fileName)}}" [ngClass]="reportIndex === 0 ? 'first-filename' : ''">submissionFile ->{{report.fileName}}</h4>
+    </div>
+    <div class="certification-report">
+      <div *ngFor="let filed of report.fields; index as fieldIndex">
+        <h4>{{filed.fieldName}}</h4>
+        <div class="table-container">
+          <table id="item-{{camelize(report.fileName)}}-{{camelize(filed.fieldName)}}">
+            <colgroup span="10"></colgroup>
+            <thead>
+              <tr>
+                <th class="no-width"></th>
+                <th>Column Value</th>
+                <th>Frequency Count</th>
+                <th>Percentage of Total</th>
+                <th>Historical Baseline</th>
+                <th>Variance To Historical Baseline</th>
+                <th>Error Msg</th>
+              </tr>
+            </thead>
+            <tbody class="Mtable">
+              <tr *ngFor="let row of filed.filterDataTable">
+                <td [ngClass]="!row.flag ? 'more-padding' : ''">
+                  <img *ngIf="row.flag===1" src="assets/img/flag-yellow.png" />
+                  <img *ngIf="row.flag===2" src="assets/img/flag-red.png" />
+                </td>
+                <td class="left-align">{{row.columnValue}}</td>
+                <td>{{row.frequencyCount}}</td>
+                <td>{{row.perTotFrequency}}</td>
+                <td>{{row.historicalBaseline}}</td>
+                <td>{{row.varianceHistoricalBaseline}}</td>
+                <td>{{row.errorMessage}}</td>
+              </tr>
+              <tr class="bottom-row">
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="table-container" *ngIf="filed?.dataTable?.length">
+            <div *ngIf="!filed?.showMore" class="show-less-button-container">
+              <button (click)="showLess(filed)">Show Less &minus;</button>
+            </div>
+            <div *ngIf="filed?.showMore" class="show-less-button-container">
+              <button (click)="showMore(filed)">Show More &plus;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
