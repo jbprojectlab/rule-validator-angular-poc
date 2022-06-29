@@ -26,9 +26,9 @@
   <div class="report-score-container">
     <div>
       <h4>Total Score</h4>
-      <span>{{initialReports?.totalscore}}</span>
+      <span>{{initialReports?.totalScore}}</span>
     </div>
-    <span class="score-indicator" [ngClass]="{'green': initialReports.totalscore === 0, 'yellow': (initialReports.totalscore > 0 && initialReports.totalscore < 1),'red':  initialReports.totalscore >= 1  }">{{initialReports?.totalPassFail}}</span>
+    <span class="score-indicator" [ngClass]="{'green': initialReports.totalScore === 0, 'yellow': (initialReports.totalScore > 0 && initialReports.totalScore < 1),'red':  initialReports.totalScore >= 1  }">{{initialReports?.totalPassFail}}</span>
     <img style="cursor: pointer;" src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
   </div>
 
@@ -62,7 +62,7 @@
                 </td>
                 <td class="left-align">{{row.metricDescription}}</td>
                 <td *ngIf="row.valueHistory && row.valueHistory.length">
-                  <div class="computed-value" (click)="expandComputedValue(i, rowIdx)">
+                  <div class="computed-value" (click)="expandComputedValue(i, rowIdx, row)">
                     <div *ngIf="row.computedValueExpanded" class="triangle"></div>
                     {{row.computedValue}}
                   </div>
@@ -83,7 +83,7 @@
                         Score Value
                       </div>
                       <div class="th2">
-                        November - April score
+                        {{row.historyPeriod}} score
                       </div>
                     </div>
                     <div *ngIf="row.valueHistory && row.valueHistory.length" class="computed-value-columns">
@@ -217,10 +217,10 @@
           </thead>
           <tbody>
             <tr *ngFor="let row of report.frxTable odd as isOdd; even as isEven;" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
-              <td>{{row.ValidRecords}}</td>
-              <td>{{row.VoidedRecords}}</td>
-              <td>{{row.RejectedRecords}}</td>
-              <td>{{row.TotalRecords}}</td>
+              <td>{{row.validRecords}}</td>
+              <td>{{row.voidedRecords}}</td>
+              <td>{{row.rejectedRecords}}</td>
+              <td>{{row.totalRecords}}</td>
             </tr>
             <tr class="bottom-row">
               <td></td>

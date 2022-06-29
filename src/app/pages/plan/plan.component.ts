@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SubmissionReport } from 'app/core/types/submissionReport';
-import mockPlan, { mockPlanDescription } from './mock-plan';
+import mockPlan from './mock-plan';
 
 @Component({
   selector: 'app-plan',
@@ -9,7 +9,6 @@ import mockPlan, { mockPlanDescription } from './mock-plan';
   styleUrls: ['./plan.component.sass']
 })
 export class PlanComponent implements OnInit {
-  planDescription: any = mockPlanDescription;
   plan: any = mockPlan;
   visibleTab: number = 1;
   level2ChecklistIsOpen: boolean = true;
@@ -30,6 +29,8 @@ export class PlanComponent implements OnInit {
       return this.visibleTab === 1 ? 'assets/img/graph-white.png' : 'assets/img/graph-black.png';
     } else if (tab === 2) {
       return this.visibleTab === 2 ? 'assets/img/checklist-white.png' : 'assets/img/checklist-black.png';
+    } else if (tab === 3) {
+      return this.visibleTab === 3 ? 'assets/img/checklist-white.png' : 'assets/img/checklist-black.png'
     }
     return undefined;
   }
