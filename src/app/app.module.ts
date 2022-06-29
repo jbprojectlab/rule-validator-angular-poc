@@ -18,9 +18,21 @@ import { CoreModule } from './core/core.module';
 import { PlanFilterPipe } from './pages/plans/pipes/plan-filter.pipe';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule,  MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+   
+const MY_DATE_FORMATS = {
+  parse: {
+    dpInput: 'YYYYMM',
+  },
+  display: {
+    dpInput: 'YYYYMM',
+    monthYearLabel: 'MMMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY'
+  },
+};
 
 @NgModule({
   declarations: [

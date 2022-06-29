@@ -25,6 +25,7 @@ export class PlansComponent implements OnInit, OnDestroy {
   submissionGroup: number = 0;
   date = new FormControl(moment());
   mostRecentPaidPeriod = new Date(Date.now());
+
   
   selectedSubmissionGroupOption!: number;
   selectedPaidThroughPeriodOption: string = this.getCurrentPaidDate();
@@ -67,6 +68,8 @@ export class PlansComponent implements OnInit, OnDestroy {
     ) { }
     
   ngOnInit(): void {
+    // console.log('date:  ', this.date, 'mostRecentPaidPeriod:   ', this.mostRecentPaidPeriod)
+
     if (this.isSearching) this.isSearching = false;
 
     this.plansService.getOptions().subscribe((response: any) => {
@@ -106,7 +109,8 @@ export class PlansComponent implements OnInit, OnDestroy {
 
   monthSelected(event: any, dp: any, input: any) {
     dp.close();
-    input.value = event.toISOString().split('-').join('').substring(0,6);
+    // input.value = event.toISOString().split('-').join('').substring(0,6);
+    input.value = moment(event).add(5, 'days').format('YYYYMM')
     if(this.selectedPaidThroughPeriodOption !== input.value) {
       this.selectedPaidThroughPeriodOption = input.value;
       this.getPlans();
@@ -130,14 +134,18 @@ export class PlansComponent implements OnInit, OnDestroy {
     }
   }
 
-  handleSearchFilterChange(key: string) {
-    console.log('handling search')
+  handleSearchFilterChange(key: string, event?: any, dpInput?: any) {
     if (key === 'paidThroughPeriod') {
-      this.selectedPaidThroughPeriodOption = this.formatPaidThroughPeriod(this.selectedPaidThroughPeriodOption);
+      this.selectedPaidThroughPeriodOption = event.target.value
       this.getPlans();
     } else if (key === 'submissionGroup') {
       this.getPlans();
     }
+  }
+
+  handleDateInputBlur() {
+    let element = (<HTMLInputElement>document.querySelector("#mat-input-0"))
+    element.value = this.selectedPaidThroughPeriodOption
   }
 
   sortByColumn(columnHeader: string) {
@@ -173,7 +181,6 @@ export class PlansComponent implements OnInit, OnDestroy {
   }
 
   public getPlans() {
-    console.log('getting plans:  ', this.selectedPaidThroughPeriodOption)
     this.plansService.getPlans(this.selectedPaidThroughPeriodOption, this.selectedSubmissionGroupOption)
     .pipe(takeUntil(this.destroyed$))
     .subscribe((data: Plan[]) => {
