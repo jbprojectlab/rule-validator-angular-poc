@@ -68,8 +68,6 @@ export class PlansComponent implements OnInit, OnDestroy {
     ) { }
     
   ngOnInit(): void {
-    // console.log('date:  ', this.date, 'mostRecentPaidPeriod:   ', this.mostRecentPaidPeriod)
-
     if (this.isSearching) this.isSearching = false;
 
     this.plansService.getOptions().subscribe((response: any) => {
@@ -90,27 +88,10 @@ export class PlansComponent implements OnInit, OnDestroy {
     })
   }
 
-  // formatPaidThroughPeriod(paidThroughPeriod: any) {
-  //   if(paidThroughPeriod) {
-  //     return paidThroughPeriod.toISOString().split('-').join('').substring(0,6)
-  //   } else {
-  //     return ''
-  //   }
-  // }
-
-  // monthSelected(event: any, dp: any, input: any) {
-  //   dp.close();
-  //   input.value = this.formatPaidThroughPeriod(event)
-  //   if(this.selectedPaidThroughPeriodOption !== input.value) {
-  //     this.selectedPaidThroughPeriodOption = input.value;
-  //     this.getPlans();
-  //   }
-  // }
-
   monthSelected(event: any, dp: any, input: any) {
     dp.close();
     // input.value = event.toISOString().split('-').join('').substring(0,6);
-    input.value = moment(event).add(5, 'days').format('YYYYMM')
+    input.value = moment(event).add(5, 'days').format('YYYYMM');
     if(this.selectedPaidThroughPeriodOption !== input.value) {
       this.selectedPaidThroughPeriodOption = input.value;
       this.getPlans();
@@ -128,15 +109,15 @@ export class PlansComponent implements OnInit, OnDestroy {
 
   formatPaidThroughPeriod(paidThroughPeriod: any) {
     if(paidThroughPeriod) {
-      return paidThroughPeriod.toISOString().split('-').join('').substring(1,7)
+      return paidThroughPeriod.toISOString().split('-').join('').substring(1,7);
     } else {
-      return ''
+      return '';
     }
   }
 
-  handleSearchFilterChange(key: string, event?: any, dpInput?: any) {
+  handleSearchFilterChange(key: string, event?: any) {
     if (key === 'paidThroughPeriod') {
-      this.selectedPaidThroughPeriodOption = event.target.value
+      this.selectedPaidThroughPeriodOption = event.target.value;
       this.getPlans();
     } else if (key === 'submissionGroup') {
       this.getPlans();

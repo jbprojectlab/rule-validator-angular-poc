@@ -14,7 +14,7 @@
         </ng-select>
 
         <mat-form-field class="paid-through-form-field">
-          <input (blur)="handleDateInputBlur()" (change)="handleSearchFilterChange('paidThroughPeriod', $event, dpInput)" [max]="mostRecentPaidPeriod" #dpInput matInput [matDatepicker]="dp" placeholder="Paid Through Period">
+          <input (blur)="handleDateInputBlur()" (change)="handleSearchFilterChange('paidThroughPeriod', $event)" [max]="mostRecentPaidPeriod" #dpInput matInput [matDatepicker]="dp" placeholder="Paid Through Period">
           <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
           <mat-datepicker #dp (monthSelected)="monthSelected($event, dp, dpInput)" startView="multi-year"></mat-datepicker>
         </mat-form-field>
