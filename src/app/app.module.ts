@@ -14,7 +14,6 @@ import { PlanTableComponent } from './pages/plan/components/plan-table/plan-tabl
 import { CertificationReportComponent } from './pages/plan/components/certification-report/certification-report.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-// import { FormsModule,  } from '@angular/forms';
 import { PlanFilterPipe } from './pages/plans/pipes/plan-filter.pipe';
 import { L1CertificationReportComponent } from './pages/plan/components/l1-certification-report/l1-certification-report.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
