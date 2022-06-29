@@ -148,7 +148,7 @@ export class PlansComponent implements OnInit, OnDestroy {
     }
     
     const columnNames = {
-      "Submission Group / Plan Code": 'submissionGroup',
+      "Submission Group": 'submissionGroup',
       "Plan Name": 'planName',
       "Paid Through Period": 'paidThroughPeriod',
       "Submission Control #": 'submissionControl',

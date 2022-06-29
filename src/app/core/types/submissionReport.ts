@@ -1,10 +1,16 @@
 export interface SubmissionReport {
-    submissionId: 1;
-	submissionType: string;
-	totalscore: 0;
-    totalPassFail: string;
-    total_Flag: number;
+    planName: string,
+	submissionGroupId: string,
+	submissionControlNumber: string,
+	paidThroughPeriod: string,
+	submissionMode: string;
+    submissionId: number;
+    submissionType: string;
+	totalScore: 0;
+	totalPassFail: string;
+	total_Flag: number;
     l2Reports: L2Report[];
+    l1Reports: L1Reports[];
 }
 
 export interface L2Report {
@@ -29,7 +35,8 @@ export interface MetricTableData {
     totalPassFail:string;
     total_Flag:number;
     computedValueExpanded: boolean;
-    valueHistory: ValueHistory[];
+    valueHistory: ValueHistory[];   
+    historyPeriod?: string;
 }
 
 export interface FinancialSummary {
@@ -47,10 +54,10 @@ export interface FinancialSummary {
 }
 
 export interface RxTable {
-    ValidRecords: number;
-    VoidedRecords: number;
-    RejectedRecords: number;
-    TotalRecords: number; 
+    validRecords: number;
+    voidedRecords: number;
+    rejectedRecords: number;
+    totalRecords: number; 
 }
 
 export interface FrequencyCountTable {
@@ -58,6 +65,35 @@ export interface FrequencyCountTable {
     frequencyCount: number;
 }
 
+
+//L1 report 
+export interface L1Reports{
+    fileName:string;
+    fileOrderNumber:string;
+    fields?: FiledData[];
+
+}
+
+export interface FiledData {
+    fieldName: string;
+    fieldOrderNumber: number;
+    dataTable?: DataTable[];
+    filterDataTable?:DataTable[];
+    showMore: any;
+}
+
+export interface DataTable {
+    columnValue:string;
+    frequencyCount:number;
+    perTotFrequency:number;
+    historicalBaseline: string;
+    varianceHistoricalBaseline: string;
+    commentText: string;
+    updateUser: string;
+    updateTimeStamp: string;
+    flag: number,
+    errorMessage: string
+}
 export interface ValueHistory {
     cycleId: string,
     computedValue: string

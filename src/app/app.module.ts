@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -16,11 +16,14 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 // import { FormsModule,  } from '@angular/forms';
 import { PlanFilterPipe } from './pages/plans/pipes/plan-filter.pipe';
+import { L1CertificationReportComponent } from './pages/plan/components/l1-certification-report/l1-certification-report.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpErrorHandlerInterceptor } from './core/interceptors/http-error-handler.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,7 @@ import { MatInputModule } from '@angular/material/input';
     PlanTableComponent,
     CertificationReportComponent,
     PlanFilterPipe,
+    L1CertificationReportComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,9 +50,17 @@ import { MatInputModule } from '@angular/material/input';
     MatDatepickerModule,
     MatNativeDateModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSnackBarModule
   ],
-  providers: [MatNativeDateModule],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorHandlerInterceptor,
+      multi: true
+    },
+    MatNativeDateModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

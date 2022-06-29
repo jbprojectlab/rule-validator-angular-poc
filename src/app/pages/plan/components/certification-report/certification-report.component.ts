@@ -22,6 +22,21 @@ export class CertificationReportComponent implements OnInit{
   showScore = false;
   scoreContainer: any;
   sections: any;
+  months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec'
+  ]
+  month: string='';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -40,9 +55,22 @@ export class CertificationReportComponent implements OnInit{
     })
   }
 
-  expandComputedValue(reportIdx: number, rowIdx: number) {
+  expandComputedValue(reportIdx: number, rowIdx: number, row:any) {
     // @ts-ignore
     this.reports[reportIdx].metricTable[rowIdx].computedValueExpanded = this.reports[reportIdx].metricTable[rowIdx].computedValueExpanded ? false : true
+    let valuemonths: string[]=[];
+    let valueHistoryMonths = row.valueHistory
+    valueHistoryMonths.forEach((element:any) => {
+      if(element.cycleId) { 
+        const monthIdx = Number(element.cycleId.substring(4,6)) - 1
+        this.month = this.months[monthIdx] 
+        valuemonths.push(this.month)
+  
+      } 
+    });
+    // @ts-ignore
+    this.reports[reportIdx].metricTable[rowIdx].historyPeriod = `${valuemonths[0]} - ${valuemonths[valuemonths.length-1]}`
+
   }
 
   openMenu() {
@@ -116,7 +144,6 @@ export class CertificationReportComponent implements OnInit{
         }
       }
     });
-
     this.menuItems = this.reports.map((report: any, index: number) => {  
       this.sections={
         title: report.fileName,
@@ -153,23 +180,9 @@ export class CertificationReportComponent implements OnInit{
   }
 
   formatCycleId(cycleId: string) {
-    const months = [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec'
-    ]
     if(cycleId) {
       const monthIdx = Number(cycleId.substring(4,6)) - 1
-      const month = months[monthIdx]
+      const month = this.months[monthIdx]
       const year = cycleId.substring(2,4)
       return month + ' ' + year
     } else {
