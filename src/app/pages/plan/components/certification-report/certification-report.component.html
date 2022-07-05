@@ -28,7 +28,7 @@
       <h4>Total Score</h4>
       <span>{{initialReports?.totalScore}}</span>
     </div>
-    <span class="score-indicator" [ngClass]="{'green': initialReports.totalFlag === 0, 'yellow': (initialReports.totalFlag > 0 && initialReports.totalFlag < 1),'red':  initialReports.totalFlag >= 1  }">{{initialReports?.totalPassFail}}</span>
+    <span class="score-indicator" [ngClass]="{'green': initialReports.totalFlag === 0, 'yellow': (initialReports.totalFlag === 1),'red':  initialReports.totalFlag === 2  }">{{initialReports?.totalPassFail}}</span>
     <img style="cursor: pointer;" src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
   </div>
 
