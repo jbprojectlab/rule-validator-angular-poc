@@ -66,7 +66,6 @@ export class CertificationReportComponent extends BaseReportComponent implements
         const monthIdx = Number(element.cycleId.substring(4,6)) - 1
         this.month = this.months[monthIdx]
         valuemonths.push(this.month)
-
       }
     });
     // @ts-ignore

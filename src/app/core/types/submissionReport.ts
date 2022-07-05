@@ -33,8 +33,8 @@ export interface MetricTableData {
 	flag: number;
 	fileOrderNumber: number;
 	errorMessage: string;
-	totalPassFail:string;
-	totalFlag:number;
+	totalPassFail: string;
+	totalFlag: number;
 	computedValueExpanded: boolean;
 	valueHistory: ValueHistory[];   
 	historyPeriod?: string;
@@ -69,8 +69,8 @@ export interface FrequencyCountTable {
 
 //L1 report 
 export interface L1Reports{
-	fileName:string;
-	fileOrderNumber:string;
+	fileName: string;
+	fileOrderNumber: string;
 	fields?: FiledData[];
 }
 
@@ -78,14 +78,14 @@ export interface FiledData {
 	fieldName: string;
 	fieldOrderNumber: number;
 	dataTable?: DataTable[];
-	filterDataTable?:DataTable[];
+	filterDataTable?: DataTable[];
 	showMore: any;
 }
 
 export interface DataTable {
-	columnValue:string;
-	frequencyCount:number;
-	perTotFrequency:number;
+	columnValue: string;
+	frequencyCount: number;
+	perTotFrequency: number;
 	historicalBaseline: string;
 	varianceHistoricalBaseline: number;
 	commentText: string;
@@ -101,7 +101,7 @@ export interface ValueHistory {
 }
 
 export interface FieldDistribution {
-	fileName:string;
+	fileName: string;
 	fields: DistributionFieldData[]
 }
 
@@ -114,6 +114,6 @@ export interface Distribution_DataTable {
 	columnValue: string,
 	count: number,
 	perTotal: number,
-	cumulativeCount:number,
+	cumulativeCount: number,
 	cumulativePerTotal: number
 }

@@ -54,7 +54,7 @@ import { BaseReportComponent } from './pages/plan/components/base-report/base-re
     MatNativeDateModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [
     {
