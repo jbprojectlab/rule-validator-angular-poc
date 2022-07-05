@@ -49,7 +49,6 @@ export class CertificationReportComponent extends BaseReportComponent implements
       this.reports = (this.initialReports && this.initialReports) ? this.initialReports.l2Reports : [];
       this.getMenuItems();
       this.initializeExpandedTables();
-      console.log('response:   ', this.initialReports.totalFlag)
     });
 
     this.metricTable.forEach((row) => {
