@@ -29,14 +29,11 @@
     background-color: rgba(0,0,0,0.38)
 
 table
-  border: 1px solid var(--border-light-grey)
-  border-radius: var(--rounded-corner-border-radius)
   border-spacing: 0
   font-weight: 500
   scrollbar-width: none
   -ms-overflow-style: none
   width: 100%
-  flex-grow: 1
 
   &::-webkit-scrollbar
     width: 0
@@ -126,7 +123,6 @@ table
 
   table
     margin-right: 0
-    height: 100%
   
   .table-title
     font-size: 16px
@@ -135,6 +131,9 @@ table
 
 .plans-table-container
   flex-grow: 1
+  border: 1px solid var(--border-light-grey)
+  border-radius: var(--rounded-corner-border-radius)
+  padding-bottom: 20px
 
 .plans-table-border
   border-bottom: 1px solid rgba(0, 0, 0, 0.5)

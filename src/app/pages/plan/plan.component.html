@@ -35,21 +35,21 @@
       </span>
       <h5>L1 Certification Report</h5>
     </div>
-    <div>      
+    <div>
       <span [ngClass]="{'active': visibleTab === 1}" (click)="selectTab(1)">
         <img src={{getTabIconSrc(1)}} />
       </span>
       <h5>L2 Certification Report</h5>
     </div>
-    <div>      
+    <div>
       <span [ngClass]="{'active': visibleTab === 2}" (click)="selectTab(2)">
         <img src={{getTabIconSrc(2)}} />
       </span>
       <h5>L2 Checklist</h5>
     </div>
     <div>      
-      <span>
-        <img src="assets/img/graph-black.png" />
+      <span [ngClass]="{'active': visibleTab === 4}" (click)="selectTab(4)">
+        <img src={{getTabIconSrc(2)}} />
       </span>
       <h5>Field Distribution Report</h5>
     </div>
@@ -80,6 +80,10 @@
   </div>
 
   <div *ngIf="visibleTab === 3">
-    <ndw-l1-certification-report></ndw-l1-certification-report>
+    <app-l1-certification-report></app-l1-certification-report>
+  </div>
+
+  <div *ngIf="visibleTab === 4">
+   <app-field-distributor-report></app-field-distributor-report>
   </div>
 </div>

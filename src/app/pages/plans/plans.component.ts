@@ -173,6 +173,11 @@ export class PlansComponent implements OnInit, OnDestroy {
     })
   }
 
+  trackByFn(index: number, item: any): any
+  {
+      return item.id || index;
+  }
+
   ngOnDestroy() {
     this.destroyed$.next(true);
   }

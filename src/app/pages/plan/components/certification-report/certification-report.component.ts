@@ -3,22 +3,21 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { FinancialSummary, L2Report, MetricTableData, SubmissionReport } from 'app/core/types/submissionReport';
 import { ActivatedRoute } from '@angular/router';
+import { BaseReportComponent } from '../base-report/base-report.component';
 
 @Component({
   selector: 'app-certification-report',
   templateUrl: './certification-report.component.html',
   styleUrls: ['./certification-report.component.sass']
 })
-export class CertificationReportComponent implements OnInit{
+export class CertificationReportComponent extends BaseReportComponent implements OnInit{
   initialReports!: SubmissionReport;
   reports: L2Report[] = [];
   metricTable: MetricTableData[] =[];
   menuItems: any = [];
-  menuIsOpen: boolean = false;
   tablesFilteredByFlag: boolean = false;
   flagImgSrc: string = 'flag.png';
   expandedTables: any[] = [];
-  destroyed$: Subject<boolean> = new Subject();
   showScore = false;
   scoreContainer: any;
   sections: any;
@@ -38,12 +37,14 @@ export class CertificationReportComponent implements OnInit{
   ]
   month: string='';
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-  ) {   }
+  constructor(private activatedRoute: ActivatedRoute) {
+    super()
+  }
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe((response: any) => {
+    this.activatedRoute.data.pipe(
+      takeUntil(this.destroyed$)
+    ).subscribe((response: any) => {
       this.initialReports = response.reportData;
       this.reports = (this.initialReports && this.initialReports) ? this.initialReports.l2Reports : [];
       this.getMenuItems();
@@ -61,28 +62,16 @@ export class CertificationReportComponent implements OnInit{
     let valuemonths: string[]=[];
     let valueHistoryMonths = row.valueHistory
     valueHistoryMonths.forEach((element:any) => {
-      if(element.cycleId) { 
+      if(element.cycleId) {
         const monthIdx = Number(element.cycleId.substring(4,6)) - 1
-        this.month = this.months[monthIdx] 
+        this.month = this.months[monthIdx]
         valuemonths.push(this.month)
-  
-      } 
+
+      }
     });
     // @ts-ignore
     this.reports[reportIdx].metricTable[rowIdx].historyPeriod = `${valuemonths[0]} - ${valuemonths[valuemonths.length-1]}`
 
-  }
-
-  openMenu() {
-    if (!this.menuIsOpen) {
-      this.menuIsOpen = true;
-    }
-  }
-
-  closeMenu() {
-    if (this.menuIsOpen) {
-      this.menuIsOpen = false;
-    }
   }
 
   private initializeExpandedTables() {
@@ -113,7 +102,6 @@ export class CertificationReportComponent implements OnInit{
     })
     this.tablesFilteredByFlag = true;
   }
-
   toggleFlagFilter() {
     if (this.tablesFilteredByFlag) {
       this.flagImgSrc = 'flag.png';
@@ -129,7 +117,7 @@ export class CertificationReportComponent implements OnInit{
       this.expandedTables[i][table] = true;
     }
   }
-  
+
   showLess(i: number, table: string) {
     if (this.expandedTables[i][table]) {
       this.expandedTables[i][table] = false;
@@ -144,7 +132,7 @@ export class CertificationReportComponent implements OnInit{
         }
       }
     });
-    this.menuItems = this.reports.map((report: any, index: number) => {  
+    this.menuItems = this.reports.map((report: any, index: number) => {
       this.sections={
         title: report.fileName,
         tableNames: []
@@ -156,27 +144,6 @@ export class CertificationReportComponent implements OnInit{
       if (report.frequencyCountTable) this.sections.tableNames.push('Frequency Count Table');
       return this.sections;
     })
-  }
-
-  camelize(str: string) {
-    if(str) {
-      return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
-        return index === 0 ? word.toLowerCase() : word.toUpperCase();
-      }).replace(/\s+/g, '');
-    } else {
-      return '';
-    }
-  }
-
-  scrollToTable(reportName: string, lastTable: boolean, tableName?: string) {
-    const table = tableName ? document.getElementById(`item-${reportName}-${tableName}`) : document.getElementById(`item-${reportName}`);
-    if (table) {
-      table.scrollIntoView(true);
-      this.closeMenu();
-      if (!lastTable) {
-        document.body.scrollTop = document.body.scrollTop - 440;
-      }
-    }
   }
 
   formatCycleId(cycleId: string) {

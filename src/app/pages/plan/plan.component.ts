@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SubmissionReport } from 'app/core/types/submissionReport';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import mockPlan from './mock-plan';
 
 @Component({
@@ -8,7 +10,8 @@ import mockPlan from './mock-plan';
   templateUrl: './plan.component.html',
   styleUrls: ['./plan.component.sass']
 })
-export class PlanComponent implements OnInit {
+export class PlanComponent implements OnInit, OnDestroy {
+  private  destroyed$: Subject<boolean> = new Subject();
   plan: any = mockPlan;
   visibleTab: number = 1;
   level2ChecklistIsOpen: boolean = true;
@@ -31,6 +34,8 @@ export class PlanComponent implements OnInit {
       return this.visibleTab === 2 ? 'assets/img/checklist-white.png' : 'assets/img/checklist-black.png';
     } else if (tab === 3) {
       return this.visibleTab === 3 ? 'assets/img/checklist-white.png' : 'assets/img/checklist-black.png'
+    } else {
+      return this.visibleTab === 4 ? 'assets/img/checklist-white.png' : 'assets/img/checklist-black.png'
     }
     return undefined;
   }
@@ -68,7 +73,9 @@ export class PlanComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe((response: any) => {
+    this.activatedRoute.data.pipe(
+      takeUntil(this.destroyed$)
+    ).subscribe((response: any) => {
       this.reportData = response.reportData;
     });
     document.body.addEventListener('scroll', (e: any) => {
@@ -78,5 +85,14 @@ export class PlanComponent implements OnInit {
         this.panelTop = false;
       }
     })
+  }
+
+  trackByFn(index: number, item: any): any
+  {
+      return item.id || index;
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next(true);
   }
 }

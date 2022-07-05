@@ -15,12 +15,12 @@ export class CertificationReportsService {
   constructor(private http: HttpClient) { }
 
   public getCertificationReportData(subId: string, subType: string): Observable<any> {
-    if (subId === this.selectedSubmissionId && subType === this.selectedSubmissionType && this.responseData ) { 
+    if (subId === this.selectedSubmissionId && subType === this.selectedSubmissionType && this.responseData) {
       return this.responseData;
     } else {
       this.selectedSubmissionId = subId;
       this.selectedSubmissionType = subType;
-      let url: string = `${environment.host}/api/db/report?submissionId=${subId}&submissionType=${subType}`
+      let url: string = `${environment.host}/api/db/report?submissionId=${subId}&submissionType=${subType}`;
       this.responseData = this.http.get<any>(url).pipe(catchError(this.handleError));
       return this.responseData;
     }

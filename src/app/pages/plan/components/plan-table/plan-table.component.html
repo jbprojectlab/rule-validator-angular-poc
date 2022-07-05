@@ -8,7 +8,7 @@
       <colgroup span="15"></colgroup>
       <thead>
         <tr>
-          <th *ngFor="let header of headers; index as i">{{header}}</th>
+          <th *ngFor="let header of headers; trackBy:trackByFn; index as i">{{header}}</th>
         </tr>
       </thead>
       <tbody>
@@ -29,7 +29,7 @@
           <td>Comments</td>
           <td>Comments</td>
         </tr>
-        <tr *ngFor="let row of tableData; index as i">
+        <tr *ngFor="let row of tableData; trackBy:trackByFn; index as i">
           <td>{{row.description}}</td>
           <td>{{row.recordCount}}</td>
           <td>{{row.percentageVariance}}</td>

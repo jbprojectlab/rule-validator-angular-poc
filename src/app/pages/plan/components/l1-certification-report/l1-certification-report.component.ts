@@ -1,32 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataTable, FiledData, L1Reports, SubmissionReport } from 'app/core/types/submissionReport';
+import { takeUntil } from 'rxjs/operators';
+import { BaseReportComponent } from '../base-report/base-report.component';
 
 @Component({
-  selector: 'ndw-l1-certification-report',
+  selector: 'app-l1-certification-report',
   templateUrl: './l1-certification-report.component.html',
   styleUrls: ['./l1-certification-report.component.sass', '../certification-report/certification-report.component.sass']
 })
-export class L1CertificationReportComponent implements OnInit {
+export class L1CertificationReportComponent extends BaseReportComponent implements OnInit {
   initialReports!: SubmissionReport;
   l1Reports: L1Reports[] = [];
-  menuIsOpen!: boolean;
   tablesFilteredByFlag!: boolean;
   flagImgSrc: string = 'flag.png';
   sections: any;
   menuItems: any = [];
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-  ) { }
+  constructor(private activatedRoute: ActivatedRoute) {
+    super()
+   }
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe((response: any) => {
+    this.activatedRoute.data.pipe(
+      takeUntil(this.destroyed$)
+    ).subscribe((response: any) => {
       this.initialReports = response.reportData;
       this.l1Reports = response.reportData.l1Reports;
       this.getMenuItems();
       this.getFilterReport();
-
     });
   }
 
@@ -43,17 +45,6 @@ export class L1CertificationReportComponent implements OnInit {
           field.filterDataTable = field.dataTable;
         });
       });
-    }
-  }
-  openMenu() {
-    if (!this.menuIsOpen) {
-      this.menuIsOpen = true;
-    }
-  }
-
-  closeMenu() {
-    if (this.menuIsOpen) {
-      this.menuIsOpen = false;
     }
   }
 
@@ -82,28 +73,6 @@ export class L1CertificationReportComponent implements OnInit {
     })
 
   }
-
-  camelize(str: string) {
-    if (str) {
-      return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
-        return index === 0 ? word.toLowerCase() : word.toUpperCase();
-      }).replace(/\s+/g, '');
-    } else {
-      return '';
-    }
-  }
-
-  scrollToTable(reportName: string, lastTable: boolean, tableName?: string) {
-    const table = tableName ? document.getElementById(`item-${reportName}-${tableName}`) : document.getElementById(`item-${reportName}`);
-    if (table) {
-      table.scrollIntoView(true);
-      this.closeMenu();
-      if (!lastTable) {
-        document.body.scrollTop = document.body.scrollTop - 440;
-      }
-    }
-  }
-
   toggleFlagFilter() {
     this.tablesFilteredByFlag = !this.tablesFilteredByFlag;
     if (!this.tablesFilteredByFlag) {

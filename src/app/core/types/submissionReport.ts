@@ -11,6 +11,7 @@ export interface SubmissionReport {
 	total_Flag: number;
     l2Reports: L2Report[];
     l1Reports: L1Reports[];
+    fieldDistribution: FieldDistribution[];
 }
 
 export interface L2Report {
@@ -87,7 +88,7 @@ export interface DataTable {
     frequencyCount:number;
     perTotFrequency:number;
     historicalBaseline: string;
-    varianceHistoricalBaseline: string;
+    varianceHistoricalBaseline: number;
     commentText: string;
     updateUser: string;
     updateTimeStamp: string;
@@ -97,4 +98,21 @@ export interface DataTable {
 export interface ValueHistory {
     cycleId: string,
     computedValue: string
+}
+
+export interface FieldDistribution {
+    fileName:string;
+    fields: DistributionFieldData[]
+}
+export interface DistributionFieldData {
+    fieldName: string,
+    dataTable?: Distribution_DataTable[]
+}
+
+export interface Distribution_DataTable {
+    columnValue: string,
+    count: number,
+    perTotal: number,
+    cumulativeCount:number,
+    cumulativePerTotal: number
 }

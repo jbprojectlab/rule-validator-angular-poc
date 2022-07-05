@@ -5,10 +5,10 @@
 <div *ngIf="menuIsOpen" class="report-menu">
   <div class="v-scroll">
     <span class="close" (click)="closeMenu()">&#10005;</span>
-    <div *ngFor="let section of menuItems; index as menuItemIdx">
+    <div *ngFor="let section of menuItems; trackBy:trackByFn; index as menuItemIdx">
       <div class="menu-section">
         <h4 (click)="scrollToTable(camelize(section.title), false)">{{section.title}}</h4>
-        <div *ngFor="let tableName of section.tableNames; index as tableNameIdx">
+        <div *ngFor="let tableName of section.tableNames;trackBy:trackByFn; index as tableNameIdx">
           <h6
             (click)="scrollToTable(camelize(section.title), (menuItemIdx === menuItems.length - 1 && tableNameIdx === section.tableNames.length - 1), camelize(tableName))">
             {{tableName}}</h6>
@@ -37,7 +37,7 @@
 
 <div class="certification-report">
   <!-- <div class="v-scrollbar"> -->
-    <div *ngFor="let report of reports; index as i">
+    <div *ngFor="let report of reports;trackBy:trackByFn; index as i">
       <h4 *ngIf="report.fileName" id="item-{{camelize(report.fileName)}}" [ngClass]="i === 0 ? 'first-filename' : ''">{{report.fileName}}</h4>
      
       <div class="table-container" *ngIf="report.metricTable?.length!==0">
@@ -55,7 +55,7 @@
             </tr>
           </thead>
           <tbody *ngIf="expandedTables[i]?.metricTable" id="metric-table">
-            <ng-container *ngFor="let row of report.metricTable odd as isOdd; even as isEven; index as rowIdx">
+            <ng-container *ngFor="let row of report.metricTable odd as isOdd; even as isEven;trackBy:trackByFn; index as rowIdx">
               <tr [ngClass]="{ 'odd': isOdd, 'even': isEven }">
                 <td [ngClass]="!row.flag ? 'more-padding' : ''">
                   <img *ngIf="row.flag" src="assets/img/flag-yellow.png" />
@@ -87,7 +87,7 @@
                       </div>
                     </div>
                     <div *ngIf="row.valueHistory && row.valueHistory.length" class="computed-value-columns">
-                      <div *ngFor="let valueHistoryColumn of row.valueHistory; index as valueHistoryIdx">
+                      <div *ngFor="let valueHistoryColumn of row.valueHistory; trackBy:trackByFn; index as valueHistoryIdx">
                           <h5>
                             {{formatCycleId(valueHistoryColumn.cycleId)}}
                           </h5>
@@ -106,7 +106,7 @@
             </tr>
           </tbody>
           <tbody *ngIf="!expandedTables[i]?.metricTable" class="Mtable">
-            <ng-container *ngFor="let row of report.metricTable">
+            <ng-container *ngFor="let row of report.metricTable; trackBy:trackByFn">
               <tr *ngIf="row.flag">
                 <td>
                   <img src="assets/img/flag-yellow.png" />
@@ -153,7 +153,7 @@
             </tr>
           </thead>
           <tbody *ngIf="expandedTables[i]?.financialSummary">
-            <tr *ngFor="let row of report.financialSummary odd as isOdd; even as isEven;" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
+            <tr *ngFor="let row of report.financialSummary odd as isOdd; even as isEven; trackBy:trackByFn" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
               <td [ngClass]="!row.flag ? 'more-padding' : ''">
                 <img *ngIf="row.flag" src="assets/img/flag-yellow.png" />
               </td>
@@ -172,7 +172,7 @@
             </tr>
           </tbody>
           <tbody *ngIf="!expandedTables[i]?.financialSummary" class="Mtable">
-            <ng-container *ngFor="let row of report.financialSummary ">
+            <ng-container *ngFor="let row of report.financialSummary; trackBy:trackByFn ">
               <tr *ngIf="row.flag">
                 <td>
                   <img src="assets/img/flag-yellow.png" />
@@ -216,7 +216,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let row of report.frxTable odd as isOdd; even as isEven;" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
+            <tr *ngFor="let row of report.frxTable odd as isOdd; even as isEven; trackBy:trackByFn" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
               <td>{{row.validRecords}}</td>
               <td>{{row.voidedRecords}}</td>
               <td>{{row.rejectedRecords}}</td>
@@ -239,7 +239,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let row of report.frequencyCountTable odd as isOdd; even as isEven;" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
+            <tr *ngFor="let row of report.frequencyCountTable odd as isOdd; even as isEven; trackBy:trackByFn" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
               <td>{{row.fieldValue}}</td>
               <td>{{row.frequencyCount}}</td>
             </tr>
