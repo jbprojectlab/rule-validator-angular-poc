@@ -22,7 +22,7 @@
     <h4>L1 Certification Report</h4>
   </div>
 
-  <div class="report-score-container">
+  <div *ngIf="initialReports" class="report-score-container">
     <div>
       <h4>Total Score</h4>
       <span>{{initialReports?.totalScore}}</span>

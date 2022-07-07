@@ -25,6 +25,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpErrorHandlerInterceptor } from './core/interceptors/http-error-handler.interceptor';
 import { FieldDistributorReportComponent } from './pages/plan/components/field-distributor-report/field-distributor-report.component';
 import { BaseReportComponent } from './pages/plan/components/base-report/base-report.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { BaseReportComponent } from './pages/plan/components/base-report/base-re
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
+    OverlayModule
   ],
   providers: [
     {
@@ -62,7 +64,9 @@ import { BaseReportComponent } from './pages/plan/components/base-report/base-re
       useClass: HttpErrorHandlerInterceptor,
       multi: true
     },
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSnackBarModule,
+    OverlayModule
   ],
   bootstrap: [AppComponent]
 })
