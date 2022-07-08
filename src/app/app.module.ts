@@ -21,7 +21,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpErrorHandlerInterceptor } from './core/interceptors/http-error-handler.interceptor';
 import { FieldDistributorReportComponent } from './pages/plan/components/field-distributor-report/field-distributor-report.component';
 import { BaseReportComponent } from './pages/plan/components/base-report/base-report.component';
@@ -65,8 +65,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
       multi: true
     },
     MatNativeDateModule,
-    MatSnackBarModule,
-    MatSnackBar
+    MatSnackBarModule
   ],
   bootstrap: [AppComponent]
 })

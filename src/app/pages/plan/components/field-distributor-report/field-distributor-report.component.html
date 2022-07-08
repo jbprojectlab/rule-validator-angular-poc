@@ -28,10 +28,10 @@
         <h4 id="item-{{camelize(report.fileName)}}" [ngClass]="reportIndex === 0 ? 'first-filename' : ''">Submission File : {{report.fileName}}</h4>
       </div>
       <div class="certification-report">
-        <div *ngFor="let filed of report.fields; trackBy:trackByFn; index as fieldIndex">
-          <h4>{{filed.fieldName}}</h4>
+        <div *ngFor="let field of report.fields; trackBy:trackByFn; index as fieldIndex">
+          <h4>{{field.fieldName}}</h4>
           <div class="table-container">
-            <table id="item-{{camelize(report.fileName)}}-{{camelize(filed.fieldName)}}">
+            <table id="item-{{camelize(report.fileName)}}-{{camelize(field.fieldName)}}">
               <colgroup span="10"></colgroup>
               <thead>
                 <tr>
@@ -43,7 +43,7 @@
                 </tr>
               </thead>
               <tbody class="Mtable">
-                <tr *ngFor="let row of filed.dataTable; trackBy:trackByFn">
+                <tr *ngFor="let row of field.dataTable; trackBy:trackByFn">
                   <td class="left-align">{{row.columnValue}}</td>
                   <td>{{row.count}}</td>
                   <td>{{row.perTotal}}</td>

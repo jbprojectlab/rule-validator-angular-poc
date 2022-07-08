@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataTable, FiledData, L1Reports, SubmissionReport } from 'app/core/types/submissionReport';
+import { DataTable, fieldData, L1Reports, SubmissionReport } from 'app/core/types/submissionReport';
 import { takeUntil } from 'rxjs/operators';
 import { BaseReportComponent } from '../base-report/base-report.component';
 
@@ -35,13 +35,13 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
   getFilterReport() {
     if (this.tablesFilteredByFlag) {
       this.l1Reports.forEach((element: L1Reports) => {
-        element.fields?.forEach((field: FiledData) => {
+        element.fields?.forEach((field: fieldData) => {
           field.filterDataTable = field.dataTable?.filter((item: any) => (item.flag > 0))
         });
       });
     } else {
       this.l1Reports.forEach((element: L1Reports) => {
-        element.fields?.forEach((field: FiledData) => {
+        element.fields?.forEach((field: fieldData) => {
           field.filterDataTable = field.dataTable;
         });
       });
@@ -82,11 +82,11 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
     }
     this.getFilterReport();
   }
-  showLess(field: FiledData) {
+  showLess(field: fieldData) {
     field.filterDataTable = field.dataTable?.filter((item:DataTable) => (item.flag > 0));
     field.showMore = true;
   }
-  showMore(field: FiledData) {
+  showMore(field: fieldData) {
     field.filterDataTable = field.dataTable;
     field.showMore = false;
   }

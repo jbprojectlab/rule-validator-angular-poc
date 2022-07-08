@@ -71,10 +71,10 @@ export interface FrequencyCountTable {
 export interface L1Reports{
 	fileName: string;
 	fileOrderNumber: string;
-	fields?: FiledData[];
+	fields?: fieldData[];
 }
 
-export interface FiledData {
+export interface fieldData {
 	fieldName: string;
 	fieldOrderNumber: number;
 	dataTable?: DataTable[];
