@@ -23,7 +23,7 @@
     </div>
   </div>
   <div>
-    <div class="mb-5 mt-3" *ngFor="let report of fieldDistributionReports; trackBy:trackByFn;index as reportIndex">
+    <div class="mb-5 mt-3" *ngFor="let report of fieldDistributionReports; trackBy:trackByFn; index as reportIndex">
       <div class="l1-heading r">
         <h4 id="item-{{camelize(report.fileName)}}" [ngClass]="reportIndex === 0 ? 'first-filename' : ''">Submission File : {{report.fileName}}</h4>
       </div>
@@ -43,19 +43,28 @@
                 </tr>
               </thead>
               <tbody class="Mtable">
-                <tr *ngFor="let row of field.dataTable; trackBy:trackByFn">
-                  <td class="left-align">{{row.columnValue}}</td>
-                  <td>{{row.count}}</td>
-                  <td>{{row.perTotal}}</td>
-                  <td>{{row.cumulativeCount}}</td>
-                  <td>{{row.cumulativePerTotal}}</td>
+                <tr *ngFor="let row of field.dataTable; trackBy:trackByFn; index as rowIndex">
+                    <ng-container *ngIf="rowIndex < 5 || expandedTables[reportIndex][fieldIndex]">
+                      <td class="left-align">{{row.columnValue}}</td>
+                      <td>{{row.count}}</td>
+                      <td>{{row.perTotal}}</td>
+                      <td>{{row.cumulativeCount}}</td>
+                      <td>{{row.cumulativePerTotal}}</td>
+                    </ng-container>
+                  </tr>
+                <tr *ngIf="field.dataTable">
+                  <td>Total</td>
+                  <td></td>
+                  <td></td>
+                  <td>{{field.dataTable[field.dataTable.length - 1].cumulativeCount}}</td>
+                  <td>{{field.dataTable[field.dataTable.length - 1].cumulativePerTotal}}</td>
                 </tr>
                 <tr class="bottom-row">
                   <td></td>
                 </tr>
               </tbody>
             </table>
-          
+            <button (click)="toggleTableExpansion(reportIndex, fieldIndex)">Show More</button>
           </div>
         </div>
         <!-- </div> -->

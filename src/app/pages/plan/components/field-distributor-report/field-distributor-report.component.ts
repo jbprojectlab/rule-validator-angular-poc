@@ -10,11 +10,11 @@ import { BaseReportComponent } from '../base-report/base-report.component';
   styleUrls: ['./field-distributor-report.component.sass','../certification-report/certification-report.component.sass']
 })
 export class FieldDistributorReportComponent extends BaseReportComponent implements OnInit {
-
   initialReports!: SubmissionReport;
   fieldDistributionReports: FieldDistribution[] = [];
   sections: any;
   menuItems: any = [];
+  expandedTables: any[] = [];
 
   constructor(private activatedRoute: ActivatedRoute) {
     super()
@@ -27,7 +27,28 @@ export class FieldDistributorReportComponent extends BaseReportComponent impleme
       this.initialReports = response.reportData;
       this.fieldDistributionReports = response.reportData.fieldDistribution;
       this.getMenuItems();
+      this.initializeExpandedTables();
+      console.log(this.expandedTables)
     });
+  }
+
+  private initializeExpandedTables() {
+    console.log('reports:   ', this.fieldDistributionReports)
+    this.expandedTables = this.fieldDistributionReports.map((report: any, index: number) => {
+      // let expandedState: any = {};
+      // if (report.metricTable) expandedState.metricTable = true;
+      // if (report.financialSummary) expandedState.financialSummary = true;
+      // if (report.frxTable) expandedState.frxTable = true;
+      // if (report.frequencyCountTable) expandedState.frequencyCountTable = true;
+      // return expandedState;
+      console.log('report:   ', report)
+      return report.fields.map((field: any) => false)
+    })
+  }
+  
+  toggleTableExpansion(reportIndex: number, fieldIndex: number) {
+    console.log('toggling table expansion')
+    this.expandedTables[reportIndex][fieldIndex] = !this.expandedTables[reportIndex][fieldIndex]
   }
 
   private getMenuItems() {
