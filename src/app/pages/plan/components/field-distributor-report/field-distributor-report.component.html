@@ -52,8 +52,8 @@
                       <td>{{row.cumulativePerTotal}}</td>
                     </ng-container>
                   </tr>
-                <tr *ngIf="field.dataTable">
-                  <td>Total</td>
+                <tr *ngIf="field.dataTable" class="total-row" [ngClass]="!expandedTables[reportIndex][fieldIndex] ? 'light-blue-bg' : ''">
+                  <td class="left-align">Total</td>
                   <td></td>
                   <td></td>
                   <td>{{field.dataTable[field.dataTable.length - 1].cumulativeCount}}</td>
@@ -64,7 +64,12 @@
                 </tr>
               </tbody>
             </table>
-            <button (click)="toggleTableExpansion(reportIndex, fieldIndex)">Show More</button>
+            <div *ngIf="expandedTables[reportIndex][fieldIndex]" class="show-less-button-container">
+              <button (click)="showLess(reportIndex, fieldIndex)">Show Less &minus;</button>
+            </div>
+            <div *ngIf="!expandedTables[reportIndex][fieldIndex]" class="show-less-button-container">
+              <button (click)="showMore(reportIndex, fieldIndex)">Show More &plus;</button>
+            </div>
           </div>
         </div>
         <!-- </div> -->

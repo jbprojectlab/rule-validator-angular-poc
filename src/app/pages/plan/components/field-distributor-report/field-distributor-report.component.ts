@@ -33,22 +33,21 @@ export class FieldDistributorReportComponent extends BaseReportComponent impleme
   }
 
   private initializeExpandedTables() {
-    console.log('reports:   ', this.fieldDistributionReports)
     this.expandedTables = this.fieldDistributionReports.map((report: any, index: number) => {
-      // let expandedState: any = {};
-      // if (report.metricTable) expandedState.metricTable = true;
-      // if (report.financialSummary) expandedState.financialSummary = true;
-      // if (report.frxTable) expandedState.frxTable = true;
-      // if (report.frequencyCountTable) expandedState.frequencyCountTable = true;
-      // return expandedState;
-      console.log('report:   ', report)
       return report.fields.map((field: any) => false)
     })
   }
-  
-  toggleTableExpansion(reportIndex: number, fieldIndex: number) {
-    console.log('toggling table expansion')
-    this.expandedTables[reportIndex][fieldIndex] = !this.expandedTables[reportIndex][fieldIndex]
+
+  showMore(reportIndex: number, fieldIndex: number) {
+    if (!this.expandedTables[reportIndex][fieldIndex]) {
+      this.expandedTables[reportIndex][fieldIndex] = true;
+    }
+  }
+
+  showLess(reportIndex: number, fieldIndex: number) {
+    if (this.expandedTables[reportIndex][fieldIndex]) {
+      this.expandedTables[reportIndex][fieldIndex] = false;
+    }
   }
 
   private getMenuItems() {
