@@ -28,7 +28,6 @@ export class FieldDistributorReportComponent extends BaseReportComponent impleme
       this.fieldDistributionReports = response.reportData.fieldDistribution;
       this.getMenuItems();
       this.initializeExpandedTables();
-      console.log(this.expandedTables)
     });
   }
 
