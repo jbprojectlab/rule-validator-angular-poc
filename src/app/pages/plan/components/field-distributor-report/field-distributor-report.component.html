@@ -37,9 +37,9 @@
                 <tr>
                   <th class="left-align">Column Value</th>
                   <th>Count</th>
-                  <th>% Count</th>
+                  <th>% Total</th>
                   <th>Cumulative Count</th>
-                  <th>Cumulative % Count</th>
+                  <th>Cumulative % Total</th>
                 </tr>
               </thead>
               <tbody class="Mtable">
@@ -55,7 +55,7 @@
                 <tr *ngIf="field.dataTable" class="total-row" [ngClass]="!expandedTables[reportIndex][fieldIndex] ? 'light-blue-bg' : ''">
                   <td class="left-align">Total</td>
                   <td>{{field.dataTable[field.dataTable.length - 1].cumulativeCount}}</td>
-                  <td>{{field.dataTable[field.dataTable.length - 1].cumulativePerTotal}}</td>
+                  <td>{{field.dataTable[field.dataTable.length - 1].cumulativePerTotal + '%'}}</td>
                   <td></td>
                   <td></td>
                 </tr>
