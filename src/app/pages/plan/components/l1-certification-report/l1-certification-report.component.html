@@ -23,11 +23,7 @@
   </div>
 
   <div *ngIf="initialReports" class="report-score-container">
-    <div>
-      <h4>Total Score</h4>
-      <span>{{initialReports?.totalScore}}</span>
-    </div>
-    <span *ngIf="initialReports.totalFlag !== undefined" class="score-indicator" [ngClass]="{'green': initialReports.totalFlag === 0, 'yellow': (initialReports.totalFlag === 1),'red':  initialReports.totalFlag === 2  }">{{initialReports?.totalPassFail}}</span>
+    <span></span>
     <img style="cursor: pointer;" src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
   </div>
 </div>
@@ -47,7 +43,7 @@
                 <th class="no-width"></th>
                 <th class="left-align">Column Value</th>
                 <th>Frequency Count</th>
-                <th>% of Total (Frequency Count)</th>
+                <th>Percentage of Total</th>
                 <th>Historical Baseline</th>
                 <th>Variance To Historical Baseline</th>
                 <th>Error Msg</th>
