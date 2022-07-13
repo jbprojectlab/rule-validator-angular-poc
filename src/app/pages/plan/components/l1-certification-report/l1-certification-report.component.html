@@ -24,9 +24,23 @@
 
   <div *ngIf="initialReports" class="report-score-container">
     <span></span>
-    <img style="cursor: pointer;" src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
+    <img style="cursor: pointer;" src='assets/img/{{flagImgSrc}}' (click)="toggleFlagMenu()" />
   </div>
 </div>
+
+<div *ngIf="flagMenuIsOpen" class="flag-menu">
+  <span>
+    <p (click)="filterTablesByFlag(1)">Warning</p>
+  </span>
+  <span>
+    <p (click)="filterTablesByFlag(2)">Critical</p>
+  </span>
+  <span>
+    <p (click)="filterTablesByFlag(3)">Clear</p>
+  </span>
+</div>
+
+
 <div>
   <div class="mb-5 mt-3" *ngFor="let report of l1Reports; trackBy:trackByFn;index as reportIndex">
     <div class="l1-heading r">

@@ -16,6 +16,7 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
   flagImgSrc: string = 'flag.png';
   sections: any;
   menuItems: any = [];
+  flagMenuIsOpen: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute) {
     super()
@@ -28,17 +29,18 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
       this.initialReports = response.reportData;
       this.l1Reports = response.reportData.l1Reports;
       this.getMenuItems();
-      this.getFilterReport();
+      this.filterTablesByFlag();
     });
   }
 
-  getFilterReport() {
-    if (this.tablesFilteredByFlag) {
+  filterTablesByFlag(flagType?: number) {
+    if (flagType && flagType !== 3) {
       this.l1Reports.forEach((element: L1Reports) => {
         element.fields?.forEach((field: fieldData) => {
-          field.filterDataTable = field.dataTable?.filter((item: any) => (item.flag > 0))
+          field.filterDataTable = field.dataTable?.filter((item: any) => (item.flag === flagType))
         });
       });
+      console.log('reports:  ', this.l1Reports)
     } else {
       this.l1Reports.forEach((element: L1Reports) => {
         element.fields?.forEach((field: fieldData) => {
@@ -46,6 +48,8 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
         });
       });
     }
+
+    this.toggleFlagFilter(flagType)
   }
 
   private getMenuItems() {
@@ -69,23 +73,54 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
         });
         return this.sections;
       }
-
     })
+  }
 
+  toggleFlagMenu() {
+    this.flagMenuIsOpen = !this.flagMenuIsOpen
   }
-  toggleFlagFilter() {
-    this.tablesFilteredByFlag = !this.tablesFilteredByFlag;
-    if (!this.tablesFilteredByFlag) {
-      this.flagImgSrc = 'flag.png';
-    } else {
+
+  // filterTablesByFlag(flagType: number) {
+  //   this.products = JSON.parse(JSON.stringify(productData))
+  //   const filtered = []
+
+  //   for(let i = 0; i < this.products.length; i += 1) {
+  //     let product = this.products[i]
+  //     const tables = product.tables.map((table: any) => table)
+  //     for(let j = 0; j < tables.length; j += 1) {
+  //       let table = tables[j][1].filter((row: any) => row[0] === flagType)
+  //       tables[j][1] = table
+  //     }
+  //     filtered.push(product)
+  //   }
+  //   this.products = [...filtered]
+  //   this.expandedTableIndexes = this.expandedTableIndexes.map(x => x.map((y: boolean) => false))
+  // }
+
+  toggleFlagFilter(flagType?: number) {
+    // this.tablesFilteredByFlag = !this.tablesFilteredByFlag;
+    // if (!this.tablesFilteredByFlag) {
+    //   this.flagImgSrc = 'flag.png';
+    // } else {
+    //   this.flagImgSrc = 'flag-yellow.png';
+    // }
+    // this.filterTablesByFlag();
+
+    if (flagType === 1) {
       this.flagImgSrc = 'flag-yellow.png';
+    } else if (flagType === 2) {
+      this.flagImgSrc = 'flag-red.png';
+    } else {
+      this.flagImgSrc = 'flag.png';
     }
-    this.getFilterReport();
+    // this.filterTablesByFlag();
   }
+
   showLess(field: fieldData) {
     field.filterDataTable = field.dataTable?.filter((item:DataTable) => (item.flag > 0));
     field.showMore = true;
   }
+  
   showMore(field: fieldData) {
     field.filterDataTable = field.dataTable;
     field.showMore = false;
