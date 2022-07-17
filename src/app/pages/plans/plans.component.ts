@@ -25,7 +25,6 @@ export class PlansComponent implements OnInit, OnDestroy {
   submissionGroup: number = 0;
   date = new FormControl(moment());
   mostRecentPaidPeriod = new Date(Date.now());
-
   
   selectedSubmissionGroupOption!: number;
   selectedPaidThroughPeriodOption: string = this.getCurrentPaidDate();
@@ -90,8 +89,7 @@ export class PlansComponent implements OnInit, OnDestroy {
 
   monthSelected(event: any, dp: any, input: any) {
     dp.close();
-    // input.value = event.toISOString().split('-').join('').substring(0,6);
-    input.value = moment(event).add(5, 'days').format('YYYYMM');
+    input.value = event.toISOString().split('-').join('').substring(0,6);
     if(this.selectedPaidThroughPeriodOption !== input.value) {
       this.selectedPaidThroughPeriodOption = input.value;
       this.getPlans();
@@ -107,26 +105,10 @@ export class PlansComponent implements OnInit, OnDestroy {
     return currentPaidDate;
   }
 
-  formatPaidThroughPeriod(paidThroughPeriod: any) {
-    if(paidThroughPeriod) {
-      return paidThroughPeriod.toISOString().split('-').join('').substring(1,7);
-    } else {
-      return '';
-    }
-  }
-
-  handleSearchFilterChange(key: string, event?: any) {
-    if (key === 'paidThroughPeriod') {
-      this.selectedPaidThroughPeriodOption = event.target.value;
-      this.getPlans();
-    } else if (key === 'submissionGroup') {
+  handleSearchFilterChange(key: string) {
+    if (key === 'submissionGroup') {
       this.getPlans();
     }
-  }
-
-  handleDateInputBlur() {
-    let element = (<HTMLInputElement>document.querySelector("#mat-input-0"))
-    element.value = this.selectedPaidThroughPeriodOption
   }
 
   sortByColumn(columnHeader: string) {
@@ -171,11 +153,6 @@ export class PlansComponent implements OnInit, OnDestroy {
         this.plans = [];
       }
     })
-  }
-
-  trackByFn(index: number, item: any): any
-  {
-      return item.id || index;
   }
 
   ngOnDestroy() {

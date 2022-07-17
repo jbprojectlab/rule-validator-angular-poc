@@ -14,6 +14,7 @@ import { PlanTableComponent } from './pages/plan/components/plan-table/plan-tabl
 import { CertificationReportComponent } from './pages/plan/components/certification-report/certification-report.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+// import { FormsModule,  } from '@angular/forms';
 import { PlanFilterPipe } from './pages/plans/pipes/plan-filter.pipe';
 import { L1CertificationReportComponent } from './pages/plan/components/l1-certification-report/l1-certification-report.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,9 +24,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpErrorHandlerInterceptor } from './core/interceptors/http-error-handler.interceptor';
-import { FieldDistributorReportComponent } from './pages/plan/components/field-distributor-report/field-distributor-report.component';
-import { BaseReportComponent } from './pages/plan/components/base-report/base-report.component';
-import { OverlayModule } from '@angular/cdk/overlay';
+
+import {
+  OKTA_CONFIG,
+  OktaAuthModule
+} from '@okta/okta-angular';
+import { OktaAuth } from '@okta/okta-auth-js';
+
+
+const config = {
+  issuer: 'https://dev-77648748.okta.com/oauth2/default',
+  clientId: '0oa5ge2bn95UC6KSO5d7',
+  redirectUri: window.location.origin + '/login/callback',
+}
+const oktaAuth = new OktaAuth(config);
+
 
 @NgModule({
   declarations: [
@@ -38,13 +51,12 @@ import { OverlayModule } from '@angular/cdk/overlay';
     CertificationReportComponent,
     PlanFilterPipe,
     L1CertificationReportComponent,
-    FieldDistributorReportComponent,
-    BaseReportComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    OktaAuthModule,
     NgSelectModule,
     FormsModule,
     ReactiveFormsModule,
@@ -55,8 +67,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     MatNativeDateModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSnackBarModule,
-    OverlayModule
+    MatSnackBarModule
   ],
   providers: [
     {
@@ -65,8 +76,10 @@ import { OverlayModule } from '@angular/cdk/overlay';
       multi: true
     },
     MatNativeDateModule,
-    MatSnackBarModule
-  ],
+    { 
+    provide: OKTA_CONFIG, 
+    useValue: { oktaAuth } 
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,17 +1,28 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CertificationReportComponent } from './certification-report.component';
+import { of } from 'rxjs';
+import { CertificationReportsService } from '../../services/certification-reports.service';
 
 describe('CertificationReportComponent', () => {
   let component: CertificationReportComponent;
   let fixture: ComponentFixture<CertificationReportComponent>;
 
+  let mockCertificationReportService = jasmine.createSpyObj('CertificationReportsService', ['getCertificationReportData']);
+  mockCertificationReportService.getCertificationReportData.and.returnValue(of([]));
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ CertificationReportComponent ],
+      providers: [{provide: CertificationReportsService, useValue: mockCertificationReportService}],
+      imports: [ HttpClientTestingModule, RouterTestingModule ]
+    })
+    .compileComponents();
+  });
+
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [CertificationReportComponent],
-      imports: [HttpClientTestingModule, RouterTestingModule]
-    }).compileComponents();
     fixture = TestBed.createComponent(CertificationReportComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -20,6 +31,11 @@ describe('CertificationReportComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('should call the certification reports ', () => {
+  //   component.getCertificationReportData();
+  //   expect(mockCertificationReportService.getCertificationReportData).toHaveBeenCalled();
+  // })
 
   it('should open the menu', () => {
     component.menuIsOpen = false;
@@ -35,35 +51,6 @@ describe('CertificationReportComponent', () => {
     fixture.detectChanges();
     let menu = fixture.nativeElement.querySelector('.report-menu');
     expect(menu).toBeFalsy();
-  })
-
-  describe('toggle flag filter', () => {
-    it('should set the filtered tables boolean to true when false', () => {
-      component.tablesFilteredByFlag = false;
-      component.toggleFlagFilter();
-      fixture.detectChanges();
-      expect(component.tablesFilteredByFlag).toBeTruthy();
-    })
-    it('should set the filtered tables boolean to false when true', () => {
-      component.tablesFilteredByFlag = true;
-      component.toggleFlagFilter();
-      fixture.detectChanges();
-      expect(component.tablesFilteredByFlag).toBeFalsy();
-    })
-    it('should set the flag img src to yellow when blue', () => {
-      component.flagImgSrc = 'flag.png';
-      component.tablesFilteredByFlag = false;
-      component.toggleFlagFilter();
-      fixture.detectChanges();
-      expect(component.flagImgSrc).toEqual('flag-yellow.png');
-    })
-    it('should set the flag img src to blue when yellow', () => {
-      component.flagImgSrc = 'flag-yellow.png';
-      component.tablesFilteredByFlag = true;
-      component.toggleFlagFilter();
-      fixture.detectChanges();
-      expect(component.flagImgSrc).toEqual('flag.png');
-    })
   })
 
   describe('camelize', () => {

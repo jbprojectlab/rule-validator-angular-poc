@@ -5,10 +5,10 @@
     "paidThroughPeriod": "202001",
     "submissionMode": "Production",
     "submissionId": 2830,
-    "submissionType": "non-ANTHEM",
+    "submissionType": "non-ANTHEM", 
     "totalScore": 0.0,
     "totalPassFail": "PASS",
-    "totalFlag": 2,
+    "totalFlag": 0,
     "l2Reports": [
         {
             "fileName": null,
@@ -22,9 +22,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "History api called",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-",
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 2,
@@ -35,9 +60,37 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ],
+                    "financialSummary": [],
+                    "frxTable": [],
+                    "frequencyCountTable": []
                 },
                 {
                     "metricOrderNumber": 3,
@@ -48,9 +101,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 4,
@@ -61,9 +113,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 5,
@@ -74,9 +125,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 6,
@@ -87,9 +137,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 7,
@@ -100,9 +149,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 8,
@@ -113,9 +161,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 9,
@@ -126,9 +173,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 }
             ],
             "financialSummary": [],
@@ -147,9 +193,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 11,
@@ -160,9 +231,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 }
             ],
             "financialSummary": [],
@@ -181,9 +277,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                     "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 13,
@@ -194,9 +315,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 }
             ],
             "financialSummary": [],
@@ -215,9 +361,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 18,
@@ -228,9 +399,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 19,
@@ -241,9 +437,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 24,
@@ -254,9 +475,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 26,
@@ -267,9 +513,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 27,
@@ -280,9 +551,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 28,
@@ -293,9 +589,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 30,
@@ -306,9 +627,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 32,
@@ -319,9 +639,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 34,
@@ -332,9 +651,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 36,
@@ -345,9 +663,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 41,
@@ -358,9 +675,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 }
             ],
             "financialSummary": [],
@@ -379,9 +695,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 44,
@@ -392,9 +733,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 47,
@@ -405,9 +771,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 50,
@@ -418,9 +809,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 53,
@@ -431,9 +847,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 55,
@@ -444,9 +885,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 105,
@@ -457,9 +897,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 106,
@@ -470,9 +909,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 109,
@@ -483,9 +921,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 110,
@@ -496,9 +933,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 }
             ],
             "financialSummary": [
@@ -622,9 +1058,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 58,
@@ -635,9 +1096,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 60,
@@ -648,9 +1134,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 62,
@@ -661,9 +1172,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 }
             ],
             "financialSummary": [],
@@ -682,9 +1218,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 65,
@@ -695,9 +1256,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 68,
@@ -708,9 +1294,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 70,
@@ -721,9 +1332,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 72,
@@ -734,9 +1370,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 76,
@@ -747,9 +1382,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 78,
@@ -760,9 +1394,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 107,
@@ -773,9 +1406,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 108,
@@ -786,9 +1418,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 111,
@@ -799,9 +1430,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 112,
@@ -812,9 +1442,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 }
             ],
             "financialSummary": [
@@ -951,9 +1580,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 82,
@@ -964,9 +1618,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 83,
@@ -977,9 +1656,34 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
-                    "valueHistory": []
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 },
                 {
                     "metricOrderNumber": 84,
@@ -990,9 +1694,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 85,
@@ -1003,9 +1706,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 86,
@@ -1016,22 +1718,20 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 87,
-                    "metricDescription": "Pharmacy.Member ZIP Code on Claim > 1% = '99999', ' ', or '00000'",
+                    "metricDescription": "Pharmacy.Member ZIP Code on Claim > 1% = '99999', '     ', or '00000'",
                     "computedValue": "0",
                     "ruleWeightPercent": 0.0,
                     "score": 0.0,
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 89,
@@ -1042,9 +1742,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 90,
@@ -1055,9 +1754,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 93,
@@ -1069,8 +1767,7 @@
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
                     "flag": 1,
-                    "errorMessage": "Computed Value exceeds threshold",
-                    "valueHistory": []
+                    "errorMessage": "Computed Value exceeds threshold"
                 },
                 {
                     "metricOrderNumber": 94,
@@ -1081,9 +1778,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 95,
@@ -1094,9 +1790,8 @@
                     "passIndicator": "F",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "NA"
                 },
                 {
                     "metricOrderNumber": 96,
@@ -1107,9 +1802,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 97,
@@ -1120,9 +1814,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 98,
@@ -1133,9 +1826,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 99,
@@ -1146,9 +1838,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 100,
@@ -1159,9 +1850,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 101,
@@ -1172,9 +1862,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 102,
@@ -1185,9 +1874,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 },
                 {
                     "metricOrderNumber": 103,
@@ -1198,9 +1886,8 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "flag": 0,
+                    "errorMessage": "-"
                 }
             ],
             "financialSummary": [
@@ -1449,15 +2136,15 @@
             ],
             "frequencyCountTable": [
                 {
-                    "fieldValue": "02  ",
+                    "fieldValue": "02                                                          ",
                     "frequencyCount": 71
                 },
                 {
-                    "fieldValue": "01  ",
+                    "fieldValue": "01                                                          ",
                     "frequencyCount": 6717
                 },
                 {
-                    "fieldValue": "98  ",
+                    "fieldValue": "98                                                          ",
                     "frequencyCount": 78436
                 },
                 {
@@ -1465,11 +2152,11 @@
                     "frequencyCount": 100973
                 },
                 {
-                    "fieldValue": "04  ",
+                    "fieldValue": "04                                                          ",
                     "frequencyCount": 154223
                 },
                 {
-                    "fieldValue": "03  ",
+                    "fieldValue": "03                                                          ",
                     "frequencyCount": 161770
                 }
             ]
@@ -1487,8 +2174,33 @@
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
                     "flag": 1,
-                    "errorMessage": "-",
-                    "valueHistory": []
+                    "errorMessage": "Computed Value exceeds threshold",
+                    "valueHistory": [
+                        {
+                            "cycleId": "202112",
+                            "computedValue": "20.12"
+                        },
+                        {
+                            "cycleId": "202201",
+                            "computedValue": "18.00"
+                        },
+                        {
+                            "cycleId": "202202",
+                            "computedValue": "21.57"
+                        },
+                        {
+                            "cycleId": "202203",
+                            "computedValue": "17.94"
+                        },
+                        {
+                            "cycleId": "202204",
+                            "computedValue": "17.00"
+                        },
+                        {
+                            "cycleId": "202205",
+                            "computedValue": "19.48"
+                        }
+                    ]
                 }
             ],
             "financialSummary": [],
@@ -1498,926 +2210,162 @@
     ],
     "l1Reports": [
         {
-            "fileName": "PRODUCT",
+            "fileName": "File1",
+            "fileOrderNumber": "<Gen_File_Display_Order - from L1 Query>",
             "fields": [
                 {
-                    "fieldName": "BHI Home Plan ID",
-                    "fieldOrderNumber": 1,
+                    "fieldName": "File1-sub1",
+                    "fieldOrderNumber": "<Display_Order_Number - from L1 Query>",
                     "dataTable": [
                         {
-                            "columnValue": "340",
-                            "frequencyCount": 2,
-                            "perTotFrequency": 1.0,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
+                            "columnValue": "<Column_Value - from L1 Query>",
+                            "frequencyCount": "<Frequency_Count - from L1 Query>",
+                            "perTotFrequency": "<C___of_Total__Frequency_Count_ - from L1 Query>",
+                            "historicalBaseline": "<Historical_Baseline - from L1 Query>",
+                            "varianceHistoricalBaseline": "<c10 - from L1 Query>",
+                            "commentText": "<Comments - from L1 Query>",
+                            "updateUser": "User12",
+                            "updateTimeStamp": "Date13",
+                            "flag": 2,
+                            "errorMessage": "error message String"
                         }
                     ]
                 },
                 {
-                    "fieldName": "Home Plan Product ID",
-                    "fieldOrderNumber": 2,
+                    "fieldName": "File1-sub2",
+                    "fieldOrderNumber": "<Display_Order_Number - from L1 Query>",
                     "dataTable": [
                         {
-                            "columnValue": "TOTAL",
-                            "frequencyCount": 2,
-                            "perTotFrequency": 1.0,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
+                            "columnValue": "<Column_Value - from L1 Query>",
+                            "frequencyCount": "<Frequency_Count - from L1 Query>",
+                            "perTotFrequency": "<C___of_Total__Frequency_Count_ - from L1 Query>",
+                            "historicalBaseline": "<Historical_Baseline - from L1 Query>",
+                            "varianceHistoricalBaseline": "<c10 - from L1 Query>",
+                            "commentText": "<Comments - from L1 Query>",
+                            "updateUser": "User12",
+                            "updateTimeStamp": "Date13",
                             "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "Home Plan Product Name",
-                    "fieldOrderNumber": 3,
-                    "dataTable": [
-                        {
-                            "columnValue": "TOTAL",
-                            "frequencyCount": 2,
-                            "perTotFrequency": 1.0,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "BHI Product Category",
-                    "fieldOrderNumber": 4,
-                    "dataTable": [
-                        {
-                            "columnValue": "PPO",
-                            "frequencyCount": 1,
-                            "perTotFrequency": 0.5,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
+                            "errorMessage": "error message String"
                         },
                         {
-                            "columnValue": "TRD",
-                            "frequencyCount": 1,
-                            "perTotFrequency": 0.5,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
+                            "columnValue": "<Column_Value - from L1 Query>",
+                            "frequencyCount": "<Frequency_Count - from L1 Query>",
+                            "perTotFrequency": "<C___of_Total__Frequency_Count_ - from L1 Query>",
+                            "historicalBaseline": "<Historical_Baseline - from L1 Query>",
+                            "varianceHistoricalBaseline": "<c10 - from L1 Query>",
+                            "commentText": "<Comments - from L1 Query>",
+                            "updateUser": "User12",
+                            "updateTimeStamp": "Date13",
+                            "flag": 1,
+                            "errorMessage": "error message String"
+                        },
+                        {
+                            "columnValue": "<Column_Value - from L1 Query>",
+                            "frequencyCount": "<Frequency_Count - from L1 Query>",
+                            "perTotFrequency": "<C___of_Total__Frequency_Count_ - from L1 Query>",
+                            "historicalBaseline": "<Historical_Baseline - from L1 Query>",
+                            "varianceHistoricalBaseline": "<c10 - from L1 Query>",
+                            "commentText": "<Comments - from L1 Query>",
+                            "updateUser": "User12",
+                            "updateTimeStamp": "Date13",
                             "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
+                            "errorMessage": "error message String"
+                        },
+                        {
+                            "columnValue": "<Column_Value - from L1 Query>",
+                            "frequencyCount": "<Frequency_Count - from L1 Query>",
+                            "perTotFrequency": "<C___of_Total__Frequency_Count_ - from L1 Query>",
+                            "historicalBaseline": "<Historical_Baseline - from L1 Query>",
+                            "varianceHistoricalBaseline": "<c10 - from L1 Query>",
+                            "commentText": "<Comments - from L1 Query>",
+                            "updateUser": "User12",
+                            "updateTimeStamp": "Date13",
+                            "flag": 1,
+                            "errorMessage": "error message String"
                         }
                     ]
                 },
                 {
-                    "fieldName": "Traceability Field",
-                    "fieldOrderNumber": 5,
+                    "fieldName": "File1-sub3",
+                    "fieldOrderNumber": "<Display_Order_Number - from L1 Query>",
                     "dataTable": [
                         {
-                            "columnValue": "EDW",
-                            "frequencyCount": 2,
-                            "perTotFrequency": 1.0,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
+                            "columnValue": "<Column_Value - from L1 Query>",
+                            "frequencyCount": "<Frequency_Count - from L1 Query>",
+                            "perTotFrequency": "<C___of_Total__Frequency_Count_ - from L1 Query>",
+                            "historicalBaseline": "<Historical_Baseline - from L1 Query>",
+                            "varianceHistoricalBaseline": "<c10 - from L1 Query>",
+                            "commentText": "<Comments - from L1 Query>",
+                            "updateUser": "User12",
+                            "updateTimeStamp": "Date13",
                             "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
+                            "errorMessage": "error message String"
+                        },
+                        {
+                            "columnValue": "<Column_Value - from L1 Query>",
+                            "frequencyCount": "<Frequency_Count - from L1 Query>",
+                            "perTotFrequency": "<C___of_Total__Frequency_Count_ - from L1 Query>",
+                            "historicalBaseline": "<Historical_Baseline - from L1 Query>",
+                            "varianceHistoricalBaseline": "<c10 - from L1 Query>",
+                            "commentText": "<Comments - from L1 Query>",
+                            "updateUser": "User12",
+                            "updateTimeStamp": "Date13",
+                            "flag": 1,
+                            "errorMessage": "error message String"
+                        }
+                    ]
+                },
+                {
+                    "fieldName": "File1-sub4",
+                    "fieldOrderNumber": "<Display_Order_Number - from L1 Query>",
+                    "dataTable": [
+                        {
+                            "columnValue": "<Column_Value - from L1 Query>",
+                            "frequencyCount": "<Frequency_Count - from L1 Query>",
+                            "perTotFrequency": "<C___of_Total__Frequency_Count_ - from L1 Query>",
+                            "historicalBaseline": "<Historical_Baseline - from L1 Query>",
+                            "varianceHistoricalBaseline": "<c10 - from L1 Query>",
+                            "commentText": "<Comments - from L1 Query>",
+                            "updateUser": "User12",
+                            "updateTimeStamp": "Date13",
+                            "flag": 0,
+                            "errorMessage": "error message String"
+                        },
+                        {
+                            "columnValue": "<Column_Value - from L1 Query>",
+                            "frequencyCount": "<Frequency_Count - from L1 Query>",
+                            "perTotFrequency": "<C___of_Total__Frequency_Count_ - from L1 Query>",
+                            "historicalBaseline": "<Historical_Baseline - from L1 Query>",
+                            "varianceHistoricalBaseline": "<c10 - from L1 Query>",
+                            "commentText": "<Comments - from L1 Query>",
+                            "updateUser": "User12",
+                            "updateTimeStamp": "Date13",
+                            "flag": 1,
+                            "errorMessage": "error message String"
                         }
                     ]
                 }
             ]
         },
         {
-            "fileName": "PRODUCT_CLIENT_CONTRACT",
+            "fileName": "File2",
+            "fileOrderNumber": "File2-sub1",
             "fields": [
                 {
-                    "fieldName": "Home Plan Product ID",
-                    "fieldOrderNumber": 1,
+                    "fieldName": "File2-sub1",
+                    "fieldOrderNumber": "<Display_Order_Number - from L1 Query>",
                     "dataTable": [
                         {
-                            "columnValue": "TOTAL",
-                            "frequencyCount": 65862,
-                            "perTotFrequency": 1.0,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
+                            "columnValue": "<Column_Value - from L1 Query>",
+                            "frequencyCount": "<Frequency_Count - from L1 Query>",
+                            "perTotFrequency": "<C___of_Total__Frequency_Count_ - from L1 Query>",
+                            "historicalBaseline": "<Historical_Baseline - from L1 Query>",
+                            "varianceHistoricalBaseline": "<c10 - from L1 Query>",
+                            "commentText": "<Comments - from L1 Query>",
+                            "updateUser": "User12",
+                            "updateTimeStamp": "Date13",
                             "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "Account",
-                    "fieldOrderNumber": 2,
-                    "dataTable": [
-                        {
-                            "columnValue": "869608",
-                            "frequencyCount": 833,
-                            "perTotFrequency": 0.0126,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "344003",
-                            "frequencyCount": 692,
-                            "perTotFrequency": 0.0105,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "Y08980",
-                            "frequencyCount": 544,
-                            "perTotFrequency": 0.0083,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "Y09881",
-                            "frequencyCount": 485,
-                            "perTotFrequency": 0.0074,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "022215",
-                            "frequencyCount": 468,
-                            "perTotFrequency": 0.0071,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "Group",
-                    "fieldOrderNumber": 3,
-                    "dataTable": [
-                        {
-                            "columnValue": "000Y09881",
-                            "frequencyCount": 485,
-                            "perTotFrequency": 0.0074,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "000627800",
-                            "frequencyCount": 252,
-                            "perTotFrequency": 0.0038,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "000165320",
-                            "frequencyCount": 240,
-                            "perTotFrequency": 0.0036,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "000889501",
-                            "frequencyCount": 236,
-                            "perTotFrequency": 0.0036,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "000344067",
-                            "frequencyCount": 219,
-                            "perTotFrequency": 0.0033,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "Subgroup",
-                    "fieldOrderNumber": 4,
-                    "dataTable": [
-                        {
-                            "columnValue": "0000",
-                            "frequencyCount": 22524,
-                            "perTotFrequency": 0.342,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "0001",
-                            "frequencyCount": 8058,
-                            "perTotFrequency": 0.1223,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "0003",
-                            "frequencyCount": 4418,
-                            "perTotFrequency": 0.0671,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "0010",
-                            "frequencyCount": 4176,
-                            "perTotFrequency": 0.0634,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "0002",
-                            "frequencyCount": 2138,
-                            "perTotFrequency": 0.0325,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "Industry Grouping - SIC Code",
-                    "fieldOrderNumber": 6,
-                    "dataTable": [
-                        {
-                            "columnValue": "9999",
-                            "frequencyCount": 798,
-                            "perTotFrequency": 0.0121,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "N/A",
-                            "frequencyCount": 0,
-                            "perTotFrequency": 0.0,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "Industry Grouping - NAICS Code",
-                    "fieldOrderNumber": 7,
-                    "dataTable": [
-                        {
-                            "columnValue": "NA",
-                            "frequencyCount": 65862,
-                            "perTotFrequency": 1.0,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "National Account Indicator",
-                    "fieldOrderNumber": 8,
-                    "dataTable": [
-                        {
-                            "columnValue": "N",
-                            "frequencyCount": 65558,
-                            "perTotFrequency": 0.9954,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
-                        },
-                        {
-                            "columnValue": "Y",
-                            "frequencyCount": 304,
-                            "perTotFrequency": 0.0046,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "ASO Code",
-                    "fieldOrderNumber": 9,
-                    "dataTable": [
-                        {
-                            "columnValue": "N",
-                            "frequencyCount": 60080,
-                            "perTotFrequency": 0.9122,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "Y",
-                            "frequencyCount": 5782,
-                            "perTotFrequency": 0.0878,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "Group / Individual Code",
-                    "fieldOrderNumber": 10,
-                    "dataTable": [
-                        {
-                            "columnValue": "GROUP",
-                            "frequencyCount": 65421,
-                            "perTotFrequency": 0.9933,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "INDIVIDUAL",
-                            "frequencyCount": 441,
-                            "perTotFrequency": 0.0067,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "Alpha Prefix",
-                    "fieldOrderNumber": 11,
-                    "dataTable": [
-                        {
-                            "columnValue": "YUP",
-                            "frequencyCount": 55033,
-                            "perTotFrequency": 0.8356,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "YUS",
-                            "frequencyCount": 2893,
-                            "perTotFrequency": 0.0439,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "YUN",
-                            "frequencyCount": 2398,
-                            "perTotFrequency": 0.0364,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "IN",
-                            "frequencyCount": 1466,
-                            "perTotFrequency": 0.0223,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "YUK",
-                            "frequencyCount": 832,
-                            "perTotFrequency": 0.0126,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "Custom Network Indicator",
-                    "fieldOrderNumber": 12,
-                    "dataTable": [
-                        {
-                            "columnValue": "N",
-                            "frequencyCount": 65862,
-                            "perTotFrequency": 1.0,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "CDHP Offered",
-                    "fieldOrderNumber": 13,
-                    "dataTable": [
-                        {
-                            "columnValue": "NONE",
-                            "frequencyCount": 61931,
-                            "perTotFrequency": 0.9403,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "HSA",
-                            "frequencyCount": 3313,
-                            "perTotFrequency": 0.0503,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "HRA",
-                            "frequencyCount": 598,
-                            "perTotFrequency": 0.0091,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        },
-                        {
-                            "columnValue": "BOTH",
-                            "frequencyCount": 20,
-                            "perTotFrequency": 3.0E-4,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "Traceability Field",
-                    "fieldOrderNumber": 14,
-                    "dataTable": [
-                        {
-                            "columnValue": "EDW",
-                            "frequencyCount": 65862,
-                            "perTotFrequency": 1.0,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "Member Enrollment Indicator",
-                    "fieldOrderNumber": 15,
-                    "dataTable": [
-                        {
-                            "columnValue": "Y",
-                            "frequencyCount": 65479,
-                            "perTotFrequency": 0.9942,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
-                        },
-                        {
-                            "columnValue": "N",
-                            "frequencyCount": 383,
-                            "perTotFrequency": 0.0058,
-                            "historicalBaseline": "0",
-                            "varianceHistoricalBaseline": 0.0,
-                            "commentText": null,
-                            "updateUser": null,
-                            "updateTimeStamp": null,
-                            "flag": 0,
-                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold, Variation between Total Frequency and Historical Baseline exceeds threshold / column value error"
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    "fieldDistribution": [
-        {
-            "fileName": "<File_Name - from FD_Metric Query>",
-            "fields": [
-                {
-                    "fieldName": "<Field_Name - from FD_Metric Query>",
-                    "dataTable": [
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "23,897",
-                            "cumulativePerTotal": "100.0000%"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "<Field_Name - from FD_Metric Query>",
-                    "dataTable": [
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "23,897",
-                            "cumulativePerTotal": "100.0000%"
-                        }
-                    ]
-                },
-                {
-                    "fieldName": "<Field_Name - from FD_Metric Query>",
-                    "dataTable": [
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "23,897",
-                            "cumulativePerTotal": "100.0000%"
+                            "errorMessage": "error message String"
                         }
                     ]
                 }

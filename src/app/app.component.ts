@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router, Event } from '@angular/router';
 import { NavigationStart, NavigationError, NavigationEnd } from '@angular/router';
+import { OKTA_AUTH, OktaAuthStateService } from '@okta/okta-angular';
+import { OktaAuth } from '@okta/okta-auth-js';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +13,11 @@ export class AppComponent {
   title: string = 'rule-validator';
   navIsHidden: boolean = false;
   landingPageMargin: boolean = false;
+  isAuthenticated?: boolean;
+  userName: string='';
+  profileInitials: string='';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, @Inject(OKTA_AUTH) private oktaAuth: OktaAuth, public authStateService: OktaAuthStateService) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         const segments = event.url.split('/');
@@ -32,4 +37,25 @@ export class AppComponent {
       }
     });
   }
+  
+  async ngOnInit(){
+    let email;
+    let _after;
+    this.authStateService.authState$.subscribe(
+      (response:any) => {
+          this.isAuthenticated = response.isAuthenticated;
+          this.userName = response.idToken.claims.name;
+          email = response.idToken.claims.email;
+          _after = email.substring(email.indexOf('.') + 1)[0];
+          this.profileInitials = email[0]+_after
+          console.log(this.profileInitials)
+      }
+  );
+
+  }
+
+  public async logout(): Promise<void> {
+    await this.authStateService.oktaAuth.signOut();
+  }
+
 }

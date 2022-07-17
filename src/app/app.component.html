@@ -8,19 +8,20 @@
         </div>
         <div>
           <div class="user-dd">
-            <div class="wlc-msg">
-              <div>User</div>
-              <!-- <div>Welcome back to BlueCross BlueShield</div> -->
+            <div class="user-name">{{userName}}</div>
+            <div class="circle">
+              {{profileInitials | uppercase}}
             </div>
-            <div class="user-profile-container">
-              <!-- <img class="user-dd-triangle" src="assets/img/triangle.png" /> -->
-              <div class="user-profile">
-                <img class="user-photo" src="https://randomuser.me/api/portraits/men/64.jpg" />
-                <img class="user-dd-arrow" src="assets/img/show-more.png" />  
+            
+    
+            <div class="dropdown">
+              <img class="user-dd-arrow dropbtn" src="assets/img/show-more.png">
+              <div class="dropdown-content">
+              <a href="#">Help ?</a>
+              <a *ngIf="isAuthenticated" (click)="logout()">Logout</a>
               </div>
             </div>
-          
-          </div>
+        </div>
         </div>
       </div>
       <router-outlet></router-outlet>

@@ -3,7 +3,7 @@
 	"submissionType": "ANTHEM",
 	"totalscore": 0.0,
 	"totalPassFail": "PASS",
-	"totalFlag": 0,
+	"total_Flag": 0,
 	"l2Reports": [
 		{
 			"fileName": "FACILITY_HEADER",
@@ -17,7 +17,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -29,7 +29,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -41,7 +41,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -53,7 +53,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -65,7 +65,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -77,7 +77,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -89,7 +89,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -101,7 +101,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -113,7 +113,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -125,7 +125,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -137,7 +137,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -149,7 +149,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -161,7 +161,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -173,7 +173,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -185,7 +185,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -197,7 +197,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -209,7 +209,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -221,7 +221,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -233,7 +233,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -245,7 +245,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -257,7 +257,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -269,7 +269,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -281,7 +281,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -293,7 +293,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -305,7 +305,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -317,7 +317,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -329,7 +329,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -341,7 +341,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -353,7 +353,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -365,7 +365,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -377,7 +377,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -389,7 +389,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -401,7 +401,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -413,7 +413,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -425,7 +425,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -437,7 +437,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -449,7 +449,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -461,7 +461,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -473,7 +473,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -485,7 +485,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -497,7 +497,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -509,7 +509,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -521,7 +521,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -533,7 +533,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -545,7 +545,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -557,7 +557,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -569,7 +569,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -581,7 +581,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -593,7 +593,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -605,7 +605,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -617,7 +617,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -629,7 +629,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -641,7 +641,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -653,7 +653,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -665,7 +665,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -677,7 +677,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -689,7 +689,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -701,7 +701,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -713,7 +713,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -725,7 +725,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -737,7 +737,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -749,7 +749,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -761,7 +761,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -773,7 +773,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -785,7 +785,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -797,7 +797,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -809,7 +809,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -821,7 +821,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -833,7 +833,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -845,7 +845,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -857,7 +857,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -869,7 +869,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -881,7 +881,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -893,7 +893,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -905,7 +905,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -917,7 +917,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -929,7 +929,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -941,7 +941,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -953,7 +953,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -965,7 +965,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				},
@@ -977,7 +977,7 @@
 					"score": 0.0,
 					"passIndicator": null,
 					"totalPassFail": "PASS",
-					"totalFlag": 0,
+					"total_Flag": 0,
 					"flag": 0,
 					"errorMessage": "-"
 				}

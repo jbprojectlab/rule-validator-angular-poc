@@ -7,32 +7,32 @@
       <div>
         <ng-select class="custom" [(ngModel)]="selectedSubmissionGroupOption" placeholder="Submission Group" (change)="handleSearchFilterChange('submissionGroup')">
           <ng-option
-            *ngFor="let submissionGroupOption of options.submissionGroupOptions; trackBy:trackByFn"
+            *ngFor="let submissionGroupOption of options.submissionGroupOptions"
             [value]="submissionGroupOption" >
             {{submissionGroupOption}}
           </ng-option>
         </ng-select>
 
         <mat-form-field class="paid-through-form-field">
-          <input (blur)="handleDateInputBlur()" (change)="handleSearchFilterChange('paidThroughPeriod', $event)" [max]="mostRecentPaidPeriod" #dpInput matInput [matDatepicker]="dp" placeholder="Paid Through Period">
+          <input [max]="mostRecentPaidPeriod" #dpInput matInput [matDatepicker]="dp" placeholder="Paid Through Period" [formControl]="date">
           <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
           <mat-datepicker #dp (monthSelected)="monthSelected($event, dp, dpInput)" startView="multi-year"></mat-datepicker>
-        </mat-form-field>
-
+        </mat-form-field>        
+  
         <ng-select class="custom large" [(ngModel)]="selectedSubmissionState" placeholder="Submission Current State" >
-          <ng-option *ngFor="let submissionCurrentStateOption of options.submissionCurrentStateOptions; trackBy:trackByFn" [value]="submissionCurrentStateOption">
+          <ng-option *ngFor="let submissionCurrentStateOption of options.submissionCurrentStateOptions" [value]="submissionCurrentStateOption">
             {{submissionCurrentStateOption}}
           </ng-option>
         </ng-select>
   
         <ng-select class="custom small last-select" [(ngModel)]="selectedCategory" placeholder="Category" >
-          <ng-option *ngFor="let categoryOption of options.categoryOptions; trackBy:trackByFn" [value]="categoryOption">
+          <ng-option *ngFor="let categoryOption of options.categoryOptions" [value]="categoryOption">
             {{categoryOption}}
           </ng-option>
         </ng-select>
   
         <ng-select class="custom last-select" [(ngModel)]="selectedStatus" placeholder="Submission Status" >
-          <ng-option *ngFor="let statusOption of options.statusOptions; trackBy:trackByFn" [value]="statusOption">
+          <ng-option *ngFor="let statusOption of options.statusOptions" [value]="statusOption">
             {{statusOption}}
           </ng-option>
         </ng-select>
@@ -44,14 +44,14 @@
     <table >
       <thead>
         <tr>
-          <th *ngFor="let header of headers;trackBy:trackByFn; index as i" (click)="sortByColumn(header)">
+          <th *ngFor="let header of headers; index as i;" (click)="sortByColumn(header)">
             <p>{{header}}</p>
             <img *ngIf="selectedSortingColumn === header" src="assets/img/show-more.png" [ngClass]="[sortIsAscending ? 'ascending sorted-column-arrow' : 'sorted-column-arrow']"/>
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let plan of plans | planFilter:selectedSubmissionState:selectedCategory:selectedStatus; trackBy:trackByFn ; index as i">
+        <tr *ngFor="let plan of plans | planFilter:selectedSubmissionState:selectedCategory:selectedStatus; index as i;">
           <td>{{plan.submissionGroup}}</td>
           <td class="left-aligned">{{plan.planName}}</td>
           <td>{{plan.paidThroughPeriod}}</td>

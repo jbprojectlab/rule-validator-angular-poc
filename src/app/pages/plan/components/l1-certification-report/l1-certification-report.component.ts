@@ -1,55 +1,60 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataTable, fieldData, L1Reports, SubmissionReport } from 'app/core/types/submissionReport';
-import { takeUntil } from 'rxjs/operators';
-import { BaseReportComponent } from '../base-report/base-report.component';
+import { DataTable, FiledData, L1Reports, SubmissionReport } from 'app/core/types/submissionReport';
 
 @Component({
-  selector: 'app-l1-certification-report',
+  selector: 'ndw-l1-certification-report',
   templateUrl: './l1-certification-report.component.html',
   styleUrls: ['./l1-certification-report.component.sass', '../certification-report/certification-report.component.sass']
 })
-export class L1CertificationReportComponent extends BaseReportComponent implements OnInit {
+export class L1CertificationReportComponent implements OnInit {
   initialReports!: SubmissionReport;
   l1Reports: L1Reports[] = [];
+  menuIsOpen!: boolean;
   tablesFilteredByFlag!: boolean;
   flagImgSrc: string = 'flag.png';
   sections: any;
   menuItems: any = [];
-  flagMenuIsOpen: boolean = false;
 
-  constructor(private activatedRoute: ActivatedRoute) {
-    super()
-   }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
-    this.activatedRoute.data.pipe(
-      takeUntil(this.destroyed$)
-    ).subscribe((response: any) => {
+    this.activatedRoute.data.subscribe((response: any) => {
       this.initialReports = response.reportData;
       this.l1Reports = response.reportData.l1Reports;
       this.getMenuItems();
-      this.filterTablesByFlag();
+      this.getFilterReport();
+
     });
   }
 
-  filterTablesByFlag(flagType?: number) {
-    if (flagType && flagType !== 3) {
+  getFilterReport() {
+    if (this.tablesFilteredByFlag) {
       this.l1Reports.forEach((element: L1Reports) => {
-        element.fields?.forEach((field: fieldData) => {
-          field.filterDataTable = field.dataTable?.filter((item: any) => (item.flag === flagType))
+        element.fields?.forEach((field: FiledData) => {
+          field.filterDataTable = field.dataTable?.filter((item: any) => (item.flag > 0))
         });
       });
-      console.log('reports:  ', this.l1Reports)
     } else {
       this.l1Reports.forEach((element: L1Reports) => {
-        element.fields?.forEach((field: fieldData) => {
+        element.fields?.forEach((field: FiledData) => {
           field.filterDataTable = field.dataTable;
         });
       });
     }
+  }
+  openMenu() {
+    if (!this.menuIsOpen) {
+      this.menuIsOpen = true;
+    }
+  }
 
-    this.toggleFlagFilter(flagType)
+  closeMenu() {
+    if (this.menuIsOpen) {
+      this.menuIsOpen = false;
+    }
   }
 
   private getMenuItems() {
@@ -73,55 +78,46 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
         });
         return this.sections;
       }
+
     })
+
   }
 
-  toggleFlagMenu() {
-    this.flagMenuIsOpen = !this.flagMenuIsOpen
-  }
-
-  // filterTablesByFlag(flagType: number) {
-  //   this.products = JSON.parse(JSON.stringify(productData))
-  //   const filtered = []
-
-  //   for(let i = 0; i < this.products.length; i += 1) {
-  //     let product = this.products[i]
-  //     const tables = product.tables.map((table: any) => table)
-  //     for(let j = 0; j < tables.length; j += 1) {
-  //       let table = tables[j][1].filter((row: any) => row[0] === flagType)
-  //       tables[j][1] = table
-  //     }
-  //     filtered.push(product)
-  //   }
-  //   this.products = [...filtered]
-  //   this.expandedTableIndexes = this.expandedTableIndexes.map(x => x.map((y: boolean) => false))
-  // }
-
-  toggleFlagFilter(flagType?: number) {
-    // this.tablesFilteredByFlag = !this.tablesFilteredByFlag;
-    // if (!this.tablesFilteredByFlag) {
-    //   this.flagImgSrc = 'flag.png';
-    // } else {
-    //   this.flagImgSrc = 'flag-yellow.png';
-    // }
-    // this.filterTablesByFlag();
-
-    if (flagType === 1) {
-      this.flagImgSrc = 'flag-yellow.png';
-    } else if (flagType === 2) {
-      this.flagImgSrc = 'flag-red.png';
+  camelize(str: string) {
+    if (str) {
+      return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
+        return index === 0 ? word.toLowerCase() : word.toUpperCase();
+      }).replace(/\s+/g, '');
     } else {
-      this.flagImgSrc = 'flag.png';
+      return '';
     }
-    // this.filterTablesByFlag();
   }
 
-  showLess(field: fieldData) {
+  scrollToTable(reportName: string, lastTable: boolean, tableName?: string) {
+    const table = tableName ? document.getElementById(`item-${reportName}-${tableName}`) : document.getElementById(`item-${reportName}`);
+    if (table) {
+      table.scrollIntoView(true);
+      this.closeMenu();
+      if (!lastTable) {
+        document.body.scrollTop = document.body.scrollTop - 440;
+      }
+    }
+  }
+
+  toggleFlagFilter() {
+    this.tablesFilteredByFlag = !this.tablesFilteredByFlag;
+    if (!this.tablesFilteredByFlag) {
+      this.flagImgSrc = 'flag.png';
+    } else {
+      this.flagImgSrc = 'flag-yellow.png';
+    }
+    this.getFilterReport();
+  }
+  showLess(field: FiledData) {
     field.filterDataTable = field.dataTable?.filter((item:DataTable) => (item.flag > 0));
     field.showMore = true;
   }
-  
-  showMore(field: fieldData) {
+  showMore(field: FiledData) {
     field.filterDataTable = field.dataTable;
     field.showMore = false;
   }

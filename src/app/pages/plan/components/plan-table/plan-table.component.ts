@@ -37,9 +37,4 @@ export class PlanTableComponent {
     let number = String(decimal * 100)
     return parseFloat(number).toFixed(2) + '%';
   }
-
-  trackByFn(index: number, item: any): any
-  {
-      return item.id || index;
-  }
 }
