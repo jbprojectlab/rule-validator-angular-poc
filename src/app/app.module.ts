@@ -14,7 +14,6 @@ import { PlanTableComponent } from './pages/plan/components/plan-table/plan-tabl
 import { CertificationReportComponent } from './pages/plan/components/certification-report/certification-report.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-// import { FormsModule,  } from '@angular/forms';
 import { PlanFilterPipe } from './pages/plans/pipes/plan-filter.pipe';
 import { L1CertificationReportComponent } from './pages/plan/components/l1-certification-report/l1-certification-report.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,6 +23,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpErrorHandlerInterceptor } from './core/interceptors/http-error-handler.interceptor';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 import {
   OKTA_CONFIG,
@@ -33,8 +33,8 @@ import { OktaAuth } from '@okta/okta-auth-js';
 
 
 const config = {
-  issuer: 'https://dev-77648748.okta.com/oauth2/default',
-  clientId: '0oa5ge2bn95UC6KSO5d7',
+  issuer: 'https://dev-88074172.okta.com/oauth2/default',
+  clientId: '0oa5tknywtLiDURf95d7',
   redirectUri: window.location.origin + '/login/callback',
 }
 const oktaAuth = new OktaAuth(config);
@@ -70,16 +70,22 @@ const oktaAuth = new OktaAuth(config);
     MatSnackBarModule
   ],
   providers: [
+    MatNativeDateModule,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorHandlerInterceptor,
       multi: true
     },
-    MatNativeDateModule,
     { 
-    provide: OKTA_CONFIG, 
-    useValue: { oktaAuth } 
-  }],
+      provide: OKTA_CONFIG, 
+      useValue: { oktaAuth } 
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

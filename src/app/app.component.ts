@@ -14,10 +14,10 @@ export class AppComponent {
   navIsHidden: boolean = false;
   landingPageMargin: boolean = false;
   isAuthenticated?: boolean;
-  userName: string='';
-  profileInitials: string='';
+  userName: string = '';
+  profileInitials: string = '';
 
-  constructor(private router: Router, @Inject(OKTA_AUTH) private oktaAuth: OktaAuth, public authStateService: OktaAuthStateService) {
+  constructor(private router: Router, @Inject(OKTA_AUTH) public oktaAuth: OktaAuth, public authStateService: OktaAuthStateService) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         const segments = event.url.split('/');
@@ -39,23 +39,24 @@ export class AppComponent {
   }
   
   async ngOnInit(){
+    console.log('app init')
     let email;
     let _after;
     this.authStateService.authState$.subscribe(
       (response:any) => {
-          this.isAuthenticated = response.isAuthenticated;
+        console.log('response:   ', response)
+        this.isAuthenticated = response.isAuthenticated;
+        if(response.idToken) {
           this.userName = response.idToken.claims.name;
           email = response.idToken.claims.email;
           _after = email.substring(email.indexOf('.') + 1)[0];
           this.profileInitials = email[0]+_after
-          console.log(this.profileInitials)
+        }
       }
-  );
-
+    );
   }
 
   public async logout(): Promise<void> {
-    await this.authStateService.oktaAuth.signOut();
+    await this.oktaAuth.signOut();
   }
-
 }
