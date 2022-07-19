@@ -5,13 +5,16 @@ import { NavigationStart, NavigationError, NavigationEnd } from '@angular/router
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.sass'],
+  host: {
+    "(window:scroll)":"scrollHandler()"
+  }
 })
 export class AppComponent {
   title: string = 'rule-validator';
   navIsHidden: boolean = false;
   landingPageMargin: boolean = false;
-
+  windowScrolled = false;
   constructor(private router: Router) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
@@ -31,5 +34,16 @@ export class AppComponent {
         }
       }
     });
+  }
+  scrollHandler($event: any){
+    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
+      this.windowScrolled = true;
+    } 
+    else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
+      this.windowScrolled = false;
+    }
+  }
+  moveTop($event: any){
+    window.scroll(0,0);
   }
 }

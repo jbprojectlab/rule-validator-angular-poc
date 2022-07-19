@@ -1,14 +1,13 @@
-<div class="plan-table">
-  <div class="plan-table-header" [ngClass]="{'closed': title === 'Rejects' && !rejectsTableIsOpen || title === 'Transformations' && !transformationsTableIsOpen || title === 'Analytical Warnings' && !analyticalWarningsTableIsOpen}">
-    <h2>{{title}}</h2>
-    <img src="/assets/img/show-more.png" (click)="toggleTable(title)"/>
-  </div>
-  <div *ngIf="title === 'Rejects' && rejectsTableIsOpen || title === 'Transformations' && transformationsTableIsOpen || title === 'Analytical Warnings' && analyticalWarningsTableIsOpen" class="table-wrapper">
+<div class="header">
+  <h4>{{title}}</h4>
+</div>
+<div class="filter-score-container">
+  <div class="report-score-container">
     <table>
       <colgroup span="15"></colgroup>
       <thead>
         <tr>
-          <th *ngFor="let header of headers; trackBy:trackByFn; index as i">{{header}}</th>
+          <th *ngFor="let header of headers; trackBy:trackByFn; index as i">{{header | uppercase}}</th>
         </tr>
       </thead>
       <tbody>

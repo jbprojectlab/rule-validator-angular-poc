@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataTable, fieldData, L1Reports, SubmissionReport } from 'app/core/types/submissionReport';
-import { takeUntil } from 'rxjs/operators';
+import { filter, takeUntil } from 'rxjs/operators';
 import { BaseReportComponent } from '../base-report/base-report.component';
 
 @Component({
   selector: 'app-l1-certification-report',
   templateUrl: './l1-certification-report.component.html',
-  styleUrls: ['./l1-certification-report.component.sass', '../certification-report/certification-report.component.sass']
+  styleUrls: ['./l1-certification-report.component.sass', '../certification-report/certification-report.component.sass'],
+  host: {
+    "(window:click)": "onClick()",
+    "(window:scroll)":"scrollHandler()"
+  }
 })
 export class L1CertificationReportComponent extends BaseReportComponent implements OnInit {
   initialReports!: SubmissionReport;
@@ -17,6 +21,8 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
   sections: any;
   menuItems: any = [];
   flagMenuIsOpen: boolean = false;
+  windowScrolled = false;
+  isShow!: boolean;
 
   constructor(private activatedRoute: ActivatedRoute) {
     super()
@@ -30,26 +36,34 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
       this.l1Reports = response.reportData.l1Reports;
       this.getMenuItems();
       this.filterTablesByFlag();
+      this.isNoShowMoreButton();
     });
   }
 
   filterTablesByFlag(flagType?: number) {
-    if (flagType && flagType !== 3) {
+    if (flagType && flagType !== 3 && flagType !==4) {
       this.l1Reports.forEach((element: L1Reports) => {
         element.fields?.forEach((field: fieldData) => {
           field.filterDataTable = field.dataTable?.filter((item: any) => (item.flag === flagType))
         });
       });
-      console.log('reports:  ', this.l1Reports)
-    } else {
+    } 
+    else if(flagType && flagType == 4){
+      this.l1Reports.forEach((element: L1Reports) => {
+        element.fields?.forEach((field: fieldData) => {
+          field.filterDataTable = field.dataTable?.filter((item: any) => (item.flag === 1 || item.flag==2))
+        });
+      });
+    }
+    else {
       this.l1Reports.forEach((element: L1Reports) => {
         element.fields?.forEach((field: fieldData) => {
           field.filterDataTable = field.dataTable;
         });
       });
     }
-
     this.toggleFlagFilter(flagType)
+    this.flagMenuIsOpen=false;
   }
 
   private getMenuItems() {
@@ -68,7 +82,6 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
           tableNames: []
         };
         report.fields.forEach((field: any) => {
-
           if (field.dataTable.length !== 0) this.sections.tableNames.push(field.fieldName)
         });
         return this.sections;
@@ -76,53 +89,65 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
     })
   }
 
-  toggleFlagMenu() {
+  toggleFlagMenu($event: { stopPropagation: () => void; }) {
+    $event.stopPropagation();
     this.flagMenuIsOpen = !this.flagMenuIsOpen
   }
-
-  // filterTablesByFlag(flagType: number) {
-  //   this.products = JSON.parse(JSON.stringify(productData))
-  //   const filtered = []
-
-  //   for(let i = 0; i < this.products.length; i += 1) {
-  //     let product = this.products[i]
-  //     const tables = product.tables.map((table: any) => table)
-  //     for(let j = 0; j < tables.length; j += 1) {
-  //       let table = tables[j][1].filter((row: any) => row[0] === flagType)
-  //       tables[j][1] = table
-  //     }
-  //     filtered.push(product)
-  //   }
-  //   this.products = [...filtered]
-  //   this.expandedTableIndexes = this.expandedTableIndexes.map(x => x.map((y: boolean) => false))
-  // }
-
   toggleFlagFilter(flagType?: number) {
-    // this.tablesFilteredByFlag = !this.tablesFilteredByFlag;
-    // if (!this.tablesFilteredByFlag) {
-    //   this.flagImgSrc = 'flag.png';
-    // } else {
-    //   this.flagImgSrc = 'flag-yellow.png';
-    // }
-    // this.filterTablesByFlag();
-
     if (flagType === 1) {
       this.flagImgSrc = 'flag-yellow.png';
     } else if (flagType === 2) {
       this.flagImgSrc = 'flag-red.png';
+    } else if(flagType==4){
+      this.flagImgSrc="flag-red-yellow.png"
     } else {
       this.flagImgSrc = 'flag.png';
     }
-    // this.filterTablesByFlag();
+    this.isShow = true;
+    this.isNoShowMoreButton()
   }
 
   showLess(field: fieldData) {
-    field.filterDataTable = field.dataTable?.filter((item:DataTable) => (item.flag > 0));
-    field.showMore = true;
+    let filteredData = field.dataTable?.filter((item:DataTable) => (item.flag > 0)) || [];
+    if(filteredData.length > 0){
+      field.filterDataTable =  filteredData || []
+      field.dataTable = field.dataTable || []
+      field.showMore = field.filterDataTable < field.dataTable ? true : false;
+    }else {
+      return
+    }
   }
   
   showMore(field: fieldData) {
-    field.filterDataTable = field.dataTable;
-    field.showMore = false;
+    field.filterDataTable = field.dataTable || [];
+    field.showMore = field.filterDataTable.length <= 0 ? true : false;
   }
+
+  isNoShowMoreButton() {
+   this.l1Reports.forEach((element: L1Reports) => {
+    element.fields?.forEach((field: fieldData) => {
+      let data = field?.dataTable?.length || 0
+      let filter = field?.filterDataTable?.length || 0
+      field.showMore = data > filter ? true : false;
+      this.isShow = data > filter ? true : false;
+    });
+  });
+  }
+
+  isTableEmpty(data: any, ind: number){
+    return data.fields[ind].filterDataTable.length > 0 
+  }
+
+  onClick() {
+    this.flagMenuIsOpen = false;
+  }
+  scrollHandler($event: any){
+    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
+      this.windowScrolled = true;
+    } 
+    else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
+      this.windowScrolled = false;
+    }
+  }
+ 
 }

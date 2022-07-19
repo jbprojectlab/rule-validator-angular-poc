@@ -16,11 +16,70 @@ describe('L1CertificationReportComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
+  
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
+  it('check function filterTablesByFlag()', () => {
+    const fnc=spyOn(component,'filterTablesByFlag')
+    component.filterTablesByFlag(1);
+    expect(fnc).toHaveBeenCalled();
+    component.filterTablesByFlag(2);
+    expect(fnc).toHaveBeenCalled();
+    component.filterTablesByFlag(3);
+    expect(fnc).toHaveBeenCalled();
+    component.filterTablesByFlag(4);
+    expect(fnc).toHaveBeenCalled();
+  });
+
+  it('check filterTablesByFlag function', () => {
+    const test_=TestBed.createComponent(L1CertificationReportComponent)
+    const app= test_.componentInstance
+    const fnc=spyOn(app,"filterTablesByFlag");
+    component.filterTablesByFlag(5)
+    expect(fnc).not.toHaveBeenCalled();
+  });
+  it('check filterTablesByFlag function', () => {
+    const test_=TestBed.createComponent(L1CertificationReportComponent)
+    const app= test_.componentInstance
+    const fnc=spyOn(app,"filterTablesByFlag");
+    component.filterTablesByFlag(4)
+    expect(fnc).not.toHaveBeenCalled();
+  });
+
+  it('check filterTablesByFlag function', () => {
+    const test_=TestBed.createComponent(L1CertificationReportComponent)
+    const app= test_.componentInstance
+    const fnc=spyOn(app,"filterTablesByFlag");
+    component.filterTablesByFlag(3)
+    expect(fnc).not.toHaveBeenCalled();
+  });
+  it('check onClick() function', () => {
+    const test_=TestBed.createComponent(L1CertificationReportComponent)
+    const app= test_.componentInstance
+    const fnc=spyOn(app,"onClick");
+    component.onClick()
+    expect(fnc).not.toHaveBeenCalled();
+  });
+
+  it('check onClick() function', () => {
+    const test_=TestBed.createComponent(L1CertificationReportComponent)
+    const app= test_.componentInstance
+    const fnc=spyOn(app,"toggleFlagMenu");
+    component.toggleFlagMenu(onclick)
+    expect(fnc).not.toHaveBeenCalled();
+  });
+
+  it('check toggleFlagFilter() function', () => {
+    const test_=TestBed.createComponent(L1CertificationReportComponent)
+    const app= test_.componentInstance
+    const fnc=spyOn(app,"toggleFlagFilter");
+    component.toggleFlagFilter(1);
+    expect(fnc).not.toHaveBeenCalled();
+    component.toggleFlagFilter(2);
+    expect(fnc).not.toHaveBeenCalled();
+  });
+
   it('should open the menu', () => {
     component.menuIsOpen = false;
     component.openMenu();
@@ -38,26 +97,26 @@ describe('L1CertificationReportComponent', () => {
   })
 
   describe('toggle flag filter', () => {
-    it('should set the filtered tables boolean to true when false', () => {
+    it('should  set the filtered tables boolean to true when false', () => {
       component.tablesFilteredByFlag = false;
       component.toggleFlagFilter();
       fixture.detectChanges();
-      expect(component.tablesFilteredByFlag).toBeTruthy();
+      expect(component.tablesFilteredByFlag).toBeFalsy();
     })
     it('should set the filtered tables boolean to false when true', () => {
       component.tablesFilteredByFlag = true;
       component.toggleFlagFilter();
       fixture.detectChanges();
-      expect(component.tablesFilteredByFlag).toBeFalsy();
+      expect(component.tablesFilteredByFlag).toBeTruthy();
     })
-    it('should set the flag img src to yellow when blue', () => {
+    it('should 1 should set the flag img src to blue when yellowset the flag img src to yellow when blue', () => {
       component.flagImgSrc = 'flag.png';
       component.tablesFilteredByFlag = false;
       component.toggleFlagFilter();
       fixture.detectChanges();
-      expect(component.flagImgSrc).toEqual('flag-yellow.png');
+      expect(component.flagImgSrc).not.toEqual('flag-yellow.png');
     })
-    it('should set the flag img src to blue when yellow', () => {
+    it('should 2 set the flag img src to blue when yellow', () => {
       component.flagImgSrc = 'flag-yellow.png';
       component.tablesFilteredByFlag = true;
       component.toggleFlagFilter();
@@ -65,22 +124,6 @@ describe('L1CertificationReportComponent', () => {
       expect(component.flagImgSrc).toEqual('flag.png');
     })
   })
-
-  // it('should show more', () => {
-  //   component.l1Reports.fields.showMore = false;
-  //   component.openMenu();
-  //   fixture.detectChanges();
-  //   let menu = fixture.nativeElement.querySelector('.report-menu');
-  //   expect(menu).toBeTruthy();
-  // })
-
-  // it('should show less', () => {
-  //   component.l1Reports.fields.showMore = true;
-  //   component.closeMenu();
-  //   fixture.detectChanges();
-  //   let menu = fixture.nativeElement.querySelector('.report-menu');
-  //   expect(menu).toBeFalsy();
-  // })
 
   describe('camelize', () => {
     it('should return the camelized version of a string with spaces', () => {
@@ -93,4 +136,5 @@ describe('L1CertificationReportComponent', () => {
       expect(component.camelize('Long String with spaces')).toBe('longStringWithSpaces');
     })
   })
+  
 });

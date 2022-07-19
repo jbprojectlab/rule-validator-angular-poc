@@ -160,7 +160,7 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
                     "valueHistory": []
                 }
@@ -1515,6 +1515,18 @@
                             "updateTimeStamp": null,
                             "flag": 0,
                             "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
+                        },
+                        {
+                            "columnValue": "341",
+                            "frequencyCount": 2,
+                            "perTotFrequency": 1.0,
+                            "historicalBaseline": "0",
+                            "varianceHistoricalBaseline": 0.0,
+                            "commentText": null,
+                            "updateUser": null,
+                            "updateTimeStamp": null,
+                            "flag": 1,
+                            "errorMessage": "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold"
                         }
                     ]
                 },
@@ -2152,272 +2164,258 @@
     ],
     "fieldDistribution": [
         {
-            "fileName": "<File_Name - from FD_Metric Query>",
+            "fileName": "Facility Header",
             "fields": [
                 {
-                    "fieldName": "<Field_Name - from FD_Metric Query>",
+                    "fieldName": "Sample Name",
                     "dataTable": [
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z01.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z02.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z03.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z04.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z05.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z06.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z07.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z08.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z09.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z10.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z11.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "23,897",
-                            "cumulativePerTotal": "100.0000%"
+                            "columnValue": "Z12.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         }
                     ]
                 },
                 {
-                    "fieldName": "<Field_Name - from FD_Metric Query>",
+                    "fieldName": "Sample Name 2",
                     "dataTable": [
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z01.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z02.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z03.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z04.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z05.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z06.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z07.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z08.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z09.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
-                        },
-                        {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "23,897",
-                            "cumulativePerTotal": "100.0000%"
+                            "columnValue": "Z09.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         }
                     ]
                 },
                 {
-                    "fieldName": "<Field_Name - from FD_Metric Query>",
+                    "fieldName": "Sample Name C",
                     "dataTable": [
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z011.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z051.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z511.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z301.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z331.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z031.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z081.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z001.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z01.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z010.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "<Cumulative_Count - from FD_Metric Query>",
-                            "cumulativePerTotal": "<Cumulative_Percentage - from FD_Metric Query - Round to first 4 decimal points"
+                            "columnValue": "Z011.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         },
                         {
-                            "columnValue": "<Column_Val - from FD_Metric Query",
-                            "count": "<Count - from FD_Metric Query - Sorting based on fileName ASC, fieldName ASC, count DESC>",
-                            "perTotal": "<Percent_Total - from FD_Metric Query - Round to first 4 decimal points>",
-                            "cumulativeCount": "23,897",
-                            "cumulativePerTotal": "100.0000%"
+                            "columnValue": "Z012.00",
+                            "count": 400,
+                            "perTotal": 20,
+                            "cumulativeCount": 400,
+                            "cumulativePerTotal": 20
                         }
                     ]
                 }

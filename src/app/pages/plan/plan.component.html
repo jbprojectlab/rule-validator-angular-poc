@@ -49,7 +49,7 @@
     </div>
     <div>      
       <span [ngClass]="{'active': visibleTab === 4}" (click)="selectTab(4)">
-        <img src={{getTabIconSrc(2)}} />
+        <img src={{getTabIconSrc(4)}} />
       </span>
       <h5>Field Distribution Report</h5>
     </div>
@@ -60,21 +60,18 @@
   </div>
 
   <div *ngIf="visibleTab === 2">
-    <div *ngIf="plan.rejects" class="plan" [ngClass]="{'closed': !level2ChecklistIsOpen}">
-      <div class="checklist-header">
-        <h1>L2 Checklist</h1>
-        <img src="assets/img/show-more-white.png" (click)="toggleChecklist(2)" class="show-table-img"/>
+    <div class="header">
+      <h4>L2 Checklist</h4>
+    </div>
+    <div *ngIf="plan.rejects" class="plan">
+      <div class="plan-table-wrapper">
+        <app-plan-table [title]="'Rejects'" [tableData]="plan.rejects" [rejectsTableIsOpen]="rejectsTableIsOpen" [toggleTable]="toggleRejectsTable"></app-plan-table>
       </div>
-      <div *ngIf="level2ChecklistIsOpen">
-        <div class="plan-table-wrapper">
-          <app-plan-table [title]="'Rejects'" [tableData]="plan.rejects" [rejectsTableIsOpen]="rejectsTableIsOpen" [toggleTable]="toggleRejectsTable"></app-plan-table>
-        </div>
-        <div class="plan-table-wrapper">
-          <app-plan-table [title]="'Transformations'" [tableData]="plan.transformations" [transformationsTableIsOpen]="transformationsTableIsOpen" [toggleTable]="toggleTransformationsTable"></app-plan-table>
-        </div>
-        <div class="plan-table-wrapper">
-          <app-plan-table [title]="'Analytical Warnings'" [tableData]="plan.analyticalWarnings" [analyticalWarningsTableIsOpen]="analyticalWarningsTableIsOpen" [toggleTable]="toggleAnalyticalWarningsTable"></app-plan-table>
-        </div>
+      <div class="plan-table-wrapper">
+        <app-plan-table [title]="'Transformations'" [tableData]="plan.transformations" [transformationsTableIsOpen]="transformationsTableIsOpen" [toggleTable]="toggleTransformationsTable"></app-plan-table>
+      </div>
+      <div class="plan-table-wrapper">
+        <app-plan-table [title]="'Analytical Warnings'" [tableData]="plan.analyticalWarnings" [analyticalWarningsTableIsOpen]="analyticalWarningsTableIsOpen" [toggleTable]="toggleAnalyticalWarningsTable"></app-plan-table>
       </div>
     </div>
   </div>

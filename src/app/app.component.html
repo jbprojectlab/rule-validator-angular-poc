@@ -25,6 +25,7 @@
       </div>
       <router-outlet></router-outlet>
       <footer [ngClass]="{'hidden-nav-margin': navIsHidden}">
+        <div *ngIf="windowScrolled"><span (click)="moveTop($event)" class="up-arrow"><img style="cursor: pointer;" src='assets/img/up-arrow.png'/></span></div>
         &copy; 2022. All rights reserved
       </footer>
     </div>

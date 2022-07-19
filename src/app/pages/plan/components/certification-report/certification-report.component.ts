@@ -8,7 +8,10 @@ import { BaseReportComponent } from '../base-report/base-report.component';
 @Component({
   selector: 'app-certification-report',
   templateUrl: './certification-report.component.html',
-  styleUrls: ['./certification-report.component.sass']
+  styleUrls: ['./certification-report.component.sass'],
+  host: {
+    "(window:scroll)":"scrollHandler()"
+  }
 })
 export class CertificationReportComponent extends BaseReportComponent implements OnInit{
   initialReports!: SubmissionReport;
@@ -16,11 +19,13 @@ export class CertificationReportComponent extends BaseReportComponent implements
   metricTable: MetricTableData[] =[];
   menuItems: any = [];
   tablesFilteredByFlag: boolean = false;
+  windowScrolled = false;
   flagImgSrc: string = 'flag.png';
   expandedTables: any[] = [];
   showScore = false;
   scoreContainer: any;
   sections: any;
+  isShowMore: boolean = false;
   months = [
     'Jan',
     'Feb',
@@ -91,16 +96,41 @@ export class CertificationReportComponent extends BaseReportComponent implements
   }
 
   private filterTablesByFlag() {
-    this.expandedTables = this.reports.map((report: any, index: number) => {
+    this.expandedTables = this.reports.map((report: any) => {
       let expandedState: any = {};
-      if (report.metricTable) expandedState.metricTable = false;
-      if (report.financialSummary) expandedState.financialSummary = false;
-      if (report.frxTable) expandedState.frxTable = false;
-      if (report.frequencyCountTable) expandedState.frequencyCountTable = false;
+      if (report.metricTable) {
+        expandedState.metricTable = false;
+        expandedState.metricTableTotalCount = report.metricTable.length;
+        expandedState.metricTableFlagCount = report.metricTable.reduce((previous: number, data: any, ) => previous + data.flag, 0)
+        this.isShowMore = expandedState.metricTableTotalCount > expandedState.metricTableFlagCount ?  true : false;
+      }
+      if (report.financialSummary) {
+        expandedState.financialSummary = false;
+        expandedState.financialSummaryTotalCount = report.financialSummary.length + expandedState.totalCount;
+        expandedState.financialSummaryFlagCount = report.financialSummary
+        .reduce((previous: number, data: any, ) => previous + data.flag, expandedState.flagCount || 0);
+        this.isShowMore = expandedState.financialSummaryTotalCount > expandedState.financialSummaryFlagCount ?  true : false;
+      }
+      if (report.frxTable) {
+        expandedState.frxTable = false;
+        expandedState.frxTableTotalCount = report.frxTable.length;
+        expandedState.frxTableFlagCount = report.frxTable.reduce((previous: number, data: any, ) => previous + data.flag, 0)
+        this.isShowMore = expandedState.frxTableTotalCount > expandedState.frxTableFlagCount ?  true : false;
+      }
+      if (report.frequencyCountTable) {
+        expandedState.frequencyCountTable = false;
+        expandedState.frequencyCountTableTotalCount = report.frequencyCountTable.length;
+        expandedState.frequencyCountTableFlagCount = report.frequencyCountTable.reduce((previous: number, data: any, ) => previous + data.flag, 0)
+        this.isShowMore = expandedState.frequencyCountTableTotalCount > expandedState.frequencyCountTableFlagCount ?  true : false;
+      }
+      expandedState.flagCount = expandedState.metricTableFlagCount || 0 + expandedState.financialSummaryFlagCount || 0
+      + expandedState.frxTableFlagCount || 0 + expandedState.frequencyCountTableFlagCount || 0
       return expandedState;
     })
     this.tablesFilteredByFlag = true;
+    this.isShowMore = true;
   }
+
   toggleFlagFilter() {
     if (this.tablesFilteredByFlag) {
       this.flagImgSrc = 'flag.png';
@@ -162,5 +192,13 @@ export class CertificationReportComponent extends BaseReportComponent implements
       flag = summaryData[0][fieldName] !== null;
     }
     return flag
+  }
+  scrollHandler($event: any){
+    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
+      this.windowScrolled = true;
+    } 
+    else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
+      this.windowScrolled = false;
+    }
   }
 }

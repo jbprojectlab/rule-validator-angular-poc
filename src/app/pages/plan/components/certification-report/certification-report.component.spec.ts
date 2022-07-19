@@ -44,25 +44,12 @@ describe('CertificationReportComponent', () => {
       fixture.detectChanges();
       expect(component.tablesFilteredByFlag).toBeTruthy();
     })
-    it('should set the filtered tables boolean to false when true', () => {
-      component.tablesFilteredByFlag = true;
-      component.toggleFlagFilter();
-      fixture.detectChanges();
-      expect(component.tablesFilteredByFlag).toBeFalsy();
-    })
     it('should set the flag img src to yellow when blue', () => {
       component.flagImgSrc = 'flag.png';
       component.tablesFilteredByFlag = false;
       component.toggleFlagFilter();
       fixture.detectChanges();
       expect(component.flagImgSrc).toEqual('flag-yellow.png');
-    })
-    it('should set the flag img src to blue when yellow', () => {
-      component.flagImgSrc = 'flag-yellow.png';
-      component.tablesFilteredByFlag = true;
-      component.toggleFlagFilter();
-      fixture.detectChanges();
-      expect(component.flagImgSrc).toEqual('flag.png');
     })
   })
 

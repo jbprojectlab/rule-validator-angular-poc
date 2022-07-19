@@ -33,9 +33,9 @@ export class PlanComponent implements OnInit, OnDestroy {
     } else if (tab === 2) {
       return this.visibleTab === 2 ? 'assets/img/checklist-white.png' : 'assets/img/checklist-black.png';
     } else if (tab === 3) {
-      return this.visibleTab === 3 ? 'assets/img/checklist-white.png' : 'assets/img/checklist-black.png'
+      return this.visibleTab === 3 ? 'assets/img/checklist-white.png' : 'assets/img/checklist-black.png';
     } else {
-      return this.visibleTab === 4 ? 'assets/img/checklist-white.png' : 'assets/img/checklist-black.png'
+      return this.visibleTab === 4 ? 'assets/img/checklist-white.png' : 'assets/img/checklist-black.png';
     }
     return undefined;
   }

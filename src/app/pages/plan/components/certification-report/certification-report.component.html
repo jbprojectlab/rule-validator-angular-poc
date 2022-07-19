@@ -29,17 +29,22 @@
       <span>{{initialReports?.totalScore}}</span>
     </div>
     <span *ngIf="initialReports.totalFlag !== undefined" class="score-indicator" [ngClass]="{'green': initialReports.totalFlag === 0, 'yellow': (initialReports.totalFlag === 1),'red':  initialReports.totalFlag === 2  }">{{initialReports?.totalPassFail}}</span>
-    <img style="cursor: pointer;" src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" />
+    <div *ngIf="windowScrolled;else elseBlock">
+      <p class="flag-button-scrolldown"><img class="flag-img"  src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" /></p></div>
+    <ng-template #elseBlock>
+     <div class="flag-static"><img  class="flag-img" src='assets/img/{{flagImgSrc}}' (click)="toggleFlagFilter()" /></div>
+    </ng-template>
   </div>
 </div>
 
 
-<div class="certification-report">
+
   <!-- <div class="v-scrollbar"> -->
-    <div *ngFor="let report of reports;trackBy:trackByFn; index as i">
+<div *ngFor="let report of reports;trackBy:trackByFn; index as i">
+  <div class="certification-report" *ngIf="report.metricTable?.length ? !expandedTables[i].metricTable ? expandedTables[i].flagCount : report.metricTable?.length : report.metricTable?.length">
       <h4 *ngIf="report.fileName" id="item-{{camelize(report.fileName)}}" [ngClass]="i === 0 ? 'first-filename' : ''">{{report.fileName}}</h4>
      
-      <div class="table-container" *ngIf="report.metricTable?.length!==0">
+      <div class="table-container">
         <table *ngIf="report.metricTable" id="item-{{camelize(report.fileName)}}-metricTable">
           <colgroup span="7"></colgroup>
           <thead>
@@ -124,7 +129,8 @@
           </tbody>
         </table>
   
-        <div class="table-container" *ngIf="report?.metricTable?.length">
+        <div class="table-container" *ngIf="report?.metricTable?.length 
+        && isShowMore && expandedTables[i]?.metricTableTotalCount > expandedTables[i]?.metricTableFlagCount">
           <div *ngIf="expandedTables[i]?.metricTable" class="show-less-button-container">
             <button (click)="showLess(i, 'metricTable')">Show Less &minus;</button>
           </div>
@@ -193,7 +199,8 @@
           </tbody>
         </table>
   
-        <div class="table-container" *ngIf="report.financialSummary">
+        <div class="table-container" *ngIf="report.financialSummary && isShowMore && 
+        expandedTables[i]?.financialSummaryTotalCount > expandedTables[i]?.financialSummaryFlagCount">
           <div *ngIf="expandedTables[i]?.financialSummary" class="show-less-button-container">
             <button (click)="showLess(i, 'financialSummary')">Show Less &minus;</button>
           </div>
@@ -249,5 +256,6 @@
         </table>
       </div>
     </div>
-  <!-- </div> -->
 </div>
+
+
