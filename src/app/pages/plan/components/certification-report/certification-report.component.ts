@@ -4,14 +4,12 @@ import { takeUntil } from 'rxjs/operators';
 import { FinancialSummary, L2Report, MetricTableData, SubmissionReport } from 'app/core/types/submissionReport';
 import { ActivatedRoute } from '@angular/router';
 import { BaseReportComponent } from '../base-report/base-report.component';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-certification-report',
   templateUrl: './certification-report.component.html',
   styleUrls: ['./certification-report.component.sass'],
-  host: {
-    "(window:scroll)":"scrollHandler()"
-  }
 })
 export class CertificationReportComponent extends BaseReportComponent implements OnInit{
   initialReports!: SubmissionReport;
@@ -106,7 +104,7 @@ export class CertificationReportComponent extends BaseReportComponent implements
       }
       if (report.financialSummary) {
         expandedState.financialSummary = false;
-        expandedState.financialSummaryTotalCount = report.financialSummary.length + expandedState.totalCount;
+        expandedState.financialSummaryTotalCount = report.financialSummary.length;
         expandedState.financialSummaryFlagCount = report.financialSummary
         .reduce((previous: number, data: any, ) => previous + data.flag, expandedState.flagCount || 0);
         this.isShowMore = expandedState.financialSummaryTotalCount > expandedState.financialSummaryFlagCount ?  true : false;
@@ -124,7 +122,10 @@ export class CertificationReportComponent extends BaseReportComponent implements
         this.isShowMore = expandedState.frequencyCountTableTotalCount > expandedState.frequencyCountTableFlagCount ?  true : false;
       }
       expandedState.flagCount = expandedState.metricTableFlagCount || 0 + expandedState.financialSummaryFlagCount || 0
-      + expandedState.frxTableFlagCount || 0 + expandedState.frequencyCountTableFlagCount || 0
+        + expandedState.frxTableFlagCount || 0 + expandedState.frequencyCountTableFlagCount || 0;
+      expandedState.tableCountStatus = expandedState.flagCount > 0 ? false : true;
+      expandedState.tableTotalCount = expandedState.metricTableTotalCount || 0 + expandedState.financialSummaryTotalCount || 0 +
+        expandedState.frxTableTotalCount || 0 + expandedState.frequencyCountTableTotalCount || 0;
       return expandedState;
     })
     this.tablesFilteredByFlag = true;
@@ -193,7 +194,7 @@ export class CertificationReportComponent extends BaseReportComponent implements
     }
     return flag
   }
-  scrollHandler($event: any){
+  @HostListener("window:scroll", [])scrollHandler($event: any){
     if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
       this.windowScrolled = true;
     } 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router, Event } from '@angular/router';
 import { NavigationStart, NavigationError, NavigationEnd } from '@angular/router';
 
@@ -6,9 +6,6 @@ import { NavigationStart, NavigationError, NavigationEnd } from '@angular/router
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
-  host: {
-    "(window:scroll)":"scrollHandler()"
-  }
 })
 export class AppComponent {
   title: string = 'rule-validator';
@@ -35,7 +32,7 @@ export class AppComponent {
       }
     });
   }
-  scrollHandler($event: any){
+  @HostListener("window:scroll", [])scrollHandler($event: any){
     if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
       this.windowScrolled = true;
     } 

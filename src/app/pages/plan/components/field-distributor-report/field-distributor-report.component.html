@@ -29,7 +29,7 @@
       </div>
       
       <div *ngFor="let field of report.fields; trackBy:trackByFn; index as fieldIndex">
-        <div class="certification-report" *ngIf="field.dataTable && field.dataTable.length > 5">
+        <div class="certification-report" *ngIf="field.dataTable && field.dataTable.length > 0">
           <h4>{{field.fieldName}}</h4>
           <div class="table-container">
             <table id="item-{{camelize(report.fileName)}}-{{camelize(field.fieldName)}}">
@@ -38,9 +38,9 @@
                 <tr>
                   <th class="left-align">Column Value</th>
                   <th>Count</th>
-                  <th>% Count</th>
+                  <th>% Total</th>
                   <th>Cumulative Count</th>
-                  <th>Cumulative % Count</th>
+                  <th>Cumulative % Total</th>
                 </tr>
               </thead>
               <tbody class="Mtable">

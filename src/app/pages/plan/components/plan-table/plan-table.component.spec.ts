@@ -23,6 +23,14 @@ describe('PlanTableComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('check trackByFn() function', () => {
+    const test_=TestBed.createComponent(PlanTableComponent)
+    const app= test_.componentInstance
+    const fnc=spyOn(app,"trackByFn");
+    component.trackByFn(1,"test")
+    expect(fnc).not.toHaveBeenCalled();
+  });
+
   describe('format decimal number to percent string', () => {
     it('should return "100%" when input is the whole number 1', () => {
       expect(component.formatDecimalToPercent(1)).toBe('100.00%');

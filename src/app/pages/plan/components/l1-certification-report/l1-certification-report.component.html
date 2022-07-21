@@ -40,7 +40,7 @@
   <span (click)="filterTablesByFlag(3)"><img style="cursor: pointer;" src='assets/img/flag.png'/>
   </span>
 </div>
-<div *ngIf="flagMenuIsOpen && windowScrolled==false " class="flag-menu-scrollup">
+<div *ngIf="flagMenuIsOpen && windowScrolled===false " class="flag-menu-scrollup">
   <span (click)="filterTablesByFlag(1)"><img style="cursor: pointer;" src='assets/img/flag-yellow.png'/></span>
   
   <span (click)="filterTablesByFlag(2)"><img style="cursor: pointer;" src='assets/img/flag-red.png'/>
@@ -55,10 +55,10 @@
     <div class="l1-heading r" *ngIf="isTableEmpty(report, reportIndex)">
       <h4 id="item-{{camelize(report.fileName)}}" [ngClass]="reportIndex === 0 ? 'first-filename' : ''">Submission File : {{report.fileName}}</h4>
     </div>
-    <div *ngFor="let field of report.fields; trackBy:trackByFn; index as fieldIndex">
-      <div class="certification-report" *ngIf="field.filterDataTable?.length">
-        <h4 id="item-{{camelize(report.fileName)}}-{{camelize(field.fieldName)}}"></h4>
-        <div class="table-container">
+    <div  *ngFor="let field of report.fields; trackBy:trackByFn; index as fieldIndex">
+      <div  class="certification-report" *ngIf="field.filterDataTable?.length">
+        <h4 id="item-{{camelize(report.fileName)}}-{{camelize(field.fieldName)}}">{{field.fieldName}}</h4>
+        <div  class="table-container">
           <table>
             <colgroup span="10"></colgroup>
             <thead>
@@ -66,7 +66,7 @@
                 <th class="no-width"></th>
                 <th class="left-align">Column Value</th>
                 <th>Frequency Count</th>
-                <th>Percentage of Total</th>
+                <th>% of Total (Frequency Count)</th>
                 <th>Historical Baseline</th>
                 <th>Variance To Historical Baseline</th>
                 <th>Error Msg</th>
@@ -90,7 +90,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="table-container" *ngIf="isShow">
+          <div class="table-container" *ngIf="isShow && field.isShow">
             <div *ngIf="!field?.showMore" class="show-less-button-container">
               <button (click)="showLess(field)">Show Less &minus;</button>
             </div>

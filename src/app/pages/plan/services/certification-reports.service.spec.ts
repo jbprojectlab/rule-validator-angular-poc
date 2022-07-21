@@ -1,5 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { TestBed } from '@angular/core/testing';
+import { inject, TestBed, waitForAsync } from '@angular/core/testing';
 import { CertificationReportsService } from './certification-reports.service';
 
 describe('CertificationReportsService', () => {
@@ -15,4 +15,7 @@ describe('CertificationReportsService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+  it('Should test function getCertificationReportData() ', waitForAsync(inject([CertificationReportsService], (CertificationReportsService: { getCertificationReportData: () => { (): any; new(): any; subscribe: { (arg0: (result: any) => void): void; new(): any; }; }; }) => {
+    CertificationReportsService.getCertificationReportData().subscribe(result => expect(result.length).toBeGreaterThan(0)); 
+})));
 });

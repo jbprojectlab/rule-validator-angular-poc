@@ -80,6 +80,7 @@ export interface fieldData {
 	dataTable?: DataTable[];
 	filterDataTable?: DataTable[];
 	showMore: any;
+	isShow: boolean;
 }
 
 export interface DataTable {

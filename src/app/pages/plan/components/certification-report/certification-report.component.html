@@ -41,11 +41,11 @@
 
   <!-- <div class="v-scrollbar"> -->
 <div *ngFor="let report of reports;trackBy:trackByFn; index as i">
-  <div class="certification-report" *ngIf="report.metricTable?.length ? !expandedTables[i].metricTable ? expandedTables[i].flagCount : report.metricTable?.length : report.metricTable?.length">
+  <div class="certification-report" *ngIf="report.metricTable?.length ? tablesFilteredByFlag ? expandedTables[i].flagCount : report.metricTable?.length : report.metricTable?.length">
       <h4 *ngIf="report.fileName" id="item-{{camelize(report.fileName)}}" [ngClass]="i === 0 ? 'first-filename' : ''">{{report.fileName}}</h4>
      
-      <div class="table-container">
-        <table *ngIf="report.metricTable" id="item-{{camelize(report.fileName)}}-metricTable">
+      <div class="table-container" *ngIf="report.metricTable?.length ? tablesFilteredByFlag ? expandedTables[i].metricTableFlagCount : report.metricTable?.length : report.metricTable?.length" id="item-{{camelize(report.fileName)}}-metricTable">
+        <table>
           <colgroup span="7"></colgroup>
           <thead>
             <tr>
@@ -128,7 +128,6 @@
             </tr>
           </tbody>
         </table>
-  
         <div class="table-container" *ngIf="report?.metricTable?.length 
         && isShowMore && expandedTables[i]?.metricTableTotalCount > expandedTables[i]?.metricTableFlagCount">
           <div *ngIf="expandedTables[i]?.metricTable" class="show-less-button-container">
@@ -198,7 +197,6 @@
             </tr>
           </tbody>
         </table>
-  
         <div class="table-container" *ngIf="report.financialSummary && isShowMore && 
         expandedTables[i]?.financialSummaryTotalCount > expandedTables[i]?.financialSummaryFlagCount">
           <div *ngIf="expandedTables[i]?.financialSummary" class="show-less-button-container">
