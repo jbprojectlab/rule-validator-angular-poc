@@ -46,7 +46,7 @@
 
 
     #logo
-      margin-left: 4.5rem
+      padding-left: 30px
       height: 30px
       max-height: 40px
 
@@ -67,45 +67,64 @@
       display: none
 
 .user-dd
-  width: auto 
-  align-items: center 
-  max-width: 404px 
-  display: flex 
-  border-radius: var(--rounded-corner-border-radius) 
-
-  .wlc-msg
-    padding: 15px
-    border-radius: var(--rounded-corner-border-radius) 
-    color: #212223
-
-    > div:first-child
-        font-size: 16px 
-
-    > div:last-child
-        font-size: 11px 
-        width: max-content 
-
-  .user-profile-container
+    width: auto
+    align-items: center
     display: flex
+    padding-right: 20px
+
+    .user-name
+        font-size: 14px
+        width: max-content
+        padding-right: 20px
+
+.circle
+    height: 40px
+    width: 40px
+    border-radius: 20px
+    background-color: #677D8D
+    color: var(--white)
+    display: flex
+    justify-content: space-evenly
     align-items: center
 
-    .user-profile
-      display: flex
-      align-items: center
-      justify-content: space-evenly
-      width: 85px
-
-  .user-dd-triangle 
-    height: 20px 
-    width: auto 
-    margin-left: -11px 
-
-  .user-photo
-    height: 40px 
-    border-radius: 20px 
-
-  .user-dd-arrow
+.user-dd-arrow
     height: 5px
+    padding-left: 10px
+
+.dropbtn  
+  padding: 16px 
+  font-size: 16px 
+  border: none 
+  cursor: pointer 
+
+.dropdown  
+  position: relative 
+  display: inline-block 
+ 
+
+.dropdown-content  
+  display: none 
+  position: absolute 
+  background-color: #f9f9f9 
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2) 
+  cursor: pointer
+  z-index: 1 
+ 
+
+.dropdown-content a 
+    color: black
+    padding: 12px 16px
+    text-decoration: none
+    display: block
+
+
+.dropdown-content a:hover 
+    background-color: #f1f1f1
+
+
+.dropdown:hover .dropdown-content 
+    display: block
+
 
 .up-arrow 
     position: fixed

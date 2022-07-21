@@ -26,6 +26,20 @@ import { HttpErrorHandlerInterceptor } from './core/interceptors/http-error-hand
 import { FieldDistributorReportComponent } from './pages/plan/components/field-distributor-report/field-distributor-report.component';
 import { BaseReportComponent } from './pages/plan/components/base-report/base-report.component';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+
+import {
+  OKTA_CONFIG,
+  OktaAuthModule
+} from '@okta/okta-angular';
+import { OktaAuth } from '@okta/okta-auth-js';
+
+const config = {
+  issuer: 'https://dev-88074172.okta.com/oauth2/default',
+  clientId: '0oa5tknywtLiDURf95d7',
+  redirectUri: window.location.origin + '/login/callback',
+};
+const oktaAuth = new OktaAuth(config);
 
 @NgModule({
   declarations: [
@@ -45,6 +59,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    OktaAuthModule,
     NgSelectModule,
     FormsModule,
     ReactiveFormsModule,
@@ -62,6 +77,15 @@ import { OverlayModule } from '@angular/cdk/overlay';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorHandlerInterceptor,
+      multi: true
+    },
+    { 
+      provide: OKTA_CONFIG, 
+      useValue: { oktaAuth } 
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
       multi: true
     },
     MatNativeDateModule,

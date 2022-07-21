@@ -30,9 +30,9 @@
       
       <div *ngFor="let field of report.fields; trackBy:trackByFn; index as fieldIndex">
         <div class="certification-report" *ngIf="field.dataTable && field.dataTable.length > 0">
-          <h4>{{field.fieldName}}</h4>
+          <h4 id="item-{{camelize(report.fileName)}}-{{camelize(field.fieldName)}}">{{field.fieldName}}</h4>
           <div class="table-container">
-            <table id="item-{{camelize(report.fileName)}}-{{camelize(field.fieldName)}}">
+            <table>
               <colgroup span="10"></colgroup>
               <thead>
                 <tr>
