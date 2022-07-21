@@ -30,7 +30,8 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 import {
   OKTA_CONFIG,
-  OktaAuthModule
+  OktaAuthModule,
+  OktaAuthGuard,
 } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
 
@@ -71,7 +72,7 @@ const oktaAuth = new OktaAuth(config);
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
-    OverlayModule
+    OverlayModule,
   ],
   providers: [
     {

@@ -9,12 +9,14 @@ import { OktaAuthGuard, OktaCallbackComponent } from '@okta/okta-angular';
 
 const routes: Routes = [
   { path: 'plans', component: PlansComponent, canActivate: [ OktaAuthGuard ] },
-  { path: '', redirectTo: 'plans', pathMatch:'full'},
+  { path: '', redirectTo: 'plans', pathMatch:'full' },
   { path: 'plans/:submissionId/:submissionType', 
-  component: PlanComponent ,
-  resolve: { reportData: CertificationReportResolversService }},
-  { path: 'clipboard', component: ClipboardComponent },
-  { path: 'dashboard', component: DashboardComponent },
+    component: PlanComponent ,
+    resolve: { reportData: CertificationReportResolversService },
+    canActivate: [OktaAuthGuard]
+  },
+  { path: 'clipboard', component: ClipboardComponent, canActivate: [OktaAuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [OktaAuthGuard]  },
   {
     path: 'login/callback',
     component: OktaCallbackComponent
