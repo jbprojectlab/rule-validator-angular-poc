@@ -1,6 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { windowTime } from 'rxjs/dist/types/operators';
 import { L1CertificationReportComponent } from './l1-certification-report.component';
 
 describe('L1CertificationReportComponent', () => {
@@ -20,6 +21,7 @@ describe('L1CertificationReportComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
   it('check function filterTablesByFlag()', () => {
     const fnc=spyOn(component,'filterTablesByFlag')
     component.filterTablesByFlag(1);
@@ -59,14 +61,6 @@ describe('L1CertificationReportComponent', () => {
     const app= test_.componentInstance
     const fnc=spyOn(app,"onClick");
     component.onClick()
-    expect(fnc).not.toHaveBeenCalled();
-  });
-
-  it('check onClick() function', () => {
-    const test_=TestBed.createComponent(L1CertificationReportComponent)
-    const app= test_.componentInstance
-    const fnc=spyOn(app,"toggleFlagMenu");
-    component.toggleFlagMenu(onclick)
     expect(fnc).not.toHaveBeenCalled();
   });
 

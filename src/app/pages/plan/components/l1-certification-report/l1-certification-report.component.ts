@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Directive, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataTable, fieldData, L1Reports, SubmissionReport } from 'app/core/types/submissionReport';
 import { filter, takeUntil } from 'rxjs/operators';
 import { BaseReportComponent } from '../base-report/base-report.component';
 
+
 @Component({
   selector: 'app-l1-certification-report',
   templateUrl: './l1-certification-report.component.html',
   styleUrls: ['./l1-certification-report.component.sass', '../certification-report/certification-report.component.sass'],
-  host: {
-    "(window:click)": "onClick()",
-    "(window:scroll)":"scrollHandler()"
-  }
 })
 export class L1CertificationReportComponent extends BaseReportComponent implements OnInit {
   initialReports!: SubmissionReport;
@@ -129,7 +126,7 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
       let data = field?.dataTable?.length || 0
       let filter = field?.filterDataTable?.length || 0
       field.showMore = data > filter ? true : false;
-      this.isShow = data > filter ? true : false;
+      field.isShow = data > filter ? true : false;
     });
   });
   }
@@ -138,10 +135,10 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
     return data.fields[ind].filterDataTable.length > 0 
   }
 
-  onClick() {
+  @HostListener('click')onClick(){
     this.flagMenuIsOpen = false;
   }
-  scrollHandler($event: any){
+  @HostListener("window:scroll", [])scrollHandler($event: any){
     if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
       this.windowScrolled = true;
     } 
@@ -149,5 +146,5 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
       this.windowScrolled = false;
     }
   }
- 
+
 }
