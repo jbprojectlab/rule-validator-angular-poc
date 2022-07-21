@@ -33,7 +33,6 @@
     "@okta/okta-auth-js": "^6.7.2",
     "angular-material-datepicker": "^1.0.2",
     "moment": "^2.29.3",
-    "ngx-toastr": "^15.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
