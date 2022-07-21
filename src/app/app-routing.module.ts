@@ -5,15 +5,20 @@ import { PlanComponent } from './pages/plan/plan.component';
 import { ClipboardComponent } from './pages/clipboard/clipboard.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CertificationReportResolversService } from './pages/plan/services/certification-report-resolvers.service';
+import { OktaAuthGuard, OktaCallbackComponent } from '@okta/okta-angular';
 
 const routes: Routes = [
+  { path: 'plans', component: PlansComponent, canActivate: [ OktaAuthGuard ] },
   { path: '', redirectTo: 'plans', pathMatch:'full'},
-  { path: 'plans', component: PlansComponent },
   { path: 'plans/:submissionId/:submissionType', 
   component: PlanComponent ,
   resolve: { reportData: CertificationReportResolversService }},
   { path: 'clipboard', component: ClipboardComponent },
   { path: 'dashboard', component: DashboardComponent },
+  {
+    path: 'login/callback',
+    component: OktaCallbackComponent
+  },
 ];
 
 @NgModule({
