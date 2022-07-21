@@ -71,7 +71,7 @@ const oktaAuth = new OktaAuth(config);
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
-    OverlayModule
+    OverlayModule,
   ],
   providers: [
     {
