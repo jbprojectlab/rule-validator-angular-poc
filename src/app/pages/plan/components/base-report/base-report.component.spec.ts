@@ -23,21 +23,16 @@ describe('BaseReportComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('check trackByFn() function', () => {
-    const test_=TestBed.createComponent(BaseReportComponent)
-    const app= test_.componentInstance
-    const fnc=spyOn(app,"trackByFn");
-    component.trackByFn(1,"test")
-    expect(fnc).not.toHaveBeenCalled();
-  });
-
   it('should close the menu', () => {
-    component.menuIsOpen = true;
+    component.isMenuOpen=true
     component.closeMenu();
     fixture.detectChanges();
-    let menu = fixture.nativeElement.querySelector('.report-menu');
-    expect(menu).toBeFalsy();
-  })
+    expect(component.menuIsOpen).toBe(false);
+  });
+  it('test hostlistner click event ', () => {
+    window.dispatchEvent(new Event('click'));
+    expect(component.menuIsOpen).toBe(false);
+  });
 
   describe('camelize', () => {
     it('should return the camelized version of a string with spaces', () => {

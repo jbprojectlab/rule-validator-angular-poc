@@ -1,7 +1,10 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { L1CertificationReportComponent } from './l1-certification-report.component';
+
 
 describe('L1CertificationReportComponent', () => {
   let component: L1CertificationReportComponent;
@@ -10,7 +13,7 @@ describe('L1CertificationReportComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ L1CertificationReportComponent ],
-      imports: [ HttpClientTestingModule, RouterTestingModule ]
+      imports: [ HttpClientTestingModule, RouterTestingModule]
     }).compileComponents();
     fixture = TestBed.createComponent(L1CertificationReportComponent);
     component = fixture.componentInstance;
@@ -21,81 +24,117 @@ describe('L1CertificationReportComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('check function filterTablesByFlag()', () => {
-    const fnc=spyOn(component,'filterTablesByFlag')
-    component.filterTablesByFlag(1);
-    expect(fnc).toHaveBeenCalled();
-    component.filterTablesByFlag(2);
-    expect(fnc).toHaveBeenCalled();
-    component.filterTablesByFlag(3);
-    expect(fnc).toHaveBeenCalled();
-    component.filterTablesByFlag(4);
-    expect(fnc).toHaveBeenCalled();
-  });
 
-  it('check filterTablesByFlag function', () => {
-    const test_=TestBed.createComponent(L1CertificationReportComponent)
-    const app= test_.componentInstance
-    const fnc=spyOn(app,"filterTablesByFlag");
-    component.filterTablesByFlag(5)
-    expect(fnc).not.toHaveBeenCalled();
-  });
-  it('check filterTablesByFlag function', () => {
-    const test_=TestBed.createComponent(L1CertificationReportComponent)
-    const app= test_.componentInstance
-    const fnc=spyOn(app,"filterTablesByFlag");
-    component.filterTablesByFlag(4)
-    expect(fnc).not.toHaveBeenCalled();
-  });
-
-  it('check filterTablesByFlag function', () => {
-    const test_=TestBed.createComponent(L1CertificationReportComponent)
-    const app= test_.componentInstance
-    const fnc=spyOn(app,"filterTablesByFlag");
-    component.filterTablesByFlag(3)
-    expect(fnc).not.toHaveBeenCalled();
-  });
-  it('check onClick() function', () => {
-    const test_=TestBed.createComponent(L1CertificationReportComponent)
-    const app= test_.componentInstance
-    const fnc=spyOn(app,"onClick");
+  it('check onClick() function sets flagMenuIsOpen to false', () => {
     component.onClick()
-    expect(fnc).not.toHaveBeenCalled();
+    expect(component.flagMenuIsOpen).toBeFalsy()
   });
 
-  // it('check onClick() function', () => {
-  //   const test_=TestBed.createComponent(L1CertificationReportComponent)
-  //   const app= test_.componentInstance
-  //   const fnc=spyOn(app,"toggleFlagMenu");
-  //   component.toggleFlagMenu(onClick)
-  //   expect(fnc).not.toHaveBeenCalled();
-  // });
 
-  it('check toggleFlagFilter() function', () => {
+  it('open table toggle menu', fakeAsync(() => {
+    let DebugElems: DebugElement[] = fixture.debugElement.queryAll(By.css('.open'));
+   expect(DebugElems.length).toEqual(1);
+ }));
+
+ it('check getMenuItems() and filterTablesByFlag() functions with same data', () => {
     const test_=TestBed.createComponent(L1CertificationReportComponent)
     const app= test_.componentInstance
-    const fnc=spyOn(app,"toggleFlagFilter");
-    component.toggleFlagFilter(1);
-    expect(fnc).not.toHaveBeenCalled();
-    component.toggleFlagFilter(2);
-    expect(fnc).not.toHaveBeenCalled();
+    let fnc=spyOn(app,"getMenuItems");
+    component.l1Reports= [{
+      fields:[
+            {
+        dataTable:[{
+                          columnValue: "340",
+                          commentText: "null",
+                          errorMessage: "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold",
+                          flag: 0,
+                          frequencyCount: 2,
+                          historicalBaseline: "0",
+                          perTotFrequency: 1,
+                          updateTimeStamp:"" ,
+                          updateUser: "null",
+                          varianceHistoricalBaseline: 0,
+             }],
+        fieldName: "BHI Home Plan ID",
+        fieldOrderNumber:100 ,
+        filterDataTable:  [{
+                  columnValue: "340",
+                  commentText: "null",
+                  errorMessage: "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold",
+                  flag: 0,
+                  frequencyCount: 2,
+                  historicalBaseline: "0",
+                  perTotFrequency: 1,
+                  updateTimeStamp:" null",
+                  updateUser: "null",
+                  varianceHistoricalBaseline: 0,
+        }],
+        isShow: false,
+        showMore: false,
+
+      }
+    ],
+      fileName: "PRODUCT",
+      fileOrderNumber: "string"
+    }    
+  ]
+    component.getMenuItems();
+    expect(fnc).toBeDefined()
+    fnc=spyOn(app,"filterTablesByFlag");
+    component.filterTablesByFlag(3)
+    component.filterTablesByFlag(2)
+    component.filterTablesByFlag(4)
+    expect(fnc).toBeDefined()
+});
+
+it('test showmore and showless functions', () => {   
+    const field_= {     
+        dataTable:[{
+                          columnValue: "340",
+                          commentText: "null",
+                          errorMessage: "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold",
+                          flag: 0,
+                          frequencyCount: 2,
+                          historicalBaseline: "0",
+                          perTotFrequency: 1,
+                          updateTimeStamp:"" ,
+                          updateUser: "null",
+                          varianceHistoricalBaseline: 0,
+             }],
+        fieldName: "BHI Home Plan ID",
+        fieldOrderNumber:100 ,
+        filterDataTable:  [
+        {
+          columnValue: "341",
+          commentText: "null",
+          errorMessage: "Cannot find historical baseline or total frequecy, Variation between Total Frequency and Historical Baseline exceeds threshold",
+          flag: 1,
+          frequencyCount: 2,
+          historicalBaseline: "0",
+          perTotFrequency: 1,
+          updateTimeStamp: "null",
+          updateUser: "null",
+          varianceHistoricalBaseline: 0
+        }
+      ],
+        isShow: true,
+        showMore: false,
+
+      }   
+    const test_=TestBed.createComponent(L1CertificationReportComponent)
+    const app= test_.componentInstance
+    const  fnc=spyOn(app,"showLess");
+    component.showLess(field_)
+    expect(fnc).toBeDefined()
+    const fnc2=spyOn(app,"showMore");
+    component.showMore(field_)
+    expect(fnc2).toBeDefined()
   });
 
-  it('should open the menu', () => {
-    component.menuIsOpen = false;
-    component.openMenu();
-    fixture.detectChanges();
-    let menu = fixture.nativeElement.querySelector('.report-menu');
-    expect(menu).toBeTruthy();
-  })
-
-  it('should close the menu', () => {
-    component.menuIsOpen = true;
-    component.closeMenu();
-    fixture.detectChanges();
-    let menu = fixture.nativeElement.querySelector('.report-menu');
-    expect(menu).toBeFalsy();
-  })
+  it('test hostlistner scroll event ', () => {
+    window.dispatchEvent(new Event('scroll'));
+    expect(component.windowScrolled).toBe(false);
+  });
 
   describe('toggle flag filter', () => {
     it('should  set the filtered tables boolean to true when false', () => {

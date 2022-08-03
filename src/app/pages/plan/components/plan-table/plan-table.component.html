@@ -1,51 +1,366 @@
-<div class="header">
-  <h4>{{title}}</h4>
+<span class="open" (click)="toggleMenu($event)">
+  <img src="assets/img/menu.png" />
+</span>
+
+<div *ngIf="isMenuOpen" class="report-menu">
+  <div class="v-scroll">
+    <span class="close" (click)="closeMenu()">&#10005;</span>
+    <div *ngFor="let section of menuItems; trackBy:trackByFn; index as menuItemIdx">
+      <div class="menu-section">
+        <div *ngFor="let tableName of section.tableNames;trackBy:trackByFn; index as tableNameIdx">
+          <h4
+            (click)="scrollToTable(section.title, (menuItemIdx === menuItems.length - 1 && tableNameIdx === section.tableNames.length - 1), tableName)">
+            {{tableName}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="filter-score-container">
-  <div class="report-score-container">
-    <table>
+  <div class="report-score-container" *ngFor="let row of l2Checklist?.records; trackBy:trackByFn; index as i">
+    
+    <div class="header" id="{{row.recordType}}">
+      <h4>{{row.recordType}}</h4>
+    </div>
+    <table *ngIf="row.recordType === 'Rejection Report'">
       <colgroup span="15"></colgroup>
       <thead>
         <tr>
-          <th *ngFor="let header of headers; trackBy:trackByFn; index as i">{{header | uppercase}}</th>
+          <th class="left-align">Description</th>
+          <th>Record Count-<br>Threshold</th>
+          <th>Percentage<br>Variance</th>
+          <th>{{row.dataTable[0].cycleIdM0}}</th>
+          <th>{{row.dataTable[0].cycleIdM1}}</th>
+          <th>{{row.dataTable[0].cycleIdM2}}</th>
+          <th>{{row.dataTable[0].cycleIdM0}}</th>
+          <th>{{row.dataTable[0].cycleIdM1}}</th>
+          <th>{{row.dataTable[0].cycleIdM2}}</th>
+          <th>{{row.dataTable[0].cycleIdM0}}</th>
+          <th>{{row.dataTable[0].cycleIdM1}}</th>
+          <th>{{row.dataTable[0].cycleIdM2}}</th>
+          <th>{{row.dataTable[0].cycleIdM0}}</th>
+          <th>{{row.dataTable[0].cycleIdM1}}</th>
+          <th>{{row.dataTable[0].cycleIdM2}}</th>
         </tr>
-      </thead>
-      <tbody>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>Row Count</td>
-          <td>Row Count</td>
-          <td>Row Count</td>
-          <td>Rejects-Count</td>
-          <td>Rejects-Count</td>
-          <td>Rejects-Count</td>
-          <td>Rejects-Percentage</td>
-          <td>Rejects-Percentage</td>
-          <td>Rejects-Percentage</td>
-          <td>Comments</td>
-          <td>Comments</td>
-          <td>Comments</td>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th colspan="3" class="merging">Row Count</th>
+          <th colspan="3" class="merging">Rejects-Count</th>
+          <th colspan="3" class="merging">Rejects-Percentage</th>
+          <th colspan="3" class="merging">Comments</th>
         </tr>
-        <tr *ngFor="let row of tableData; trackBy:trackByFn; index as i">
-          <td>{{row.description}}</td>
-          <td>{{row.recordCount}}</td>
-          <td>{{row.percentageVariance}}</td>
-          <td>{{row.ptdPeriod0.rowCount}}</td>
-          <td>{{row.ptdPeriod1.rowCount}}</td>
-          <td>{{row.ptdPeriod2.rowCount}}</td>
-          <td>{{row.ptdPeriod0.rejectsCount}}</td>
-          <td>{{row.ptdPeriod1.rejectsCount}}</td>
-          <td>{{row.ptdPeriod2.rejectsCount}}</td>
-          <td>{{formatDecimalToPercent(row.ptdPeriod0.rejectsPercentage)}}</td>
-          <td>{{formatDecimalToPercent(row.ptdPeriod1.rejectsPercentage)}}</td>
-          <td>{{formatDecimalToPercent(row.ptdPeriod2.rejectsPercentage)}}</td>
-          <td>{{row.ptdPeriod0.comments}}</td>
-          <td>{{row.ptdPeriod1.comments}}</td>
-          <td>{{row.ptdPeriod2.comments}}</td>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let data of row.dataTable; trackBy:trackByFn; index as i">
+        <tr>
+          <td class="left-align">{{data.metricName}}</td>
+          <td>{{data.recordCountThreshold}} %</td>
+          <td>{{data.percentageVariance}} %</td>
+          <td>{{data.rowCountM0 | number: '2.'}}</td>
+          <td>{{data.rowCountM1 | number: '2.'}}</td>
+          <td>{{data.rowCountM2 | number: '2.'}}</td>
+          <td>{{data.metricCountM0 | number: '2.'}}</td>
+          <td>{{data.metricCountM1 | number: '2.'}}</td>
+          <td>{{data.metricCountM2 | number: '2.'}}</td>
+          <td>{{data.metricPercentageM0}} %</td>
+          <td>{{data.metricPercentageM1}} %</td>
+          <td>{{data.metricPercentageM2}} %</td>
+          <td title="{{data.commentsM0}}" class="max-width left-align">{{data.commentsM0}}</td>
+          <td title="{{data.commentsM1}}" class="max-width left-align">{{data.commentsM1}}</td>
+          <td title="{{data.commentsM2}}" class="max-width left-align">{{data.commentsM2}}</td>
+        </tr>
+        <tr *ngIf="data.voidedRecords" class="subrow-void-records">
+          <td class="left-align">Voided Records</td>
+          <td></td>
+          <td></td>
+          <td>{{data.voidedRecords?.rowCountM0 | number: '2.'}}</td>
+          <td>{{data.voidedRecords?.rowCountM1 | number: '2.'}}</td>
+          <td>{{data.voidedRecords?.rowCountM2 | number: '2.'}}</td>
+          <td>{{data.voidedRecords?.metricCountM0 | number: '2.'}}</td>
+          <td>{{data.voidedRecords?.metricCountM1 | number: '2.'}}</td>
+          <td>{{data.voidedRecords?.metricCountM2 | number: '2.'}}</td>
+          <td>{{data.voidedRecords?.metricPercentageM0}} %</td>
+          <td>{{data.voidedRecords?.metricPercentageM1}} %</td>
+          <td>{{data.voidedRecords?.metricPercentageM2}} %</td>
+          <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
+          <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
+          <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
+        </tr>
+        <tr *ngIf="data.totalSubmittedAmount" class="subrow-total-submitted-amount">
+          <td class="left-align">Total Submitted Amount</td>
+          <td></td>
+          <td></td>
+          <td>{{data.totalSubmittedAmount?.rowCountM0 | number: '2.'}}</td>
+          <td>{{data.totalSubmittedAmount?.rowCountM1 | number: '2.'}}</td>
+          <td>{{data.totalSubmittedAmount?.rowCountM2 | number: '2.'}}</td>
+          <td>{{data.totalSubmittedAmount?.metricCountM0 | number: '2.'}}</td>
+          <td>{{data.totalSubmittedAmount?.metricCountM1 | number: '2.'}}</td>
+          <td>{{data.totalSubmittedAmount?.metricCountM2 | number: '2.'}}</td>
+          <td>{{data.totalSubmittedAmount?.metricPercentageM0}} %</td>
+          <td>{{data.totalSubmittedAmount?.metricPercentageM1}} %</td>
+          <td>{{data.totalSubmittedAmount?.metricPercentageM2}} %</td>
+          <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
+          <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
+          <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
+        </tr>
+        </ng-container>
+      </tbody>
+    </table>
+
+      <!-- condition two -->
+      
+    <table *ngIf="row.recordType === 'Transformation Report'">
+        <colgroup span="15"></colgroup>
+        <thead>
+          <tr>
+            <th class="left-align">Description</th>
+            <th>Record Count-<br>Threshold</th>
+            <th>Percentage<br>Variance</th>
+            <th>{{row.dataTable[0].cycleIdM0}}</th>
+            <th>{{row.dataTable[0].cycleIdM1}}</th>
+            <th>{{row.dataTable[0].cycleIdM2}}</th>
+            <th>{{row.dataTable[0].cycleIdM0}}</th>
+            <th>{{row.dataTable[0].cycleIdM1}}</th>
+            <th>{{row.dataTable[0].cycleIdM2}}</th>
+            <th>{{row.dataTable[0].cycleIdM0}}</th>
+            <th>{{row.dataTable[0].cycleIdM1}}</th>
+            <th>{{row.dataTable[0].cycleIdM2}}</th>
+            <th>{{row.dataTable[0].cycleIdM0}}</th>
+            <th>{{row.dataTable[0].cycleIdM1}}</th>
+            <th>{{row.dataTable[0].cycleIdM2}}</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th colspan="3" class="merging">Row Count</th>
+            <th colspan="3" class="merging">Transformations-Count</th>
+            <th colspan="3" class="merging">Transformations-Percentage</th>
+            <th colspan="3" class="merging">Comments</th>
+          </tr>
+          </thead>
+          <tbody>
+          <ng-container *ngFor="let data of row.dataTable; trackBy:trackByFn; index as i">
+          <tr>
+            <td class="left-align">{{data.metricName}}</td>
+            <td>{{data.recordCountThreshold}} %</td>
+            <td>{{data.percentageVariance}} %</td>
+            <td>{{data.rowCountM0 | number: '2.'}}</td>
+            <td>{{data.rowCountM1 | number: '2.'}}</td>
+            <td>{{data.rowCountM2 | number: '2.'}}</td>
+            <td>{{data.metricCountM0 | number: '2.'}}</td>
+            <td>{{data.metricCountM1 | number: '2.'}}</td>
+            <td>{{data.metricCountM2 | number: '2.'}}</td>
+            <td>{{data.metricPercentageM0}} %</td>
+            <td>{{data.metricPercentageM1}} %</td>
+            <td>{{data.metricPercentageM2}} %</td>
+            <td title="{{data.commentsM0}}" class="max-width left-align">{{data.commentsM0}}</td>
+            <td title="{{data.commentsM1}}" class="max-width left-align">{{data.commentsM1}}</td>
+            <td title="{{data.commentsM2}}" class="max-width left-align">{{data.commentsM2}}</td>
+          </tr>
+          <tr *ngIf="data.voidedRecords" class="subrow-void-records">
+            <td class="left-align">Voided Records</td>
+            <td></td>
+            <td></td>
+            <td>{{data.voidedRecords?.rowCountM0 | number: '2.'}}</td>
+            <td>{{data.voidedRecords?.rowCountM1 | number: '2.'}}</td>
+            <td>{{data.voidedRecords?.rowCountM2 | number: '2.'}}</td>
+            <td>{{data.voidedRecords?.metricCountM0 | number: '2.'}}</td>
+            <td>{{data.voidedRecords?.metricCountM1 | number: '2.'}}</td>
+            <td>{{data.voidedRecords?.metricCountM2 | number: '2.'}}</td>
+            <td>{{data.voidedRecords?.metricPercentageM0}} %</td>
+            <td>{{data.voidedRecords?.metricPercentageM1}} %</td>
+            <td>{{data.voidedRecords?.metricPercentageM2}} %</td>
+            <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
+            <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
+            <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
+          </tr>
+          <tr *ngIf="data.totalSubmittedAmount" class="subrow-total-submitted-amount">
+            <td class="left-align">Total Submitted Amount</td>
+            <td></td>
+            <td></td>
+            <td>{{data.totalSubmittedAmount?.rowCountM0 | number: '2.'}}</td>
+            <td>{{data.totalSubmittedAmount?.rowCountM1 | number: '2.'}}</td>
+            <td>{{data.totalSubmittedAmount?.rowCountM2 | number: '2.'}}</td>
+            <td>{{data.totalSubmittedAmount?.metricCountM0 | number: '2.'}}</td>
+            <td>{{data.totalSubmittedAmount?.metricCountM1 | number: '2.'}}</td>
+            <td>{{data.totalSubmittedAmount?.metricCountM2 | number: '2.'}}</td>
+            <td>{{data.totalSubmittedAmount?.metricPercentageM0}} %</td>
+            <td>{{data.totalSubmittedAmount?.metricPercentageM1}} %</td>
+            <td>{{data.totalSubmittedAmount?.metricPercentageM2}} %</td>
+            <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
+            <td>{{data.totalSubmittedAmount?.AddlPercentageM1}}</td>
+            <td>{{data.totalSubmittedAmount?.AddlPercentageM2}}</td>
+          </tr>
+          </ng-container>
+        </tbody>
+    </table>
+
+      <!-- Condition Three -->
+    
+    <table *ngIf="row.recordType === 'Analytical Warnings'">
+      <colgroup span="15"></colgroup>
+      <thead>
+        <tr>
+          <th class="left-align">Description</th>
+          <th>Record Count-<br>Threshold</th>
+          <th>Percentage<br>Variance</th>
+          <th>{{row.dataTable[0].cycleIdM0}}</th>
+          <th>{{row.dataTable[0].cycleIdM1}}</th>
+          <th>{{row.dataTable[0].cycleIdM2}}</th>
+          <th>{{row.dataTable[0].cycleIdM0}}</th>
+          <th>{{row.dataTable[0].cycleIdM1}}</th>
+          <th>{{row.dataTable[0].cycleIdM2}}</th>
+          <th>{{row.dataTable[0].cycleIdM0}}</th>
+          <th>{{row.dataTable[0].cycleIdM1}}</th>
+          <th>{{row.dataTable[0].cycleIdM2}}</th>
+          <th>{{row.dataTable[0].cycleIdM0}}</th>
+          <th>{{row.dataTable[0].cycleIdM1}}</th>
+          <th>{{row.dataTable[0].cycleIdM2}}</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th colspan="3" class="merging">Row Count</th>
+          <th colspan="3" class="merging">Warnings-Count</th>
+          <th colspan="3" class="merging">Warnings-Percentage</th>
+          <th colspan="3" class="merging">Comments</th>
+        </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let data of row.dataTable; trackBy:trackByFn; index as i">
+        <tr>
+          <td class="left-align">{{data.metricName}}</td>
+          <td>{{data.recordCountThreshold}} %</td>
+          <td>{{data.percentageVariance}} %</td>
+          <td>{{data.rowCountM0 | number: '2.'}}</td>
+          <td>{{data.rowCountM1 | number: '2.'}}</td>
+          <td>{{data.rowCountM2 | number: '2.'}}</td>
+          <td>{{data.metricCountM0 | number: '2.'}}</td>
+          <td>{{data.metricCountM1 | number: '2.'}}</td>
+          <td>{{data.metricCountM2 | number: '2.'}}</td>
+          <td>{{data.metricPercentageM0}} %</td>
+          <td>{{data.metricPercentageM1}} %</td>
+          <td>{{data.metricPercentageM2}} %</td>
+          <td title="{{data.commentsM0}}" class="max-width left-align">{{data.commentsM0}}</td>
+          <td title="{{data.commentsM1}}" class="max-width left-align">{{data.commentsM1}}</td>
+          <td title="{{data.commentsM2}}" class="max-width left-align">{{data.commentsM2}}</td>
+        </tr>
+        <tr *ngIf="data.voidedRecords" class="subrow-void-records">
+          <td class="left-align">Voided Records</td>
+          <td></td>
+          <td></td>
+          <td>{{data.voidedRecords?.rowCountM0 | number: '2.'}}</td>
+          <td>{{data.voidedRecords?.rowCountM1 | number: '2.'}}</td>
+          <td>{{data.voidedRecords?.rowCountM2 | number: '2.'}}</td>
+          <td>{{data.voidedRecords?.metricCountM0 | number: '2.'}}</td>
+          <td>{{data.voidedRecords?.metricCountM1 | number: '2.'}}</td>
+          <td>{{data.voidedRecords?.metricCountM2 | number: '2.'}}</td>
+          <td>{{data.voidedRecords?.metricPercentageM0}} %</td>
+          <td>{{data.voidedRecords?.metricPercentageM1}} %</td>
+          <td>{{data.voidedRecords?.metricPercentageM2}} %</td>
+          <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
+          <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
+          <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
+        </tr>
+        <tr *ngIf="data.totalSubmittedAmount" class="subrow-total-submitted-amount">
+          <td class="left-align">Total Submitted Amount</td>
+          <td>{{data.totalSubmittedAmount?.rowCountM0 | number: '2.'}}</td>
+          <td>{{data.totalSubmittedAmount?.rowCountM1 | number: '2.'}}</td>
+          <td>{{data.totalSubmittedAmount?.rowCountM2 | number: '2.'}}</td>
+          <td>{{data.totalSubmittedAmount?.metricCountM0 | number: '2.'}}</td>
+          <td>{{data.totalSubmittedAmount?.metricCountM1 | number: '2.'}}</td>
+          <td>{{data.totalSubmittedAmount?.metricCountM2 | number: '2.'}}</td>
+          <td>{{data.totalSubmittedAmount?.metricPercentageM0}} %</td>
+          <td>{{data.totalSubmittedAmount?.metricPercentageM1}} %</td>
+          <td>{{data.totalSubmittedAmount?.metricPercentageM2}} %</td>
+          <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
+          <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
+          <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+
+    <!-- Condition Four -->
+    <table *ngIf="row.recordType === 'Provider Match Percentage'">
+      <colgroup span="15"></colgroup>
+      <thead>
+        <tr>
+          <th class="left-align">Description</th>
+          <th>Record Count-<br>Threshold</th>
+          <th>Percentage<br>Variance</th>
+          <th>{{row.dataTable[0].cycleIdM0}}</th>
+          <th>{{row.dataTable[0].cycleIdM1}}</th>
+          <th>{{row.dataTable[0].cycleIdM2}}</th>
+          <th>{{row.dataTable[0].cycleIdM0}}</th>
+          <th>{{row.dataTable[0].cycleIdM1}}</th>
+          <th>{{row.dataTable[0].cycleIdM2}}</th>
+          <th>{{row.dataTable[0].cycleIdM0}}</th>
+          <th>{{row.dataTable[0].cycleIdM1}}</th>
+          <th>{{row.dataTable[0].cycleIdM2}}</th>
+          <th>{{row.dataTable[0].cycleIdM0}}</th>
+          <th>{{row.dataTable[0].cycleIdM1}}</th>
+          <th>{{row.dataTable[0].cycleIdM2}}</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th colspan="3" class="merging">Record Count  <> Y</th>
+          <th colspan="3" class="merging">Match Percentage <> Y</th>
+          <th colspan="3" class="merging">Record Count = Y</th>
+          <th colspan="3" class="merging">Match Percentage = Y</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of row.dataTable; trackBy:trackByFn; index as i">
+          <td class="left-align">{{data.metricName}}</td>
+          <td>{{data.recordCountThreshold}} %</td>
+          <td>{{data.percentageVariance}} %</td>
+          <td>{{data.rowCountM0 | number: '2.'}}</td>
+          <td>{{data.rowCountM1 | number: '2.'}}</td>
+          <td>{{data.rowCountM2 | number: '2.'}}</td>
+          <td>{{data.metricCountM0}} %</td>
+          <td>{{data.metricCountM1}} %</td>
+          <td>{{data.metricCountM2}} %</td>
+          <td>{{data.metricPercentageM0 | number: '2.'}}</td>
+          <td>{{data.metricPercentageM1 | number: '2.'}}</td>
+          <td>{{data.metricPercentageM2 | number: '2.'}}</td>
+          <td title="{{data.commentsM0}}" class="max-width">{{data.addlPercentageM0}} %</td>
+          <td title="{{data.commentsM1}}" class="max-width">{{data.addlPercentageM1}} %</td>
+          <td title="{{data.commentsM2}}" class="max-width">{{data.addlPercentageM2}} %</td>
         </tr>
       </tbody>
     </table>
   </div>
-</div>
+
+  <div class="reports-update">
+    <div *ngIf="l2Checklist?.approvedUser;else elseBlock" class="approver">
+      <div class="L2-status">
+        L2 Certification performed by  <input class="approver-textarea" 
+        [value]="l2Checklist?.approvedUser" disabled> 
+      </div><br><br>
+      <div class="L2-status">
+        Date  <input class="date-textarea"  [value]="l2Checklist?.approvedDate" disabled>
+      </div>
+    </div>
+    <ng-template #elseBlock class="approver">
+      <button class="button-approve" (click)="approveReport()">Approve</button>
+    </ng-template>
+
+    <div class="approver">
+      <div class="L2-status">
+        Error Threshold Report Score - {{ l2Checklist?.errorThresholdReportScore}}
+      </div> 
+    </div>
+    <div class="approver">
+      -
+    </div>
+
+  </div>
+
+

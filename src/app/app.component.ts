@@ -38,6 +38,17 @@ export class AppComponent {
       }
     });
   }
+  @HostListener("window:scroll", [])scrollHandler($event: any){
+    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
+      this.windowScrolled = true;
+    } 
+    else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
+      this.windowScrolled = false;
+    }
+  }
+  moveTop($event: any){
+    window.scroll(0,0);
+  }
   
   async ngOnInit(){
     let email;
@@ -56,18 +67,8 @@ export class AppComponent {
   }
 
   public async logout(): Promise<void> {
-    await this.oktaAuth.signOut();
-  }
-  
-  @HostListener("window:scroll", [])scrollHandler($event: any){
-    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
-      this.windowScrolled = true;
-    } 
-    else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
-      this.windowScrolled = false;
-    }
-  }
-  moveTop($event: any){
-    window.scroll(0,0);
+    await this.oktaAuth.signOut({
+      postLogoutRedirectUri: window.location.origin + '/logout'
+    });
   }
 }

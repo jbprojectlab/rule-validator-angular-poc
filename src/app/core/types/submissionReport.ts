@@ -12,6 +12,7 @@ export interface SubmissionReport {
 	l2Reports: L2Report[];
 	l1Reports: L1Reports[];
 	fieldDistribution: FieldDistribution[];
+	l2CheckList: l2CheckList;
 }
 
 export interface L2Report {
@@ -92,7 +93,7 @@ export interface DataTable {
 	commentText: string;
 	updateUser: string;
 	updateTimeStamp: string;
-	flag: number,
+	flag: number;
 	errorMessage: string
 }
 
@@ -117,4 +118,73 @@ export interface Distribution_DataTable {
 	perTotal: number,
 	cumulativeCount: number,
 	cumulativePerTotal: number
+}
+
+export interface l2CheckList {
+	approvedDate: string;
+	approvedUser: string;
+	errorThresholdReportScore: number;
+	records?: records[];
+}
+
+export interface records{
+	recordType: string,
+	dataTable: rejectRecords[]
+}
+
+export interface rejectRecords {
+	cycleIdM0: string,
+	cycleIdM1: string,
+	cycleIdM2: string,
+	sortOrder: number, 
+	metricName: string,
+	recordCountThreshold: string
+	percentageVariance: string
+	rowCountM0: number,
+	rowCountM1: number,
+	rowCountM2: number,
+	metricCountM0: number,
+	metricCountM1: number,
+	metricCountM2: number,
+	metricPercentageM0: number,
+	metricPercentageM1: number,
+	metricPercentageM2: number,
+	addlPercentageM0: number,
+	addlPercentageM1: number,
+	addlPercentageM2: number,
+	commentsM0: string,
+	commentsM1: string,
+	commentsM2: string,
+	voidedRecords?: voidedRecords,
+	totalSubmittedAmount?: totalSubmittedAmount
+}
+
+export interface voidedRecords{
+	rowCountM0: number,
+	rowCountM1: number,
+	rowCountM2: number,
+	metricCountM0: number,
+	metricCountM1: number,
+	metricCountM2: number,
+	metricPercentageM0: number,
+	metricPercentageM1: number,
+	metricPercentageM2: number,
+	AddlPercentageM0: number,
+	AddlPercentageM1: number,
+	AddlPercentageM2: number
+}
+
+export interface totalSubmittedAmount{
+	rowCountM0: number,
+	rowCountM1: number,
+	rowCountM2: number,
+	metricCountM0: number,
+	metricCountM1: number,
+	metricCountM2: number,
+	metricPercentageM0: number,
+	metricPercentageM1: number,
+	metricPercentageM2: number,
+	AddlPercentageM0: number,
+	AddlPercentageM1: number,
+	AddlPercentageM2: number
 }

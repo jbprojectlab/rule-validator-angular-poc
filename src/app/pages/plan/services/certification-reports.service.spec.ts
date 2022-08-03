@@ -15,6 +15,7 @@ describe('CertificationReportsService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+  
   it('Should test function getCertificationReportData() ', waitForAsync(inject([CertificationReportsService], (CertificationReportsService: { getCertificationReportData: () => { (): any; new(): any; subscribe: { (arg0: (result: any) => void): void; new(): any; }; }; }) => {
     CertificationReportsService.getCertificationReportData().subscribe(result => expect(result.length).toBeGreaterThan(0)); 
 })));

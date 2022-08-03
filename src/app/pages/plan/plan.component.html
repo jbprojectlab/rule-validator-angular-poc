@@ -63,18 +63,12 @@
     <div class="header">
       <h4>L2 Checklist</h4>
     </div>
-    <div *ngIf="plan.rejects" class="plan">
+    <div class="plan">
       <div class="plan-table-wrapper">
-        <app-plan-table [title]="'Rejects'" [tableData]="plan.rejects" [rejectsTableIsOpen]="rejectsTableIsOpen" [toggleTable]="toggleRejectsTable"></app-plan-table>
-      </div>
-      <div class="plan-table-wrapper">
-        <app-plan-table [title]="'Transformations'" [tableData]="plan.transformations" [transformationsTableIsOpen]="transformationsTableIsOpen" [toggleTable]="toggleTransformationsTable"></app-plan-table>
-      </div>
-      <div class="plan-table-wrapper">
-        <app-plan-table [title]="'Analytical Warnings'" [tableData]="plan.analyticalWarnings" [analyticalWarningsTableIsOpen]="analyticalWarningsTableIsOpen" [toggleTable]="toggleAnalyticalWarningsTable"></app-plan-table>
+        <app-plan-table></app-plan-table>
       </div>
     </div>
-  </div>
+  </div> 
 
   <div *ngIf="visibleTab === 3">
     <app-l1-certification-report></app-l1-certification-report>

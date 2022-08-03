@@ -35,12 +35,15 @@ import {
 } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
 
+
 const config = {
-  issuer: 'https://dev-88074172.okta.com/oauth2/default',
-  clientId: '0oa5tknywtLiDURf95d7',
+  issuer: 'https://bcbsauat.oktapreview.com/oauth2/default',
+  clientId: '0oa1at1sa6zTwUh9L0h8',
   redirectUri: window.location.origin + '/login/callback',
-};
+  post_logout_redirect_uri: window.location.origin + '/logout'
+}
 const oktaAuth = new OktaAuth(config);
+
 
 @NgModule({
   declarations: [
@@ -75,6 +78,7 @@ const oktaAuth = new OktaAuth(config);
     OverlayModule,
   ],
   providers: [
+    MatNativeDateModule,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorHandlerInterceptor,
@@ -84,13 +88,13 @@ const oktaAuth = new OktaAuth(config);
       provide: OKTA_CONFIG, 
       useValue: { oktaAuth } 
     },
+    MatNativeDateModule,
+    MatSnackBarModule,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    },
-    MatNativeDateModule,
-    MatSnackBarModule
+    }
   ],
   bootstrap: [AppComponent]
 })

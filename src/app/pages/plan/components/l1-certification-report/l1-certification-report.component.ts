@@ -20,6 +20,7 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
   flagMenuIsOpen: boolean = false;
   windowScrolled = false;
   isShow!: boolean;
+  flagTypeSelected!: number;
 
   constructor(private activatedRoute: ActivatedRoute) {
     super()
@@ -38,6 +39,7 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
   }
 
   filterTablesByFlag(flagType?: number) {
+    this.flagTypeSelected = flagType || 4;
     if (flagType && flagType !== 3 && flagType !==4) {
       this.l1Reports.forEach((element: L1Reports) => {
         element.fields?.forEach((field: fieldData) => {
@@ -63,7 +65,7 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
     this.flagMenuIsOpen=false;
   }
 
-  private getMenuItems() {
+ getMenuItems() {
     this.l1Reports.forEach(function (element: { [x: string]: any; }) {
       for (var key in element) {
         if (element[key] && element[key].length === 0) {
@@ -105,7 +107,7 @@ export class L1CertificationReportComponent extends BaseReportComponent implemen
   }
 
   showLess(field: fieldData) {
-    let filteredData = field.dataTable?.filter((item:DataTable) => (item.flag > 0)) || [];
+    let filteredData = field.dataTable?.filter((item:DataTable) => ( this.flagTypeSelected === 4 ? item.flag > 0 : item.flag === this.flagTypeSelected)) || [];
     if(filteredData.length > 0){
       field.filterDataTable =  filteredData || []
       field.dataTable = field.dataTable || []

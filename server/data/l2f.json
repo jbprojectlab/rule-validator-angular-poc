@@ -147,7 +147,7 @@
                     "passIndicator": "P",
                     "totalPassFail": "PASS",
                     "totalFlag": 0,
-                    "flag": 1,
+                    "flag": 0,
                     "errorMessage": "-",
                     "valueHistory": []
                 },
@@ -2421,5 +2421,69 @@
                 }
             ]
         }
-    ]
+    ],
+    "l2Checklist": {
+        "errorThresholdReportScore": "float from L2C_Error_Threshold_Score in SolutionDB Main Query",
+        "approvedUser": "string from L2C_Approved_Name in SolutionDB Main Query",
+        "approvedDate": "datetime from L2C_Approved_Date in SolutionDB Main Query",
+        "records" :[
+            {
+                "recordType": "Report_Type string from SolutionDB Main Query",
+                "dataTable": [
+                    {
+                        "cycleIdM0": "202112 - Calculated from current paid through period",
+                        "cycleIdM1": "202111 - Calculated from current paid through period minus 1",
+                        "cycleIdM2": "202110 - Calculated from current paid through period minus 2",
+                        "sortOrder": "integer from Sort_Order in SolutionDB",
+                        "metricName": "string from Metric_Name in SolutionDB Main Query",
+                        "recordCountThreshold": "<string from Record_Count_Threshold in SolutionDB Main Query>",
+                        "percentageVariance": "<float from Percentage_Variance in SolutionDB Main Query>",
+                        "rowCountM0": "integer from Row_Count_M0 in SolutionDB Main Query",
+                        "rowCountM1": "integer from Row_Count_M1 in SolutionDB Main Query",
+                        "rowCountM2": "integer from Row_Count_M2 in SolutionDB Main Query",
+                        "metricCountM0": "integer from Metric_Count_M0 in SolutionDB Main Query",
+                        "metricCountM1": "integer from Metric_Count_M2 in SolutionDB Main Query",
+                        "metricCountM2": "integer from Metric_Count_M3 in SolutionDB Main Query",
+                        "metricPercentageM0": "float from Metric_Percentage_M0 in SolutionDB Main Query",
+                        "metricPercentageM1": "float from Metric_Percentage_M0 in SolutionDB Main Query",
+                        "metricPercentageM2": "float from Metric_Percentage_M0 in SolutionDB Main Query",
+                        "AddlPercentageM0" : "float from Addl_Percentage_M0 in SolutionDB Main Query",
+                        "AddlPercentageM1" : "float from Addl_Percentage_M1 in SolutionDB Main Query",
+                        "AddlPercentageM2" : "float from Addl_Percentage_M2 in SolutionDB Main Query",
+                        "commentsM0": "string from Comments_0 in SolutionDB Main Query",
+                        "commentsM1": "string from Comments_1 in SolutionDB Main Query",
+                        "commentsM2": "string from Comments_2 in SolutionDB Main Query",
+                        "voidedRecords": {
+                            "rowCountM0": "integer from Row_Count_M0 in SolutionDB SubRecord Query using L2C_Voided_Record ID- CAN BE NULL",
+                            "rowCountM1": "integer from Row_Count_M1 in SolutionDB SubRecord Query using L2C_Voided_Record ID - CAN BE NULL",
+                            "rowCountM2": "integer from Row_Count_M2 in SolutionDB SubRecord Query using L2C_Voided_Record ID - CAN BE NULL",
+                            "metricCountM0": "integer from Metric_Count_M0 in SolutionDB SubRecord Query using L2C_Voided_Record ID - CAN BE NULL",
+                            "metricCountM1": "integer from Metric_Count_M1 in SolutionDB SubRecord Query using L2C_Voided_Record ID - CAN BE NULL",
+                            "metricCountM2": "integer from Metric_Count_M2 in SolutionDB SubRecord Query using L2C_Voided_Record ID - CAN BE NULL",
+                            "metricPercentageM0": "float from Metric_Percentage_M0 in SolutionDB SubRecord Query using L2C_Voided_Record ID - CAN BE NULL",
+                            "metricPercentageM1": "float from Metric_Percentage_M1 in SolutionDB SubRecord Query using L2C_Voided_Record ID - CAN BE NULL",
+                            "metricPercentageM2": "float from Metric_Percentage_M2 in SolutionDB SubRecord Query using L2C_Voided_Record ID - CAN BE NULL",
+                            "AddlPercentageM0" : null,
+                            "AddlPercentageM1" : null,
+                            "AddlPercentageM2" : null
+                        },
+                        "totalSubmittedAmount": {
+                            "rowCountM0": "integer from Row_Count_M0 in SolutionDB SubRecord Query using L2C_Total_Submitted_Record ID - CAN BE NULL",
+                            "rowCountM1": "integer from Row_Count_M1 in SolutionDB SubRecord Query using L2C_Total_Submitted_Record ID - CAN BE NULL",
+                            "rowCountM2": "integer from Row_Count_M2 in SolutionDB SubRecord Query using L2C_Total_Submitted_Record ID - CAN BE NULL",
+                            "metricCountM0": "integer from Metric_Count_M0 in SolutionDB SubRecord Query using L2C_Total_Submitted_Record ID - CAN BE NULL",
+                            "metricCountM1": "integer from Metric_Count_M1 in SolutionDB SubRecord Query using L2C_Total_Submitted_Record ID - CAN BE NULL",
+                            "metricCountM2": "integer from Metric_Count_M2 in SolutionDB SubRecord Query using L2C_Total_Submitted_Record ID - CAN BE NULL",
+                            "metricPercentageM0": "float from Metric_Percentage_M0 in SolutionDB SubRecord Query using L2C_Total_Submitted_Record ID - CAN BE NULL",
+                            "metricPercentageM1": "float from Metric_Percentage_M1 in SolutionDB SubRecord Query using L2C_Total_Submitted_Record ID - CAN BE NULL",
+                            "metricPercentageM2": "float from Metric_Percentage_M2 in SolutionDB SubRecord Query using L2C_Total_Submitted_Record ID - CAN BE NULL",
+                            "AddlPercentageM0" : null,
+                            "AddlPercentageM1" : null,
+                            "AddlPercentageM2" : null
+                        }
+                    }
+                ]
+            }
+        ]
+        }
 }

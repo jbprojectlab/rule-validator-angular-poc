@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SubmissionReport } from 'app/core/types/submissionReport';
+import { l2CheckList, SubmissionReport } from 'app/core/types/submissionReport';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import mockPlan from './mock-plan';
@@ -20,6 +20,7 @@ export class PlanComponent implements OnInit, OnDestroy {
   analyticalWarningsTableIsOpen: boolean = false;
   panelTop: boolean = false;
   reportData!: SubmissionReport;
+  l2Checklist!: l2CheckList;
   constructor(private activatedRoute: ActivatedRoute
   ) { }
 
@@ -77,6 +78,7 @@ export class PlanComponent implements OnInit, OnDestroy {
       takeUntil(this.destroyed$)
     ).subscribe((response: any) => {
       this.reportData = response.reportData;
+      this.l2Checklist = this.reportData.l2CheckList;
     });
     document.body.addEventListener('scroll', (e: any) => {
       if (document.body.scrollTop > 20) {

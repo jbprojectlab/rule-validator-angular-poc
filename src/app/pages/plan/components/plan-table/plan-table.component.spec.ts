@@ -1,4 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from "@angular/router/testing";
 
 import { PlanTableComponent } from './plan-table.component';
 
@@ -8,7 +11,8 @@ describe('PlanTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlanTableComponent ]
+      declarations: [ PlanTableComponent ],
+      imports:[RouterTestingModule]
     })
     .compileComponents();
   });
@@ -30,6 +34,25 @@ describe('PlanTableComponent', () => {
     component.trackByFn(1,"test")
     expect(fnc).not.toHaveBeenCalled();
   });
+
+  it('should close the menu', () => {
+    component.isMenuOpen=true
+    component.closeMenu();
+    fixture.detectChanges();
+    expect(component.menuIsOpen).toBe(false);
+  });
+
+  it('test hostlistner ', () => {
+    window.dispatchEvent(new Event('click'));
+    expect(component.menuIsOpen).toBe(false);
+  });
+
+ 
+
+  it('open table toggle menu', fakeAsync(() => {
+    let DebugElems: DebugElement[] = fixture.debugElement.queryAll(By.css('.open'));
+   expect(DebugElems.length).toEqual(1);
+ }));
 
   describe('format decimal number to percent string', () => {
     it('should return "100%" when input is the whole number 1', () => {

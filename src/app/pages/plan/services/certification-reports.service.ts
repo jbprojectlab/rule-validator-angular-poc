@@ -20,7 +20,7 @@ export class CertificationReportsService {
     } else {
       this.selectedSubmissionId = subId;
       this.selectedSubmissionType = subType;
-      let url: string = `${environment.host}/api/db/report?submissionId=${subId}&submissionType=${subType}`;
+      let url: string = `${environment.host}/api/summary/report?submissionId=${subId}&submissionType=${subType}`;
       this.responseData = this.http.get<any>(url).pipe(catchError(this.handleError));
       return this.responseData;
     }
