@@ -26,7 +26,7 @@
   <div *ngIf="initialReports" class="report-score-container">
     <div>
       <h4>Total Score</h4>
-      <span>{{initialReports?.totalScore}}</span>
+      <span>{{initialReports.totalScore}}</span>
     </div>
     <span *ngIf="initialReports.totalFlag !== undefined" class="score-indicator" [ngClass]="{'green': initialReports.totalFlag === 0, 'yellow': (initialReports.totalFlag === 1),'red':  initialReports.totalFlag === 2  }">{{initialReports?.totalPassFail}}</span>
     <div *ngIf="windowScrolled;else elseBlock">
@@ -39,7 +39,6 @@
 
 
 
-  <!-- <div class="v-scrollbar"> -->
 <div *ngFor="let report of reports;trackBy:trackByFn; index as i">
   <div class="certification-report" *ngIf="report.metricTable?.length ? tablesFilteredByFlag ? expandedTables[i].flagCount : report.metricTable?.length : report.metricTable?.length">
       <h4 *ngIf="report.fileName" id="item-{{camelize(report.fileName)}}" [ngClass]="i === 0 ? 'first-filename' : ''">{{report.fileName}}</h4>

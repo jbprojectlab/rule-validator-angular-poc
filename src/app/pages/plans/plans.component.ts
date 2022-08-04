@@ -16,7 +16,6 @@ const moment = _rollupMoment || _moment;
 
 export class PlansComponent implements OnInit, OnDestroy {
   plans: Plan[] = [];
-  isSearching: boolean = false;
   panelTop: boolean = false;
   selectedSortingColumn: string = 'Submission Group / Plan Code';
   sortIsAscending: boolean = true;
@@ -68,8 +67,6 @@ export class PlansComponent implements OnInit, OnDestroy {
     ) { }
     
   ngOnInit(): void {
-    if (this.isSearching) this.isSearching = false;
-
     this.plansService.getOptions().subscribe((response: any) => {
       this.options = {
         submissionGroupOptions: response.submissionGroup,
@@ -90,7 +87,6 @@ export class PlansComponent implements OnInit, OnDestroy {
 
   monthSelected(event: any, dp: any, input: any) {
     dp.close();
-    // input.value = event.toISOString().split('-').join('').substring(0,6);
     input.value = moment(event).add(5, 'days').format('YYYYMM');
     if(this.selectedPaidThroughPeriodOption !== input.value) {
       this.selectedPaidThroughPeriodOption = input.value;
@@ -173,9 +169,8 @@ export class PlansComponent implements OnInit, OnDestroy {
     })
   }
 
-  trackByFn(index: number, item: any): any
-  {
-      return item.id || index;
+  trackByFn(index: number, item: any): any {
+    return item.id || index;
   }
 
   ngOnDestroy() {

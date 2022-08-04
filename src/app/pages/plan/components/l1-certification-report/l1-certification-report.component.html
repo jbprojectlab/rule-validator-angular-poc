@@ -3,7 +3,7 @@
 </span>
 
 <div *ngIf="menuIsOpen" class="report-menu">
-  <div class="v-scroll">
+  <div>
     <span class="close" (click)="closeMenu()">&#10005;</span>
     <div *ngFor="let section of menuItems; trackBy:trackByFn; index as menuItemIdx">
       <div class="menu-section">
@@ -17,7 +17,7 @@
     </div>
   </div>
 </div>
-<div class="filter-score-container">
+<div>
   <div class="header">
     <h4>L1 Certification Report</h4>
   </div>

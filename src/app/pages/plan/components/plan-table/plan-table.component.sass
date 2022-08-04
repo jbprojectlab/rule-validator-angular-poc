@@ -1,24 +1,3 @@
-.plan-table-header
-  align-items: center
-  display: flex
-  height: 60px
-  justify-content: space-between
-  padding: 4px 0 0 30px
-
-  img
-    cursor: pointer
-    height: 12px
-    margin-right: 24px
-
-  &.closed img
-    transform: rotate(270deg)
-
-.table-wrapper
-  padding: 0px 4px 6px
-
-.plan-table
-  padding: 0
-  
 table
   background-color: #fff
   margin: 8px
@@ -31,11 +10,8 @@ table
 
   th
     border-bottom: 1px solid var(--border-light-grey)
-    padding: 10px
-    text-align: left
-
-  th
     padding: 20px
+    text-align: left
 
   th,
   td
@@ -56,38 +32,3 @@ table
         
       &:last-child
         border-right: 4px solid var(--white)
-
-      &.green p
-        background-color: #5dbf40
-
-      &.yellow p
-        background-color: #f9ca06
-
-      &.red p
-        background-color: #e52a1a
-
-      a
-        color: #5f696b
-      
-      p
-        border-radius: var(--round-border-radius)
-        color: white
-        padding: 10px
-        text-align: center
-
-@media screen and (max-width: 1650px)
-  .plan-table table
-    display: block
-    margin-right: 12px
-    padding-top: 12px
-    overflow-x: scroll
-    scrollbar-width: none
-    -ms-overflow-style: none
-
-    &::-webkit-scrollbar
-      width: 0
-      height: 0
-
-@media screen and (max-width: 700px)
-  .plan-table-header img
-    right: 0
