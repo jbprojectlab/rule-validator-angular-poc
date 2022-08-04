@@ -5,6 +5,14 @@
     </div>
     <div class="search">
       <div>
+        <ng-select class="custom" [(ngModel)]="submissionType" placeholder="Submission Type">
+          <ng-option
+            *ngFor="let submissionType of options.submissionTypes; trackBy:trackByFn"
+            [value]="submissionType">
+            {{submissionType}}
+          </ng-option>
+        </ng-select>
+
         <ng-select class="custom" [(ngModel)]="selectedSubmissionGroupOption" placeholder="Submission Group" (change)="handleSearchFilterChange('submissionGroup')">
           <ng-option
             *ngFor="let submissionGroupOption of options.submissionGroupOptions; trackBy:trackByFn"

@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, HostListener, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -6,14 +6,19 @@ import { Subject } from 'rxjs';
 })
 export class BaseReportComponent implements OnDestroy {
   menuIsOpen: boolean = false;
+  isMenuOpen=false;
   protected  destroyed$: Subject<boolean> = new Subject();
   constructor() { }
 
-  openMenu() {
-    if (!this.menuIsOpen) {
-      this.menuIsOpen = true;
-    }
+  toggleMenu($event: { stopPropagation: () => void; }) {    
+    $event.stopPropagation();
+    this.isMenuOpen = !this.isMenuOpen;
   }
+
+  @HostListener('click')onClicK(){
+    this.isMenuOpen = false;
+  }
+ 
   closeMenu() {
     if (this.menuIsOpen) {
       this.menuIsOpen = false;

@@ -68,11 +68,13 @@ export class PlansComponent implements OnInit, OnDestroy {
     
   ngOnInit(): void {
     this.plansService.getOptions().subscribe((response: any) => {
+      console.log(response)
       this.options = {
         submissionGroupOptions: response.submissionGroup,
         submissionCurrentStateOptions: response.submissionCurrentState,
         categoryOptions: response.category,
         statusOptions: response.submissionStatus,
+        submissionTypes: ['ANTHEM', 'non-ANTHEM']
       };
     })
     this.getPlans();
@@ -158,7 +160,7 @@ export class PlansComponent implements OnInit, OnDestroy {
   }
 
   public getPlans() {
-    this.plansService.getPlans(this.selectedPaidThroughPeriodOption, this.selectedSubmissionGroupOption)
+    this.plansService.getPlans(this.selectedPaidThroughPeriodOption, this.selectedSubmissionGroupOption, this.submissionType)
     .pipe(takeUntil(this.destroyed$))
     .subscribe((data: Plan[]) => {
       if (data && data.length) {

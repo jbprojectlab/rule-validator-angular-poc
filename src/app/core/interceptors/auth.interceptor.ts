@@ -31,11 +31,14 @@ export class AuthInterceptor implements HttpInterceptor {
 
   private addAuthHeaderToAllowedOrigins(request: HttpRequest<unknown>): HttpRequest<unknown> {
     let req = request;
-    const allowedOrigins = ['http://localhost:4200', 'http://mdcdappl2r01lv.bcbsa.com'];
-    if (!!allowedOrigins.find(origin => request.url.includes(origin))) {
-      const authToken = this.oktaAuth.getAccessToken();
-      req = request.clone({ setHeaders: { 'Authorization': `Bearer ${authToken}` } });
-    }
+    const allowedOrigins = ['http://localhost:4200', 'https://mdcdappl2r01lv.bcbsa.com', 'https://ndwl2validation-dev.bcbsa.com', 'https://ndwl2validation-pve.bcbsa.com', 'https://ndwl2validation.bcbsa.com'];
+    // if (!!allowedOrigins.find(origin => request.url.includes(origin))) {
+    //   console.log('setting headers')
+    //   const authToken = this.oktaAuth.getAccessToken();
+    //   req = request.clone({ setHeaders: { 'Authorization': `Bearer ${authToken}` } });
+    // }
+    const authToken = this.oktaAuth.getAccessToken();
+    req = request.clone({ setHeaders: { 'Authorization': `Bearer ${authToken}` } });
 
     return req;
   }

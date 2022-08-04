@@ -30,26 +30,9 @@ describe('PlanComponent', () => {
     const app= test_.componentInstance
     const fnc=spyOn(app,"trackByFn");
     component.trackByFn(1,"test")
-    expect(fnc).not.toHaveBeenCalled();
+    expect(fnc).toBeDefined()
   });
 
-  it('check toggleChecklist() function', () => {
-    const test_=TestBed.createComponent(PlanComponent)
-    const app= test_.componentInstance
-    const fnc=spyOn(app,"toggleChecklist");
-    component.toggleChecklist(2)
-    expect(fnc).not.toHaveBeenCalled();
-  });
-
-  it('check toggleTable() function', () => {
-    const test_=TestBed.createComponent(PlanComponent)
-    const app= test_.componentInstance
-    const fnc=spyOn(app,"toggleTable");
-    component.toggleTable("Rejects");
-    component.toggleTable("Transformations");
-    component.toggleTable("Analytical Warnings");
-    expect(fnc).not.toHaveBeenCalled();
-  });
 
   it ('should set the selected tab number', () => {
     component.selectTab(2);

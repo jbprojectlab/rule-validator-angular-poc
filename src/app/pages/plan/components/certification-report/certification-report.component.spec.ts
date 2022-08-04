@@ -1,6 +1,9 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BaseReportComponent } from '../base-report/base-report.component';
 import { CertificationReportComponent } from './certification-report.component';
 
 describe('CertificationReportComponent', () => {
@@ -21,21 +24,18 @@ describe('CertificationReportComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should open the menu', () => {
-    component.menuIsOpen = false;
-    component.openMenu();
-    fixture.detectChanges();
-    let menu = fixture.nativeElement.querySelector('.report-menu');
-    expect(menu).toBeTruthy();
-  })
+  it('test hostlistner scroll ', () => {
+    component.scrollHandler(new Event('scroll'))
+    expect(component.windowScrolled).toBe(false)
 
-  it('should close the menu', () => {
-    component.menuIsOpen = true;
-    component.closeMenu();
-    fixture.detectChanges();
-    let menu = fixture.nativeElement.querySelector('.report-menu');
-    expect(menu).toBeFalsy();
-  })
+  });
+
+  it('open table toggle menu', fakeAsync(() => {
+    let DebugElems: DebugElement[] = fixture.debugElement.queryAll(By.css('.open'));
+   expect(DebugElems.length).toEqual(1);
+ }));
+
+
 
   describe('toggle flag filter', () => {
     it('should set the filtered tables boolean to true when false', () => {

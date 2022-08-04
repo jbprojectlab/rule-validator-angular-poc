@@ -1,6 +1,8 @@
 import { OverlayModule } from '@angular/cdk/overlay';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FieldDistributorReportComponent } from './field-distributor-report.component';
 
@@ -26,22 +28,11 @@ describe('FieldDistributorReportComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should open the menu', () => {
-    component.menuIsOpen = false;
-    component.openMenu();
-    fixture.detectChanges();
-    let menu = fixture.nativeElement.querySelector('.report-menu');
-    expect(menu).toBeTruthy();
-  })
-
-  it('should close the menu', () => {
-    component.menuIsOpen = true;
-    component.closeMenu();
-    fixture.detectChanges();
-    let menu = fixture.nativeElement.querySelector('.report-menu');
-    expect(menu).toBeFalsy();
-  })
-
+  it('open table toggle menu', fakeAsync(() => {
+    let DebugElems: DebugElement[] = fixture.debugElement.queryAll(By.css('.open'));
+   expect(DebugElems.length).toEqual(1);
+ }));
+ 
   describe('camelize', () => {
     it('should return the camelized version of a string with spaces', () => {
       expect(component.camelize('test string')).toBe('testString');
