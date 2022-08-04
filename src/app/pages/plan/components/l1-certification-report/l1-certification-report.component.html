@@ -2,7 +2,7 @@
   <img src="assets/img/menu.png" />
 </span>
 
-<div *ngIf="menuIsOpen" class="report-menu">
+<div *ngIf="menuIsOpen">
   <div>
     <span class="close" (click)="closeMenu()">&#10005;</span>
     <div *ngFor="let section of menuItems; trackBy:trackByFn; index as menuItemIdx">
