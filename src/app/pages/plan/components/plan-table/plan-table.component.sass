@@ -10,27 +10,6 @@
   margin-top: 10px
   width: 100%
   
-.plan-table-header
-  align-items: center
-  display: flex
-  height: 60px
-  justify-content: space-between
-  padding: 4px 0 0 30px
-
-  img
-    cursor: pointer
-    height: 12px
-    margin-right: 24px
-
-  &.closed img
-    transform: rotate(270deg)
-
-.table-wrapper
-  padding: 0px 4px 6px
-
-.plan-table
-  padding: 0
-  
 table
   background: #E0EBF2
   border: 1px solid var(--background-shade-dark-grey)
@@ -86,6 +65,33 @@ table
     tr.subrow-void-records,tr.subrow-total-submitted-amount
       background-color: #a6d9e9
 
+    tr.subrow-void-records
+      td:first-child
+        border-left: 10px solid white
+
+      td:last-child
+        border-right: 10px solid white
+
+    tr.subrow-total-submitted-amount
+      td
+        border-bottom: 10px solid white
+
+      td:first-child
+        border-bottom-left-radius: 20px
+        border-left: 10px solid white
+
+      td:last-child
+        border-bottom-right-radius: 20px
+        border-right: 10px solid white
+
+    th,
+    td.max-width
+      max-width: 120px
+
+    th:nth-child(3n+4),
+    td:nth-child(3n+4)
+      border-left: 1px solid #37393A
+
     td
       padding: 10px
 
@@ -124,10 +130,10 @@ span.open
     position: absolute
 
 .L2-status
-    float: right
-    right: 0
-    display: flex
-    align-items: center
+  float: right
+  right: 0
+  display: flex
+  align-items: center
 
 .approver-textarea
   margin-left: 80px
@@ -146,33 +152,6 @@ span.open
 
 .approver
   padding: 20px
-
-tr.subrow-void-records
-  td:first-child
-    border-left: 10px solid white
-
-  td:last-child
-    border-right: 10px solid white
-
-tr.subrow-total-submitted-amount
-  td
-    border-bottom: 10px solid white
-
-  td:first-child
-    border-bottom-left-radius: 20px
-    border-left: 10px solid white
-
-  td:last-child
-    border-bottom-right-radius: 20px
-    border-right: 10px solid white
-
-th,
-td.max-width
-  max-width: 120px
-
-th:nth-child(3n+4),
-td:nth-child(3n+4)
-  border-left: 1px solid #37393A
 
 .filter-score-container
   display: flex
