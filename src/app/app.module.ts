@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { environment } from 'environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlansComponent } from './pages/plans/plans.component';
@@ -38,9 +38,8 @@ import { OktaAuth } from '@okta/okta-auth-js';
 
 const config = {
   issuer: 'https://bcbsauat.oktapreview.com/oauth2/default',
-  clientId: '0oa1at1sa6zTwUh9L0h8',
+  clientId: `${environment.clientId}`,
   redirectUri: window.location.origin + '/login/callback',
-  post_logout_redirect_uri: window.location.origin + '/logout'
 }
 const oktaAuth = new OktaAuth(config);
 

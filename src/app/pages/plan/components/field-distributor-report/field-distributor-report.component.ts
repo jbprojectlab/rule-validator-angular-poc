@@ -31,7 +31,7 @@ export class FieldDistributorReportComponent extends BaseReportComponent impleme
     });
   }
 
-  private initializeExpandedTables() {
+ initializeExpandedTables() {
     this.expandedTables = this.fieldDistributionReports.map((report: any, index: number) => {
       return report.fields.map((field: any) => false)
     })
@@ -49,7 +49,7 @@ export class FieldDistributorReportComponent extends BaseReportComponent impleme
     }
   }
 
-  private getMenuItems() {
+  getMenuItems() {
     this.fieldDistributionReports.forEach(function (element: { [x: string]: any; }) {
       for (var key in element) {
         if (element[key] && element[key].length === 0) {

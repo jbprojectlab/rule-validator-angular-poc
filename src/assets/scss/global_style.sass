@@ -1,84 +1,25 @@
+/*===== BUTTON CSS =====*/
 button
-	border: none
-	border-radius: var(--rounded-corner-border-radius)
-	color: #fff
-	cursor: pointer
-	height: 50px
-	margin-left: 20px
-	width: 180px
+    border: none
+    border-radius: var(--rounded-corner-border-radius)
+    color: #fff
+    cursor: pointer
+    height: 50px
+    margin-left: 20px
+    width: 180px
 
-.error-snackbar
-	background-color: var(--medium-red)
-	color: var(--white)
+/*===== SCROLL CSS =====*/
+.scroll-y
+    overflow-y: scroll
+    display: block
+    scrollbar-width: none
+    -ms-overflow-style: none
 
-.certification-report
-	margin-bottom: 10px
+    &::-webkit-scrollbar
+      width: 0
+      height: 0
 
-.l1-heading 
-	background-color: var(--background-shade-light-grey)
-	border: 1px solid var(--background-shade-light-grey)
-	border-radius: var(--rounded-corner-border-radius)
-	border-spacing: 0
-	padding: 0px 10px 0px  
-	border-radius: 20px
-	display: flex
-	flex-direction: column
-	margin: 20px 0px
-
-.flag-button-scrolldown
-	width: 35px
-	position: fixed
-	border-radius: 50%
-	margin-top: 3px
-	background-color: white
-	right: 12px
-	box-shadow: 2px 2px 2px #ccc
-	height: 37px
-	border: 0.1px solid #ccc
-
-.green
-	background-color: var(--green)
-
-.yellow
-	background-color: var(--yellow)
-
-.red
-	background-color: var(--light-red)
-
-.flag-img
-	margin-top: 10px
-	cursor: pointer
-
-span.open
-  cursor: pointer
-  position: fixed
-  top: 340px
-  left: 10px
-  background-color: var(--primary-blue-dark)
-  border-radius: 0 var(--round-border-radius) var(--round-border-radius) 0
-  padding: 12px 8px 8px 4px
-
-.report-menu
-  border: 1px solid var(--white)
-  background-color: var(--primary-blue-dark)
-  border-radius: var(--rounded-corner-border-radius)
-  display: flex
-  flex-direction: column
-  font-size: 16px
-  position: fixed
-  top: 340px
-  left: 18px
-  cursor: pointer
-  color: var(--white)
-  z-index: 3
-
-  .v-scroll
-    height: calc(100vh - 400px)
-    overflow: auto
-    margin: 30px 0px 18px 0px
-    padding: 0px 10px
-
-  span.close
-    right: 8px
-    top: 8px
-    position: absolute
+/*=====Snackbar ========*/
+.errorSnackBar
+    background-color: var(--medium-red)
+    color: var(--white)

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Plan } from 'app/core/types/plan';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -14,8 +14,9 @@ const moment = _rollupMoment || _moment;
   styleUrls: ['./plans.component.sass']
 })
 
-export class PlansComponent implements OnInit, OnDestroy {
+export class PlansComponent implements OnInit, AfterViewInit, OnDestroy {
   plans: Plan[] = [];
+  isSearching: boolean = false;
   panelTop: boolean = false;
   selectedSortingColumn: string = 'Submission Group / Plan Code';
   sortIsAscending: boolean = true;
@@ -46,7 +47,7 @@ export class PlansComponent implements OnInit, OnDestroy {
     statusOptions: this.statusOptions
   };
   
-  submissionType: string = 'non-ANTHEM'
+  submissionType: string = 'Non-Anthem'
   
   headers = [
     'Submission Group',
@@ -63,18 +64,19 @@ export class PlansComponent implements OnInit, OnDestroy {
     'L2 Report Score'
   ];
   constructor(
-    private plansService: PlansService
+    private plansService: PlansService, private cdr: ChangeDetectorRef
     ) { }
     
   ngOnInit(): void {
+    if (this.isSearching) this.isSearching = false;
+
     this.plansService.getOptions().subscribe((response: any) => {
-      console.log(response)
       this.options = {
         submissionGroupOptions: response.submissionGroup,
         submissionCurrentStateOptions: response.submissionCurrentState,
         categoryOptions: response.category,
         statusOptions: response.submissionStatus,
-        submissionTypes: ['ANTHEM', 'non-ANTHEM']
+        submissionTypes: ['Anthem', 'Non-Anthem']
       };
     })
     this.getPlans();
@@ -87,8 +89,14 @@ export class PlansComponent implements OnInit, OnDestroy {
     })
   }
 
+  ngAfterViewInit(){
+    this.handleDateInputBlur()
+    this.cdr.detectChanges()
+  }
+
   monthSelected(event: any, dp: any, input: any) {
     dp.close();
+    // input.value = event.toISOString().split('-').join('').substring(0,6);
     input.value = moment(event).add(5, 'days').format('YYYYMM');
     if(this.selectedPaidThroughPeriodOption !== input.value) {
       this.selectedPaidThroughPeriodOption = input.value;
@@ -118,6 +126,9 @@ export class PlansComponent implements OnInit, OnDestroy {
       this.selectedPaidThroughPeriodOption = event.target.value;
       this.getPlans();
     } else if (key === 'submissionGroup') {
+      this.getPlans();
+    } else if (key === 'submissionType') {
+      this.submissionType = this.submissionType === null ? 'Non-Anthem' : this.submissionType;
       this.getPlans();
     }
   }
@@ -171,8 +182,9 @@ export class PlansComponent implements OnInit, OnDestroy {
     })
   }
 
-  trackByFn(index: number, item: any): any {
-    return item.id || index;
+  trackByFn(index: number, item: any): any
+  {
+      return item.id || index;
   }
 
   ngOnDestroy() {

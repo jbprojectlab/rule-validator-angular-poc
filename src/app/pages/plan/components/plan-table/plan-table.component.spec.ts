@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -12,7 +13,7 @@ describe('PlanTableComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ PlanTableComponent ],
-      imports:[RouterTestingModule]
+      imports: [HttpClientTestingModule,RouterTestingModule], 
     })
     .compileComponents();
   });
@@ -36,7 +37,7 @@ describe('PlanTableComponent', () => {
   });
 
   it('should close the menu', () => {
-    component.isMenuOpen=true
+    component.menuIsOpen=true
     component.closeMenu();
     fixture.detectChanges();
     expect(component.menuIsOpen).toBe(false);

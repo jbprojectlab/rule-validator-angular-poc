@@ -35,7 +35,38 @@ describe('CertificationReportComponent', () => {
    expect(DebugElems.length).toEqual(1);
  }));
 
-
+ it('check getMenuItems(), initializeExpandedTables() and filterTablesByFlag() functions to be defined', () => {
+  const test_=TestBed.createComponent(CertificationReportComponent)
+  const app= test_.componentInstance
+  let fnc=spyOn(app,"getMenuItems");
+  component.reports= [{
+    fileName: "PRODUCT",
+    fileOrderNumber: 1,
+    metricTable: [{
+      metricOrderNumber: "10",
+      metricDescription: "Product File 5% total rejected records",
+      computedValue: 0,
+      passIndicator: "-",
+      ruleWeightPercent: 1,
+      score: 0,
+      flag: 0,
+      fileOrderNumber: 10,
+      errorMessage: "-",
+      totalPassFail: "pass",
+      totalFlag: 0,
+      computedValueExpanded:false,
+      valueHistory:[],
+      historyPeriod: "-"}]
+  }]
+  component.getMenuItems();
+  expect(fnc).toBeDefined()
+  fnc=spyOn(app,"initializeExpandedTables");
+  component. initializeExpandedTables()
+  expect(fnc).toBeDefined()
+  fnc=spyOn(app,"filterTablesByFlag");
+  component.filterTablesByFlag()
+  expect(fnc).toBeDefined()
+});
 
   describe('toggle flag filter', () => {
     it('should set the filtered tables boolean to true when false', () => {

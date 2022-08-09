@@ -11,7 +11,7 @@ export class PlanTableService {
   constructor(private http: HttpClient) { }
 
   public updateReporter(data: any): Observable<any> {
-    return this.http.post(`${environment.host}/api/summary/submission`,  data).pipe(catchError(this.handleError));
+    return this.http.put(`${environment.host}/api/summary/submission`,  data).pipe(catchError(this.handleError));
   }
 
   handleError(error: any) {

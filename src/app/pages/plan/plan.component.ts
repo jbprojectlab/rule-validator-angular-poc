@@ -30,7 +30,7 @@ export class PlanComponent implements OnInit, OnDestroy {
 
   getTabIconSrc(tab: number) {
     if (tab === 1) {
-      return this.visibleTab === 1 ? 'assets/img/graph-white.png' : 'assets/img/graph-black.png';
+      return this.visibleTab === 1 ? 'assets/img/checklist-white.png' : 'assets/img/checklist-black.png';
     } else if (tab === 2) {
       return this.visibleTab === 2 ? 'assets/img/checklist-white.png' : 'assets/img/checklist-black.png';
     } else if (tab === 3) {

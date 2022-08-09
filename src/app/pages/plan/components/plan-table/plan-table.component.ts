@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -12,15 +12,14 @@ import { PlanTableService } from '../../services/plan-table.service'
   styleUrls: ['./plan-table.component.sass']
 })
 export class PlanTableComponent implements OnInit{
-// showTableIcon: string = !isOpen ? 'show-more-blue' : 'show-less-blue'
-private  destroyed$: Subject<boolean> = new Subject();
+  private  destroyed$: Subject<boolean> = new Subject();
   reportData!: SubmissionReport;
   reports_:any =[]
   l2Checklist!: l2CheckList;
-  isMenuOpen = false;
   menuItems: any = [];
   menuIsOpen: boolean = false;
   sections: any;
+  active:number = -1
   
   constructor(private activatedRoute: ActivatedRoute, private planTableService: PlanTableService) { }
 
@@ -75,35 +74,46 @@ private  destroyed$: Subject<boolean> = new Subject();
   }
 
   closeMenu() {
-    if (this.isMenuOpen) {
-      this.isMenuOpen = false;
+    if (this.menuIsOpen) {
+      this.menuIsOpen = false;
     }
   }
   toggleMenu($event: { stopPropagation: () => void; }) {    
     $event.stopPropagation();
-    this.isMenuOpen = !this.isMenuOpen;
+    this.menuIsOpen = !this.menuIsOpen;
   }
-  @HostListener('click')onClick(){
-    this.isMenuOpen = false;
+  @HostListener('window:click', ['$event'])onClicK(e: any){
+    if (this.menuIsOpen) {
+      this.menuIsOpen = false;
+    }
+    this.closeRow(e.target.localName)
   }
 
   approveReport(){
     let data = {
-      "submissionId": "3000",
-      "score": 0.4,
-      "passFail": "Pass",
-      "flag": 0.5,
-      "l2cApprovedName": "Bappa",
-      "l2cApprovedDate": "2022-07-28T08:14:35.155Z",
-      "l2cErrorThresholdScore": 0.5
+      "submissionId": this.reportData.submissionId,
+      "score": this.reportData.totalScore,
+      "passFail": this.reportData.totalPassFail,
+      "flag": this.reportData.totalFlag,
+      "l2cApprovedName": localStorage.getItem("profile"),
+      "l2cApprovedDate": new Date(new Date().toString().split('GMT')[0]+' UTC').toISOString(),
+      "l2cErrorThresholdScore": this.l2Checklist.errorThresholdReportScore
     }
     this.planTableService.updateReporter(data).subscribe(
       (response: any) => {
-        this.l2Checklist.approvedUser = "Bappa";
-        this.l2Checklist.approvedDate = "2022-07-28T08:14:35.155Z"
+        this.l2Checklist.approvedUser = response.l2cApprovedName;
+        this.l2Checklist.approvedDate = response.l2cApprovedDate;
       }
     )
     
+  }
+
+  openRow(index: number, e:any){
+      this.active = this.active === index ? -1 : index;
+  }
+
+  closeRow(el: string){
+    if(el !== 'td') this.active = -1;
   }
 
 }

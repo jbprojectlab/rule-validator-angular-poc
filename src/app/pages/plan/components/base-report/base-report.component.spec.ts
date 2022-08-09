@@ -24,7 +24,7 @@ describe('BaseReportComponent', () => {
   });
 
   it('should close the menu', () => {
-    component.isMenuOpen=true
+    component.menuIsOpen=true
     component.closeMenu();
     fixture.detectChanges();
     expect(component.menuIsOpen).toBe(false);

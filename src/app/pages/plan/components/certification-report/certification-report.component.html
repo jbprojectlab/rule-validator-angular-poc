@@ -2,7 +2,7 @@
   <img src="assets/img/menu.png" />
 </span>
 
-<div *ngIf="isMenuOpen" class="report-menu">
+<div *ngIf="menuIsOpen" class="report-menu">
   <div class="v-scroll">
     <span class="close" (click)="closeMenu()">&#10005;</span>
     <div *ngFor="let section of menuItems; trackBy:trackByFn; index as menuItemIdx">
@@ -26,7 +26,7 @@
   <div *ngIf="initialReports" class="report-score-container">
     <div>
       <h4>Total Score</h4>
-      <span>{{initialReports.totalScore}}</span>
+      <span>{{initialReports?.totalScore}}</span>
     </div>
     <span *ngIf="initialReports.totalFlag !== undefined" class="score-indicator" [ngClass]="{'green': initialReports.totalFlag === 0, 'yellow': (initialReports.totalFlag === 1),'red':  initialReports.totalFlag === 2  }">{{initialReports?.totalPassFail}}</span>
     <div *ngIf="windowScrolled;else elseBlock">
@@ -39,6 +39,7 @@
 
 
 
+  <!-- <div class="v-scrollbar"> -->
 <div *ngFor="let report of reports;trackBy:trackByFn; index as i">
   <div class="certification-report" *ngIf="report.metricTable?.length ? tablesFilteredByFlag ? expandedTables[i].flagCount : report.metricTable?.length : report.metricTable?.length">
       <h4 *ngIf="report.fileName" id="item-{{camelize(report.fileName)}}" [ngClass]="i === 0 ? 'first-filename' : ''">{{report.fileName}}</h4>
@@ -149,8 +150,8 @@
               <th>Total Rejected Amount</th>
               <th>Total Amount</th>
                <th>%Rejected</th>
-              <th *ngIf="displayColoumEnable(report.financialSummary,'totalAmountExcludingDeniedSecondary')">Total Amount Excluding Denied Secondary</th>
-              <th *ngIf="displayColoumEnable(report.financialSummary,'totalAmountOutpatientFacilityOnly')">Total Amount Outpatient Facility Only</th>
+              <th *ngIf="displayColoumEnable(report.financialSummary,'totalAmountExcludingDeniedSecondary')">Total Amount - Excluding Denied/Secondary</th>
+              <th *ngIf="displayColoumEnable(report.financialSummary,'totalAmountOutpatientFacilityOnly')">Total Amount - Outpatient Facility Only</th>
               <th *ngIf="displayColoumEnable(report.financialSummary,'estimatedAveragePerValidScript')">Estimated Average Per Valid Script</th>
               <th>Error Msg</th>
             </tr>
@@ -220,10 +221,10 @@
           </thead>
           <tbody>
             <tr *ngFor="let row of report.frxTable odd as isOdd; even as isEven; trackBy:trackByFn" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
-              <td>{{row.validRecords}}</td>
-              <td>{{row.voidedRecords}}</td>
-              <td>{{row.rejectedRecords}}</td>
-              <td>{{row.totalRecords}}</td>
+              <td>{{row.validRecords | number: '2.'}}</td>
+              <td>{{row.voidedRecords | number: '2.'}}</td>
+              <td>{{row.rejectedRecords | number: '2.'}}</td>
+              <td>{{row.totalRecords | number: '2.'}}</td>
             </tr>
             <tr class="bottom-row">
               <td></td>
@@ -244,7 +245,7 @@
           <tbody>
             <tr *ngFor="let row of report.frequencyCountTable odd as isOdd; even as isEven; trackBy:trackByFn" [ngClass]="{ 'odd': isOdd, 'even': isEven }">
               <td>{{row.fieldValue}}</td>
-              <td>{{row.frequencyCount}}</td>
+              <td>{{row.frequencyCount | number: '2.'}}</td>
             </tr>
             <tr class="bottom-row">
               <td></td>

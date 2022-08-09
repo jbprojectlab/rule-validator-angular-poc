@@ -32,8 +32,34 @@ describe('FieldDistributorReportComponent', () => {
     let DebugElems: DebugElement[] = fixture.debugElement.queryAll(By.css('.open'));
    expect(DebugElems.length).toEqual(1);
  }));
- 
-  describe('camelize', () => {
+
+ it('check getMenuItems() and initializeExpandedTables() functions to be defined', () => {
+  const test_=TestBed.createComponent(FieldDistributorReportComponent)
+  const app= test_.componentInstance
+  let fnc=spyOn(app,"getMenuItems");
+  component.fieldDistributionReports= [{
+    fields:[{
+      dataTable:[{
+        columnValue: "Z01.00",
+        count: 400,
+        cumulativeCount: 400,
+        cumulativePerTotal: 20,
+        perTotal: 20,
+      }],
+    fieldName: "Sample Name"
+    }         
+  ],
+    fileName: "Facility Header",
+  }    
+]
+  component.getMenuItems();
+  expect(fnc).toBeDefined()
+  fnc=spyOn(app,"initializeExpandedTables");
+  component. initializeExpandedTables()
+  expect(fnc).toBeDefined()
+});
+
+describe('camelize', () => {
     it('should return the camelized version of a string with spaces', () => {
       expect(component.camelize('test string')).toBe('testString');
     })

@@ -76,7 +76,7 @@ export class CertificationReportComponent extends BaseReportComponent implements
 
   }
 
-  private initializeExpandedTables() {
+ initializeExpandedTables() {
     this.expandedTables = this.reports.map((report: any, index: number) => {
       let expandedState: any = {};
       if (report.metricTable) expandedState.metricTable = true;
@@ -93,7 +93,7 @@ export class CertificationReportComponent extends BaseReportComponent implements
     this.initializeExpandedTables();
   }
 
-  private filterTablesByFlag() {
+  filterTablesByFlag() {
     this.expandedTables = this.reports.map((report: any) => {
       let expandedState: any = {};
       if (report.metricTable) {
@@ -154,7 +154,7 @@ export class CertificationReportComponent extends BaseReportComponent implements
     }
   }
 
-  private getMenuItems() {
+  getMenuItems() {
     this.reports.forEach(function(element: { [x: string]: any; }) {
       for (var key in element) {
         if (element[key] && element[key].length === 0) {

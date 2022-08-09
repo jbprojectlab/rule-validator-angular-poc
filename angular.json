@@ -160,6 +160,7 @@
   },
   "defaultProject": "rule-validator",
   "cli": {
+    "analytics": false,
     "defaultCollection": "@angular-eslint/schematics"
   }
 }

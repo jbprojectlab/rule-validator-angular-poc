@@ -2,7 +2,7 @@
   <img src="assets/img/menu.png" />
 </span>
 
-<div *ngIf="isMenuOpen" class="report-menu">
+<div *ngIf="menuIsOpen" class="report-menu">
   <div class="v-scroll">
     <span class="close" (click)="closeMenu()">&#10005;</span>
     <div *ngFor="let section of menuItems; trackBy:trackByFn; index as menuItemIdx">
@@ -67,9 +67,9 @@
           <td>{{data.metricPercentageM0}} %</td>
           <td>{{data.metricPercentageM1}} %</td>
           <td>{{data.metricPercentageM2}} %</td>
-          <td title="{{data.commentsM0}}" class="max-width left-align">{{data.commentsM0}}</td>
-          <td title="{{data.commentsM1}}" class="max-width left-align">{{data.commentsM1}}</td>
-          <td title="{{data.commentsM2}}" class="max-width left-align">{{data.commentsM2}}</td>
+          <td title="{{data.commentsM0}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM0}}</td>
+          <td title="{{data.commentsM1}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM1}}</td>
+          <td title="{{data.commentsM2}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM2}}</td>
         </tr>
         <tr *ngIf="data.voidedRecords" class="subrow-void-records">
           <td class="left-align">Voided Records</td>
@@ -156,9 +156,9 @@
             <td>{{data.metricPercentageM0}} %</td>
             <td>{{data.metricPercentageM1}} %</td>
             <td>{{data.metricPercentageM2}} %</td>
-            <td title="{{data.commentsM0}}" class="max-width left-align">{{data.commentsM0}}</td>
-            <td title="{{data.commentsM1}}" class="max-width left-align">{{data.commentsM1}}</td>
-            <td title="{{data.commentsM2}}" class="max-width left-align">{{data.commentsM2}}</td>
+            <td title="{{data.commentsM0}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM0}}</td>
+            <td title="{{data.commentsM1}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM1}}</td>
+            <td title="{{data.commentsM2}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM2}}</td>
           </tr>
           <tr *ngIf="data.voidedRecords" class="subrow-void-records">
             <td class="left-align">Voided Records</td>
@@ -245,9 +245,9 @@
           <td>{{data.metricPercentageM0}} %</td>
           <td>{{data.metricPercentageM1}} %</td>
           <td>{{data.metricPercentageM2}} %</td>
-          <td title="{{data.commentsM0}}" class="max-width left-align">{{data.commentsM0}}</td>
-          <td title="{{data.commentsM1}}" class="max-width left-align">{{data.commentsM1}}</td>
-          <td title="{{data.commentsM2}}" class="max-width left-align">{{data.commentsM2}}</td>
+          <td title="{{data.commentsM0}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM0}}</td>
+          <td title="{{data.commentsM1}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM1}}</td>
+          <td title="{{data.commentsM2}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM2}}</td>
         </tr>
         <tr *ngIf="data.voidedRecords" class="subrow-void-records">
           <td class="left-align">Voided Records</td>
@@ -330,9 +330,9 @@
           <td>{{data.metricPercentageM0 | number: '2.'}}</td>
           <td>{{data.metricPercentageM1 | number: '2.'}}</td>
           <td>{{data.metricPercentageM2 | number: '2.'}}</td>
-          <td title="{{data.commentsM0}}" class="max-width">{{data.addlPercentageM0}} %</td>
-          <td title="{{data.commentsM1}}" class="max-width">{{data.addlPercentageM1}} %</td>
-          <td title="{{data.commentsM2}}" class="max-width">{{data.addlPercentageM2}} %</td>
+          <td title="{{data.commentsM0}}" class="max-width">{{data.addlPercentageM0}}%</td>
+          <td title="{{data.commentsM1}}" class="max-width">{{data.addlPercentageM1}}%</td>
+          <td title="{{data.commentsM2}}" class="max-width">{{data.addlPercentageM2}}%</td>
         </tr>
       </tbody>
     </table>

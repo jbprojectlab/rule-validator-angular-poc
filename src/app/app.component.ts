@@ -1,4 +1,4 @@
-import { Component, Inject, HostListener } from '@angular/core';
+import { Component, Inject, HostListener, OnInit } from '@angular/core';
 import { Router, Event } from '@angular/router';
 import { NavigationStart, NavigationError, NavigationEnd } from '@angular/router';
 import { OKTA_AUTH, OktaAuthStateService } from '@okta/okta-angular';
@@ -9,7 +9,7 @@ import { OktaAuth } from '@okta/okta-auth-js';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title: string = 'rule-validator';
   navIsHidden: boolean = false;
   landingPageMargin: boolean = false;
@@ -19,9 +19,9 @@ export class AppComponent {
   profileInitials: string = '';
 
   constructor(private router: Router, @Inject(OKTA_AUTH) public oktaAuth: OktaAuth, public authStateService: OktaAuthStateService) {
-    this.router.events.subscribe((event: Event) => {
+    this.router.events.subscribe(async (event: Event) => {
       if (event instanceof NavigationEnd) {
-        const segments = event.url.split('/');
+        const segments = event.urlAfterRedirects.split('/');
 
         if (segments[1] && segments[1] === 'plans' && segments[2]) {
           this.navIsHidden = true;
@@ -58,6 +58,7 @@ export class AppComponent {
         this.isAuthenticated = response.isAuthenticated;
         if(response.idToken) {
           this.userName = response.idToken.claims.name;
+          localStorage.setItem("profile", this.userName)
           email = response.idToken.claims.email;
           _after = email.substring(email.indexOf('.') + 1)[0];
           this.profileInitials = email[0]+_after
@@ -67,8 +68,6 @@ export class AppComponent {
   }
 
   public async logout(): Promise<void> {
-    await this.oktaAuth.signOut({
-      postLogoutRedirectUri: window.location.origin + '/logout'
-    });
+    await this.oktaAuth.signOut({ postLogoutRedirectUri: window.location.origin + '/logout' });
   }
 }

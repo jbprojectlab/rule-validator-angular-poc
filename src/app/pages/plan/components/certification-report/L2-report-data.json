@@ -1,0 +1,54 @@
+{
+	"submissionID": "<submissionID - from score query>",
+	"SubmissionType": "Anthem <<or NonAnthem>>",
+	"totalScore": "<Score - from score query>",
+	"totalPassFail": "'Pass' <<or 'Fail'>>",
+	"totalFlag": "0 <<0=Green, 1=Yellow, 2=Red>>",
+	"l2Reports": [
+		{
+			"fileName": "<File_Name - from Metric Query>",
+			"fileOrderNumber": "<File_ID - from Metric Query>",
+			"metricTable": [
+				{
+					"metricOrderNumber": "<Display_Order_Num - from Metric Query>",
+					"metricDescription": "<Metric_Description - from Metric Query>",
+					"computedValue": "<Actual_Result - from Metric Query>",
+					"ruleWeightPercent": "<Weight - from Metric Query>",
+					"score": "<Actual_Result - from Metric Query>",
+					"passindicator": "<Pass_Fail - from Metric Query>",
+					"flag": "<<1=True(there is a warning flag), 0=False>>",
+					"errorMessage": "error message String"
+				}
+			],
+			"financialSummary": [
+				{
+					"columnName": "<Field_Name - from Financial Summary Query>",
+					"financialOrderNumber": "<Display_Order_Num - from Financial Summary Query>",
+					"totalValidAmount": "<Valid_Records - from Financial Summary Query>",
+					"totalRejectedAmount": "<Rejected_Records - from Financial Summary Query>",
+					"totalAmount": "<Total_Records - from Financial Summary Query>",
+					"percentRejected": "<C__Rejected - from Financial Summary Query>",
+					"totalAmountExcludingDeniedSecondary": "<Total_Permissible_Records - from Financial Summary Query>",
+					"totalAmountOutpatientFacilityOnly": "<Rx_Est_Med_Total - from Financial Summary Query for matching 'Total Amount Outpatient Facility Only' in Rx_Est_Med_Total_Label>",
+					"estimatedAveragePerValidScript": "<Rx_Est_Med_Total - from Financial Summary Query for matching 'Estimated Average Per Valid Script' in Rx_Est_Med_Total_Label>",
+					"flag": "<<1=True(there is a warning flag), 0=False>>",
+					"errorMessage": "error message String"
+				}
+			],
+			"frxTable": [
+				{
+					"validRecords": "<Valid_Records - from 4RX Query>",
+					"voidedRecords": "<Voided_Records - from 4RX Query>",
+					"rejectedRecords": "<Rejected_Records - from 4RX Query>",
+					"totalRecords": "<Total_Records - from 4RX Query>"
+				}
+			],
+			"frequencyCountTable": [
+				{
+					"fieldValue": "<Column_Value - from frequency Query>",
+					"frequencyCount": "<Frequency_Count - from frequency Query>"
+				}
+			]
+		}
+	]
+}

@@ -6,17 +6,18 @@ import { Subject } from 'rxjs';
 })
 export class BaseReportComponent implements OnDestroy {
   menuIsOpen: boolean = false;
-  isMenuOpen=false;
   protected  destroyed$: Subject<boolean> = new Subject();
   constructor() { }
 
   toggleMenu($event: { stopPropagation: () => void; }) {    
     $event.stopPropagation();
-    this.isMenuOpen = !this.isMenuOpen;
+    this.menuIsOpen = !this.menuIsOpen;
   }
 
-  @HostListener('click')onClicK(){
-    this.isMenuOpen = false;
+  @HostListener('window:click')onClicK(){
+    if (this.menuIsOpen) {
+      this.menuIsOpen = false;
+    }
   }
  
   closeMenu() {

@@ -4,7 +4,7 @@
     <div [ngClass]="[navIsHidden ? ('main-container hidden-nav-margin') : ('main-container')]">
       <div class="toolbar" role="banner">
         <div>
-          <img id="logo" src="../assets/img//logo.svg" alt="bcbsa-logo">
+          <a href="/home"><img id="logo" src="../assets/img//logo.svg" alt="bcbsa-logo"></a>
         </div>
         <div>
           <div class="user-dd">
@@ -12,14 +12,16 @@
             <div class="circle">
               {{profileInitials | uppercase}}
             </div>
+            
+    
             <div class="dropdown">
               <img class="user-dd-arrow dropbtn" src="assets/img/show-more.png">
               <div class="dropdown-content">
-                <a href="#">Help ?</a>
-                <a *ngIf="isAuthenticated" (click)="logout()">Logout</a>
+              <a href="#">Help ?</a>
+              <a *ngIf="isAuthenticated" (click)="logout()">Logout</a>
               </div>
             </div>
-          </div>
+        </div>
         </div>
       </div>
       <router-outlet></router-outlet>

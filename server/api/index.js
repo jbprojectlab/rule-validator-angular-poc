@@ -31,7 +31,7 @@ router.get('/l2-certification-reports', (req, res, next) => {
     next(err)
   }
 })
-router.get('/db/report', (req, res, next) => {
+router.get('/summary/report', (req, res, next) => {
   try {
     let reports = fs.readFileSync('./server/data/l2f.json');
     res.json(JSON.parse(reports))

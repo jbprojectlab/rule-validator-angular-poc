@@ -2,8 +2,8 @@
   <img src="assets/img/menu.png" />
 </span>
 
-<div *ngIf="menuIsOpen">
-  <div>
+<div *ngIf="menuIsOpen" class="report-menu">
+  <div class="v-scroll">
     <span class="close" (click)="closeMenu()">&#10005;</span>
     <div *ngFor="let section of menuItems; trackBy:trackByFn; index as menuItemIdx">
       <div class="menu-section">
@@ -17,12 +17,12 @@
     </div>
   </div>
 </div>
-<div>
+<div class="filter-score-container">
   <div class="header">
     <h4>L1 Certification Report</h4>
   </div>
 
-  <div *ngIf="initialReports" (scroll)="scrollHandler($event)">
+  <div *ngIf="initialReports" class="report-score-container" (scroll)="scrollHandler($event)">
     <div *ngIf="windowScrolled;else elseBlock">
       <p class="flag-button-scrolldown-l1"><img class="flag-img" src='assets/img/{{flagImgSrc}}' (click)="toggleFlagMenu($event)" /></p></div>
     <ng-template #elseBlock>
@@ -58,7 +58,7 @@
     <div  *ngFor="let field of report.fields; trackBy:trackByFn; index as fieldIndex">
       <div  class="certification-report" *ngIf="field.filterDataTable?.length">
         <h4 id="item-{{camelize(report.fileName)}}-{{camelize(field.fieldName)}}">{{field.fieldName}}</h4>
-        <div>
+        <div  class="table-container">
           <table>
             <colgroup span="10"></colgroup>
             <thead>
@@ -69,6 +69,9 @@
                 <th>% of Total (Frequency Count)</th>
                 <th>Historical Baseline</th>
                 <th>Variance To Historical Baseline</th>
+                <th>Comment Text</th>
+                <th>Update User</th>
+                <th>Update Timestamp</th>
                 <th>Error Msg</th>
               </tr>
             </thead>
@@ -79,10 +82,13 @@
                   <img *ngIf="row.flag===2" src="assets/img/flag-red.png" />
                 </td>
                 <td class="left-align">{{row.columnValue}}</td>
-                <td>{{row.frequencyCount}}</td>
-                <td>{{row.perTotFrequency + '%'}}</td>
+                <td>{{row.frequencyCount | number: '2.'}}</td>
+                <td>{{row.perTotFrequency | number: '1.4-4'}}%</td>
                 <td>{{row.historicalBaseline}}</td>
                 <td>{{row.varianceHistoricalBaseline}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>{{row.errorMessage}}</td>
               </tr>
               <tr class="bottom-row">
@@ -90,7 +96,7 @@
               </tr>
             </tbody>
           </table>
-          <div *ngIf="isShow && field.isShow">
+          <div class="table-container" *ngIf="isShow && field.isShow">
             <div *ngIf="!field?.showMore" class="show-less-button-container">
               <button (click)="showLess(field)">Show Less &minus;</button>
             </div>
