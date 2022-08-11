@@ -3,8 +3,7 @@
     <h4>NDW - Summary Page</h4>
     <div class="search">
       <div>
-        <ng-select class="custom" [(ngModel)]="submissionType" placeholder="Submission Type" 
-        (change)="handleSearchFilterChange('submissionType')" [clearable]="false">
+        <ng-select class="custom" [(ngModel)]="submissionType" placeholder="Submission Type" (change)="handleSearchFilterChange('submissionType')" [clearable]="false">
           <ng-option
             *ngFor="let submissionType of options.submissionTypes; trackBy:trackByFn"
             [value]="submissionType" (change)="getPlans()">
@@ -49,7 +48,7 @@
   </div>
   
   <div class="plans-table-container">
-    <table >
+    <table>
       <thead>
         <tr>
           <th *ngFor="let header of headers;trackBy:trackByFn; index as i" (click)="sortByColumn(header)">
@@ -75,13 +74,11 @@
           <td>{{plan.submissionCurrentState}}</td>
           <td>{{plan.lastUpdated | date:'MM/dd/yyyy h:mm a'}}</td>
           <td>{{plan.planValidationDueDate | date:'MM/dd/yyyy'}}</td>
-          <td *ngIf="plan.score !== undefined" [ngClass]="{'green': plan.score === 0, 'yellow': plan.score > 0 && plan.score < 1, 'red':  plan.score >= 1}">
-            <p>{{plan.score}}</p>
+          <td *ngIf="plan.score !== undefined">
+            <p [ngClass]="{'green': plan.score === 0, 'yellow': plan.score > 0 && plan.score < 1, 'red':  plan.score >= 1}">{{plan.score}}</p>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-
-  <div *ngIf="(!plans || !plans.length) && isSearching" class="no-results-msg">No plans match your search</div>
 </div>

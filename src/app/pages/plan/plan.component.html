@@ -3,23 +3,23 @@
     <ul>
       <li>
         <h4>Plan Name:</h4>
-        <p>{{reportData?.planName}}</p>
+        <p>{{reportData.planName}}</p>
       </li>
       <li>
         <h4>Plan Code:</h4>
-        <p>{{reportData?.submissionGroupId}}</p>
+        <p>{{reportData.submissionGroupId}}</p>
       </li>
       <li>
         <h4>Submission Control Number:</h4>
-        <p>{{reportData?.submissionControlNumber}}</p>
+        <p>{{reportData.submissionControlNumber}}</p>
       </li>
       <li>
         <h4>Paid Through Period:</h4>
-        <p>{{reportData?.paidThroughPeriod}}</p>
+        <p>{{reportData.paidThroughPeriod}}</p>
       </li>
       <li>
         <h4>Submission Mode:</h4>
-        <p>{{reportData?.submissionMode}}</p>
+        <p>{{reportData.submissionMode}}</p>
       </li>
     </ul>
     <div>
@@ -28,61 +28,68 @@
     </div>
   </div>
 
-  <div class="plan-report-selection-buttons">
-    <div class="home-icon">
-      <a routerLink="/plans" target='_blank' rel='noopener noreferrer'>
-        <span title="Back to Summary Page">
-          <img src="/ndw/assets/img/home.png" alt="Back to Summary Page"/>
+  <div *ngIf="!reportData.l2Reports.length && !reportData.l1Reports.length && !reportData.fieldDistribution.length && !reportData.l2Checklist.records.length; else elseBlock" class="no-report-msg">
+    The report for this submission has not been generated.
+    Kindly try again later.
+  </div>
+
+  <ng-template #elseBlock>
+    <div class="plan-report-selection-buttons">
+      <div class="home-icon">
+        <a routerLink="/plans" target='_blank' rel='noopener noreferrer'>
+          <span title="Back to Summary Page">
+            <img src="/ndw/assets/img/home.png" alt="Back to Summary Page"/>
+          </span>
+        </a>
+        <h5>Back to Summary</h5>
+      </div>
+      <div>
+        <span [ngClass]="{'active': visibleTab === 3}" (click)="selectTab(3)">
+          <img src={{getTabIconSrc(3)}} />
         </span>
-      </a>
-      <h5>Back to Summary</h5>
-    </div>
-    <div>
-      <span [ngClass]="{'active': visibleTab === 3}" (click)="selectTab(3)">
-        <img src={{getTabIconSrc(3)}} />
-      </span>
-      <h5>L1 Certification Report</h5>
-    </div>
-    <div>
-      <span [ngClass]="{'active': visibleTab === 1}" (click)="selectTab(1)">
-        <img src={{getTabIconSrc(1)}} />
-      </span>
-      <h5>L2 Certification Report</h5>
-    </div>
-    <div>
-      <span [ngClass]="{'active': visibleTab === 2}" (click)="selectTab(2)">
-        <img src={{getTabIconSrc(2)}} />
-      </span>
-      <h5>L2 Checklist</h5>
-    </div>
-    <div>      
-      <span [ngClass]="{'active': visibleTab === 4}" (click)="selectTab(4)">
-        <img src={{getTabIconSrc(4)}} />
-      </span>
-      <h5>Field Distribution Report</h5>
-    </div>
-  </div>
-
-  <div *ngIf="visibleTab === 1">
-    <app-certification-report></app-certification-report>
-  </div>
-
-  <div *ngIf="visibleTab === 2">
-    <div class="header">
-      <h4>L2 Checklist</h4>
-    </div>
-    <div class="plan">
-      <div class="plan-table-wrapper">
-        <app-plan-table></app-plan-table>
+        <h5>L1 Certification Report</h5>
+      </div>
+      <div>
+        <span [ngClass]="{'active': visibleTab === 1}" (click)="selectTab(1)">
+          <img src={{getTabIconSrc(1)}} />
+        </span>
+        <h5>L2 Certification Report</h5>
+      </div>
+      <div>
+        <span [ngClass]="{'active': visibleTab === 2}" (click)="selectTab(2)">
+          <img src={{getTabIconSrc(2)}} />
+        </span>
+        <h5>L2 Checklist</h5>
+      </div>
+      <div>      
+        <span [ngClass]="{'active': visibleTab === 4}" (click)="selectTab(4)">
+          <img src={{getTabIconSrc(4)}} />
+        </span>
+        <h5>Field Distribution Report</h5>
       </div>
     </div>
-  </div> 
-
-  <div *ngIf="visibleTab === 3">
-    <app-l1-certification-report></app-l1-certification-report>
-  </div>
-
-  <div *ngIf="visibleTab === 4">
-   <app-field-distributor-report></app-field-distributor-report>
-  </div>
+  
+    <div *ngIf="visibleTab === 1">
+      <app-certification-report></app-certification-report>
+    </div>
+  
+    <div *ngIf="visibleTab === 2">
+      <div class="header">
+        <h4>L2 Checklist</h4>
+      </div>
+      <div class="plan">
+        <div>
+          <app-plan-table></app-plan-table>
+        </div>
+      </div>
+    </div> 
+  
+    <div *ngIf="visibleTab === 3">
+      <app-l1-certification-report></app-l1-certification-report>
+    </div>
+  
+    <div *ngIf="visibleTab === 4">
+     <app-field-distributor-report></app-field-distributor-report>
+    </div>
+  </ng-template>
 </div>

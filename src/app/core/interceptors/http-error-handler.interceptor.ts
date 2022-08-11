@@ -21,7 +21,7 @@ export class HttpErrorHandlerInterceptor implements HttpInterceptor {
           duration: 3000,
           verticalPosition: 'bottom',
           horizontalPosition: 'right',
-          panelClass: 'errorSnackBar'
+          panelClass: 'error-snackbar'
         })
         return next.handle(error);
       })

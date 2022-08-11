@@ -26,7 +26,7 @@
   <div *ngIf="initialReports" class="report-score-container">
     <div>
       <h4>Total Score</h4>
-      <span>{{initialReports?.totalScore}}</span>
+      <span>{{initialReports.totalScore}}</span>
     </div>
     <span *ngIf="initialReports.totalFlag !== undefined" class="score-indicator" [ngClass]="{'green': initialReports.totalFlag === 0, 'yellow': (initialReports.totalFlag === 1),'red':  initialReports.totalFlag === 2  }">{{initialReports?.totalPassFail}}</span>
     <div *ngIf="windowScrolled;else elseBlock">
@@ -39,7 +39,6 @@
 
 
 
-  <!-- <div class="v-scrollbar"> -->
 <div *ngFor="let report of reports;trackBy:trackByFn; index as i">
   <div class="certification-report" *ngIf="report.metricTable?.length ? tablesFilteredByFlag ? expandedTables[i].flagCount : report.metricTable?.length : report.metricTable?.length">
       <h4 *ngIf="report.fileName" id="item-{{camelize(report.fileName)}}" [ngClass]="i === 0 ? 'first-filename' : ''">{{report.fileName}}</h4>
@@ -128,18 +127,20 @@
             </tr>
           </tbody>
         </table>
-        <div class="table-container" *ngIf="report?.metricTable?.length 
+        <div *ngIf="report?.metricTable?.length 
         && isShowMore && expandedTables[i]?.metricTableTotalCount > expandedTables[i]?.metricTableFlagCount">
-          <div *ngIf="expandedTables[i]?.metricTable" class="show-less-button-container">
-            <button (click)="showLess(i, 'metricTable')">Show Less &minus;</button>
-          </div>
-          <div *ngIf="!expandedTables[i]?.metricTable" class="show-less-button-container">
-            <button (click)="showMore(i, 'metricTable')">Show More &plus;</button>
+          <div class="table-container">
+            <div *ngIf="expandedTables[i]?.metricTable" class="show-less-button-container">
+              <button (click)="showLess(i, 'metricTable')">Show Less &minus;</button>
+            </div>
+            <div *ngIf="!expandedTables[i]?.metricTable" class="show-less-button-container">
+              <button (click)="showMore(i, 'metricTable')">Show More &plus;</button>
+            </div>
           </div>
         </div>
       </div>
-  
-      <div class="table-container" *ngIf="report.financialSummary?.length!==0">
+
+      <div [ngClass]="[report.financialSummary?.length ? 'table-container' : '']" *ngIf="report.financialSummary?.length!==0">
         <table *ngIf="report.financialSummary" id="item-{{camelize(report.fileName)}}-financialSummary">
           <colgroup span="10"></colgroup>
           <thead>
@@ -197,18 +198,20 @@
             </tr>
           </tbody>
         </table>
-        <div class="table-container" *ngIf="report.financialSummary && isShowMore && 
+        <div *ngIf="report.financialSummary && isShowMore && 
         expandedTables[i]?.financialSummaryTotalCount > expandedTables[i]?.financialSummaryFlagCount">
-          <div *ngIf="expandedTables[i]?.financialSummary" class="show-less-button-container">
-            <button (click)="showLess(i, 'financialSummary')">Show Less &minus;</button>
-          </div>
-          <div *ngIf="!expandedTables[i]?.financialSummary" class="show-less-button-container">
-            <button (click)="showMore(i, 'financialSummary')">Show More &plus;</button>
+          <div class="table-container">
+            <div *ngIf="expandedTables[i]?.financialSummary" class="show-less-button-container">
+              <button (click)="showLess(i, 'financialSummary')">Show Less &minus;</button>
+            </div>
+            <div *ngIf="!expandedTables[i]?.financialSummary" class="show-less-button-container">
+              <button (click)="showMore(i, 'financialSummary')">Show More &plus;</button>
+            </div>
           </div>
         </div>
       </div>
-  
-      <div class="table-container" *ngIf="report.frxTable?.length!==0">
+
+      <div [ngClass]="[report.frxTable?.length ? 'table-container' : '']" *ngIf="report.frxTable?.length!==0">
         <table *ngIf="report.frxTable" id="item-{{camelize(report.fileName)}}-rxTable">
           <colgroup span="4"></colgroup>
           <thead>
@@ -233,7 +236,7 @@
         </table>
       </div>
   
-      <div class="table-container" *ngIf="report.frequencyCountTable?.length!==0">
+      <div [ngClass]="[report.frequencyCountTable?.length ? 'table-container' : '']" *ngIf="report.frequencyCountTable?.length!==0">
         <table *ngIf="report.frequencyCountTable" id="item-{{camelize(report.fileName)}}-frequencyCountTable">
           <colgroup span="2"></colgroup>
           <thead>
