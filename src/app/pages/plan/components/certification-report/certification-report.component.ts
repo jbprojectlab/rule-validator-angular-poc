@@ -190,7 +190,7 @@ export class CertificationReportComponent extends BaseReportComponent implements
   displayColoumEnable(summaryData: FinancialSummary[], fieldName: string): boolean {
     let flag = false;
     if (summaryData?.length!==0 && (fieldName === 'totalAmountExcludingDeniedSecondary' || fieldName === 'totalAmountOutpatientFacilityOnly' || fieldName === 'estimatedAveragePerValidScript')) {
-      flag = summaryData[0][fieldName] !== null;
+      flag = summaryData[0][fieldName] !== 0;
     }
     return flag
   }

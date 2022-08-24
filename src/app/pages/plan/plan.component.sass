@@ -32,7 +32,10 @@
       li
         margin-right: 20px
 
-        h4,
+        h4
+          font-weight: bold
+          color: #333
+
         p
           font-weight: bold
           color: #333
@@ -91,7 +94,6 @@
 
   .plan
     border-radius: var(--rounded-corner-border-radius)
-    color: #fff
     padding: 8px 8px 2px 8px
     min-width: 600px
     overflow-y: scroll
@@ -122,9 +124,19 @@
     &.closed .show-table-img
       transform: rotate(270deg) 
 
+
+    .plan-table-wrapper
+      border-radius: var(--rounded-corner-border-radius)
+      color: #37393A
+      margin-bottom: 12px
+
+.no-report-msg
+  margin: 0 auto
+  font-size: 18px
+  padding: 40px 0
+
 @media screen and (max-width: 1600px)
   .plan
-    margin-right: 40px
 
     .checklist-header
       padding: 12px 0
@@ -136,3 +148,17 @@
 
     button
       margin: 4px 0
+
+@media screen and (max-width: 1300px)
+
+  .plan-report-selection-buttons
+
+    div
+      margin: 0 12px !important
+
+  .plan-header
+    font-size: 10px
+    text-align: center
+
+  h5
+   font-size: 10px !important

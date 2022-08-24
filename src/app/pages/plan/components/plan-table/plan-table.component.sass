@@ -1,14 +1,41 @@
+.filter-score-container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 20px
+
 .report-score-container
-  background-color: var(--background-shade-light-grey)
-  border: 1px solid var(--background-shade-light-grey)
-  border-radius: var(--rounded-corner-border-radius)
-  border-spacing: 0
-  padding: 20px 20px 20px
-  border-radius: 20px
+    background-color: var(--background-shade-light-grey)
+    border: 1px solid var(--background-shade-light-grey)
+    border-radius: var(--rounded-corner-border-radius)
+    border-spacing: 0
+    padding: 20px 20px 20px
+    border-radius: var(--rounded-corner-border-radius)
+    display: flex
+    flex-direction: column
+    margin-top: 10px
+    width: 100%
+  
+.plan-table-header
+  align-items: center
   display: flex
-  flex-direction: column
-  margin-top: 10px
-  width: 100%
+  height: 60px
+  justify-content: space-between
+  padding: 4px 0 0 30px
+
+  img
+    cursor: pointer
+    height: 12px
+    margin-right: 24px
+
+  &.closed img
+    transform: rotate(270deg)
+
+.table-wrapper
+  padding: 0px 4px 6px
+
+.plan-table
+  padding: 0
   
 table
   background: #E0EBF2
@@ -21,6 +48,11 @@ table
   overflow: hidden
   color: #000
   text-align: center
+
+  th
+    border-bottom: 1px solid var(--border-light-grey)
+    padding: 10px
+    text-align: center
   
   thead
     tr:nth-child(odd)
@@ -32,16 +64,14 @@ table
   td
     color: #37393A
     font-weight:400
-    font-zise:14px
+    font-size:14px
     overflow: hidden
     text-overflow: ellipsis
     white-space: nowrap
   
   th
-    border-bottom: 1px solid var(--border-light-grey)
-    padding: 10px
-    text-align: center
     color: #37393A
+    font-zise:14px
     overflow: hidden
     text-overflow: ellipsis
     white-space: nowrap
@@ -53,6 +83,7 @@ table
     border-left: 1px solid #37393A
 
   tbody
+
     tr:nth-child(odd)
       background-color: var(--background-shade-blue)
 
@@ -65,41 +96,66 @@ table
     tr.subrow-void-records,tr.subrow-total-submitted-amount
       background-color: #a6d9e9
 
-    tr.subrow-void-records
-      td:first-child
-        border-left: 10px solid white
-
-      td:last-child
-        border-right: 10px solid white
-
-    tr.subrow-total-submitted-amount
-      td
-        border-bottom: 10px solid white
-
-      td:first-child
-        border-bottom-left-radius: 20px
-        border-left: 10px solid white
-
-      td:last-child
-        border-bottom-right-radius: 20px
-        border-right: 10px solid white
-
-    th,
-    td.max-width
-      max-width: 120px
-
-    th:nth-child(3n+4),
-    td:nth-child(3n+4)
-      border-left: 1px solid #37393A
-
     td
       padding: 10px
 
-.L2-status
-  float: right
-  right: 0
+      &.green p
+        background-color: #5dbf40
+
+      &.yellow p
+        background-color: #f9ca06
+
+      &.red p
+        background-color: #e52a1a
+
+      a
+        color: #5f696b
+      
+      p
+        border-radius: var(--round-border-radius)
+        color: white
+        padding: 10px
+        text-align: center
+
+span.open
+  cursor: pointer
+  position: fixed
+  top: 340px
+  left: 10px
+  background-color: var(--primary-blue-dark)
+  border-radius: 0 var(--round-border-radius) var(--round-border-radius) 0
+  padding: 12px 8px 8px 4px
+
+.report-menu
+  border: 1px solid var(--white)
+  background-color: var(--primary-blue-dark)
+  border-radius: var(--rounded-corner-border-radius)
   display: flex
-  align-items: center
+  flex-direction: column
+  font-size: 16px
+  position: fixed
+  top: 340px
+  left: 18px
+  cursor: pointer
+  color: var(--white)
+  z-index: 3
+
+  .v-scroll
+    height: calc(100vh - 400px)
+    overflow: auto
+    margin: 30px 0px 18px 0px
+    padding: 0px 10px
+
+  span.close
+    right: 8px
+    top: 8px
+    position: absolute
+
+.L2-status
+    float: right
+    right: 0
+    display: flex
+    align-items: center
 
 .approver-textarea
   margin-left: 80px
@@ -119,6 +175,56 @@ table
 .approver
   padding: 20px
 
+tr.subrow-void-records
+
+  td:first-child
+     
+      border-left: 7px solid white
+
+  td:last-child
+      
+      border-right: 7px solid white
+
+tr.subrow-total-submitted-amount
+
+  td
+    border-bottom: 7px solid white
+
+  td:first-child
+      border-bottom-left-radius: var(--rounded-corner-border-radius)
+      border-left: 7px solid white
+
+  td:last-child
+      border-bottom-right-radius: var(--rounded-corner-border-radius)
+      border-right: 7px solid white
+  
+tr.subrow-bg
+  td
+    border-bottom-color: #E0EBF2
+
+  td:first-child
+      border-left-color: #E0EBF2
+
+  td:last-child
+      border-right-color: #E0EBF2
+
+th,
+td.max-width
+  max-width: 120px
+
+th:nth-child(3n+4),
+td:nth-child(3n+4)
+  border-left: 1px solid #37393A
+
+th.left-align, td.left-align
+  text-align: left !important
+
+th.fit-width, td.fit-width
+  width: fit-content !important
+
+.shadow 
+  box-shadow: 32px 22px 50px #000
+  
 .filter-score-container
   display: flex
   flex-direction: column
@@ -133,3 +239,36 @@ table
 
 .active
   white-space: pre-line !important
+  word-break: break-all
+
+@media screen and (max-width: 1650px)
+  .plan-table table
+    display: block
+    margin-right: 12px
+    padding-top: 12px
+    overflow-x: scroll
+    scrollbar-width: none
+    -ms-overflow-style: none
+
+    &::-webkit-scrollbar
+      width: 0
+      height: 0
+
+@media screen and (max-width: 700px)
+  .plan-table-header img
+    right: 0
+
+@media screen and (max-width: 1300px)
+  table
+
+    th, td
+      padding:5px
+      font-size: 10px
+
+    th,
+    td.max-width
+      max-width: 90px
+
+    th.fit-width, td.fit-width
+      width: fit-content !important
+      white-space: pre-wrap !important

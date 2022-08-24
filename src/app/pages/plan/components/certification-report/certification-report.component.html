@@ -26,7 +26,7 @@
   <div *ngIf="initialReports" class="report-score-container">
     <div>
       <h4>Total Score</h4>
-      <span>{{initialReports.totalScore}}</span>
+      <span>{{initialReports?.totalScore}}</span>
     </div>
     <span *ngIf="initialReports.totalFlag !== undefined" class="score-indicator" [ngClass]="{'green': initialReports.totalFlag === 0, 'yellow': (initialReports.totalFlag === 1),'red':  initialReports.totalFlag === 2  }">{{initialReports?.totalPassFail}}</span>
     <div *ngIf="windowScrolled;else elseBlock">
@@ -39,6 +39,7 @@
 
 
 
+  <!-- <div class="v-scrollbar"> -->
 <div *ngFor="let report of reports;trackBy:trackByFn; index as i">
   <div class="certification-report" *ngIf="report.metricTable?.length ? tablesFilteredByFlag ? expandedTables[i].flagCount : report.metricTable?.length : report.metricTable?.length">
       <h4 *ngIf="report.fileName" id="item-{{camelize(report.fileName)}}" [ngClass]="i === 0 ? 'first-filename' : ''">{{report.fileName}}</h4>
@@ -168,8 +169,8 @@
               <td>{{row.totalAmount |currency:'USD':'symbol-narrow'}}</td>
               <td>{{row.percentRejected}}%</td>
               <td  *ngIf="displayColoumEnable(report.financialSummary,'totalAmountExcludingDeniedSecondary')">{{row.totalAmountExcludingDeniedSecondary |currency:'USD':'symbol-narrow'}}</td>
-              <td  *ngIf="displayColoumEnable(report.financialSummary,'totalAmountOutpatientFacilityOnly')">{{row.totalAmountOutpatientFacilityOnly ? (row.totalAmountOutpatientFacilityOnly|currency:'USD':'symbol-narrow') :'-'}}</td>
-              <td  *ngIf="displayColoumEnable(report.financialSummary,'estimatedAveragePerValidScript')">{{row.estimatedAveragePerValidScript ? (row.estimatedAveragePerValidScript|currency:'USD':'symbol-narrow') :'-'}}</td>
+              <td  *ngIf="displayColoumEnable(report.financialSummary,'totalAmountOutpatientFacilityOnly')">{{row.totalAmountOutpatientFacilityOnly|currency:'USD':'symbol-narrow'}}</td>
+              <td  *ngIf="displayColoumEnable(report.financialSummary,'estimatedAveragePerValidScript')">{{row.estimatedAveragePerValidScript|currency:'USD':'symbol-narrow'}}</td>
               <td>{{row.errorMessage}}</td>
             </tr>
             <tr class="bottom-row">
@@ -188,8 +189,8 @@
                 <td>{{row.totalAmount |currency:'USD':'symbol-narrow'}}</td>
                 <td>{{row.percentRejected}}%</td>
                 <td  *ngIf="displayColoumEnable(report.financialSummary,'totalAmountExcludingDeniedSecondary')">{{row.totalAmountExcludingDeniedSecondary |currency:'USD':'symbol-narrow'}}</td>
-                <td  *ngIf="displayColoumEnable(report.financialSummary,'totalAmountOutpatientFacilityOnly')">{{row.totalAmountOutpatientFacilityOnly ? (row.totalAmountOutpatientFacilityOnly|currency:'USD':'symbol-narrow') :'-'}}</td>
-                <td  *ngIf="displayColoumEnable(report.financialSummary,'estimatedAveragePerValidScript')">{{row.estimatedAveragePerValidScript ? (row.estimatedAveragePerValidScript|currency:'USD':'symbol-narrow') :'-'}}</td>
+                <td  *ngIf="displayColoumEnable(report.financialSummary,'totalAmountOutpatientFacilityOnly')">{{row.totalAmountOutpatientFacilityOnly|currency:'USD':'symbol-narrow'}}</td>
+                <td  *ngIf="displayColoumEnable(report.financialSummary,'estimatedAveragePerValidScript')">{{row.estimatedAveragePerValidScript|currency:'USD':'symbol-narrow'}}</td>
                 <td>{{row.errorMessage}}</td>
               </tr>
             </ng-container>
@@ -237,6 +238,7 @@
       </div>
   
       <div [ngClass]="[report.frequencyCountTable?.length ? 'table-container' : '']" *ngIf="report.frequencyCountTable?.length!==0">
+        <h4 *ngIf="report.frequencyCountTable">Pharmacy Benefit Tiers</h4>
         <table *ngIf="report.frequencyCountTable" id="item-{{camelize(report.fileName)}}-frequencyCountTable">
           <colgroup span="2"></colgroup>
           <thead>

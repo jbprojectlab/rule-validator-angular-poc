@@ -65,14 +65,10 @@ export class FieldDistributorReportComponent extends BaseReportComponent impleme
           tableNames: []
         };
         report.fields.forEach((field: any) => {
-
           if (field.dataTable.length !== 0) this.sections.tableNames.push(field.fieldName)
         });
         return this.sections;
       }
-
     })
-
   }
-
 }

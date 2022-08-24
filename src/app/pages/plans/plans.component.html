@@ -3,7 +3,8 @@
     <h4>NDW - Summary Page</h4>
     <div class="search">
       <div>
-        <ng-select class="custom" [(ngModel)]="submissionType" placeholder="Submission Type" (change)="handleSearchFilterChange('submissionType')" [clearable]="false">
+        <ng-select class="custom" [(ngModel)]="submissionType" placeholder="Submission Type" 
+        (change)="handleSearchFilterChange('submissionType')" [clearable]="false" [editableSearchTerm]="true">
           <ng-option
             *ngFor="let submissionType of options.submissionTypes; trackBy:trackByFn"
             [value]="submissionType" (change)="getPlans()">
@@ -11,7 +12,8 @@
           </ng-option>
         </ng-select>
 
-        <ng-select class="custom" [(ngModel)]="selectedSubmissionGroupOption" placeholder="Submission Group" (change)="handleSearchFilterChange('submissionGroup')">
+        <ng-select class="custom" [(ngModel)]="selectedSubmissionGroupOption" placeholder="Submission Group" (change)="handleSearchFilterChange('submissionGroup')"
+        [editableSearchTerm]="true">
           <ng-option
             *ngFor="let submissionGroupOption of options.submissionGroupOptions; trackBy:trackByFn"
             [value]="submissionGroupOption">
@@ -21,24 +23,24 @@
 
         <mat-form-field class="paid-through-form-field">
           <input (blur)="handleDateInputBlur()" (change)="handleSearchFilterChange('paidThroughPeriod', $event)" [max]="mostRecentPaidPeriod" 
-          #dpInput matInput [matDatepicker]="dp" placeholder="Paid Through Period">
+          #dpInput matInput [matDatepicker]="dp" placeholder="Paid Through Period" autocomplete="off">
           <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
           <mat-datepicker #dp (monthSelected)="monthSelected($event, dp, dpInput)" startView="multi-year"></mat-datepicker>
         </mat-form-field>
 
-        <ng-select class="custom xllarge" [(ngModel)]="selectedSubmissionState" placeholder="Submission Current State" >
+        <ng-select class="custom xllarge" [(ngModel)]="selectedSubmissionState" placeholder="Submission Current State" [editableSearchTerm]="true">
           <ng-option *ngFor="let submissionCurrentStateOption of options.submissionCurrentStateOptions; trackBy:trackByFn" [value]="submissionCurrentStateOption">
             {{submissionCurrentStateOption}}
           </ng-option>
         </ng-select>
   
-        <ng-select class="custom small last-select" [(ngModel)]="selectedCategory" placeholder="Category" >
+        <ng-select class="custom small last-select" [(ngModel)]="selectedCategory" placeholder="Category" [editableSearchTerm]="true">
           <ng-option *ngFor="let categoryOption of options.categoryOptions; trackBy:trackByFn" [value]="categoryOption">
             {{categoryOption}}
           </ng-option>
         </ng-select>
   
-        <ng-select class="custom last-select" [(ngModel)]="selectedStatus" placeholder="Submission Status" >
+        <ng-select class="custom last-select" [(ngModel)]="selectedStatus" placeholder="Submission Status" [editableSearchTerm]="true">
           <ng-option *ngFor="let statusOption of options.statusOptions; trackBy:trackByFn" [value]="statusOption">
             {{statusOption}}
           </ng-option>
@@ -48,7 +50,7 @@
   </div>
   
   <div class="plans-table-container">
-    <table>
+    <table >
       <thead>
         <tr>
           <th *ngFor="let header of headers;trackBy:trackByFn; index as i" (click)="sortByColumn(header)">
@@ -74,11 +76,13 @@
           <td>{{plan.submissionCurrentState}}</td>
           <td>{{plan.lastUpdated | date:'MM/dd/yyyy h:mm a'}}</td>
           <td>{{plan.planValidationDueDate | date:'MM/dd/yyyy'}}</td>
-          <td *ngIf="plan.score !== undefined">
-            <p [ngClass]="{'green': plan.score === 0, 'yellow': plan.score > 0 && plan.score < 1, 'red':  plan.score >= 1}">{{plan.score}}</p>
+          <td *ngIf="plan.score !== undefined" [ngClass]="{'green': plan.score === 0, 'yellow': plan.score > 0 && plan.score < 1, 'red':  plan.score >= 1}">
+            <p>{{plan.score}}</p>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
+
+  <div *ngIf="(!plans || !plans.length) && isSearching" class="no-results-msg">No plans match your search</div>
 </div>

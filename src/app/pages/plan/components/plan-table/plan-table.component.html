@@ -55,24 +55,24 @@
         <tbody>
         <ng-container *ngFor="let data of row.dataTable; trackBy:trackByFn; index as i">
         <tr>
-          <td class="left-align">{{data.metricName}}</td>
-          <td>{{data.recordCountThreshold}} %</td>
-          <td>{{data.percentageVariance}} %</td>
+          <td class="left-align fit-width">{{data.metricName}}</td>
+          <td>{{data.recordCountThreshold}}%</td>
+          <td>{{data.percentageVariance}}%</td>
           <td>{{data.rowCountM0 | number: '2.'}}</td>
           <td>{{data.rowCountM1 | number: '2.'}}</td>
           <td>{{data.rowCountM2 | number: '2.'}}</td>
           <td>{{data.metricCountM0 | number: '2.'}}</td>
           <td>{{data.metricCountM1 | number: '2.'}}</td>
           <td>{{data.metricCountM2 | number: '2.'}}</td>
-          <td>{{data.metricPercentageM0}} %</td>
-          <td>{{data.metricPercentageM1}} %</td>
-          <td>{{data.metricPercentageM2}} %</td>
-          <td title="{{data.commentsM0}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM0}}</td>
-          <td title="{{data.commentsM1}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM1}}</td>
-          <td title="{{data.commentsM2}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM2}}</td>
+          <td>{{data.metricPercentageM0}}%</td>
+          <td>{{data.metricPercentageM1}}%</td>
+          <td>{{data.metricPercentageM2}}%</td>
+          <td title="{{data.commentsM0}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']" [innerText]="data.commentsM0"></td>
+          <td title="{{data.commentsM1}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']" [innerText]="data.commentsM1"></td>
+          <td title="{{data.commentsM2}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']" [innerText]="data.commentsM2"></td>
         </tr>
-        <tr *ngIf="data.voidedRecords" class="subrow-void-records">
-          <td class="left-align">Voided Records</td>
+        <tr *ngIf="data.voidedRecords" class="subrow-void-records"  [ngClass]="{'subrow-bg': i%2 === 0}">
+          <td class="left-align fit-width">Voided Records</td>
           <td></td>
           <td></td>
           <td>{{data.voidedRecords?.rowCountM0 | number: '2.'}}</td>
@@ -81,15 +81,15 @@
           <td>{{data.voidedRecords?.metricCountM0 | number: '2.'}}</td>
           <td>{{data.voidedRecords?.metricCountM1 | number: '2.'}}</td>
           <td>{{data.voidedRecords?.metricCountM2 | number: '2.'}}</td>
-          <td>{{data.voidedRecords?.metricPercentageM0}} %</td>
-          <td>{{data.voidedRecords?.metricPercentageM1}} %</td>
-          <td>{{data.voidedRecords?.metricPercentageM2}} %</td>
+          <td>{{data.voidedRecords?.metricPercentageM0}}%</td>
+          <td>{{data.voidedRecords?.metricPercentageM1}}%</td>
+          <td>{{data.voidedRecords?.metricPercentageM2}}%</td>
           <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
           <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
           <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
         </tr>
-        <tr *ngIf="data.totalSubmittedAmount" class="subrow-total-submitted-amount">
-          <td class="left-align">Total Submitted Amount</td>
+        <tr *ngIf="data.totalSubmittedAmount" class="subrow-total-submitted-amount" [ngClass]="{'subrow-bg': i%2 === 0}">
+          <td class="left-align fit-width">Total Submitted Amount</td>
           <td></td>
           <td></td>
           <td>{{data.totalSubmittedAmount?.rowCountM0 | number: '2.'}}</td>
@@ -98,9 +98,9 @@
           <td>{{data.totalSubmittedAmount?.metricCountM0 | number: '2.'}}</td>
           <td>{{data.totalSubmittedAmount?.metricCountM1 | number: '2.'}}</td>
           <td>{{data.totalSubmittedAmount?.metricCountM2 | number: '2.'}}</td>
-          <td>{{data.totalSubmittedAmount?.metricPercentageM0}} %</td>
-          <td>{{data.totalSubmittedAmount?.metricPercentageM1}} %</td>
-          <td>{{data.totalSubmittedAmount?.metricPercentageM2}} %</td>
+          <td>{{data.totalSubmittedAmount?.metricPercentageM0}}%</td>
+          <td>{{data.totalSubmittedAmount?.metricPercentageM1}}%</td>
+          <td>{{data.totalSubmittedAmount?.metricPercentageM2}}%</td>
           <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
           <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
           <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
@@ -144,24 +144,24 @@
           <tbody>
           <ng-container *ngFor="let data of row.dataTable; trackBy:trackByFn; index as i">
           <tr>
-            <td class="left-align">{{data.metricName}}</td>
-            <td>{{data.recordCountThreshold}} %</td>
-            <td>{{data.percentageVariance}} %</td>
+            <td class="left-align fit-width">{{data.metricName}}</td>
+            <td>{{data.recordCountThreshold}}%</td>
+            <td>{{data.percentageVariance}}%</td>
             <td>{{data.rowCountM0 | number: '2.'}}</td>
             <td>{{data.rowCountM1 | number: '2.'}}</td>
             <td>{{data.rowCountM2 | number: '2.'}}</td>
             <td>{{data.metricCountM0 | number: '2.'}}</td>
             <td>{{data.metricCountM1 | number: '2.'}}</td>
             <td>{{data.metricCountM2 | number: '2.'}}</td>
-            <td>{{data.metricPercentageM0}} %</td>
-            <td>{{data.metricPercentageM1}} %</td>
-            <td>{{data.metricPercentageM2}} %</td>
-            <td title="{{data.commentsM0}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM0}}</td>
-            <td title="{{data.commentsM1}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM1}}</td>
-            <td title="{{data.commentsM2}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM2}}</td>
+            <td>{{data.metricPercentageM0}}%</td>
+            <td>{{data.metricPercentageM1}}%</td>
+            <td>{{data.metricPercentageM2}}%</td>
+            <td title="{{data.commentsM0}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']" [innerText]="data.commentsM0"></td>
+            <td title="{{data.commentsM1}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']" [innerText]="data.commentsM1"></td>
+            <td title="{{data.commentsM2}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']" [innerText]="data.commentsM2"></td>
           </tr>
-          <tr *ngIf="data.voidedRecords" class="subrow-void-records">
-            <td class="left-align">Voided Records</td>
+          <tr *ngIf="data.voidedRecords" class="subrow-void-records" [ngClass]="{'subrow-bg': i%2 === 0}">
+            <td class="left-align fit-width">Voided Records</td>
             <td></td>
             <td></td>
             <td>{{data.voidedRecords?.rowCountM0 | number: '2.'}}</td>
@@ -170,15 +170,15 @@
             <td>{{data.voidedRecords?.metricCountM0 | number: '2.'}}</td>
             <td>{{data.voidedRecords?.metricCountM1 | number: '2.'}}</td>
             <td>{{data.voidedRecords?.metricCountM2 | number: '2.'}}</td>
-            <td>{{data.voidedRecords?.metricPercentageM0}} %</td>
-            <td>{{data.voidedRecords?.metricPercentageM1}} %</td>
-            <td>{{data.voidedRecords?.metricPercentageM2}} %</td>
+            <td>{{data.voidedRecords?.metricPercentageM0}}%</td>
+            <td>{{data.voidedRecords?.metricPercentageM1}}%</td>
+            <td>{{data.voidedRecords?.metricPercentageM2}}%</td>
             <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
             <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
             <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
           </tr>
-          <tr *ngIf="data.totalSubmittedAmount" class="subrow-total-submitted-amount">
-            <td class="left-align">Total Submitted Amount</td>
+          <tr *ngIf="data.totalSubmittedAmount" class="subrow-total-submitted-amount" [ngClass]="{'subrow-bg': i%2 === 0}">
+            <td class="left-align fit-width">Total Submitted Amount</td>
             <td></td>
             <td></td>
             <td>{{data.totalSubmittedAmount?.rowCountM0 | number: '2.'}}</td>
@@ -187,9 +187,9 @@
             <td>{{data.totalSubmittedAmount?.metricCountM0 | number: '2.'}}</td>
             <td>{{data.totalSubmittedAmount?.metricCountM1 | number: '2.'}}</td>
             <td>{{data.totalSubmittedAmount?.metricCountM2 | number: '2.'}}</td>
-            <td>{{data.totalSubmittedAmount?.metricPercentageM0}} %</td>
-            <td>{{data.totalSubmittedAmount?.metricPercentageM1}} %</td>
-            <td>{{data.totalSubmittedAmount?.metricPercentageM2}} %</td>
+            <td>{{data.totalSubmittedAmount?.metricPercentageM0}}%</td>
+            <td>{{data.totalSubmittedAmount?.metricPercentageM1}}%</td>
+            <td>{{data.totalSubmittedAmount?.metricPercentageM2}}%</td>
             <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
             <td>{{data.totalSubmittedAmount?.AddlPercentageM1}}</td>
             <td>{{data.totalSubmittedAmount?.AddlPercentageM2}}</td>
@@ -204,7 +204,7 @@
       <colgroup span="15"></colgroup>
       <thead>
         <tr>
-          <th class="left-align">Description</th>
+          <th class="left-align fit-width">Description</th>
           <th>Record Count-<br>Threshold</th>
           <th>Percentage<br>Variance</th>
           <th>{{row.dataTable[0].cycleIdM0}}</th>
@@ -233,24 +233,24 @@
         <tbody>
         <ng-container *ngFor="let data of row.dataTable; trackBy:trackByFn; index as i">
         <tr>
-          <td class="left-align">{{data.metricName}}</td>
-          <td>{{data.recordCountThreshold}} %</td>
-          <td>{{data.percentageVariance}} %</td>
+          <td class="left-align fit-width">{{data.metricName}}</td>
+          <td>{{data.recordCountThreshold}}%</td>
+          <td>{{data.percentageVariance}}%</td>
           <td>{{data.rowCountM0 | number: '2.'}}</td>
           <td>{{data.rowCountM1 | number: '2.'}}</td>
           <td>{{data.rowCountM2 | number: '2.'}}</td>
           <td>{{data.metricCountM0 | number: '2.'}}</td>
           <td>{{data.metricCountM1 | number: '2.'}}</td>
           <td>{{data.metricCountM2 | number: '2.'}}</td>
-          <td>{{data.metricPercentageM0}} %</td>
-          <td>{{data.metricPercentageM1}} %</td>
-          <td>{{data.metricPercentageM2}} %</td>
-          <td title="{{data.commentsM0}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM0}}</td>
-          <td title="{{data.commentsM1}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM1}}</td>
-          <td title="{{data.commentsM2}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']">{{data.commentsM2}}</td>
+          <td>{{data.metricPercentageM0}}%</td>
+          <td>{{data.metricPercentageM1}}%</td>
+          <td>{{data.metricPercentageM2}}%</td>
+          <td title="{{data.commentsM0}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']" [innerText]="data.commentsM0"></td>
+          <td title="{{data.commentsM1}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']" [innerText]="data.commentsM1"></td>
+          <td title="{{data.commentsM2}}" class="max-width left-align" (click)="openRow(i, $event)" [ngClass]="[active === i ? ('active') : '']" [innerText]="data.commentsM2"></td>
         </tr>
-        <tr *ngIf="data.voidedRecords" class="subrow-void-records">
-          <td class="left-align">Voided Records</td>
+        <tr *ngIf="data.voidedRecords" class="subrow-void-records" [ngClass]="{'subrow-bg': i%2 === 0}">
+          <td class="left-align fit-width">Voided Records</td>
           <td></td>
           <td></td>
           <td>{{data.voidedRecords?.rowCountM0 | number: '2.'}}</td>
@@ -259,24 +259,24 @@
           <td>{{data.voidedRecords?.metricCountM0 | number: '2.'}}</td>
           <td>{{data.voidedRecords?.metricCountM1 | number: '2.'}}</td>
           <td>{{data.voidedRecords?.metricCountM2 | number: '2.'}}</td>
-          <td>{{data.voidedRecords?.metricPercentageM0}} %</td>
-          <td>{{data.voidedRecords?.metricPercentageM1}} %</td>
-          <td>{{data.voidedRecords?.metricPercentageM2}} %</td>
+          <td>{{data.voidedRecords?.metricPercentageM0}}%</td>
+          <td>{{data.voidedRecords?.metricPercentageM1}}%</td>
+          <td>{{data.voidedRecords?.metricPercentageM2}}%</td>
           <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
           <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
           <td>{{data.voidedRecords?.AddlPercentageM0}}</td>
         </tr>
-        <tr *ngIf="data.totalSubmittedAmount" class="subrow-total-submitted-amount">
-          <td class="left-align">Total Submitted Amount</td>
+        <tr *ngIf="data.totalSubmittedAmount" class="subrow-total-submitted-amount" [ngClass]="{'subrow-bg': i%2 === 0}">
+          <td class="left-align fit-width">Total Submitted Amount</td>
           <td>{{data.totalSubmittedAmount?.rowCountM0 | number: '2.'}}</td>
           <td>{{data.totalSubmittedAmount?.rowCountM1 | number: '2.'}}</td>
           <td>{{data.totalSubmittedAmount?.rowCountM2 | number: '2.'}}</td>
           <td>{{data.totalSubmittedAmount?.metricCountM0 | number: '2.'}}</td>
           <td>{{data.totalSubmittedAmount?.metricCountM1 | number: '2.'}}</td>
           <td>{{data.totalSubmittedAmount?.metricCountM2 | number: '2.'}}</td>
-          <td>{{data.totalSubmittedAmount?.metricPercentageM0}} %</td>
-          <td>{{data.totalSubmittedAmount?.metricPercentageM1}} %</td>
-          <td>{{data.totalSubmittedAmount?.metricPercentageM2}} %</td>
+          <td>{{data.totalSubmittedAmount?.metricPercentageM0}}%</td>
+          <td>{{data.totalSubmittedAmount?.metricPercentageM1}}%</td>
+          <td>{{data.totalSubmittedAmount?.metricPercentageM2}}%</td>
           <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
           <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
           <td>{{data.totalSubmittedAmount?.AddlPercentageM0}}</td>
@@ -291,8 +291,8 @@
       <thead>
         <tr>
           <th class="left-align">Description</th>
-          <th>Record Count-<br>Threshold</th>
-          <th>Percentage<br>Variance</th>
+          <th></th>
+          <th></th>
           <th>{{row.dataTable[0].cycleIdM0}}</th>
           <th>{{row.dataTable[0].cycleIdM1}}</th>
           <th>{{row.dataTable[0].cycleIdM2}}</th>
@@ -319,14 +319,14 @@
         <tbody>
         <tr *ngFor="let data of row.dataTable; trackBy:trackByFn; index as i">
           <td class="left-align">{{data.metricName}}</td>
-          <td>{{data.recordCountThreshold}} %</td>
-          <td>{{data.percentageVariance}} %</td>
+          <td></td>
+          <td></td>
           <td>{{data.rowCountM0 | number: '2.'}}</td>
           <td>{{data.rowCountM1 | number: '2.'}}</td>
           <td>{{data.rowCountM2 | number: '2.'}}</td>
-          <td>{{data.metricCountM0}} %</td>
-          <td>{{data.metricCountM1}} %</td>
-          <td>{{data.metricCountM2}} %</td>
+          <td>{{data.metricCountM0}}%</td>
+          <td>{{data.metricCountM1}}%</td>
+          <td>{{data.metricCountM2}}%</td>
           <td>{{data.metricPercentageM0 | number: '2.'}}</td>
           <td>{{data.metricPercentageM1 | number: '2.'}}</td>
           <td>{{data.metricPercentageM2 | number: '2.'}}</td>
@@ -358,7 +358,13 @@
       </div> 
     </div>
     <div class="approver">
-      -
+      .
+    </div>
+    <div class="approver">
+      .
+    </div>
+    <div class="approver">
+      .
     </div>
 
   </div>

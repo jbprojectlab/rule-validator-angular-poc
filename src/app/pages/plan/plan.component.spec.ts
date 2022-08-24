@@ -41,12 +41,12 @@ describe('PlanComponent', () => {
 
   it('should return the selected tab 1 image', () => {
     component.visibleTab = 1;
-    expect(component.getTabIconSrc(1)).toBe('assets/img/graph-white.png')
+    expect(component.getTabIconSrc(1)).toBe('assets/img/checklist-white.png')
   })
 
   it('should return the nonselected tab 1 image', () => {
     component.visibleTab = 2;
-    expect(component.getTabIconSrc(1)).toBe('assets/img/graph-black.png')
+    expect(component.getTabIconSrc(1)).toBe('assets/img/checklist-black.png')
   })
   it('should return the selected tab 1 image', () => {
     component.visibleTab = 2;

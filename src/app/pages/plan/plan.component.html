@@ -3,11 +3,11 @@
     <ul>
       <li>
         <h4>Plan Name:</h4>
-        <p>{{reportData.planName}}</p>
+        <p>{{reportData?.planName}}</p>
       </li>
       <li>
         <h4>Plan Code:</h4>
-        <p>{{reportData.submissionGroupId}}</p>
+        <p>{{reportData?.submissionGroupId}}</p>
       </li>
       <li>
         <h4>Submission Control Number:</h4>
@@ -15,20 +15,20 @@
       </li>
       <li>
         <h4>Paid Through Period:</h4>
-        <p>{{reportData.paidThroughPeriod}}</p>
+        <p>{{reportData?.paidThroughPeriod}}</p>
       </li>
       <li>
         <h4>Submission Mode:</h4>
-        <p>{{reportData.submissionMode}}</p>
+        <p>{{reportData?.submissionMode}}</p>
       </li>
     </ul>
-    <div>
+    <div *ngIf="reportData?.l2Reports?.length || reportData?.l1Reports?.length || reportData?.fieldDistribution?.length || reportData?.l2CheckList?.records?.length">
       <button>Pass</button>
       <button>Reject</button>
     </div>
   </div>
 
-  <div *ngIf="!reportData.l2Reports.length && !reportData.l1Reports.length && !reportData.fieldDistribution.length && !reportData.l2Checklist.records.length; else elseBlock" class="no-report-msg">
+  <div *ngIf="!reportData?.l2Reports?.length && !reportData?.l1Reports?.length && !reportData?.fieldDistribution?.length && !reportData?.l2CheckList?.records?.length; else elseBlock" class="no-report-msg">
     The report for this submission has not been generated.
     Kindly try again later.
   </div>
@@ -36,7 +36,7 @@
   <ng-template #elseBlock>
     <div class="plan-report-selection-buttons">
       <div class="home-icon">
-        <a routerLink="/plans" target='_blank' rel='noopener noreferrer'>
+        <a routerLink="/plans" target='_self' rel='noopener noreferrer'>
           <span title="Back to Summary Page">
             <img src="/ndw/assets/img/home.png" alt="Back to Summary Page"/>
           </span>
